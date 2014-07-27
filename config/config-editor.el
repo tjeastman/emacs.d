@@ -1,3 +1,10 @@
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(setq confirm-nonexistent-file-or-buffer nil)
+(setq require-final-newline nil)
+(setq mouse-yank-at-point t)
+(setq vc-follow-symlinks t)
+
 ; save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
