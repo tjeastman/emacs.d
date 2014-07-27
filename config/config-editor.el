@@ -13,7 +13,7 @@
 
 ; store backup files in a central directory
 (setq backup-directory-alist
-      `(("." . ,(expand-file-name "backups" user-emacs-directory))))
+      `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
 (setq backup-by-copying t
       delete-old-versions t
       kept-new-versions 6
