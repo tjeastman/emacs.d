@@ -13,6 +13,11 @@
 (setq mouse-yank-at-point t)
 (setq vc-follow-symlinks t)
 
+(setq-default
+ ; only allow continuation lines in buffers that occupy the full frame width
+ truncate-lines nil
+ truncate-partial-width-windows t)
+
 ; replace text in the active region with typed text
 (delete-selection-mode t)
 
