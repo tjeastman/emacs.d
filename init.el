@@ -11,5 +11,6 @@
 
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (require 'config-packages)
+(require 'config-editor)
 (require 'config-features)
 (require 'config-keybindings)
