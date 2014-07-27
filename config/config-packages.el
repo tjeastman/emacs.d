@@ -8,7 +8,9 @@
 
 ; declare required packages
 (defvar config-required-packages
-  '(smex)
+  '(ido-ubiquitous
+    flx-ido
+    smex)
   "List of packages that are automatically installed.")
 
 ; install required packages
