@@ -10,7 +10,8 @@
 (defvar config-required-packages
   '(ido-ubiquitous
     flx-ido
-    smex)
+    smex
+    expand-region)
   "List of packages that are automatically installed.")
 
 ; install required packages
