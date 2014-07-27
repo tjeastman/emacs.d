@@ -1,3 +1,10 @@
+; configure UI appearance
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'blink-cursor-mode) (blink-cursor-mode -1))
+(if (fboundp 'fringe-mode) (fringe-mode 0))
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq confirm-nonexistent-file-or-buffer nil)
