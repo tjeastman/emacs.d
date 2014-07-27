@@ -11,7 +11,8 @@
   '(ido-ubiquitous
     flx-ido
     smex
-    expand-region)
+    expand-region
+    magit)
   "List of packages that are automatically installed.")
 
 ; install required packages
