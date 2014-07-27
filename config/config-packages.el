@@ -3,12 +3,19 @@
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(setq package-user-dir (expand-file-name "packages" user-emacs-directory))
+(setq package-user-dir
+      (expand-file-name "packages" user-emacs-directory))
+
+; declare required packages
+(defvar config-required-packages
+  '(cask
+    pallet)
+  "List of packages that are automatically installed.")
 
 ; install required packages
 (package-initialize)
 (package-refresh-contents)
-(dolist (package-name '(cask pallet))
+(dolist (package-name config-required-packages)
   (unless (package-installed-p package-name)
     (package-install package-name)))
 
