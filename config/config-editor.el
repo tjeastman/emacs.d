@@ -12,6 +12,9 @@
 (setq mouse-yank-at-point t)
 (setq vc-follow-symlinks t)
 
+; replace text in the active region with typed text
+(delete-selection-mode t)
+
 ; save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
