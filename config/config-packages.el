@@ -9,7 +9,8 @@
 ; declare required packages
 (defvar config-required-packages
   '(cask
-    pallet)
+    pallet
+    smex)
   "List of packages that are automatically installed.")
 
 ; install required packages
