@@ -20,4 +20,9 @@
       kept-old-versions 2
       version-control t)
 
+; open zsh files in sh-mode
+(add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.zsh-theme$" . sh-mode))
+(add-to-list 'auto-mode-alist '("zshrc$" . sh-mode))
+
 (provide 'config-editor)
