@@ -13,6 +13,13 @@
 (setq mouse-yank-at-point t)
 (setq vc-follow-symlinks t)
 
+(setq
+ ; preserve the vertical position of the line containing the point
+ scroll-preserve-screen-position t
+ ; never vertically recenter windows
+ scroll-conservatively 100000
+ scroll-margin 0)
+
 (setq-default
  ; only allow continuation lines in buffers that occupy the full frame width
  truncate-lines nil
