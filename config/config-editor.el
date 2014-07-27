@@ -16,6 +16,9 @@
 ; replace text in the active region with typed text
 (delete-selection-mode t)
 
+; highlight the current line (the line containing the point)
+(global-hl-line-mode t)
+
 ; save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
