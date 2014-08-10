@@ -13,7 +13,8 @@
     smex
     expand-region
     magit
-    volatile-highlights)
+    volatile-highlights
+    company)
   "List of packages that are automatically installed.")
 
 ; install required packages

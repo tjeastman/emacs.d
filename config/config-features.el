@@ -23,4 +23,12 @@
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 
+; text completion framework
+(require 'company)
+(setq company-idle-delay 1.0
+      company-minimum-prefix-length 3
+      company-tooltip-limit 10
+      company-tooltip-flip-when-above t)
+(global-company-mode t)
+
 (provide 'config-features)
