@@ -60,5 +60,7 @@
 (add-to-list 'auto-mode-alist '("bashrc$" . sh-mode))
 (add-to-list 'auto-mode-alist '("bash_profile$" . sh-mode))
 (add-to-list 'auto-mode-alist '("bash_logout$" . sh-mode))
+; open Debian preseed files in conf-mode
+(add-to-list 'auto-mode-alist '(".preseed$" . conf-mode))
 
 (provide 'config-editor)
