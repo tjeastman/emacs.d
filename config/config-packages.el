@@ -12,7 +12,8 @@
     flx-ido
     smex
     expand-region
-    magit)
+    magit
+    volatile-highlights)
   "List of packages that are automatically installed.")
 
 ; install required packages

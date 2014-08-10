@@ -19,4 +19,8 @@
       (expand-file-name "smex-items" user-emacs-state-directory))
 (smex-initialize)
 
+; highlight buffer changes caused by certain commands
+(require 'volatile-highlights)
+(volatile-highlights-mode t)
+
 (provide 'config-features)
