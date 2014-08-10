@@ -56,5 +56,9 @@
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.zsh-theme$" . sh-mode))
 (add-to-list 'auto-mode-alist '("zshrc$" . sh-mode))
+; open bash files in sh-mode
+(add-to-list 'auto-mode-alist '("bashrc$" . sh-mode))
+(add-to-list 'auto-mode-alist '("bash_profile$" . sh-mode))
+(add-to-list 'auto-mode-alist '("bash_logout$" . sh-mode))
 
 (provide 'config-editor)
