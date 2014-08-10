@@ -37,6 +37,12 @@
 (setq save-place-file
       (expand-file-name "places" user-emacs-state-directory))
 
+; improved mechanism for making buffer names unique
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward
+      uniquify-after-kill-buffer-p t
+      uniquify-ignore-buffers-re "^\\*")
+
 ; store backup files in a central directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
