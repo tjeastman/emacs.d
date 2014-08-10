@@ -14,7 +14,8 @@
     expand-region
     magit
     volatile-highlights
-    company)
+    company
+    yaml-mode)
   "List of packages that are automatically installed.")
 
 ; install required packages
