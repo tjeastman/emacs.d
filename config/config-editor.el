@@ -43,6 +43,12 @@
       uniquify-after-kill-buffer-p t
       uniquify-ignore-buffers-re "^\\*")
 
+; visualize unwanted whitespace characters and lines that are too long
+(require 'whitespace)
+(setq whitespace-line-column 100
+      whitespace-style '(face tabs empty trailing lines-tail))
+(whitespace-mode t)
+
 ; store backup files in a central directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
