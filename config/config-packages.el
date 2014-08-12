@@ -17,7 +17,8 @@
     company
     yaml-mode
     diminish
-    rainbow-mode)
+    rainbow-mode
+    smartparens)
   "List of packages that are automatically installed.")
 
 ; install required packages

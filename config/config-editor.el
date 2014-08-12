@@ -31,6 +31,11 @@
 ; highlight the current line (the line containing the point)
 (global-hl-line-mode t)
 
+; highlight matching bracket delimiters
+(require 'smartparens-config)
+(show-smartparens-global-mode +1)
+(setq blink-matching-paren nil)
+
 ; save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
