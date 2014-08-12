@@ -15,7 +15,8 @@
     magit
     volatile-highlights
     company
-    yaml-mode)
+    yaml-mode
+    diminish)
   "List of packages that are automatically installed.")
 
 ; install required packages
