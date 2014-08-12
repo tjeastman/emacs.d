@@ -16,7 +16,8 @@
     volatile-highlights
     company
     yaml-mode
-    diminish)
+    diminish
+    rainbow-mode)
   "List of packages that are automatically installed.")
 
 ; install required packages

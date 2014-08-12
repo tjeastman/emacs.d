@@ -1,7 +1,8 @@
+(require 'diminish)
+
 (require 'ido)
 (require 'ido-ubiquitous)
 (require 'flx-ido)
-
 (setq ido-enable-flex-matching t
       ido-create-new-buffer 'always
       ido-use-filename-at-point 'guess
@@ -30,5 +31,10 @@
       company-tooltip-limit 10
       company-tooltip-flip-when-above t)
 (global-company-mode t)
+
+; highlight color strings with the colors they represent
+(require 'rainbow-mode)
+(rainbow-mode t)
+(diminish 'rainbow-mode)
 
 (provide 'config-features)
