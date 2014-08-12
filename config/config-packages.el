@@ -18,7 +18,8 @@
     yaml-mode
     diminish
     rainbow-mode
-    smartparens)
+    smartparens
+    projectile)
   "List of packages that are automatically installed.")
 
 ; install required packages

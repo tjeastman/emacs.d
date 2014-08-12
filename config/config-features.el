@@ -33,6 +33,10 @@
       company-tooltip-flip-when-above t)
 (global-company-mode t)
 
+; project management
+(require 'projectile)
+(projectile-global-mode t)
+
 ; highlight color strings with the colors they represent
 (require 'rainbow-mode)
 (rainbow-mode t)
