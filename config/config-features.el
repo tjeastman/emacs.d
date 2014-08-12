@@ -23,6 +23,7 @@
 ; highlight buffer changes caused by certain commands
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
+(diminish 'volatile-highlights-mode)
 
 ; text completion framework
 (require 'company)
