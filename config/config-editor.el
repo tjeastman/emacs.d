@@ -54,6 +54,9 @@
       whitespace-style '(face tabs empty trailing lines-tail))
 (whitespace-mode t)
 
+; make it possible to undo and redo window configuration changes
+(winner-mode t)
+
 ; store backup files in a central directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
