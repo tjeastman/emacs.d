@@ -57,6 +57,9 @@
 ; make it possible to undo and redo window configuration changes
 (winner-mode t)
 
+; automatically revert buffers when the corresponding file changes
+(global-auto-revert-mode t)
+
 ; store backup files in a central directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
