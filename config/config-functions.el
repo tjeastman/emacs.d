@@ -10,5 +10,17 @@ then move to the beginning of the line."
     (if (<= original-point-value (point))
 	(beginning-of-line))))
 
+(defun my-run-new-shell-always ()
+  "Run a shell in a new buffer regardless of how many shells are already running."
+  (interactive)
+  (let ((shell-buffer-index 0)
+        (shell-buffer-name-format "*shell-%d*")
+        (shell-buffer-name))
+    (while ; loop until an unused shell buffer name is found
+        (progn
+          (incf shell-buffer-index)
+          (setq shell-buffer-name (format shell-buffer-name-format shell-buffer-index))
+          (get-buffer shell-buffer-name)))
+    (shell shell-buffer-name)))
 
 (provide 'config-functions)
