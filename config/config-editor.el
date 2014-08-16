@@ -31,6 +31,10 @@
 ; highlight the current line (the line containing the point)
 (global-hl-line-mode t)
 
+; show the current line number and indicate the buffer size in the mode line
+(line-number-mode t)
+(size-indication-mode t)
+
 ; highlight matching bracket delimiters
 (require 'smartparens-config)
 (show-smartparens-global-mode +1)
