@@ -4,4 +4,7 @@
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(global-set-key [remap move-beginning-of-line]
+                'my-move-to-beginning-of-line)
+
 (provide 'config-keybindings)
