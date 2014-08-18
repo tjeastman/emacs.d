@@ -4,6 +4,8 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (global-set-key (kbd "C-;") 'backward-kill-word)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
