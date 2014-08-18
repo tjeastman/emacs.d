@@ -33,6 +33,10 @@
       company-tooltip-flip-when-above t)
 (global-company-mode t)
 
+; navigate contents of the kill ring
+(require 'browse-kill-ring)
+(browse-kill-ring-default-keybindings)
+
 ; project management
 (require 'projectile)
 (projectile-global-mode t)

@@ -6,6 +6,8 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
+(global-set-key (kbd "C-c y") 'browse-kill-ring)
+
 (global-set-key (kbd "C-;") 'backward-kill-word)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
