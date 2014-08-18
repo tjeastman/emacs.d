@@ -37,6 +37,11 @@
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 
+; use a tree-structured representation of undo history
+(require 'undo-tree)
+(global-undo-tree-mode)
+(diminish 'undo-tree-mode)
+
 ; project management
 (require 'projectile)
 (projectile-global-mode t)

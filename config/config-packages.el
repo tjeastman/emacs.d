@@ -21,7 +21,8 @@
     smartparens
     projectile
     markdown-mode
-    anzu)
+    anzu
+    undo-tree)
   "List of packages that are automatically installed.")
 
 ; install required packages
