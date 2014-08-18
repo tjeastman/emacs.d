@@ -37,6 +37,11 @@
 (require 'projectile)
 (projectile-global-mode t)
 
+; indicate current match index and total matches in the mode line when searching
+(require 'anzu)
+(diminish 'anzu-mode)
+(global-anzu-mode)
+
 ; highlight color strings with the colors they represent
 (require 'rainbow-mode)
 (rainbow-mode t)

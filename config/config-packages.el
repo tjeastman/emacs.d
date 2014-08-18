@@ -20,7 +20,8 @@
     rainbow-mode
     smartparens
     projectile
-    markdown-mode)
+    markdown-mode
+    anzu)
   "List of packages that are automatically installed.")
 
 ; install required packages
