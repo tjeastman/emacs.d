@@ -73,6 +73,14 @@
       kept-old-versions 2
       version-control t)
 
+; enabled region case manipulation commands
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+; enable buffer narrowing commands
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+
 ; open zsh files in sh-mode
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.zsh-theme$" . sh-mode))
