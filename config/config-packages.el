@@ -19,7 +19,8 @@
     diminish
     rainbow-mode
     smartparens
-    projectile)
+    projectile
+    markdown-mode)
   "List of packages that are automatically installed.")
 
 ; install required packages
