@@ -25,6 +25,10 @@
  truncate-lines nil
  truncate-partial-width-windows t)
 
+(setq
+ comint-process-echoes t
+ comint-prompt-read-only t)
+
 ; replace text in the active region with typed text
 (delete-selection-mode t)
 
