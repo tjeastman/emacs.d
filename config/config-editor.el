@@ -25,6 +25,10 @@
  truncate-lines nil
  truncate-partial-width-windows t)
 
+(setq-default
+ indent-tabs-mode nil
+ tab-width 4)
+
 (setq
  comint-process-echoes t
  comint-prompt-read-only t)
