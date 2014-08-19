@@ -22,7 +22,8 @@
     projectile
     markdown-mode
     anzu
-    undo-tree)
+    undo-tree
+    browse-kill-ring)
   "List of packages that are automatically installed.")
 
 ; install required packages
