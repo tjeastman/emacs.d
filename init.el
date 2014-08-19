@@ -5,6 +5,10 @@
 (setq user-emacs-state-directory
       (expand-file-name "state" user-emacs-directory))
 
+; store customizations outside of the emacs configuration directory
+(setq custom-file "~/.emacs-custom.el")
+(load custom-file t)
+
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (require 'config-packages)
 (require 'config-functions)
