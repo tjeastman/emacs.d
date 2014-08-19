@@ -1,5 +1,7 @@
 (require 'diminish)
 
+(load-theme 'zenburn t)
+
 (require 'ido)
 (require 'ido-ubiquitous)
 (require 'flx-ido)
