@@ -1,3 +1,5 @@
+(require 'cl)
+
 (defun my-move-to-beginning-of-line ()
   "Incrementally move point toward the beginning of the line.
 
