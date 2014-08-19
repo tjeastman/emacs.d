@@ -23,7 +23,10 @@
     markdown-mode
     anzu
     undo-tree
-    browse-kill-ring)
+    browse-kill-ring
+    zenburn-theme
+    solarized-theme
+    anti-zenburn-theme)
   "List of packages that are automatically installed.")
 
 ; install required packages
