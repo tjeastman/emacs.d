@@ -64,7 +64,7 @@
 (require 'whitespace)
 (setq whitespace-line-column 100
       whitespace-style '(face tabs empty trailing lines-tail))
-(whitespace-mode t)
+(whitespace-mode +1)
 
 ; make it possible to undo and redo window configuration changes
 (winner-mode t)
