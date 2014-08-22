@@ -29,7 +29,7 @@
 
 ; text completion framework
 (require 'company)
-(setq company-idle-delay 1.0
+(setq company-idle-delay 0.5
       company-minimum-prefix-length 3
       company-tooltip-limit 10
       company-tooltip-flip-when-above t)
