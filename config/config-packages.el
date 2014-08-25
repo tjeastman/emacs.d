@@ -26,7 +26,8 @@
     browse-kill-ring
     zenburn-theme
     solarized-theme
-    anti-zenburn-theme)
+    anti-zenburn-theme
+    ag)
   "List of packages that are automatically installed.")
 
 ; install required packages

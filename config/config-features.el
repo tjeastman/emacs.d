@@ -22,6 +22,10 @@
       (expand-file-name "smex-items" user-emacs-state-directory))
 (smex-initialize)
 
+(require 'ag)
+(setq ag-highlight-search t)
+(setq ag-reuse-window t)
+
 ; highlight buffer changes caused by certain commands
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
