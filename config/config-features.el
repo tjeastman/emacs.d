@@ -39,6 +39,13 @@
       company-tooltip-flip-when-above t)
 (global-company-mode t)
 
+; configure readline completion in shell mode
+(setq explicit-shell-file-name "bash")
+(setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
+;;(setq comint-process-echoes t)
+(push 'company-readline company-backends)
+(add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
+
 ; navigate contents of the kill ring
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)

@@ -27,7 +27,8 @@
     zenburn-theme
     solarized-theme
     anti-zenburn-theme
-    ag)
+    ag
+    readline-complete)
   "List of packages that are automatically installed.")
 
 ; install required packages
