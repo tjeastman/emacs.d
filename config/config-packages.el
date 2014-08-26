@@ -28,7 +28,8 @@
     solarized-theme
     anti-zenburn-theme
     ag
-    readline-complete)
+    readline-complete
+    flycheck)
   "List of packages that are automatically installed.")
 
 ; install required packages
