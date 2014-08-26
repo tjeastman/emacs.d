@@ -1,0 +1,3 @@
+[submodule "contrib/Pymacs"]
+	path = contrib/Pymacs
+	url = https://github.com/pinard/Pymacs.git
