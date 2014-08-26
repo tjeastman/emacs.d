@@ -29,7 +29,8 @@
     anti-zenburn-theme
     ag
     readline-complete
-    flycheck)
+    flycheck
+    yasnippet)
   "List of packages that are automatically installed.")
 
 ; install required packages

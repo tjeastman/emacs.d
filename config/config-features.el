@@ -46,6 +46,10 @@
 (push 'company-readline company-backends)
 (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 
+; enable yasnippet template system
+(require 'yasnippet)
+(yas-global-mode t)
+
 ; navigate contents of the kill ring
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
