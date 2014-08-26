@@ -73,4 +73,8 @@
 (rainbow-mode t)
 (diminish 'rainbow-mode)
 
+; enable flycheck in python-mode
+(require 'flycheck)
+(add-hook 'python-mode-hook (lambda () (flycheck-mode)))
+
 (provide 'config-features)
