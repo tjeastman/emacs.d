@@ -64,7 +64,8 @@
 (require 'whitespace)
 (setq whitespace-line-column 100
       whitespace-style '(face tabs empty trailing lines-tail))
-(whitespace-mode +1)
+(add-hook 'prog-mode-hook (lambda ()
+                            (whitespace-mode +1)))
 
 ; make it possible to undo and redo window configuration changes
 (winner-mode t)
