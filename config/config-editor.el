@@ -81,6 +81,12 @@
       kept-old-versions 2
       version-control t)
 
+; set up abbreviations
+(setq-default abbrev-mode t)
+(setq abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
+(quietly-read-abbrev-file abbrev-file-name)
+(setq save-abbrevs 'silently)
+
 ; enabled region case manipulation commands
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
