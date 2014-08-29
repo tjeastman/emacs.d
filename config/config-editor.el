@@ -87,6 +87,14 @@
 (quietly-read-abbrev-file abbrev-file-name)
 (setq save-abbrevs 'silently)
 
+(setq ispell-personal-dictionary "~/.aspell.en.pws")
+
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'python-mode-hook 'flyspell-prog-mode)
+(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
+(add-hook 'c-mode-hook 'flyspell-prog-mode)
+(add-hook 'c++-mode-hook 'flyspell-prog-mode)
+
 ; enabled region case manipulation commands
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
