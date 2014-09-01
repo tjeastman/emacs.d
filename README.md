@@ -10,5 +10,5 @@ Setup Pymacs:
 ```
 cd ~/.emacs.d/contrib/Pymacs
 make
-python setup.py --user
+python setup.py install --user
 ```
