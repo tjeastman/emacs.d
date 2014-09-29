@@ -1,7 +1,7 @@
 ; configure packages
 (require 'package)
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (setq package-user-dir
       (expand-file-name "packages" user-emacs-directory))

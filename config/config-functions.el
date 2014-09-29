@@ -10,7 +10,7 @@ then move to the beginning of the line."
   (let ((original-point-value (point)))
     (back-to-indentation)
     (if (<= original-point-value (point))
-	(beginning-of-line))))
+        (beginning-of-line))))
 
 (defun my-run-new-shell-always ()
   "Run a shell in a new buffer regardless of how many shells are already running."
