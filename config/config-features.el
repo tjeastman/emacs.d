@@ -84,4 +84,6 @@
 (setq ropemacs-enable-autoimport t)
 (setq ropemacs-autoimport-modules '("os" "sys"))
 
+(add-hook 'python-mode-hook (lambda () (subword-mode +1)))
+
 (provide 'config-features)
