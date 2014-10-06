@@ -30,8 +30,7 @@
     ag
     readline-complete
     flycheck
-    yasnippet
-    sml-mode)
+    yasnippet)
   "List of packages that are automatically installed.")
 
 ; install required packages
