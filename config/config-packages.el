@@ -30,7 +30,9 @@
     ag
     readline-complete
     flycheck
-    yasnippet)
+    yasnippet
+    scad-mode
+    arduino-mode)
   "List of packages that are automatically installed.")
 
 ; install required packages
