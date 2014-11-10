@@ -17,6 +17,10 @@
 (ido-ubiquitous-mode 1)
 (flx-ido-mode +1)
 
+(add-to-list 'completion-ignored-extensions ".jar")
+(add-to-list 'completion-ignored-extensions ".elf")
+(add-to-list 'completion-ignored-extensions ".hex")
+
 (require 'smex)
 (setq smex-save-file
       (expand-file-name "smex-items" user-emacs-state-directory))
