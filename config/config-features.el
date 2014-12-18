@@ -20,6 +20,7 @@
 (add-to-list 'completion-ignored-extensions ".jar")
 (add-to-list 'completion-ignored-extensions ".elf")
 (add-to-list 'completion-ignored-extensions ".hex")
+(add-to-list 'completion-ignored-extensions ".ropeproject/")
 
 (require 'smex)
 (setq smex-save-file
