@@ -34,7 +34,8 @@
     flycheck
     yasnippet
     scad-mode
-    arduino-mode)
+    arduino-mode
+    jinja2-mode)
   "List of packages that are automatically installed.")
 
 ; ensure that all required packages are installed
