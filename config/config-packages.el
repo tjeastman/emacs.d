@@ -35,7 +35,8 @@
     yasnippet
     scad-mode
     arduino-mode
-    jinja2-mode)
+    jinja2-mode
+    ein)
   "List of packages that are automatically installed.")
 
 ; ensure that all required packages are installed
