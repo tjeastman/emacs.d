@@ -2,12 +2,6 @@
 
 (load-theme 'zenburn t)
 
-; disable bold text
-(mapc
- (lambda (face)
-   (set-face-attribute face nil :weight 'normal))
- (face-list))
-
 (require 'ido)
 (require 'ido-ubiquitous)
 (require 'flx-ido)
