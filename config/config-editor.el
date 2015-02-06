@@ -15,6 +15,8 @@
 ; consistently ask yes or no questions
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(setq visible-bell t)
+
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq require-final-newline t)
 (setq mouse-yank-at-point t)
