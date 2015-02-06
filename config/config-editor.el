@@ -82,6 +82,9 @@
 ; automatically revert buffers when the corresponding file changes
 (global-auto-revert-mode t)
 
+; revert dired buffers when revisiting
+(setq dired-auto-revert-buffer t)
+
 ; store backup files in a central directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
