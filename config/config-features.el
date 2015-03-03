@@ -21,6 +21,7 @@
 (add-to-list 'completion-ignored-extensions ".elf")
 (add-to-list 'completion-ignored-extensions ".hex")
 (add-to-list 'completion-ignored-extensions ".ropeproject/")
+(add-to-list 'completion-ignored-extensions ".db")
 
 (require 'smex)
 (setq smex-save-file
