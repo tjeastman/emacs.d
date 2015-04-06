@@ -73,10 +73,14 @@
     ("disalbe" "disable" nil 1)
     ("fiel" "file" nil 1)
     ("flasg" "flags" nil 1)
-    ("fro" "for" nil 0)
+    ("fro" "for" nil 1)
     ("gropu" "group" nil 0)
+    ("imoport" "import" nil 0)
+    ("imoprt" "import" nil 0)
+    ("joine" "join" nil 1)
     ("recieve" "receive" nil 1)
     ("retreive" "retrieve" nil 0)
+    ("talbe" "table" nil 0)
     ("teh" "the" nil 2)
     ("termainl" "terminal" nil 1)
    ))
@@ -155,7 +159,9 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'rst-mode-abbrev-table '())
 
