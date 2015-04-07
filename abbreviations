@@ -80,6 +80,7 @@
     ("joine" "join" nil 1)
     ("recieve" "receive" nil 1)
     ("retreive" "retrieve" nil 0)
+    ("slef" "self" nil 0)
     ("talbe" "table" nil 0)
     ("teh" "the" nil 2)
     ("termainl" "terminal" nil 1)
