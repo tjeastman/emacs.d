@@ -13,9 +13,21 @@
 
 (define-abbrev-table 'apropos-mode-abbrev-table '())
 
+(define-abbrev-table 'awk-mode-abbrev-table
+  '(
+   ))
+
 (define-abbrev-table 'browse-kill-ring-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'browse-kill-ring-mode-abbrev-table '())
+
+(define-abbrev-table 'c++-mode-abbrev-table
+  '(
+   ))
+
+(define-abbrev-table 'c-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'calc-trail-mode-abbrev-table '())
 
@@ -71,6 +83,7 @@
   '(
     ("adn" "and" nil 0)
     ("disalbe" "disable" nil 1)
+    ("expresison" "expression" nil 0)
     ("expressoin" "expression" nil 0)
     ("fiel" "file" nil 1)
     ("flasg" "flags" nil 1)
@@ -82,7 +95,7 @@
     ("recieve" "receive" nil 1)
     ("retreive" "retrieve" nil 0)
     ("slef" "self" nil 1)
-    ("talbe" "table" nil 0)
+    ("talbe" "table" nil 2)
     ("teh" "the" nil 2)
     ("termainl" "terminal" nil 1)
    ))
@@ -93,7 +106,15 @@
 
 (define-abbrev-table 'ibuffer-mode-abbrev-table '())
 
+(define-abbrev-table 'idl-mode-abbrev-table '())
+
 (define-abbrev-table 'inferior-python-mode-abbrev-table '())
+
+(define-abbrev-table 'java-mode-abbrev-table
+  '(
+   ))
+
+(define-abbrev-table 'js-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
@@ -141,6 +162,10 @@
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
+(define-abbrev-table 'objc-mode-abbrev-table
+  '(
+   ))
+
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'occur-mode-abbrev-table '())
@@ -152,6 +177,10 @@
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
 (define-abbrev-table 'perl-mode-abbrev-table '())
+
+(define-abbrev-table 'pike-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
@@ -181,7 +210,9 @@
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
 
-(define-abbrev-table 'sql-mode-abbrev-table '())
+(define-abbrev-table 'sql-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
@@ -194,4 +225,6 @@
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-svn-log-view-mode-abbrev-table '())
+
+(define-abbrev-table 'yaml-mode-abbrev-table '())
 
