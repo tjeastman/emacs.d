@@ -15,6 +15,8 @@
 
 (define-abbrev-table 'awk-mode-abbrev-table '())
 
+(define-abbrev-table 'bibtex-mode-abbrev-table '())
+
 (define-abbrev-table 'browse-kill-ring-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'browse-kill-ring-mode-abbrev-table '())
@@ -47,6 +49,10 @@
 
 (define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
 
+(define-abbrev-table 'csv-mode-abbrev-table '())
+
+(define-abbrev-table 'debugger-mode-abbrev-table '())
+
 (define-abbrev-table 'diff-mode-abbrev-table '())
 
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
@@ -76,10 +82,11 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("adn" "and" nil 0)
+    ("configur" "configure" nil 0)
     ("disalbe" "disable" nil 1)
     ("expresison" "expression" nil 0)
     ("expressoin" "expression" nil 0)
-    ("fiel" "file" nil 1)
+    ("fiel" "file" nil 2)
     ("flasg" "flags" nil 1)
     ("fro" "for" nil 1)
     ("gropu" "group" nil 0)
@@ -155,6 +162,8 @@
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
+(define-abbrev-table 'nxml-mode-abbrev-table '())
+
 (define-abbrev-table 'objc-mode-abbrev-table '())
 
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
@@ -183,9 +192,13 @@
   '(
    ))
 
-(define-abbrev-table 'rst-mode-abbrev-table '())
+(define-abbrev-table 'rst-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'rst-toc-mode-abbrev-table '())
+
+(define-abbrev-table 'ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
 
