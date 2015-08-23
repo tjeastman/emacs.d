@@ -128,4 +128,9 @@
 ; open Debian preseed files in conf-mode
 (add-to-list 'auto-mode-alist '(".preseed$" . conf-mode))
 
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25
+      recentf-max-saved-items 250)
+
 (provide 'config-editor)
