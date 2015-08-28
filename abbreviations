@@ -90,11 +90,12 @@
     ("adn" "and" nil 0)
     ("configur" "configure" nil 0)
     ("disalbe" "disable" nil 1)
-    ("expresison" "expression" nil 0)
+    ("expresison" "expression" nil 1)
     ("expressoin" "expression" nil 0)
     ("fiel" "file" nil 2)
     ("flasg" "flags" nil 1)
     ("fro" "for" nil 1)
+    ("gorup" "group" nil 1)
     ("gropu" "group" nil 0)
     ("imoport" "import" nil 0)
     ("imoprt" "import" nil 0)
@@ -105,7 +106,7 @@
     ("recieve" "receive" nil 1)
     ("retreive" "retrieve" nil 0)
     ("slef" "self" nil 1)
-    ("talbe" "table" nil 2)
+    ("talbe" "table" nil 4)
     ("teh" "the" nil 2)
     ("termainl" "terminal" nil 1)
    ))
@@ -214,7 +215,9 @@
 
 (define-abbrev-table 'python-mode-abbrev-table '())
 
-(define-abbrev-table 'python-mode-skeleton-abbrev-table '())
+(define-abbrev-table 'python-mode-skeleton-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'rst-mode-abbrev-table '())
 
