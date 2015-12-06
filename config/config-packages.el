@@ -38,7 +38,8 @@
     jinja2-mode
     ein
     cider
-    paredit)
+    paredit
+    js2-mode)
   "List of packages that are automatically installed.")
 
 ; ensure that all required packages are installed
