@@ -13,9 +13,7 @@
 
 (define-abbrev-table 'apropos-mode-abbrev-table '())
 
-(define-abbrev-table 'awk-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'awk-mode-abbrev-table '())
 
 (define-abbrev-table 'bibtex-mode-abbrev-table '())
 
@@ -23,13 +21,9 @@
 
 (define-abbrev-table 'browse-kill-ring-mode-abbrev-table '())
 
-(define-abbrev-table 'c++-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'c++-mode-abbrev-table '())
 
-(define-abbrev-table 'c-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'c-mode-abbrev-table '())
 
 (define-abbrev-table 'calc-trail-mode-abbrev-table '())
 
@@ -87,15 +81,14 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
-    ("adn" "and" nil 0)
+    ("adn" "and" nil 1)
     ("configur" "configure" nil 0)
     ("disalbe" "disable" nil 1)
-    ("expresison" "expression" nil 1)
+    ("expresison" "expression" nil 0)
     ("expressoin" "expression" nil 0)
     ("fiel" "file" nil 2)
     ("flasg" "flags" nil 1)
     ("fro" "for" nil 1)
-    ("gorup" "group" nil 1)
     ("gropu" "group" nil 0)
     ("imoport" "import" nil 0)
     ("imoprt" "import" nil 0)
@@ -106,9 +99,10 @@
     ("recieve" "receive" nil 1)
     ("retreive" "retrieve" nil 0)
     ("slef" "self" nil 1)
-    ("talbe" "table" nil 4)
+    ("talbe" "table" nil 2)
     ("teh" "the" nil 2)
     ("termainl" "terminal" nil 1)
+    ("vlaue" "value" nil 0)
    ))
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
@@ -121,9 +115,7 @@
 
 (define-abbrev-table 'inferior-python-mode-abbrev-table '())
 
-(define-abbrev-table 'java-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'java-mode-abbrev-table '())
 
 (define-abbrev-table 'js-mode-abbrev-table '())
 
@@ -144,6 +136,8 @@
 (define-abbrev-table 'magit-log-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-log-select-mode-abbrev-table '())
+
+(define-abbrev-table 'magit-merge-preview-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-mode-abbrev-table '())
 
@@ -187,9 +181,7 @@
 
 (define-abbrev-table 'nxml-mode-abbrev-table '())
 
-(define-abbrev-table 'objc-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'objc-mode-abbrev-table '())
 
 (define-abbrev-table 'occur-edit-mode-abbrev-table '())
 
@@ -203,9 +195,7 @@
 
 (define-abbrev-table 'perl-mode-abbrev-table '())
 
-(define-abbrev-table 'pike-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'pike-mode-abbrev-table '())
 
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
@@ -237,9 +227,7 @@
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
 
-(define-abbrev-table 'sql-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'sql-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
