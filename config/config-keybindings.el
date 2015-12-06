@@ -12,6 +12,8 @@
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
 (global-set-key [remap move-beginning-of-line]
                 'my-move-to-beginning-of-line)
 
