@@ -92,4 +92,6 @@
 
 (add-hook 'python-mode-hook (lambda () (subword-mode +1)))
 
+(setq git-commit-summary-max-length 72)
+
 (provide 'config-features)
