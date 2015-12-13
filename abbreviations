@@ -93,6 +93,7 @@
     ("imoport" "import" nil 0)
     ("imoprt" "import" nil 0)
     ("joine" "join" nil 1)
+    ("mdule" "module" nil 0)
     ("optino" "option" nil 0)
     ("optinos" "options" nil 0)
     ("queyr" "query" nil 1)
