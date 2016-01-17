@@ -94,4 +94,11 @@
 
 (setq git-commit-summary-max-length 72)
 
+; use ssh-specific modes for ssh configuration files
+(add-to-list 'auto-mode-alist '(".ssh/config$" . ssh-config-mode))
+(add-to-list 'auto-mode-alist '("sshd_config$" . ssh-config-mode))
+(add-to-list 'auto-mode-alist '("ssh_config$" . ssh-config-mode))
+(add-to-list 'auto-mode-alist '("known_hosts$" . ssh-known-hosts-mode))
+(add-to-list 'auto-mode-alist '("authorized_keys$" . ssh-authorized-keys-mode))
+
 (provide 'config-features)

@@ -39,7 +39,8 @@
     ein
     cider
     paredit
-    js2-mode)
+    js2-mode
+    ssh-config-mode)
   "List of packages that are automatically installed.")
 
 ; ensure that all required packages are installed
