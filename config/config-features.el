@@ -101,4 +101,11 @@
 (add-to-list 'auto-mode-alist '("known_hosts$" . ssh-known-hosts-mode))
 (add-to-list 'auto-mode-alist '("authorized_keys$" . ssh-authorized-keys-mode))
 
+; preview files in dired
+(use-package peep-dired
+  :ensure t
+  :defer t  ; don't access `dired-mode-map' until `peep-dired' is loaded
+  :bind (:map dired-mode-map
+              ("P" . peep-dired)))
+
 (provide 'config-features)
