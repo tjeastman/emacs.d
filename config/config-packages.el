@@ -41,7 +41,6 @@
     cider
     paredit
     js2-mode
-    ssh-config-mode
     scala-mode2
     ansible-doc
     aggressive-indent

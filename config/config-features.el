@@ -95,11 +95,13 @@
 (setq git-commit-summary-max-length 72)
 
 ; use ssh-specific modes for ssh configuration files
-(add-to-list 'auto-mode-alist '(".ssh/config$" . ssh-config-mode))
-(add-to-list 'auto-mode-alist '("sshd_config$" . ssh-config-mode))
-(add-to-list 'auto-mode-alist '("ssh_config$" . ssh-config-mode))
-(add-to-list 'auto-mode-alist '("known_hosts$" . ssh-known-hosts-mode))
-(add-to-list 'auto-mode-alist '("authorized_keys$" . ssh-authorized-keys-mode))
+(use-package ssh-config-mode
+  :ensure t
+  :mode ((".ssh/config$" . ssh-config-mode)
+         ("sshd_config$" . ssh-config-mode)
+         ("ssh_config$" . ssh-config-mode)
+         ("known_hosts$" . ssh-known-hosts-mode)
+         ("authorized_keys$" . ssh-authorized-keys-mode)))
 
 ; preview files in dired
 (use-package peep-dired
