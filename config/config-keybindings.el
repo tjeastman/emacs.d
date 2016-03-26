@@ -18,6 +18,7 @@
                 'my-move-to-beginning-of-line)
 
 ; lookup Ansible module documentation in YAML mode
-(define-key yaml-mode-map (kbd "C-c h a") #'ansible-doc)
+(eval-after-load 'yaml-mode
+  '(define-key yaml-mode-map (kbd "C-c h a") #'ansible-doc))
 
 (provide 'config-keybindings)
