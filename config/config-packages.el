@@ -45,7 +45,8 @@
     scala-mode2
     ansible-doc
     aggressive-indent
-    peep-dired)
+    peep-dired
+    use-package)
   "List of packages that are automatically installed.")
 
 ; ensure that all required packages are installed
