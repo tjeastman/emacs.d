@@ -15,6 +15,7 @@
     smex
     expand-region
     magit
+    git-timemachine
     volatile-highlights
     company
     yaml-mode
