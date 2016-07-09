@@ -41,7 +41,7 @@
     cider
     paredit
     js2-mode
-    scala-mode2
+    scala-mode
     ansible-doc
     aggressive-indent
     peep-dired
