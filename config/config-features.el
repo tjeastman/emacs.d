@@ -22,6 +22,7 @@
 (add-to-list 'completion-ignored-extensions ".hex")
 (add-to-list 'completion-ignored-extensions ".ropeproject/")
 (add-to-list 'completion-ignored-extensions ".db")
+(add-to-list 'completion-ignored-extensions "__pycache__/")
 
 (require 'smex)
 (setq smex-save-file
