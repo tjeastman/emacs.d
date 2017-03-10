@@ -95,6 +95,8 @@
 
 (setq git-commit-summary-max-length 72)
 
+(setq magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
+
 ; use ssh-specific modes for ssh configuration files
 (use-package ssh-config-mode
   :ensure t
