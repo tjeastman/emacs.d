@@ -45,7 +45,9 @@
     ansible-doc
     aggressive-indent
     peep-dired
-    use-package)
+    use-package
+    elpy
+    counsel)
   "List of packages that are automatically installed.")
 
 ; ensure that all required packages are installed
