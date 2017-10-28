@@ -1,4 +1,4 @@
-(require 'diminish)
+(use-package diminish)
 
 (load-theme 'zenburn t)
 
@@ -23,19 +23,22 @@
 (add-to-list 'completion-ignored-extensions ".db")
 (add-to-list 'completion-ignored-extensions "__pycache__/")
 
-(require 'smex)
-(setq smex-save-file
-      (expand-file-name "smex-items" user-emacs-state-directory))
-(smex-initialize)
+(use-package smex
+  :init
+  (setq smex-save-file (expand-file-name "smex-items" user-emacs-state-directory))
+  :config
+  (smex-initialize))
 
-(require 'ag)
-(setq ag-highlight-search t)
-(setq ag-reuse-window t)
+(use-package ag
+  :init
+  (setq ag-highlight-search t)
+  (setq ag-reuse-window t))
 
 ; highlight buffer changes caused by certain commands
-(require 'volatile-highlights)
-(volatile-highlights-mode t)
-(diminish 'volatile-highlights-mode)
+(use-package volatile-highlights
+  :diminish volatile-highlights-mode
+  :config
+  (volatile-highlights-mode t))
 
 ; text completion framework
 (require 'company)
@@ -52,9 +55,9 @@
 (push 'company-readline company-backends)
 (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 
-; enable yasnippet template system
-(require 'yasnippet)
-(yas-global-mode t)
+(use-package yasnippet
+  :config
+  (yas-global-mode t))
 
 ; navigate contents of the kill ring
 (require 'browse-kill-ring)
@@ -66,18 +69,21 @@
 (diminish 'undo-tree-mode)
 
 ; project management
-(require 'projectile)
-(projectile-global-mode t)
+(use-package projectile
+  :config
+  (projectile-global-mode t))
 
 ; indicate current match index and total matches in the mode line when searching
-(require 'anzu)
-(diminish 'anzu-mode)
-(global-anzu-mode)
+(use-package anzu
+  :diminish anzu-mode
+  :config
+  (global-anzu-mode))
 
 ; highlight color strings with the colors they represent
-(require 'rainbow-mode)
-(rainbow-mode t)
-(diminish 'rainbow-mode)
+(use-package rainbow-mode
+  :diminish rainbow-mode
+  :config
+  (rainbow-mode t))
 
 ; enable flycheck in python-mode
 (require 'flycheck)

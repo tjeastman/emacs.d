@@ -11,6 +11,9 @@
     (dolist (top-level-subdir (directory-files top-level-dir t "\\w+"))
       (add-to-list 'load-path top-level-subdir))))
 
+; FIX set this up
+;;(setq use-package-always-ensure t)
+
 (add-top-level-subdirectories-to-load-path
  (expand-file-name "contrib" user-emacs-directory))
 

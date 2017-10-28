@@ -16,24 +16,17 @@
     expand-region
     magit
     git-timemachine
-    volatile-highlights
     company
     yaml-mode
-    diminish
-    rainbow-mode
     smartparens
-    projectile
     markdown-mode
-    anzu
     undo-tree
     browse-kill-ring
     zenburn-theme
     solarized-theme
     anti-zenburn-theme
-    ag
     readline-complete
     flycheck
-    yasnippet
     scad-mode
     arduino-mode
     jinja2-mode
