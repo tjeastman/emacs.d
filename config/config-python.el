@@ -1,4 +1,3 @@
-; enable flycheck in python-mode
 (require 'flycheck)
 (add-hook 'python-mode-hook (lambda () (flycheck-mode)))
 
