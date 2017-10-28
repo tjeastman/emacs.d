@@ -23,4 +23,5 @@
 (require 'config-functions)
 (require 'config-editor)
 (require 'config-features)
+(require 'config-python)
 (require 'config-keybindings)
