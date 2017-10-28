@@ -2,6 +2,8 @@
 
 (load-theme 'zenburn t)
 
+(setq use-package-always-ensure t)
+
 (require 'ido)
 (require 'flx-ido)
 (setq ido-enable-flex-matching t
@@ -60,13 +62,15 @@
   (yas-global-mode t))
 
 ; navigate contents of the kill ring
-(require 'browse-kill-ring)
-(browse-kill-ring-default-keybindings)
+(use-package browse-kill-ring
+  :config
+  (browse-kill-ring-default-keybindings))
 
 ; use a tree-structured representation of undo history
-(require 'undo-tree)
-(global-undo-tree-mode)
-(diminish 'undo-tree-mode)
+(use-package undo-tree
+  :diminish undo-tree-mode
+  :config
+  (global-undo-tree-mode))
 
 ; project management
 (use-package projectile
@@ -85,26 +89,12 @@
   :config
   (rainbow-mode t))
 
-; enable flycheck in python-mode
-(require 'flycheck)
-(add-hook 'python-mode-hook (lambda () (flycheck-mode)))
-
-; enable access to rope refactoring library for Python through Pymacs
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-guess-project t)
-(setq ropemacs-enable-autoimport t)
-(setq ropemacs-autoimport-modules '("os" "sys"))
-
-(add-hook 'python-mode-hook (lambda () (subword-mode +1)))
-
 (setq git-commit-summary-max-length 72)
 
 (setq magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
 
 ; use ssh-specific modes for ssh configuration files
 (use-package ssh-config-mode
-  :ensure t
   :mode ((".ssh/config$" . ssh-config-mode)
          ("sshd_config$" . ssh-config-mode)
          ("ssh_config$" . ssh-config-mode)
@@ -113,7 +103,6 @@
 
 ; preview files in dired
 (use-package peep-dired
-  :ensure t
   :defer t  ; don't access `dired-mode-map' until `peep-dired' is loaded
   :bind (:map dired-mode-map
               ("P" . peep-dired)))

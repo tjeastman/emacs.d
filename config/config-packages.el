@@ -20,8 +20,6 @@
     yaml-mode
     smartparens
     markdown-mode
-    undo-tree
-    browse-kill-ring
     zenburn-theme
     solarized-theme
     anti-zenburn-theme
