@@ -11,4 +11,6 @@
 
 (add-hook 'python-mode-hook (lambda () (subword-mode +1)))
 
+(use-package virtualenvwrapper)
+
 (provide 'config-python)
