@@ -107,4 +107,8 @@
   :bind (:map dired-mode-map
               ("P" . peep-dired)))
 
+(use-package dockerfile-mode)
+(use-package docker-compose-mode)
+(use-package docker-tramp)
+
 (provide 'config-features)
