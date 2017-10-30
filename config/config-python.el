@@ -1,5 +1,10 @@
-(require 'flycheck)
-(add-hook 'python-mode-hook (lambda () (flycheck-mode)))
+(use-package flycheck
+  :init
+  (global-flycheck-mode t))
+
+(use-package jedi
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup))
 
 ; enable access to rope refactoring library for Python through Pymacs
 (require 'pymacs)
