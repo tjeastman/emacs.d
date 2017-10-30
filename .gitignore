@@ -7,3 +7,4 @@ tramp
 recentf
 .cask
 smex-items
+*.elc
