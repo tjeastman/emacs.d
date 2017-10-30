@@ -116,5 +116,7 @@
 (use-package docker-compose-mode)
 (use-package docker-tramp)
 
+(use-package multiple-cursors)
+
 (provide 'config-features)
 ;;; config-features.el ends here
