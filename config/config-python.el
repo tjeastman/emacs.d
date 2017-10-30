@@ -1,3 +1,8 @@
+;;; config-python.el -- Python configuration
+
+;;; Commentary:
+
+;;; Code:
 (use-package flycheck
   :init
   (global-flycheck-mode t))
@@ -18,3 +23,4 @@
 (use-package virtualenvwrapper)
 
 (provide 'config-python)
+;;; config-python.el ends here

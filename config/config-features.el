@@ -1,3 +1,8 @@
+;;; config-features.el --- misc. feature configuration
+
+;;; Commentary:
+
+;;; Code:
 (use-package diminish)
 
 (load-theme 'zenburn t)
@@ -112,3 +117,4 @@
 (use-package docker-tramp)
 
 (provide 'config-features)
+;;; config-features.el ends here
