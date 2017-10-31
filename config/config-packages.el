@@ -42,7 +42,8 @@
     peep-dired
     use-package
     elpy
-    counsel)
+    counsel
+    kaolin-themes)
   "List of packages that are automatically installed.")
 
 ;; ensure that all required packages are installed

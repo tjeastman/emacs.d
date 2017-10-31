@@ -127,5 +127,9 @@
 
 (use-package multiple-cursors)
 
+(use-package electric-spacing
+  :config
+  (add-hook 'prog-mode-hook #'electric-spacing-mode))
+
 (provide 'config-features)
 ;;; config-features.el ends here
