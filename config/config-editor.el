@@ -1,3 +1,9 @@
+;;; config-editor.el --- editor configuration
+
+;;; Commentary:
+
+;;; Code:
+
 ; configure UI appearance
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -137,3 +143,4 @@
       recentf-max-saved-items 250)
 
 (provide 'config-editor)
+;;; config-editor.el ends here
