@@ -8,3 +8,4 @@ recentf
 .cask
 smex-items
 *.elc
+.python-environments
