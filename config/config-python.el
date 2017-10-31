@@ -11,7 +11,7 @@
   :init
   (add-hook 'python-mode-hook 'jedi:setup))
 
-; enable access to rope refactoring library for Python through Pymacs
+;; enable access to rope refactoring library for Python through Pymacs
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 (setq ropemacs-guess-project t)

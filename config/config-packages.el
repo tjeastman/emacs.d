@@ -1,4 +1,10 @@
-; configure packages
+;;; config-packages.el --- package manager configuration
+
+;;; Commentary:
+
+;;; Code:
+
+;; configure packages
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -8,7 +14,7 @@
 
 (package-initialize)
 
-; declare required packages
+;; declare required packages
 (defvar config-required-packages
   '(ido-ubiquitous
     flx-ido
@@ -16,7 +22,6 @@
     expand-region
     magit
     git-timemachine
-    company
     yaml-mode
     smartparens
     markdown-mode
@@ -34,14 +39,13 @@
     js2-mode
     scala-mode
     ansible-doc
-    aggressive-indent
     peep-dired
     use-package
     elpy
     counsel)
   "List of packages that are automatically installed.")
 
-; ensure that all required packages are installed
+;; ensure that all required packages are installed
 (let ((package-not-installed-p (lambda (pkg) (not (package-installed-p pkg)))))
   (if (delq nil (mapcar package-not-installed-p config-required-packages))
       (progn
@@ -51,3 +55,4 @@
             (package-install package-name))))))
 
 (provide 'config-packages)
+;;; config-packages.el ends here

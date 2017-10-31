@@ -41,7 +41,7 @@
   (setq ag-highlight-search t)
   (setq ag-reuse-window t))
 
-; highlight buffer changes caused by certain commands
+;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
   :diminish volatile-highlights-mode
   :config
@@ -53,7 +53,7 @@
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'html-mode))
 
-; text completion framework
+;; text completion framework
 (use-package company
   :diminish company-mode
   :config
@@ -63,7 +63,7 @@
         company-tooltip-flip-when-above t)
   (global-company-mode t))
 
-; configure readline completion in shell mode
+;; configure readline completion in shell mode
 (setq explicit-shell-file-name "bash")
 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
 ;;(setq comint-process-echoes t)
@@ -75,29 +75,29 @@
   :config
   (yas-global-mode t))
 
-; navigate contents of the kill ring
+;; navigate contents of the kill ring
 (use-package browse-kill-ring
   :config
   (browse-kill-ring-default-keybindings))
 
-; use a tree-structured representation of undo history
+;; use a tree-structured representation of undo history
 (use-package undo-tree
   :diminish undo-tree-mode
   :config
   (global-undo-tree-mode))
 
-; project management
+;; project management
 (use-package projectile
   :config
   (projectile-global-mode t))
 
-; indicate current match index and total matches in the mode line when searching
+;; indicate current match index and total matches in the mode line when searching
 (use-package anzu
   :diminish anzu-mode
   :config
   (global-anzu-mode))
 
-; highlight color strings with the colors they represent
+;; highlight color strings with the colors they represent
 (use-package rainbow-mode
   :diminish rainbow-mode
   :config
@@ -107,7 +107,7 @@
 
 (setq magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
 
-; use ssh-specific modes for ssh configuration files
+;; use ssh-specific modes for ssh configuration files
 (use-package ssh-config-mode
   :mode ((".ssh/config$" . ssh-config-mode)
          ("sshd_config$" . ssh-config-mode)
@@ -115,7 +115,7 @@
          ("known_hosts$" . ssh-known-hosts-mode)
          ("authorized_keys$" . ssh-authorized-keys-mode)))
 
-; preview files in dired
+;; preview files in dired
 (use-package peep-dired
   :defer t  ; don't access `dired-mode-map' until `peep-dired' is loaded
   :bind (:map dired-mode-map

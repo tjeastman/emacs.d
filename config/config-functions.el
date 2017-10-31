@@ -1,11 +1,17 @@
-(require 'cl)
+;;; config-functions.el --- global function definitions
+
+;;; Commentary:
+
+;;; Code:
+(use-package cl)
 
 (defun my-move-to-beginning-of-line ()
   "Incrementally move point toward the beginning of the line.
 
-Movement stops at the first non-whitespace character of the current line if it is between the point
-and the beginning of the line.  If the point is at or before the first non-whitespace character,
-then move to the beginning of the line."
+Movement stops at the first non-whitespace character of the current line
+if it is between the point and the beginning of the line.  If the point
+is at or before the first non-whitespace character, then move to the
+beginning of the line."
   (interactive)
   (let ((original-point-value (point)))
     (back-to-indentation)
@@ -18,7 +24,7 @@ then move to the beginning of the line."
   (let ((shell-buffer-index 0)
         (shell-buffer-name-format "*shell-%d*")
         (shell-buffer-name))
-    (while ; loop until an unused shell buffer name is found
+    (while ;; loop until an unused shell buffer name is found
         (progn
           (incf shell-buffer-index)
           (setq shell-buffer-name (format shell-buffer-name-format shell-buffer-index))
@@ -26,3 +32,4 @@ then move to the beginning of the line."
     (shell shell-buffer-name)))
 
 (provide 'config-functions)
+;;; config-functions.el ends here
