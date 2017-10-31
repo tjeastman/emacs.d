@@ -53,28 +53,31 @@
 (size-indication-mode t)
 
 ; highlight matching bracket delimiters
-(require 'smartparens-config)
-(show-smartparens-global-mode +1)
-(setq blink-matching-paren nil)
+(use-package smartparens-config
+  :config
+  (show-smartparens-global-mode +1)
+  (setq blink-matching-paren nil))
 
 ; save point position between sessions
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file
-      (expand-file-name "places" user-emacs-state-directory))
+(use-package saveplace
+  :config
+  (setq-default save-place t)
+  (setq save-place-file
+        (expand-file-name "places" user-emacs-state-directory)))
 
 ; improved mechanism for making buffer names unique
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward
-      uniquify-after-kill-buffer-p t
-      uniquify-ignore-buffers-re "^\\*")
+(use-package uniquify
+  :config
+  (setq uniquify-buffer-name-style 'post-forward
+        uniquify-after-kill-buffer-p t
+        uniquify-ignore-buffers-re "^\\*"))
 
 ; visualize unwanted whitespace characters and lines that are too long
-(require 'whitespace)
-(setq whitespace-line-column 100
-      whitespace-style '(face tabs empty trailing lines-tail))
-(add-hook 'prog-mode-hook (lambda ()
-                            (whitespace-mode +1)))
+(use-package whitespace
+  :config
+  (setq whitespace-line-column 100
+        whitespace-style '(face tabs empty trailing lines-tail))
+  (add-hook 'prog-mode-hook (lambda () (whitespace-mode +1))))
 
 ; make it possible to undo and redo window configuration changes
 (winner-mode t)
