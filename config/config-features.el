@@ -47,13 +47,21 @@
   :config
   (volatile-highlights-mode t))
 
+(use-package aggressive-indent
+  :diminish aggressive-indent-mode
+  :config
+  (global-aggressive-indent-mode 1)
+  (add-to-list 'aggressive-indent-excluded-modes 'html-mode))
+
 ; text completion framework
-(require 'company)
-(setq company-idle-delay 0.5
-      company-minimum-prefix-length 3
-      company-tooltip-limit 10
-      company-tooltip-flip-when-above t)
-(global-company-mode t)
+(use-package company
+  :diminish company-mode
+  :config
+  (setq company-idle-delay 0.5
+        company-minimum-prefix-length 3
+        company-tooltip-limit 10
+        company-tooltip-flip-when-above t)
+  (global-company-mode t))
 
 ; configure readline completion in shell mode
 (setq explicit-shell-file-name "bash")
@@ -63,6 +71,7 @@
 (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :config
   (yas-global-mode t))
 
