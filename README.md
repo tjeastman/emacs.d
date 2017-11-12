@@ -6,10 +6,3 @@ git clone https://github.com/tjeastman/emacs.d.git
 ln -s emacs.d ~/.emacs.d
 mkdir emacs.d/state
 ```
-
-Setup Pymacs:
-```
-cd ~/.emacs.d/contrib/Pymacs
-make
-python setup.py install --user
-```
