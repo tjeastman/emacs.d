@@ -11,6 +11,10 @@
   :init
   (add-hook 'python-mode-hook 'jedi:setup))
 
+(use-package elpy
+  :config
+  (elpy-enable))
+
 (add-hook 'python-mode-hook (lambda () (subword-mode +1)))
 
 (use-package virtualenvwrapper)
