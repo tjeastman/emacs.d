@@ -22,5 +22,8 @@
 
 (use-package virtualenvwrapper)
 
+(use-package cython-mode)
+(use-package nose)
+
 (provide 'config-python)
 ;;; config-python.el ends here
