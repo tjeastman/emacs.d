@@ -13,7 +13,8 @@
 
 (use-package elpy
   :config
-  (elpy-enable))
+  (elpy-enable)
+  (elpy-use-ipython))
 
 (add-hook 'python-mode-hook (lambda () (subword-mode +1)))
 
