@@ -22,5 +22,7 @@
 ;; (use-package cython-mode)
 ;; (use-package nose)
 
+(use-package pip-requirements)
+
 (provide 'config-python)
 ;;; config-python.el ends here
