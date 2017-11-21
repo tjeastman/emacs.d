@@ -3,6 +3,8 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; organize emacs feature state files
 (setq user-emacs-state-directory
       (expand-file-name "state" user-emacs-directory))
