@@ -18,9 +18,7 @@
 (defvar config-required-packages
   '(ido-ubiquitous
     flx-ido
-    smex
     git-timemachine
-    yaml-mode
     smartparens
     markdown-mode
     zenburn-theme
@@ -28,7 +26,6 @@
     anti-zenburn-theme
     readline-complete
     scad-mode
-    arduino-mode
     jinja2-mode
     ein
     cider

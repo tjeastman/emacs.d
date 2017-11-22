@@ -23,10 +23,15 @@
 
 (setq visible-bell t)
 
-(setq confirm-nonexistent-file-or-buffer nil)
-(setq require-final-newline t)
-(setq mouse-yank-at-point t)
-(setq vc-follow-symlinks t)
+(use-package mouse
+  :defer t
+  :custom
+  (mouse-yank-at-point t))
+
+(use-package vc
+  :defer t
+  :custom
+  (vc-follow-symlinks t))
 
 (setq
  ;; preserve the vertical position of the line containing the point
@@ -82,9 +87,11 @@
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
+  :diminish whitespace-mode
+  :custom
+  (whitespace-line-column 100)
+  (whitespace-style '(face tabs empty trailing lines-tail))
   :config
-  (setq whitespace-line-column 100
-        whitespace-style '(face tabs empty trailing lines-tail))
   (add-hook 'prog-mode-hook (lambda () (whitespace-mode +1))))
 
 ;; make it possible to undo and redo window configuration changes
@@ -105,11 +112,20 @@
       kept-old-versions 2
       version-control t)
 
+(use-package files
+  :custom
+  (save-abbrevs 'silently)
+  (require-final-newline t)
+  (confirm-nonexistent-file-or-buffer nil))
+
 ;; set up abbreviations
-(setq-default abbrev-mode t)
-(setq abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
-(quietly-read-abbrev-file abbrev-file-name)
-(setq save-abbrevs 'silently)
+(use-package abbrev
+  :diminish abbrev-mode
+  :custom
+  (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
+  :config
+  (setq-default abbrev-mode t)
+  (quietly-read-abbrev-file abbrev-file-name))
 
 (setq ispell-personal-dictionary "~/.aspell.en.pws")
 
@@ -127,17 +143,20 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-defun 'disabled nil)
 
-;; open zsh files in sh-mode
-(add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
-(add-to-list 'auto-mode-alist '("\\.zsh-theme$" . sh-mode))
-(add-to-list 'auto-mode-alist '("zshrc$" . sh-mode))
-(add-to-list 'auto-mode-alist '(".zsh_personal$" . sh-mode))
-;; open bash files in sh-mode
-(add-to-list 'auto-mode-alist '("bashrc$" . sh-mode))
-(add-to-list 'auto-mode-alist '("bash_profile$" . sh-mode))
-(add-to-list 'auto-mode-alist '("bash_logout$" . sh-mode))
+;; open bash and zsh files in sh-mode
+(use-package sh-script
+  :mode (("\\.zsh$" . sh-mode)
+         ("\\.zsh-theme$" . sh-mode)
+         ("zshrc$" . sh-mode)
+         (".zsh_personal$" . sh-mode)
+         ("bashrc$" . sh-mode)
+         ("bash_profile$" . sh-mode)
+         ("bash_logout$" . sh-mode)
+         ("profile$" . sh-mode)))
+
 ;; open Debian preseed files in conf-mode
-(add-to-list 'auto-mode-alist '(".preseed$" . conf-mode))
+(use-package conf-mode
+  :mode ((".preseed$". conf-mode)))
 
 (use-package recentf
   :config

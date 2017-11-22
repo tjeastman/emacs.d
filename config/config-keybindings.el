@@ -3,12 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(global-set-key (kbd "C-x C-m") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
 (global-set-key (kbd "C-x y") 'browse-kill-ring)
 
 (global-set-key (kbd "C-;") 'backward-kill-word)

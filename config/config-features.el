@@ -31,10 +31,14 @@
 (add-to-list 'completion-ignored-extensions "__pycache__/")
 
 (use-package smex
-  :init
-  (setq smex-save-file (expand-file-name "smex-items" user-emacs-state-directory))
+  :custom
+  (smex-save-file (expand-file-name "smex-items" user-emacs-state-directory))
+  :bind ("C-x C-m" . smex)
   :config
   (smex-initialize))
+;; (global-set-key (kbd "C-x C-m") 'smex)
+;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (use-package ag
   :init
@@ -88,6 +92,8 @@
 
 ;; project management
 (use-package projectile
+  :custom
+  (projectile-use-git-grep t)
   :config
   (projectile-global-mode t))
 
@@ -103,12 +109,15 @@
   :config
   (rainbow-mode t))
 
-(setq git-commit-summary-max-length 72)
-
 (use-package magit
   :config
   (setq magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
   :bind ("C-x g" . magit-status))
+
+(use-package git-commit
+  :defer t
+  :custom
+  (git-commit-summary-max-length 72))
 
 ;; use ssh-specific modes for ssh configuration files
 (use-package ssh-config-mode
@@ -150,6 +159,15 @@
   :defer t
   :config
   (yatemplate-fill-alist))
+
+(use-package imenu-anywhere
+  :bind ("C-c i" . imenu-anywhere))
+
+(use-package arduino-mode
+  :mode "\\.ino\\'")
+
+(use-package yaml-mode
+  :mode ("\\.yaml\\'" "\\.yml\\'"))
 
 (provide 'config-features)
 ;;; config-features.el ends here
