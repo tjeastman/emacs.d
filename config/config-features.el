@@ -170,5 +170,9 @@
   :init
   (global-flycheck-mode t))
 
+(use-package beacon
+  :config
+  (beacon-mode 1))
+
 (provide 'config-features)
 ;;; config-features.el ends here
