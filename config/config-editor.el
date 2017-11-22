@@ -75,10 +75,10 @@
 
 ;; improved mechanism for making buffer names unique
 (use-package uniquify
-  :config
-  (setq uniquify-buffer-name-style 'post-forward
-        uniquify-after-kill-buffer-p t
-        uniquify-ignore-buffers-re "^\\*"))
+  :custom
+  (uniquify-buffer-name-style 'post-forward)
+  (uniquify-after-kill-buffer-p t)
+  (uniquify-ignore-buffers-re "^\\*"))
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
@@ -142,8 +142,9 @@
 (use-package recentf
   :config
   (recentf-mode 1)
-  (setq recentf-max-menu-items 25
-        recentf-max-saved-items 250))
+  :custom
+  (recentf-max-menu-items 25)
+  (recentf-max-saved-items 250))
 
 (provide 'config-editor)
 ;;; config-editor.el ends here
