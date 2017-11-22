@@ -44,9 +44,11 @@
  indent-tabs-mode nil
  tab-width 4)
 
-(setq
- comint-process-echoes t
- comint-prompt-read-only t)
+(use-package comint
+  :custom
+  (comint-buffer-maximum-size 20000)
+  (comint-process-echoes t)
+  (comint-prompt-read-only t))
 
 ;; replace text in the active region with typed text
 (delete-selection-mode t)
