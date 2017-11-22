@@ -68,8 +68,7 @@
 ;; highlight matching bracket delimiters
 (use-package smartparens-config
   :config
-  (show-smartparens-global-mode +1)
-  (setq blink-matching-paren nil))
+  (show-smartparens-global-mode +1))
 
 ;; save point position between sessions
 (use-package saveplace
