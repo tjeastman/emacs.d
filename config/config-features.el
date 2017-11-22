@@ -149,14 +149,12 @@
   :bind ("C-=" . er/expand-region))
 
 (use-package autoinsert
-  :defer t
   :custom
   (auto-insert-alist nil)
   :config
   (auto-insert-mode))
 
 (use-package yatemplate
-  :defer t
   :config
   (yatemplate-fill-alist))
 
