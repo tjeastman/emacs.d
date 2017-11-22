@@ -138,6 +138,7 @@
 (use-package multiple-cursors)
 
 (use-package electric-spacing
+  :diminish electric-spacing-mode
   :config
   (add-hook 'prog-mode-hook #'electric-spacing-mode))
 
