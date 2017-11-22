@@ -9,8 +9,6 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(global-set-key (kbd "C-x g") 'magit-status)
-
 (global-set-key (kbd "C-x y") 'browse-kill-ring)
 
 (global-set-key (kbd "C-;") 'backward-kill-word)

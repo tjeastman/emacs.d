@@ -20,7 +20,6 @@
     flx-ido
     smex
     expand-region
-    magit
     git-timemachine
     yaml-mode
     smartparens
