@@ -29,7 +29,6 @@
     solarized-theme
     anti-zenburn-theme
     readline-complete
-    flycheck
     scad-mode
     arduino-mode
     jinja2-mode
@@ -41,7 +40,6 @@
     ansible-doc
     peep-dired
     use-package
-    elpy
     counsel
     kaolin-themes)
   "List of packages that are automatically installed.")
