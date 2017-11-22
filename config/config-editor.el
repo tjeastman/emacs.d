@@ -97,22 +97,32 @@
 (winner-mode t)
 
 ;; automatically revert buffers when the corresponding file changes
-(global-auto-revert-mode t)
+(use-package autorevert
+  :config
+  (global-auto-revert-mode t))
 
 ;; revert dired buffers when revisiting
 (setq dired-auto-revert-buffer t)
 
 ;; store backup files in a central directory
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
-(setq backup-by-copying t
-      delete-old-versions t
-      kept-new-versions 6
-      kept-old-versions 2
-      version-control t)
+;; (setq backup-directory-alist
+;;       `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
+;; (setq backup-by-copying t
+;;       delete-old-versions t
+;;       kept-new-versions 6
+;;       kept-old-versions 2
+;;       version-control t)
 
 (use-package files
   :custom
+  ;; store backup files in a central directory
+  (backup-directory-alist
+   `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
+  (backup-by-copying t)
+  (version-control t)
+  (delete-old-versions t)
+  (kept-new-versions 6)
+  (kept-old-versions 2)
   (save-abbrevs 'silently)
   (require-final-newline t)
   (confirm-nonexistent-file-or-buffer nil))
@@ -126,7 +136,10 @@
   (setq-default abbrev-mode t)
   (quietly-read-abbrev-file abbrev-file-name))
 
-(setq ispell-personal-dictionary "~/.aspell.en.pws")
+(use-package ispell
+  :defer t
+  :custom
+  (ispell-personal-dictionary "~/.aspell.en.pws"))
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
