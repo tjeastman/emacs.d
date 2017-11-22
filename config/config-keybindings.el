@@ -13,8 +13,6 @@
 
 (global-set-key (kbd "C-;") 'backward-kill-word)
 
-(global-set-key (kbd "C-=") 'er/expand-region)
-
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 (global-set-key (kbd "M-o") 'other-window)

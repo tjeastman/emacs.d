@@ -136,5 +136,8 @@
 
 (use-package thrift)
 
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+
 (provide 'config-features)
 ;;; config-features.el ends here

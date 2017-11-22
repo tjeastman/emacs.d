@@ -19,7 +19,6 @@
   '(ido-ubiquitous
     flx-ido
     smex
-    expand-region
     git-timemachine
     yaml-mode
     smartparens
