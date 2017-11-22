@@ -22,6 +22,7 @@
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 (require 'config-packages)
 (require 'config-functions)
+(require 'config-appearance)
 (require 'config-editor)
 (require 'config-features)
 (require 'config-python)

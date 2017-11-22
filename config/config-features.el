@@ -5,8 +5,6 @@
 ;;; Code:
 (use-package diminish)
 
-(load-theme 'zenburn t)
-
 (setq use-package-always-ensure t)
 
 (require 'ido)
