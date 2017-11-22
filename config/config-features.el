@@ -131,5 +131,7 @@
   :config
   (add-hook 'prog-mode-hook #'electric-spacing-mode))
 
+(use-package thrift)
+
 (provide 'config-features)
 ;;; config-features.el ends here
