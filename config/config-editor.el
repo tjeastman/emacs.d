@@ -146,5 +146,8 @@
   (recentf-max-menu-items 25)
   (recentf-max-saved-items 250))
 
+(use-package ibuffer
+  :bind ("C-x C-b" . ibuffer))
+
 (provide 'config-editor)
 ;;; config-editor.el ends here
