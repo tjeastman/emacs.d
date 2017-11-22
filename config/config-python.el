@@ -3,10 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-;; (use-package flycheck
-;;   :init
-;;   (global-flycheck-mode t))
-
 ;; (use-package jedi
 ;;   :init
 ;;   (add-hook 'python-mode-hook 'jedi:setup))
@@ -15,6 +11,10 @@
   :config
   (elpy-enable)
   (elpy-use-ipython))
+
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 (add-hook 'python-mode-hook (lambda () (subword-mode +1)))
 

@@ -169,5 +169,9 @@
 (use-package yaml-mode
   :mode ("\\.yaml\\'" "\\.yml\\'"))
 
+(use-package flycheck
+  :init
+  (global-flycheck-mode t))
+
 (provide 'config-features)
 ;;; config-features.el ends here
