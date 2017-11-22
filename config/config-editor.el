@@ -142,9 +142,8 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-defun 'disabled nil)
 
-;; open bash and zsh files in sh-mode
 (use-package sh-script
-  :mode (("\\.zsh$" . sh-mode)
+  :mode (("\\.zsh$" . sh-mode)          ; standard bash and zsh files
          ("\\.zsh-theme$" . sh-mode)
          ("zshrc$" . sh-mode)
          (".zsh_personal$" . sh-mode)
@@ -153,9 +152,8 @@
          ("bash_logout$" . sh-mode)
          ("profile$" . sh-mode)))
 
-;; open Debian preseed files in conf-mode
 (use-package conf-mode
-  :mode ((".preseed$". conf-mode)))
+  :mode ((".preseed$". conf-mode)))     ; Debian preseed files
 
 (use-package recentf
   :config
