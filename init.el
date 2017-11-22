@@ -1,5 +1,11 @@
 ;; (package-initialize)
 
+;; https://github.com/nilcons/emacs-use-package-fast
+(setq gc-cons-threshold 64000000)
+(add-hook 'after-init-hook #'(lambda ()
+                               ;; restore after startup
+                               (setq gc-cons-threshold 800000)))
+
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
