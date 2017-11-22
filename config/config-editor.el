@@ -72,7 +72,10 @@
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
-  :diminish whitespace-mode
+  :diminish
+  (global-whitespace-mode
+   whitespace-mode
+   whitespace-newline-mode)
   :custom
   (whitespace-line-column 100)
   (whitespace-style '(face tabs empty trailing lines-tail))
