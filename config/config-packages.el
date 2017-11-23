@@ -33,7 +33,6 @@
     js2-mode
     scala-mode
     ansible-doc
-    peep-dired
     use-package
     counsel
     kaolin-themes)

@@ -34,22 +34,24 @@
   :bind ("C-x C-m" . smex)
   :config
   (smex-initialize))
-;; (global-set-key (kbd "C-x C-m") 'smex)
 ;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (use-package ag
-  :init
-  (setq ag-highlight-search t)
-  (setq ag-reuse-window t))
+  :defer t
+  :custom
+  (ag-highlight-search t)
+  (ag-reuse-window t))
 
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
+  :defer t
   :diminish volatile-highlights-mode
   :config
   (volatile-highlights-mode t))
 
 (use-package aggressive-indent
+  :defer t
   :diminish aggressive-indent-mode
   :config
   (global-aggressive-indent-mode 1)
@@ -66,24 +68,29 @@
   (global-company-mode t))
 
 ;; configure readline completion in shell mode
-(setq explicit-shell-file-name "bash")
-(setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
-;;(setq comint-process-echoes t)
+(use-package shell
+  :custom
+  (explicit-shell-file-name "bash")
+  (explicit-bash-args '("-c" "export EMACS=; stty echo; bash")))
+
 (push 'company-readline company-backends)
 (add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
 
 (use-package yasnippet
+  :defer t
   :diminish yas-minor-mode
   :config
   (yas-global-mode t))
 
 ;; navigate contents of the kill ring
 (use-package browse-kill-ring
+  :defer t
   :config
   (browse-kill-ring-default-keybindings))
 
 ;; use a tree-structured representation of undo history
 (use-package undo-tree
+  :defer t
   :diminish undo-tree-mode
   :config
   (global-undo-tree-mode))
@@ -97,6 +104,7 @@
 
 ;; indicate current match index and total matches in the mode line when searching
 (use-package anzu
+  :defer t
   :diminish anzu-mode
   :config
   (global-anzu-mode))
@@ -108,8 +116,8 @@
   (rainbow-mode t))
 
 (use-package magit
-  :config
-  (setq magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
+  :custom
+  (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
   :bind ("C-x g" . magit-status))
 
 (use-package git-commit
@@ -171,8 +179,20 @@
   (global-flycheck-mode t))
 
 (use-package beacon
+  :diminish beacon-mode
   :config
   (beacon-mode 1))
+
+(global-set-key (kbd "C-;") 'backward-kill-word)
+
+(global-set-key (kbd "M-o") 'other-window)
+
+(global-set-key [remap move-beginning-of-line]
+                'my-move-to-beginning-of-line)
+
+;; lookup Ansible module documentation in YAML mode
+(eval-after-load 'yaml-mode
+  '(define-key yaml-mode-map (kbd "C-c h a") #'ansible-doc))
 
 (provide 'config-features)
 ;;; config-features.el ends here

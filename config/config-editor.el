@@ -9,16 +9,6 @@
 
 (setq visible-bell t)
 
-(use-package mouse
-  :defer t
-  :custom
-  (mouse-yank-at-point t))
-
-(use-package vc
-  :defer t
-  :custom
-  (vc-follow-symlinks t))
-
 (setq
  ;; preserve the vertical position of the line containing the point
  scroll-preserve-screen-position t
@@ -35,7 +25,18 @@
  indent-tabs-mode nil
  tab-width 4)
 
+(use-package mouse
+  :defer t
+  :custom
+  (mouse-yank-at-point t))
+
+(use-package vc
+  :defer t
+  :custom
+  (vc-follow-symlinks t))
+
 (use-package comint
+  :defer t
   :custom
   (comint-buffer-maximum-size 20000)
   (comint-process-echoes t)
@@ -83,24 +84,20 @@
   (add-hook 'prog-mode-hook (lambda () (whitespace-mode +1))))
 
 ;; make it possible to undo and redo window configuration changes
-(winner-mode t)
+(use-package winner
+  :defer t
+  :config
+  (winner-mode t))
 
 ;; automatically revert buffers when the corresponding file changes
 (use-package autorevert
+  :diminish autorevert-mode
   :config
   (global-auto-revert-mode t))
 
-;; revert dired buffers when revisiting
-(setq dired-auto-revert-buffer t)
-
-;; store backup files in a central directory
-;; (setq backup-directory-alist
-;;       `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
-;; (setq backup-by-copying t
-;;       delete-old-versions t
-;;       kept-new-versions 6
-;;       kept-old-versions 2
-;;       version-control t)
+(use-package dired
+  :custom
+  (dired-auto-revert-buffer t))         ; revert dired buffers when revisiting
 
 (use-package files
   :custom
@@ -130,12 +127,11 @@
   :custom
   (ispell-personal-dictionary "~/.aspell.en.pws"))
 
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-;; (add-hook 'python-mode-hook 'flyspell-prog-mode)
-;; (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
-;; (add-hook 'c-mode-hook 'flyspell-prog-mode)
-;; (add-hook 'c++-mode-hook 'flyspell-prog-mode)
+(use-package flyspell
+  :diminish (flyspell-mode flyspell-prog-mode)
+  :config
+  (add-hook 'text-mode-hook 'flyspell-mode)
+  (add-hook 'prog-mode-hook 'flyspell-prog-mode))
 
 ;; enabled region case manipulation commands
 (put 'upcase-region 'disabled nil)
@@ -159,14 +155,25 @@
   :mode ((".preseed$". conf-mode)))     ; Debian preseed files
 
 (use-package recentf
+  :demand
+  :defer t
+  :bind ("C-x C-r" . recentf-open-files)
   :config
   (recentf-mode 1)
   :custom
   (recentf-max-menu-items 25)
   (recentf-max-saved-items 250))
 
+(use-package browse-kill-ring
+  :bind ("C-x y" . browse-kill-ring))
+
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
+
+(use-package subword
+  :diminish subword-mode
+  :config
+  (add-hook 'prog-mode-hook (lambda () (subword-mode +1))))
 
 (provide 'config-editor)
 ;;; config-editor.el ends here
