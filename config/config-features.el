@@ -173,11 +173,14 @@
   :mode "\\.ino\\'")
 
 (use-package ansible-doc
+  :bind (:map ansible-doc-module-mode ("C-c h a" . ansible-doc))
   :commands ansible-doc)
 
 (use-package yaml-mode
   :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
-  :mode ("\\.yaml\\'" "\\.yml\\'"))
+  :mode ("\\.yaml\\'" "\\.yml\\'")
+  :config
+  (add-hook 'yaml-mode-hook 'flyspell-prog-mode))
 
 (use-package flycheck
   :init
