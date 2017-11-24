@@ -12,6 +12,7 @@
 
 (use-package elpy
   :demand
+  :diminish highlight-indentation-mode
   :bind ("C-c ," . elpy-multiedit)      ; FIX set for Python only?
   :config
   (elpy-enable)
