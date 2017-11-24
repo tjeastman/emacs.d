@@ -94,7 +94,10 @@
 
 ;; automatically revert buffers when the corresponding file changes
 (use-package autorevert
-  :diminish (auto-revert-mode global-auto-revert-mode auto-revert-tail-mode)
+  :diminish
+  (auto-revert-mode
+   auto-revert-tail-mode
+   global-auto-revert-mode)
   :config
   (global-auto-revert-mode t))
 
