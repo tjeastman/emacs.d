@@ -175,6 +175,7 @@
 
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
+(use-package ibuffer-vc)
 
 (use-package subword
   :diminish subword-mode

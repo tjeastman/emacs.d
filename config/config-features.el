@@ -198,5 +198,7 @@
 (global-set-key [remap move-beginning-of-line]
                 'my-move-to-beginning-of-line)
 
+(use-package rtags)
+
 (provide 'config-features)
 ;;; config-features.el ends here
