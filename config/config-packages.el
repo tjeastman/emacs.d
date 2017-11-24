@@ -32,7 +32,6 @@
     paredit
     js2-mode
     scala-mode
-    ansible-doc
     use-package
     counsel
     kaolin-themes)

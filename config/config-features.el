@@ -171,7 +171,11 @@
 (use-package arduino-mode
   :mode "\\.ino\\'")
 
+(use-package ansible-doc
+  :commands ansible-doc)
+
 (use-package yaml-mode
+  :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
   :mode ("\\.yaml\\'" "\\.yml\\'"))
 
 (use-package flycheck
@@ -189,10 +193,6 @@
 
 (global-set-key [remap move-beginning-of-line]
                 'my-move-to-beginning-of-line)
-
-;; lookup Ansible module documentation in YAML mode
-(eval-after-load 'yaml-mode
-  '(define-key yaml-mode-map (kbd "C-c h a") #'ansible-doc))
 
 (provide 'config-features)
 ;;; config-features.el ends here
