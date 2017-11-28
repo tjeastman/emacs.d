@@ -28,7 +28,6 @@
     scad-mode
     jinja2-mode
     ein
-    cider
     paredit
     js2-mode
     scala-mode
