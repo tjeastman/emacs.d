@@ -191,6 +191,9 @@
   :config
   (beacon-mode 1))
 
+(use-package protobuf-mode
+  :mode "\\.proto\\'")
+
 (global-set-key (kbd "C-;") 'backward-kill-word)
 
 (global-set-key (kbd "M-o") 'other-window)
