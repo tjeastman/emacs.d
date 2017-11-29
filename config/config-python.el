@@ -28,7 +28,5 @@
 
 (use-package pip-requirements)
 
-;; FIX: diminish highlight indentation minor mode (indicator ||)
-
 (provide 'config-python)
 ;;; config-python.el ends here
