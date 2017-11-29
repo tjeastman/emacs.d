@@ -26,3 +26,7 @@
 (require 'config-editor)
 (require 'config-features)
 (require 'config-python)
+
+;; Local Variables:
+;; flycheck-disabled-checkers: (emacs-lisp-checkdoc)
+;; End:
