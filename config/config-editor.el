@@ -53,11 +53,11 @@
 (size-indication-mode t)
 
 ;; highlight matching bracket delimiters
-(use-package smartparens-config
-  :ensure smartparens
-  :diminish smartparens-minor-mode
+(use-package smartparens
+  :ensure t
+  :diminish smartparens-mode
   :hook (prog-mode . turn-on-smartparens-strict-mode)
-  :init
+  :config
   (show-smartparens-global-mode +1))
 
 ;; save point position between sessions
