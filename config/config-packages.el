@@ -26,7 +26,6 @@
     readline-complete
     scad-mode
     jinja2-mode
-    ein
     paredit
     js2-mode
     scala-mode

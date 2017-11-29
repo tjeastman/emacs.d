@@ -28,5 +28,8 @@
 
 (use-package pip-requirements)
 
+(use-package ein
+  :commands ein:notebooklist-open)
+
 (provide 'config-python)
 ;;; config-python.el ends here
