@@ -85,11 +85,9 @@
   :custom
   (whitespace-line-column 100)
   (whitespace-style '(face tabs empty trailing lines-tail))
-  :config
-  (add-hook 'prog-mode-hook
-            (lambda () (whitespace-mode +1)))
-  (add-hook 'makefile-mode-hook
-            (lambda () (whitespace-toggle-options '(tabs)))))
+  :hook
+  ((prog-mode . (lambda () (whitespace-mode +1)))
+   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs))))))
 
 ;; make it possible to undo and redo window configuration changes
 (use-package winner
