@@ -192,7 +192,9 @@
   (beacon-mode 1))
 
 (use-package protobuf-mode
-  :mode "\\.proto\\'")
+  :mode "\\.proto\\'"
+  :config
+  (add-hook 'protobuf-mode-hook 'flyspell-prog-mode))
 
 (global-set-key (kbd "C-;") 'backward-kill-word)
 
