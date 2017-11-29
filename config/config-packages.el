@@ -20,7 +20,6 @@
     flx-ido
     git-timemachine
     smartparens
-    markdown-mode
     zenburn-theme
     solarized-theme
     anti-zenburn-theme
