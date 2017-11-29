@@ -45,5 +45,8 @@
           (unless (package-installed-p package-name)
             (package-install package-name))))))
 
+(use-package diminish
+  :ensure t)
+
 (provide 'config-packages)
 ;;; config-packages.el ends here

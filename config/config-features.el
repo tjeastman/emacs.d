@@ -3,9 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(use-package diminish
-  :ensure t)
-
 (require 'ido)
 (require 'flx-ido)
 (setq ido-enable-flex-matching t
