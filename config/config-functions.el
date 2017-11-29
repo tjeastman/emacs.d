@@ -3,8 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-(use-package cl)
-
 (defun my-move-to-beginning-of-line ()
   "Incrementally move point toward the beginning of the line.
 
@@ -26,7 +24,7 @@ beginning of the line."
         (shell-buffer-name))
     (while ;; loop until an unused shell buffer name is found
         (progn
-          (incf shell-buffer-index)
+          (setq shell-buffer-index (1+ shell-buffer-index))
           (setq shell-buffer-name (format shell-buffer-name-format shell-buffer-index))
           (get-buffer shell-buffer-name)))
     (shell shell-buffer-name)))
