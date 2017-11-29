@@ -54,15 +54,19 @@
 
 ;; highlight matching bracket delimiters
 (use-package smartparens-config
-  :config
+  :ensure smartparens
+  :diminish smartparens-minor-mode
+  :hook (prog-mode . turn-on-smartparens-strict-mode)
+  :init
   (show-smartparens-global-mode +1))
 
 ;; save point position between sessions
 (use-package saveplace
+  :ensure t
+  :custom
+  (save-place-file (expand-file-name "places" user-emacs-state-directory))
   :config
-  (setq-default save-place t)
-  (setq save-place-file
-        (expand-file-name "places" user-emacs-state-directory)))
+  (save-place-mode 1))
 
 ;; improved mechanism for making buffer names unique
 (use-package uniquify
@@ -73,6 +77,7 @@
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
+  :ensure t
   :diminish
   (global-whitespace-mode
    whitespace-mode
@@ -88,12 +93,13 @@
 
 ;; make it possible to undo and redo window configuration changes
 (use-package winner
-  :defer t
+  :ensure t
   :config
   (winner-mode t))
 
 ;; automatically revert buffers when the corresponding file changes
 (use-package autorevert
+  :ensure t
   :diminish
   (auto-revert-mode
    auto-revert-tail-mode
@@ -129,15 +135,19 @@
   (quietly-read-abbrev-file abbrev-file-name))
 
 (use-package ispell
+  :ensure t
   :defer t
   :custom
   (ispell-personal-dictionary "~/.aspell.en.pws"))
 
 (use-package flyspell
-  :diminish (flyspell-mode flyspell-prog-mode)
-  :config
-  (add-hook 'text-mode-hook 'flyspell-mode)
-  (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+  :ensure t
+  :diminish
+  (flyspell-mode
+   flyspell-prog-mode)
+  :hook
+  ((text-mode . flyspell-mode)
+   (prog-mode . flyspell-prog-mode)))
 
 ;; enabled region case manipulation commands
 (put 'upcase-region 'disabled nil)
@@ -148,21 +158,24 @@
 (put 'narrow-to-defun 'disabled nil)
 
 (use-package sh-script
-  :mode (("\\.zsh$" . sh-mode)          ; standard bash and zsh files
-         ("\\.zsh-theme$" . sh-mode)
-         ("zshrc$" . sh-mode)
-         (".zsh_personal$" . sh-mode)
-         ("bashrc$" . sh-mode)
-         ("bash_profile$" . sh-mode)
-         ("bash_logout$" . sh-mode)
-         ("profile$" . sh-mode)))
+  :ensure t
+  :mode
+  (("\\.zsh$" . sh-mode)          ; standard bash and zsh files
+   ("\\.zsh-theme$" . sh-mode)
+   ("zshrc$" . sh-mode)
+   (".zsh_personal$" . sh-mode)
+   ("bashrc$" . sh-mode)
+   ("bash_profile$" . sh-mode)
+   ("bash_logout$" . sh-mode)
+   ("profile$" . sh-mode)))
 
 (use-package conf-mode
+  :ensure t
   :mode ((".preseed$". conf-mode)))     ; Debian preseed files
 
 (use-package recentf
+  :ensure t
   :demand
-  :defer t
   :bind ("C-x C-r" . recentf-open-files)
   :config
   (recentf-mode 1)
@@ -171,13 +184,17 @@
   (recentf-max-saved-items 250))
 
 (use-package browse-kill-ring
+  :ensure t
   :bind ("C-x y" . browse-kill-ring))
 
 (use-package ibuffer
+  :ensure t
   :bind ("C-x C-b" . ibuffer))
-(use-package ibuffer-vc)
+(use-package ibuffer-vc
+  :ensure t)
 
 (use-package subword
+  :ensure t
   :diminish subword-mode
   :config
   (add-hook 'prog-mode-hook (lambda () (subword-mode +1))))
