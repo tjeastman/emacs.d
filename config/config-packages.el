@@ -19,7 +19,6 @@
   '(ido-ubiquitous
     flx-ido
     git-timemachine
-    smartparens
     zenburn-theme
     solarized-theme
     anti-zenburn-theme
