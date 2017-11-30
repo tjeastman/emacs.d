@@ -137,7 +137,8 @@
   :ensure t
   :defer t
   :custom
-  (ispell-personal-dictionary "~/.aspell.en.pws"))
+  (ispell-personal-dictionary "~/.aspell.en.pws")
+  (ispell-program-name "aspell"))
 
 (use-package flyspell
   :ensure t
