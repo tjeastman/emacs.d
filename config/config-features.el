@@ -187,5 +187,8 @@
 (use-package rtags
   :ensure t)
 
+(use-package rainbow-delimiters
+  :ensure t)
+
 (provide 'config-features)
 ;;; config-features.el ends here
