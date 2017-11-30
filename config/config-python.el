@@ -14,8 +14,11 @@
 (use-package company-jedi
   :ensure t
   :defer t
+  :hook
+  (python-mode . (lambda () (progn (jedi:setup) (add-to-list 'company-backends 'company-jedi))))
   :custom
-  (jedi:complete-on-dot t))
+  (jedi:complete-on-dot t)
+  (jedi:setup-keys t))
 
 (use-package elpy
   :demand
@@ -25,8 +28,7 @@
   :config
   (elpy-enable)
   (elpy-use-ipython)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-to-list 'company-backends 'company-jedi))
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
 
 ;; (use-package virtualenvwrapper)
 ;; (use-package cython-mode)
