@@ -23,11 +23,8 @@
     solarized-theme
     anti-zenburn-theme
     readline-complete
-    scad-mode
-    jinja2-mode
     paredit
     js2-mode
-    scala-mode
     use-package
     counsel
     kaolin-themes)
