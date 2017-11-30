@@ -18,7 +18,6 @@
 (defvar config-required-packages
   '(ido-ubiquitous
     flx-ido
-    git-timemachine
     zenburn-theme
     solarized-theme
     anti-zenburn-theme

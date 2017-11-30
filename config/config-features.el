@@ -129,6 +129,10 @@
   :custom
   (git-commit-summary-max-length 72))
 
+(use-package git-timemachine
+  :ensure t
+  :commands git-timemachine)
+
 ;; preview files in dired
 (use-package peep-dired
   :ensure t
