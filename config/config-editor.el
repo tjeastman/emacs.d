@@ -199,5 +199,9 @@
   :config
   (add-hook 'prog-mode-hook (lambda () (subword-mode +1))))
 
+(use-package which-func
+  :config
+  (which-function-mode 1))
+
 (provide 'config-editor)
 ;;; config-editor.el ends here
