@@ -11,16 +11,22 @@
   :defer t
   :diminish highlight-indentation-mode)
 
-(use-package jedi
-  :hook (python-mode . jedi:setup))
+(use-package company-jedi
+  :ensure t
+  :defer t
+  :custom
+  (jedi:complete-on-dot t))
 
 (use-package elpy
   :demand
   :bind ("C-c ," . elpy-multiedit)      ; FIX set for Python only?
+  :custom
+  (elpy-rpc-backend "jedi")
   :config
   (elpy-enable)
   (elpy-use-ipython)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-to-list 'company-backends 'company-jedi))
 
 ;; (use-package virtualenvwrapper)
 ;; (use-package cython-mode)
