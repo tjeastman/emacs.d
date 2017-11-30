@@ -17,13 +17,6 @@
 (ido-ubiquitous-mode 1)
 (flx-ido-mode +1)
 
-(add-to-list 'completion-ignored-extensions ".jar")
-(add-to-list 'completion-ignored-extensions ".elf")
-(add-to-list 'completion-ignored-extensions ".hex")
-(add-to-list 'completion-ignored-extensions ".ropeproject/")
-(add-to-list 'completion-ignored-extensions ".db")
-(add-to-list 'completion-ignored-extensions "__pycache__/")
-
 (use-package smex
   :ensure t
   :custom

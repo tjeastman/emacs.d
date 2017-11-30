@@ -3,24 +3,30 @@
 ;;; Commentary:
 
 ;;; Code:
-;; (use-package jedi
-;;   :init
-;;   (add-hook 'python-mode-hook 'jedi:setup))
 
 (use-package pyvenv
   :bind ("C-c w" . pyvenv-workon))
 
+(use-package highlight-indentation
+  :defer t
+  :diminish highlight-indentation-mode)
+
+(use-package company-jedi
+  :ensure t
+  :defer t
+  :custom
+  (jedi:complete-on-dot t))
+
 (use-package elpy
   :demand
-  :diminish highlight-indentation-mode
   :bind ("C-c ," . elpy-multiedit)      ; FIX set for Python only?
+  :custom
+  (elpy-rpc-backend "jedi")
   :config
   (elpy-enable)
-  (elpy-use-ipython))
-
-(when (require 'flycheck nil t)
+  (elpy-use-ipython)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+  (add-to-list 'company-backends 'company-jedi))
 
 ;; (use-package virtualenvwrapper)
 ;; (use-package cython-mode)

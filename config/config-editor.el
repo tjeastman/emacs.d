@@ -25,6 +25,13 @@
  indent-tabs-mode nil
  tab-width 4)
 
+(add-to-list 'completion-ignored-extensions ".jar")
+(add-to-list 'completion-ignored-extensions ".elf")
+(add-to-list 'completion-ignored-extensions ".hex")
+(add-to-list 'completion-ignored-extensions ".ropeproject/")
+(add-to-list 'completion-ignored-extensions ".db")
+(add-to-list 'completion-ignored-extensions "__pycache__/")
+
 (use-package mouse
   :defer t
   :custom
