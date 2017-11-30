@@ -58,6 +58,7 @@
   :diminish smartparens-mode
   :hook (prog-mode . turn-on-smartparens-strict-mode)
   :config
+  (require 'smartparens-config)
   (show-smartparens-global-mode +1))
 
 ;; save point position between sessions
