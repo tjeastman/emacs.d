@@ -19,11 +19,8 @@
   :bind ("C-c ," . elpy-multiedit)      ; FIX set for Python only?
   :config
   (elpy-enable)
-  (elpy-use-ipython))
-
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+  (elpy-use-ipython)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
 
 ;; (use-package virtualenvwrapper)
 ;; (use-package cython-mode)
