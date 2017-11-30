@@ -203,5 +203,9 @@
   :config
   (which-function-mode 1))
 
+(use-package simple
+  :custom
+  (next-line-add-newlines t))
+
 (provide 'config-editor)
 ;;; config-editor.el ends here
