@@ -129,15 +129,6 @@
   :custom
   (git-commit-summary-max-length 72))
 
-;; use ssh-specific modes for ssh configuration files
-(use-package ssh-config-mode
-  :ensure t
-  :mode ((".ssh/config$" . ssh-config-mode)
-         ("sshd_config$" . ssh-config-mode)
-         ("ssh_config$" . ssh-config-mode)
-         ("known_hosts$" . ssh-known-hosts-mode)
-         ("authorized_keys$" . ssh-authorized-keys-mode)))
-
 ;; preview files in dired
 (use-package peep-dired
   :ensure t
@@ -145,8 +136,6 @@
   :bind (:map dired-mode-map
               ("P" . peep-dired)))
 
-(use-package dockerfile-mode
-  :ensure t)
 (use-package docker-compose-mode
   :ensure t)
 (use-package docker-tramp
@@ -159,10 +148,6 @@
   :ensure t
   :hook (prog-mode . electric-spacing-mode)
   :diminish electric-spacing-mode)
-
-(use-package thrift
-  :ensure t
-  :mode "\\.thrift\\'")
 
 (use-package expand-region
   :ensure t
@@ -184,22 +169,6 @@
   :ensure t
   :bind ("C-c i" . imenu-anywhere))
 
-(use-package arduino-mode
-  :ensure t
-  :mode "\\.ino\\'")
-
-(use-package ansible-doc
-  :ensure t
-  :defer t
-  :commands ansible-doc)
-
-(use-package yaml-mode
-  :ensure t
-  :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
-  :mode ("\\.yaml\\'" "\\.yml\\'")
-  :hook (yaml-mode . flyspell-prog-mode)
-  :config)
-
 (use-package flycheck
   :ensure t
   :init
@@ -211,11 +180,6 @@
   :config
   (beacon-mode 1))
 
-(use-package protobuf-mode
-  :ensure t
-  :mode "\\.proto\\'"
-  :hook (protobuf-mode . flyspell-prog-mode))
-
 (global-set-key (kbd "C-;") 'backward-kill-word)
 
 (global-set-key (kbd "M-o") 'other-window)
@@ -225,14 +189,6 @@
 
 (use-package rtags
   :ensure t)
-
-(use-package markdown-mode
-  :ensure t
-  :commands (markdown-mode gfm-mode)
-  :mode
-  (("README\\.md\\'" . gfm-mode)
-   ("\\.md\\'" . markdown-mode)
-   ("\\.markdown\\'" . markdown-mode)))
 
 (provide 'config-features)
 ;;; config-features.el ends here

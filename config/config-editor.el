@@ -157,22 +157,6 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-defun 'disabled nil)
 
-(use-package sh-script
-  :ensure t
-  :mode
-  (("\\.zsh$" . sh-mode)          ; standard bash and zsh files
-   ("\\.zsh-theme$" . sh-mode)
-   ("zshrc$" . sh-mode)
-   (".zsh_personal$" . sh-mode)
-   ("bashrc$" . sh-mode)
-   ("bash_profile$" . sh-mode)
-   ("bash_logout$" . sh-mode)
-   ("profile$" . sh-mode)))
-
-(use-package conf-mode
-  :ensure t
-  :mode ((".preseed$". conf-mode)))     ; Debian preseed files
-
 (use-package recentf
   :ensure t
   :demand

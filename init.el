@@ -25,6 +25,7 @@
 (require 'config-appearance)
 (require 'config-editor)
 (require 'config-features)
+(require 'config-files)
 (require 'config-python)
 
 ;; Local Variables:
