@@ -10,9 +10,12 @@
 (use-package pyvenv
   :bind ("C-c w" . pyvenv-workon))
 
+(use-package highlight-indentation
+  :defer t
+  :diminish highlight-indentation-mode)
+
 (use-package elpy
   :demand
-  :diminish highlight-indentation-mode
   :bind ("C-c ," . elpy-multiedit)      ; FIX set for Python only?
   :config
   (elpy-enable)
