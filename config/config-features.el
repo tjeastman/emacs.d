@@ -121,7 +121,8 @@
   :ensure t
   :bind ("C-x g" . magit-status)
   :custom
-  (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref)))
+  (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
+  (magit-save-repository-buffers 'dontask))
 
 (use-package git-commit
   :ensure t
