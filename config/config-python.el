@@ -3,9 +3,6 @@
 ;;; Commentary:
 
 ;;; Code:
-;; (use-package jedi
-;;   :init
-;;   (add-hook 'python-mode-hook 'jedi:setup))
 
 (use-package pyvenv
   :bind ("C-c w" . pyvenv-workon))
@@ -13,6 +10,9 @@
 (use-package highlight-indentation
   :defer t
   :diminish highlight-indentation-mode)
+
+(use-package jedi
+  :hook (python-mode . jedi:setup))
 
 (use-package elpy
   :demand
