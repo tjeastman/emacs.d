@@ -116,7 +116,9 @@
 
 (use-package dired
   :custom
-  (dired-auto-revert-buffer t))         ; revert dired buffers when revisiting
+  (dired-auto-revert-buffer t)          ; revert dired buffers when revisiting
+  (dired-recursive-copies 'always)
+  (dired-recursive-deletes 'always))
 
 (use-package files
   :custom
