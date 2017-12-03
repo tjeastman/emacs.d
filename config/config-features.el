@@ -101,9 +101,7 @@
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
   :config
-  ;;(projectile-global-mode t)
-  (projectile-mode t)
-  )
+  (projectile-mode t))
 
 ;; indicate current match index and total matches in the mode line when searching
 ;; (use-package anzu
