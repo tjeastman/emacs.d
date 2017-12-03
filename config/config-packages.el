@@ -20,6 +20,8 @@
     solarized-theme
     anti-zenburn-theme
     kaolin-themes
+    blackboard-theme
+    lush-theme
     readline-complete
     paredit
     js2-mode
