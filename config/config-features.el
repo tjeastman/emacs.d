@@ -143,7 +143,9 @@
 
 (use-package electric-spacing
   :ensure t
-  :hook (prog-mode . electric-spacing-mode)
+  :hook
+  ((c-mode-common . electric-spacing-mode)
+   (python-mode . electric-spacing-mode))
   :diminish electric-spacing-mode)
 
 (use-package expand-region
