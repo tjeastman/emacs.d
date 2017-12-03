@@ -67,13 +67,17 @@
   (global-company-mode t))
 
 ;; configure readline completion in shell mode
+(use-package readline-complete
+  :ensure t
+  :defer t
+  :commands company-readline
+  :hook (rlc-no-readline-hook . (lambda () (company-mode -1))))
 (use-package shell
   :custom
   (explicit-shell-file-name "bash")
-  (explicit-bash-args '("-c" "export EMACS=; stty echo; bash")))
-
-(push 'company-readline company-backends)
-(add-hook 'rlc-no-readline-hook (lambda () (company-mode -1)))
+  (explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
+  :config
+  (push 'company-readline company-backends))
 
 (use-package yasnippet
   :ensure t

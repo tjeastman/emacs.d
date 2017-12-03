@@ -22,7 +22,6 @@
     kaolin-themes
     blackboard-theme
     lush-theme
-    readline-complete
     paredit
     use-package)
   "List of packages that are automatically installed.")
