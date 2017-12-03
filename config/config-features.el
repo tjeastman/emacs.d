@@ -179,8 +179,10 @@
 
 (use-package flycheck
   :ensure t
-  :init
-  (global-flycheck-mode t))
+  :hook (after-init . global-flycheck-mode)
+  :bind
+  (("C-c e n" . flycheck-next-error)
+   ("C-c e p" . flycheck-previous-error)))
 
 (use-package beacon
   :ensure t
