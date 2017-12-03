@@ -1,4 +1,4 @@
-;;; config-editor.el --- editor configuration
+;;; config-editor.el --- configure features built into the editor
 
 ;;; Commentary:
 

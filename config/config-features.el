@@ -1,4 +1,4 @@
-;;; config-features.el --- misc. feature configuration
+;;; config-features.el --- configure features provided by third party packages
 
 ;;; Commentary:
 
