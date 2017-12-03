@@ -3,29 +3,35 @@
 ;;; Commentary:
 
 ;;; Code:
-(require 'ido)
-(require 'flx-ido)
-(setq ido-enable-flex-matching t
-      ido-create-new-buffer 'always
-      ido-use-filename-at-point 'guess
-      ido-ignore-extensions t
-      ido-auto-merge-work-directories-length -1
-      ido-save-directory-list-file (expand-file-name "ido.last" user-emacs-state-directory)
-      ido-use-faces nil)
-(ido-everywhere t)
-(ido-mode 1)
-(ido-ubiquitous-mode 1)
-(flx-ido-mode +1)
 
-(use-package smex
+;; used by ivy for fuzzy matching below...
+(use-package flx
   :ensure t
+  :defer t)
+
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
   :custom
-  (smex-save-file (expand-file-name "smex-items" user-emacs-state-directory))
-  :bind ("C-x C-m" . smex)
+  (ivy-use-virtual-buffers t)
   :config
-  (smex-initialize))
-;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (setq ivy-initial-inputs-alist nil)
+  (ivy-mode t))
+
+(use-package counsel
+  :ensure t
+  :commands counsel-ag
+  :bind
+  (("C-x C-m" . counsel-M-x)
+   ("C-x C-f" . counsel-find-file)
+   ("C-h f" . counsel-describe-function)
+   ("C-h v" . counsel-describe-variable)
+   ("C-c k" . counsel-ag)))
+
+(use-package swiper
+  :ensure t
+  :bind ("C-s" . swiper))
 
 (use-package ag
   :ensure t
@@ -93,15 +99,18 @@
   :ensure t
   :custom
   (projectile-use-git-grep t)
+  (projectile-completion-system 'ivy)
   :config
-  (projectile-global-mode t))
+  ;;(projectile-global-mode t)
+  (projectile-mode t)
+  )
 
 ;; indicate current match index and total matches in the mode line when searching
-(use-package anzu
-  :ensure t
-  :diminish anzu-mode
-  :config
-  (global-anzu-mode))
+;; (use-package anzu
+;;   :ensure t
+;;   :diminish anzu-mode
+;;   :config
+;;   (global-anzu-mode))
 
 ;; highlight color strings with the colors they represent
 (use-package rainbow-mode

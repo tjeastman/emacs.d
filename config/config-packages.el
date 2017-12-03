@@ -16,17 +16,14 @@
 
 ;; declare required packages
 (defvar config-required-packages
-  '(ido-ubiquitous
-    flx-ido
-    zenburn-theme
+  '(zenburn-theme
     solarized-theme
     anti-zenburn-theme
+    kaolin-themes
     readline-complete
     paredit
     js2-mode
-    use-package
-    counsel
-    kaolin-themes)
+    use-package)
   "List of packages that are automatically installed.")
 
 ;; ensure that all required packages are installed
