@@ -210,5 +210,15 @@
   :ensure t
   :mode "\\.json\\'")
 
+(use-package irony
+  :ensure t
+  :diminish irony-mode
+  :hook
+  ((c++-mode . irony-mode)
+   (c-mode . irony-mode)))
+
+(use-package flycheck-irony)
+(use-package eldoc-irony)
+
 (provide 'config-features)
 ;;; config-features.el ends here
