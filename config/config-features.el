@@ -204,5 +204,9 @@
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package js2-mode
+  :ensure t
+  :mode "\\.json\\'")
+
 (provide 'config-features)
 ;;; config-features.el ends here

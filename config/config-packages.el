@@ -24,7 +24,6 @@
     lush-theme
     readline-complete
     paredit
-    js2-mode
     use-package)
   "List of packages that are automatically installed.")
 
