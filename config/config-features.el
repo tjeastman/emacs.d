@@ -190,7 +190,8 @@
   :ensure t)
 
 (use-package rainbow-delimiters
-  :ensure t)
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (provide 'config-features)
 ;;; config-features.el ends here
