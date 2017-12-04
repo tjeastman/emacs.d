@@ -5,9 +5,11 @@
 ;;; Code:
 
 (use-package pyvenv
+  :ensure t
   :bind ("C-c w" . pyvenv-workon))
 
 (use-package highlight-indentation
+  :ensure t
   :defer t
   :diminish highlight-indentation-mode)
 
@@ -21,6 +23,7 @@
   (jedi:setup-keys t))
 
 (use-package elpy
+  :ensure t
   :demand
   :bind ("C-c ," . elpy-multiedit)      ; FIX set for Python only?
   :custom
@@ -34,9 +37,11 @@
 ;; (use-package cython-mode)
 ;; (use-package nose)
 
-(use-package pip-requirements)
+(use-package pip-requirements
+  :ensure t)
 
 (use-package ein
+  :ensure t
   :commands ein:notebooklist-open)
 
 (provide 'config-python)
