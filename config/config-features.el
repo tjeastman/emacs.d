@@ -221,8 +221,6 @@
 
 (use-package flycheck-irony
   :ensure t)
-(use-package eldoc-irony
-  :ensure t)
 
 (provide 'config-features)
 ;;; config-features.el ends here
