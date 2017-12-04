@@ -219,8 +219,10 @@
   ((c++-mode . irony-mode)
    (c-mode . irony-mode)))
 
-(use-package flycheck-irony)
-(use-package eldoc-irony)
+(use-package flycheck-irony
+  :ensure t)
+(use-package eldoc-irony
+  :ensure t)
 
 (provide 'config-features)
 ;;; config-features.el ends here
