@@ -15,7 +15,9 @@
   :custom
   (ivy-use-virtual-buffers t)
   :config
-  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (setq ivy-re-builders-alist
+        '((swiper . ivy--regex-plus)
+          (t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
   (ivy-mode t))
 
