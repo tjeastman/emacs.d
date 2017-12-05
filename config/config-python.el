@@ -6,7 +6,9 @@
 
 (use-package pyvenv
   :ensure t
-  :bind ("C-c w" . pyvenv-workon))
+  :bind
+  (("C-c w" . pyvenv-workon)
+   ("C-c a" . pyvenv-activate)))
 
 (use-package highlight-indentation
   :ensure t
