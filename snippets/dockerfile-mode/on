@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: onbuild
+# key: o
+# --
+ONBUILD $0
