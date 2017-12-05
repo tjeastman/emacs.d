@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: rpc
+# key: rpc
+# --
+rpc ${1:Name} (${2:InputMessageType}) returns (${3:OutputMessageType}) {}
+$0
