@@ -14,3 +14,15 @@ Install the jedi server:
 M-x jedi:install-server
 ```
 This command creates a virtualenv in ~/.emacs.d/.python-environments/ and installs the Jedi server there.
+
+
+### Keymap
+
+#### Global
+
+Keybinding             | Description
+-----------------------|------------------------------------------------------------
+<kbd>C-c & C-n</kbd>   | create a new snippet
+<kbd>C-=</kbd>         | expand region
+<kbd>C-c w</kbd>       | pyvenv workon
+<kbd>C-c a</kbd>       | pyvenv activate
