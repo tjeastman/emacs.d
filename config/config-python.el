@@ -24,6 +24,12 @@
   (jedi:complete-on-dot t)
   (jedi:setup-keys t))
 
+(use-package python
+  :defer t
+  :custom
+  (python-indent-offset 4)
+  (python-indent-guess-indent-offset nil))
+
 (use-package elpy
   :ensure t
   :demand
