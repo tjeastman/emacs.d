@@ -161,6 +161,7 @@
   :ensure t
   :custom
   (auto-insert-alist nil)
+  (auto-insert-query nil)
   :config
   (auto-insert-mode))
 
