@@ -31,6 +31,7 @@
 (add-to-list 'completion-ignored-extensions ".db")
 (add-to-list 'completion-ignored-extensions "__pycache__/")
 (add-to-list 'completion-ignored-extensions "a.out")
+(add-to-list 'completion-ignored-extensions ".pyc")
 
 (use-package mouse
   :defer t
