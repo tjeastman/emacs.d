@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: label
+# key: lns
+# --
+LABEL ${1:namespace}.${2:key}="${3:value}"
+$0

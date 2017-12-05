@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: entrypoint
+# key: ent
+# --
+ENTRYPOINT ["$1"]
+$0

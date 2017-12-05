@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: maintainer
+# key: main
+# --
+LABEL maintainer="`user-mail-address`"
+$0

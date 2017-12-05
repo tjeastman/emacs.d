@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: expose
+# key: exp
+# --
+EXPOSE $1
+$0
