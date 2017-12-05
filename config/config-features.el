@@ -109,13 +109,6 @@
   :config
   (projectile-mode t))
 
-;; indicate current match index and total matches in the mode line when searching
-;; (use-package anzu
-;;   :ensure t
-;;   :diminish anzu-mode
-;;   :config
-;;   (global-anzu-mode))
-
 ;; highlight color strings with the colors they represent
 (use-package rainbow-mode
   :ensure t
