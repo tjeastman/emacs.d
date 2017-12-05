@@ -154,12 +154,11 @@
 (use-package multiple-cursors
   :ensure t)
 
-(use-package electric-spacing
+(use-package electric-operator
   :ensure t
   :hook
-  ((c-mode-common . electric-spacing-mode)
-   (python-mode . electric-spacing-mode))
-  :diminish electric-spacing-mode)
+  ((c-mode-common . electric-operator-mode)
+   (python-mode . electric-operator)))
 
 (use-package expand-region
   :ensure t
