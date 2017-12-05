@@ -151,7 +151,7 @@
   :ensure t
   :hook
   ((c-mode-common . electric-operator-mode)
-   (python-mode . electric-operator)))
+   (python-mode . electric-operator-mode)))
 
 (use-package expand-region
   :ensure t
