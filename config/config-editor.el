@@ -71,7 +71,6 @@
 
 ;; save point position between sessions
 (use-package saveplace
-  :ensure t
   :custom
   (save-place-file (expand-file-name "places" user-emacs-state-directory))
   :config
@@ -86,7 +85,6 @@
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
-  :ensure t
   :diminish
   (global-whitespace-mode
    whitespace-mode
@@ -101,13 +99,11 @@
 
 ;; make it possible to undo and redo window configuration changes
 (use-package winner
-  :ensure t
   :config
   (winner-mode t))
 
 ;; automatically revert buffers when the corresponding file changes
 (use-package autorevert
-  :ensure t
   :diminish
   (auto-revert-mode
    auto-revert-tail-mode
@@ -145,14 +141,12 @@
   (quietly-read-abbrev-file abbrev-file-name))
 
 (use-package ispell
-  :ensure t
   :defer t
   :custom
   (ispell-personal-dictionary "~/.aspell.en.pws")
   (ispell-program-name "aspell"))
 
 (use-package flyspell
-  :ensure t
   :diminish
   (flyspell-mode
    flyspell-prog-mode)
@@ -169,7 +163,6 @@
 (put 'narrow-to-defun 'disabled nil)
 
 (use-package recentf
-  :ensure t
   :demand
   :bind ("C-x C-r" . recentf-open-files)
   :config
@@ -183,13 +176,11 @@
   :bind ("C-x y" . browse-kill-ring))
 
 (use-package ibuffer
-  :ensure t
   :bind ("C-x C-b" . ibuffer))
 (use-package ibuffer-vc
   :ensure t)
 
 (use-package subword
-  :ensure t
   :diminish subword-mode
   :config
   (add-hook 'prog-mode-hook (lambda () (subword-mode +1))))
