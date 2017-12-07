@@ -195,5 +195,8 @@
   :custom
   (next-line-add-newlines t))
 
+(use-package make-mode
+  :mode ("Make.rules" . makefile-mode))
+
 (provide 'config-editor)
 ;;; config-editor.el ends here
