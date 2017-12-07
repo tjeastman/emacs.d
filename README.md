@@ -26,3 +26,4 @@ Keybinding             | Description
 <kbd>C-=</kbd>         | expand region
 <kbd>C-c w</kbd>       | pyvenv workon
 <kbd>C-c a</kbd>       | pyvenv activate
+<kbd>C-c C-e</kbd>     | elpy multiedit symbol at point
