@@ -183,8 +183,9 @@
 
 (use-package subword
   :diminish subword-mode
-  :config
-  (add-hook 'prog-mode-hook (lambda () (subword-mode +1))))
+  :hook
+  ((prog-mode . subword-mode)
+   (yaml-mode . subword-mode)))
 
 (use-package which-func
   :config
