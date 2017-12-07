@@ -32,8 +32,6 @@
 
 (use-package elpy
   :ensure t
-  :demand
-  :bind ("C-c ," . elpy-multiedit)      ; FIX set for Python only?
   :custom
   (elpy-rpc-backend "jedi")
   :config
