@@ -154,10 +154,7 @@
   :defer t
   :hook
   ((c-mode-common . electric-operator-mode)
-   (python-mode . electric-operator-mode)
-   (emacs-lisp-mode . electric-operator-mode))
-  :config
-  (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
+   (python-mode . electric-operator-mode)))
 
 (use-package expand-region
   :ensure t
