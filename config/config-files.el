@@ -45,7 +45,7 @@
 (use-package yaml-mode
   :ensure t
   :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
-  :mode ("\\.yaml\\'" "\\.yml\\'")
+  :mode ("\\.yaml\\'" "\\.yml\\'" "group_vars/.+\\'")
   :hook (yaml-mode . flyspell-prog-mode)
   :config)
 
