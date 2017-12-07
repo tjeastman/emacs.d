@@ -23,7 +23,8 @@
 
 (use-package counsel
   :ensure t
-  :commands counsel-ag
+  :custom
+  (counsel-find-file-at-point t)
   :bind
   (("C-x C-m" . counsel-M-x)
    ("C-x C-f" . counsel-find-file)
