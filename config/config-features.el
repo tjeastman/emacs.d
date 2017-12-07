@@ -14,6 +14,7 @@
   :diminish ivy-mode
   :custom
   (ivy-use-virtual-buffers t)
+  (ivy-display-style 'fancy)
   :config
   (setq ivy-re-builders-alist
         '((swiper . ivy--regex-plus)
