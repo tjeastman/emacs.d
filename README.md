@@ -27,3 +27,4 @@ Keybinding             | Description
 <kbd>C-c w</kbd>       | pyvenv workon
 <kbd>C-c a</kbd>       | pyvenv activate
 <kbd>C-c C-e</kbd>     | elpy multiedit symbol at point
+<kbd>C-M-j</kbd>       | end ivy completion
