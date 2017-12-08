@@ -179,7 +179,8 @@
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
 (use-package ibuffer-vc
-  :ensure t)
+  :ensure t
+  :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
 
 (use-package subword
   :diminish subword-mode
