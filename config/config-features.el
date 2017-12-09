@@ -26,6 +26,8 @@
   :ensure t
   :custom
   (counsel-find-file-at-point t)
+  (counsel-find-file-ignore-regexp
+   (regexp-opt completion-ignored-extensions))
   :bind
   (("C-x C-m" . counsel-M-x)
    ("C-x C-f" . counsel-find-file)
