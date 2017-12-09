@@ -69,5 +69,8 @@
   :ensure t
   :mode "\\.ino\\'")
 
+(use-package systemd
+  :ensure t)
+
 (provide 'config-files)
 ;;; config-files.el ends here
