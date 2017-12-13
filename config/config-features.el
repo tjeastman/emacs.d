@@ -39,6 +39,12 @@
   :ensure t
   :bind ("C-s" . swiper))
 
+(use-package avy
+  :ensure t
+  :bind
+  (("M-g g" . avy-goto-line)
+   ("C-:" . avy-goto-char-timer)))
+
 (use-package ag
   :ensure t
   :defer t

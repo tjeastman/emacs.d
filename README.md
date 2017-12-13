@@ -29,6 +29,8 @@ Keybinding             | Description
 <kbd>C-c e p</kbd>     | goto flycheck previous error
 <kbd>C-;</kbd>         | backward kill word
 <kbd>M-o</kbd>         | goto other window
+<kbd>C-:</kbd>         | avy goto char timer
+<kbd>M-g g</kbd>       | avy goto line
 
 #### Python
 
