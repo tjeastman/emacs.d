@@ -156,7 +156,10 @@
   :defer t
   :hook
   ((c-mode-common . electric-operator-mode)
-   (python-mode . electric-operator-mode)))
+   (python-mode . electric-operator-mode)
+   (protobuf-mode . electric-operator-mode))
+  :config
+  (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
 
 (use-package expand-region
   :ensure t
