@@ -186,7 +186,8 @@
   :diminish subword-mode
   :hook
   ((prog-mode . subword-mode)
-   (yaml-mode . subword-mode)))
+   (yaml-mode . subword-mode)
+   (protobuf-mode . subword-mode)))
 
 (use-package which-func
   :config
