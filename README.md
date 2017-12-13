@@ -24,7 +24,17 @@ Keybinding             | Description
 -----------------------|------------------------------------------------------------
 <kbd>C-c & C-n</kbd>   | create a new snippet
 <kbd>C-=</kbd>         | expand region
+<kbd>C-M-j</kbd>       | end ivy completion
+<kbd>C-c e n</kbd>     | goto flycheck next error
+<kbd>C-c e p</kbd>     | goto flycheck previous error
+<kbd>C-;</kbd>         | backward kill word
+<kbd>M-o</kbd>         | goto other window
+
+#### Python
+
+Keybinding             | Description
+-----------------------|------------------------------------------------------------
 <kbd>C-c w</kbd>       | pyvenv workon
 <kbd>C-c a</kbd>       | pyvenv activate
 <kbd>C-c C-e</kbd>     | elpy multiedit symbol at point
-<kbd>C-M-j</kbd>       | end ivy completion
+<kbd>M-.</kbd>         | goto definition
