@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: oneof
+# key: oo
+# --
+oneof ${1:Name} {
+        $0
+}
