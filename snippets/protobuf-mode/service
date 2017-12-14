@@ -2,6 +2,7 @@
 # name: service
 # key: srv
 # --
-service ${1:Name} {
+// ${1:description}
+service ${2:Name} {
         $0
 }

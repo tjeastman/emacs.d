@@ -2,4 +2,5 @@
 # name: rpc
 # key: rpc
 # --
-rpc ${1:Name} (${2:InputMessageType}) returns (${3:OutputMessageType}) {}$0
+// ${1:description}
+rpc ${2:Name} (${3:InputMessageType}) returns (${4:OutputMessageType}) {}$0
