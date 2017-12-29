@@ -78,5 +78,8 @@
 (use-package apt-sources-list
   :ensure t)
 
+(use-package json-mode
+  :ensure t)
+
 (provide 'config-files)
 ;;; config-files.el ends here

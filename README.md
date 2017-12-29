@@ -40,3 +40,8 @@ Keybinding             | Description
 <kbd>C-c a</kbd>       | pyvenv activate
 <kbd>C-c C-e</kbd>     | elpy multiedit symbol at point
 <kbd>M-.</kbd>         | goto definition
+
+#### JSON
+Keybinding             | Description
+-----------------------|------------------------------------------------------------
+<kbd>C-c C-f</kbd>     | reformat region/buffer
