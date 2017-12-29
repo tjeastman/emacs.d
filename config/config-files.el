@@ -72,6 +72,9 @@
 (use-package systemd
   :ensure t)
 
+(use-package dotenv-mode
+  :ensure t)
+
 (use-package apt-sources-list
   :ensure t)
 
