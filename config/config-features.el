@@ -231,5 +231,8 @@
 
 (use-package git-modes)
 
+(use-package dotenv-mode
+  :ensure t)
+
 (provide 'config-features)
 ;;; config-features.el ends here
