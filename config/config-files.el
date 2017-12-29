@@ -72,5 +72,8 @@
 (use-package systemd
   :ensure t)
 
+(use-package apt-sources-list
+  :ensure t)
+
 (provide 'config-files)
 ;;; config-files.el ends here
