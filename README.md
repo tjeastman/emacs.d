@@ -41,6 +41,7 @@ Keybinding             | Description
 <kbd>C-c C-e</kbd>     | elpy multiedit symbol at point
 <kbd>C-c C-t</kbd>     | run tests
 <kbd>M-.</kbd>         | goto definition
+<kbd>M-,</kbd>         | return from goto definition
 
 #### JSON
 Keybinding             | Description
