@@ -216,10 +216,6 @@
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package js2-mode
-  :ensure t
-  :mode "\\.json\\'")
-
 (use-package irony
   :ensure t
   :diminish irony-mode
