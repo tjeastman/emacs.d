@@ -15,6 +15,7 @@
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-display-style 'fancy)
+  (ivy-extra-directories nil)
   :config
   (setq ivy-re-builders-alist
         '((swiper . ivy--regex-plus)
