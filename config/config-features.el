@@ -23,6 +23,11 @@
   (setq ivy-initial-inputs-alist nil)
   (ivy-mode t))
 
+(use-package ivy-historian
+  :ensure t
+  :config
+  (ivy-historian-mode t))
+
 (use-package counsel
   :ensure t
   :custom
