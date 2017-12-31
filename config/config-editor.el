@@ -201,5 +201,10 @@
 (use-package make-mode
   :mode ("Make.rules" . makefile-mode))
 
+(use-package compile
+  :custom
+  (compilation-ask-about-save nil)
+  (compilation-scroll-output 'next-error))
+
 (provide 'config-editor)
 ;;; config-editor.el ends here
