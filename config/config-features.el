@@ -93,7 +93,7 @@
 (use-package shell
   :custom
   (explicit-shell-file-name "bash")
-  (explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
+  (explicit-bash-args '("-c" "export TERM=eterm-color; export EMACS=; stty echo; bash"))
   :config
   (push 'company-readline company-backends))
 
