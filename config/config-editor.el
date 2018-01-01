@@ -210,7 +210,7 @@
   :custom
   (compilation-ask-about-save nil)
   (compilation-scroll-output 'next-error)
-  (compilation-environment '("TERM=emacs")))
+  (compilation-environment '("TERM=eterm-color")))
 
 (provide 'config-editor)
 ;;; config-editor.el ends here
