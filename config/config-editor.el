@@ -202,9 +202,15 @@
   :mode ("Make.rules" . makefile-mode))
 
 (use-package compile
+  :hook
+  (compilation-filter
+   . (lambda ()
+       (let ((inhibit-read-only t))
+         (ansi-color-apply-on-region compilation-filter-start (point)))))
   :custom
   (compilation-ask-about-save nil)
-  (compilation-scroll-output 'next-error))
+  (compilation-scroll-output 'next-error)
+  (compilation-environment '("TERM=emacs")))
 
 (provide 'config-editor)
 ;;; config-editor.el ends here
