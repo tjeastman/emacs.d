@@ -11,3 +11,4 @@ smex-items
 *.elc
 .python-environments
 contrib
+.historian
