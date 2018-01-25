@@ -33,6 +33,8 @@
 (add-to-list 'completion-ignored-extensions "a.out")
 (add-to-list 'completion-ignored-extensions ".pyc")
 (add-to-list 'completion-ignored-extensions ".cache/")
+(add-to-list 'completion-ignored-extensions ".python-environments/")
+(add-to-list 'completion-ignored-extensions ".coverage")
 
 (use-package mouse
   :defer t
