@@ -25,6 +25,7 @@
 (use-package ivy-historian
   :ensure t
   :config
+  (historian-mode t)
   (ivy-historian-mode t))
 
 (use-package counsel
