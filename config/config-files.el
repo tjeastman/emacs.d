@@ -23,6 +23,8 @@
   (("README\\.md\\'" . gfm-mode)
    ("\\.md\\'" . markdown-mode)
    ("\\.markdown\\'" . markdown-mode)))
+(use-package markdown-preview-mode
+  :ensure t)
 
 (use-package thrift
   :ensure t
