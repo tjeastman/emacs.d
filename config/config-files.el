@@ -63,7 +63,9 @@
 
 (use-package conf-mode
   :ensure t
-  :mode ((".preseed$". conf-mode)))     ; Debian preseed files
+  :mode
+  ((".preseed$" . conf-mode)            ; Debian preseed files
+   ("pylintrc$" . conf-mode)))
 
 (use-package arduino-mode
   :ensure t
