@@ -51,6 +51,10 @@
   :hook (yaml-mode . flyspell-prog-mode)
   :config)
 
+(use-package docker-compose-mode
+  :ensure t
+  :mode "docker-compose.yml")
+
 (use-package sh-script
   :ensure t
   :mode

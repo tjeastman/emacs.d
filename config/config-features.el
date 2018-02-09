@@ -155,8 +155,6 @@
   :bind (:map dired-mode-map
               ("P" . peep-dired)))
 
-(use-package docker-compose-mode
-  :ensure t)
 (use-package docker-tramp
   :ensure t)
 
