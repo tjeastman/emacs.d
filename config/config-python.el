@@ -36,7 +36,6 @@
   (elpy-rpc-backend "jedi")
   :config
   (elpy-enable)
-  (elpy-use-ipython)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
 
 ;; (use-package virtualenvwrapper)
