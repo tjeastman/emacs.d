@@ -38,9 +38,12 @@
   (elpy-enable)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
 
-;; (use-package virtualenvwrapper)
-;; (use-package cython-mode)
-;; (use-package nose)
+(use-package virtualenvwrapper
+  :ensure t)
+(use-package cython-mode
+  :ensure t)
+(use-package nose
+  :ensure t)
 
 (use-package pip-requirements
   :ensure t)
