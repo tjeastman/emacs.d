@@ -89,5 +89,8 @@
 (use-package json-mode
   :ensure t)
 
+(use-package cuda-mode
+  :ensure t)
+
 (provide 'config-files)
 ;;; config-files.el ends here
