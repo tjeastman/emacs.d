@@ -92,5 +92,8 @@
 (use-package cuda-mode
   :ensure t)
 
+(use-package go-mode
+  :ensure t)
+
 (provide 'config-files)
 ;;; config-files.el ends here
