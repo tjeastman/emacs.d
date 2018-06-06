@@ -229,7 +229,5 @@
 (use-package flycheck-irony
   :ensure t)
 
-(use-package git-modes)
-
 (provide 'config-features)
 ;;; config-features.el ends here
