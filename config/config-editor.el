@@ -16,6 +16,9 @@
  scroll-conservatively 100000
  scroll-margin 0)
 
+;; prefer horizontal splits
+(setq split-height-threshold 9999)
+
 (setq-default
  ;; only allow continuation lines in buffers that occupy the full frame width
  truncate-lines nil
