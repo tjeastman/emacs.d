@@ -19,6 +19,9 @@
 ;; prefer horizontal splits
 (setq split-height-threshold 9999)
 
+;; hide cursor in windows that are not selected
+(setq-default cursor-in-non-selected-windows nil)
+
 (setq-default
  ;; only allow continuation lines in buffers that occupy the full frame width
  truncate-lines nil
