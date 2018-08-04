@@ -20,6 +20,7 @@
         '((swiper . ivy--regex-plus)
           (t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
+  (setq ivy-use-selectable-prompt t)
   (ivy-mode t))
 
 (use-package ivy-historian
