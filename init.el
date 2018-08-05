@@ -15,6 +15,11 @@
 (setq user-emacs-state-directory
       (expand-file-name "state" user-emacs-directory))
 
+(when (eq system-type 'darwin)
+  (setq
+   mac-command-modifier 'meta
+   mac-option-modifier 'super))
+
 ;; store customizations outside of the emacs configuration directory
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file t)
