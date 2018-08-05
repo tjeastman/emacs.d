@@ -123,8 +123,9 @@
   :custom
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
+  (projectile-indexing-method 'alien)
   :config
-  (projectile-mode t))
+  (projectile-global-mode))
 
 ;; highlight color strings with the colors they represent
 (use-package rainbow-mode
