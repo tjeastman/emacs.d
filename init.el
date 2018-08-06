@@ -11,9 +11,9 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; organize emacs feature state files
-(setq user-emacs-state-directory
-      (expand-file-name "state" user-emacs-directory))
+(defconst user-emacs-state-directory
+  (expand-file-name "state" user-emacs-directory)
+  "root directory for organizing feature state files")
 
 (when (eq system-type 'darwin)
   (setq
