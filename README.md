@@ -31,6 +31,7 @@ Keybinding             | Description
 <kbd>M-o</kbd>         | goto other window
 <kbd>C-:</kbd>         | avy goto char timer
 <kbd>M-g g</kbd>       | avy goto line
+<kbd>C-c C-p p</kbd>   | switch projects with projectile
 
 #### Python
 
@@ -42,6 +43,8 @@ Keybinding             | Description
 <kbd>C-c C-t</kbd>     | run tests
 <kbd>M-.</kbd>         | goto definition
 <kbd>M-,</kbd>         | return from goto definition
+<kbd>M-a</kbd>         | navigate backward block
+<kbd>M-e</kbd>         | navigate forward block
 
 #### JSON
 Keybinding             | Description
