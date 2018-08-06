@@ -124,10 +124,12 @@
 ;; project management
 (use-package projectile
   :ensure t
+  :after neotree
   :custom
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
   (projectile-indexing-method 'alien)
+  (projectile-switch-project-action 'neotree-projectile-action)
   :config
   (projectile-global-mode))
 
@@ -234,6 +236,12 @@
 
 (use-package flycheck-irony
   :ensure t)
+
+(use-package neotree
+  :ensure t
+  :custom
+  (neo-smart-open t)
+  (neo-theme 'icons 'arrow))
 
 (provide 'config-features)
 ;;; config-features.el ends here
