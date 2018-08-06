@@ -13,11 +13,6 @@
   (expand-file-name "state" user-emacs-directory)
   "root directory for organizing feature state files")
 
-(when (eq system-type 'darwin)
-  (setq
-   mac-command-modifier 'meta
-   mac-option-modifier 'super))
-
 ;; store customizations outside of the emacs configuration directory
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file t)
@@ -28,6 +23,7 @@
 (require 'config-functions)
 (require 'config-appearance)
 (require 'config-editor)
+(require 'config-keys)
 (require 'config-features)
 (require 'config-files)
 (require 'config-python)
