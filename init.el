@@ -9,8 +9,6 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-
 (defconst user-emacs-state-directory
   (expand-file-name "state" user-emacs-directory)
   "root directory for organizing feature state files")
