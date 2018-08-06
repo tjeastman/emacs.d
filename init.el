@@ -26,13 +26,6 @@
 
 (add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
 
-;; add subdirectories of contrib to the load path...
-(let ((contrib-dir (expand-file-name "contrib" user-emacs-directory)))
-  (if (file-directory-p contrib-dir)
-      (dolist (contrib-subdir (directory-files contrib-dir))
-        (unless (member contrib-subdir '("." ".."))
-          (add-to-list 'load-path (expand-file-name contrib-subdir contrib-dir))))))
-
 (require 'config-packages)
 (require 'config-functions)
 (require 'config-appearance)

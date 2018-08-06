@@ -76,5 +76,13 @@
 
 (use-package go-mode)
 
+(use-package git-modes
+  :load-path "contrib/git-modes/"
+  :mode
+  ("/\\.gitconfig\\'" . gitconfig-mode)
+  ("/\\.git/config\\'" . gitconfig-mode)
+  ("/\\.gitignore\\'" . gitignore-mode)
+  ("/.dockerignore\\'" . gitignore-mode))
+
 (provide 'config-files)
 ;;; config-files.el ends here
