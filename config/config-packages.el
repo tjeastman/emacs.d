@@ -4,7 +4,6 @@
 
 ;;; Code:
 
-;; configure packages
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -14,7 +13,6 @@
 
 (package-initialize)
 
-;; declare required packages
 (defvar config-required-packages
   '(solarized-theme
     anti-zenburn-theme
