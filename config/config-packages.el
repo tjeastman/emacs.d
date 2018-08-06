@@ -16,8 +16,7 @@
 
 ;; declare required packages
 (defvar config-required-packages
-  '(zenburn-theme
-    solarized-theme
+  '(solarized-theme
     anti-zenburn-theme
     kaolin-themes
     blackboard-theme

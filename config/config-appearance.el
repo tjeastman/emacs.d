@@ -17,7 +17,9 @@
      (set-face-attribute face nil :weight 'normal))
    (face-list)))
 
-(load-theme 'zenburn t)
+(use-package zenburn-theme
+  :init
+  (load-theme 'zenburn t))
 
 (provide 'config-appearance)
 ;;; config-appearance.el ends here
