@@ -43,17 +43,16 @@
 (add-to-list 'completion-ignored-extensions ".coverage")
 
 (use-package mouse
-  :defer t
+  :ensure nil
   :custom
   (mouse-yank-at-point t))
 
 (use-package vc
-  :defer t
   :custom
   (vc-follow-symlinks t))
 
 (use-package comint
-  :defer t
+  :ensure nil
   :custom
   (comint-buffer-maximum-size 20000)
   (comint-process-echoes t)
@@ -71,7 +70,6 @@
 
 ;; highlight matching bracket delimiters
 (use-package smartparens
-  :ensure t
   :diminish smartparens-mode
   :hook (prog-mode . turn-on-smartparens-strict-mode)
   :config
@@ -87,6 +85,7 @@
 
 ;; improved mechanism for making buffer names unique
 (use-package uniquify
+  :ensure nil
   :custom
   (uniquify-buffer-name-style 'post-forward)
   (uniquify-after-kill-buffer-p t)
@@ -121,12 +120,14 @@
   (global-auto-revert-mode t))
 
 (use-package dired
+  :ensure nil
   :custom
   (dired-auto-revert-buffer t)          ; revert dired buffers when revisiting
   (dired-recursive-copies 'always)
   (dired-recursive-deletes 'always))
 
 (use-package files
+  :ensure nil
   :custom
   ;; store backup files in a central directory
   (backup-directory-alist
@@ -142,6 +143,7 @@
 
 ;; set up abbreviations
 (use-package abbrev
+  :ensure nil
   :diminish abbrev-mode
   :custom
   (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
@@ -150,7 +152,6 @@
   (quietly-read-abbrev-file abbrev-file-name))
 
 (use-package ispell
-  :defer t
   :custom
   (ispell-personal-dictionary "~/.aspell.en.pws")
   (ispell-program-name "aspell"))
@@ -182,13 +183,11 @@
   (recentf-max-saved-items 250))
 
 (use-package browse-kill-ring
-  :ensure t
   :bind ("C-x y" . browse-kill-ring))
 
 (use-package ibuffer
   :bind ("C-x C-b" . ibuffer))
 (use-package ibuffer-vc
-  :ensure t
   :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
 
 (use-package subword
@@ -203,6 +202,7 @@
   (which-function-mode 1))
 
 (use-package simple
+  :ensure nil
   :custom
   (next-line-add-newlines t))
 

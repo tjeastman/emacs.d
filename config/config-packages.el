@@ -35,8 +35,12 @@
           (unless (package-installed-p package-name)
             (package-install package-name))))))
 
-(use-package diminish
-  :ensure t)
+(use-package use-package
+  :custom
+  (use-package-always-ensure t)
+  (use-package-always-defer t))
+
+(use-package diminish)
 
 (provide 'config-packages)
 ;;; config-packages.el ends here
