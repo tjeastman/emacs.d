@@ -21,6 +21,7 @@
     kaolin-themes
     blackboard-theme
     lush-theme
+    doneburn-theme
     paredit
     use-package)
   "List of packages that are automatically installed.")
