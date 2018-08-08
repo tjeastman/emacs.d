@@ -204,7 +204,5 @@
   (neo-smart-open t)
   (neo-theme 'icons 'arrow))
 
-(use-package dropbox)
-
 (provide 'config-features)
 ;;; config-features.el ends here
