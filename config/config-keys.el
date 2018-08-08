@@ -4,6 +4,13 @@
 
 ;;; Code:
 
+(global-set-key (kbd "C-;") 'backward-kill-word)
+
+(global-set-key (kbd "M-o") 'other-window)
+
+(global-set-key [remap move-beginning-of-line]
+                'my-move-to-beginning-of-line)
+
 (use-package ns-win
   :ensure nil
   :if (eq system-type 'darwin)

@@ -179,13 +179,6 @@
   :config
   (beacon-mode 1))
 
-(global-set-key (kbd "C-;") 'backward-kill-word)
-
-(global-set-key (kbd "M-o") 'other-window)
-
-(global-set-key [remap move-beginning-of-line]
-                'my-move-to-beginning-of-line)
-
 (use-package rtags)
 
 (use-package rainbow-delimiters
