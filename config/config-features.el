@@ -143,6 +143,7 @@
 
 (use-package multiple-cursors)
 
+;; FIX: not enabled in python-mode
 (use-package electric-operator
   :hook
   ((c-mode-common . electric-operator-mode)
