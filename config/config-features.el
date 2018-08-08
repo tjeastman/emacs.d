@@ -206,5 +206,10 @@
   (neo-smart-open t)
   (neo-theme 'icons 'arrow))
 
+(use-package fill-column-indicator
+  :custom
+  (fci-rule-width 1)
+  (fci-rule-color "darkblue"))
+
 (provide 'config-features)
 ;;; config-features.el ends here
