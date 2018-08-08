@@ -179,8 +179,6 @@
   :config
   (beacon-mode 1))
 
-(use-package rtags)
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
