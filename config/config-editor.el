@@ -8,6 +8,8 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq visible-bell t)
+(if (eq system-type 'darwin)
+    (setq ring-bell-function 'ignore))
 
 (setq
  ;; preserve the vertical position of the line containing the point
