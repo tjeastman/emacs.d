@@ -22,8 +22,14 @@
    (face-list)))
 
 (use-package zenburn-theme
+  :unless (eq system-type 'darwin)
   :init
   (load-theme 'zenburn t))
+
+(use-package solarized
+  :if (eq system-type 'darwin)
+  :init
+  (load-theme 'solarized-light t))
 
 (provide 'config-appearance)
 ;;; config-appearance.el ends here
