@@ -180,7 +180,7 @@
   :config
   (recentf-mode 1)
   :custom
-  (recentf-save-file (expand-file-name "recentf" user-emacs-directory))
+  (recentf-save-file (expand-file-name "recentf" user-emacs-state-directory))
   (recentf-max-menu-items 25)
   (recentf-max-saved-items 250))
 
