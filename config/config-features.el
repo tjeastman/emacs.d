@@ -199,6 +199,8 @@
 
 (use-package flycheck-irony)
 
+;; also run once: M-x all-the-icons-install-fonts
+(use-package all-the-icons)
 (use-package neotree
   :custom
   (neo-smart-open t)
