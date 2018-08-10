@@ -6,12 +6,7 @@
 
 ;; use ssh-specific modes for ssh configuration files
 (use-package ssh-config-mode
-  :mode
-  ((".ssh/config$" . ssh-config-mode)
-   ("sshd_config$" . ssh-config-mode)
-   ("ssh_config$" . ssh-config-mode)
-   ("known_hosts$" . ssh-known-hosts-mode)
-   ("authorized_keys$" . ssh-authorized-keys-mode)))
+  :defer t)
 
 (use-package markdown-mode
   :commands
