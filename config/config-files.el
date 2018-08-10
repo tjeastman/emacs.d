@@ -64,7 +64,9 @@
 
 (use-package apt-sources-list)
 
-(use-package json-mode)
+(use-package json-mode
+  :mode
+  ("Pipfile.lock\\'" . json-mode))
 
 (use-package cuda-mode)
 
@@ -80,6 +82,10 @@
 
 (use-package pip-requirements
   :defer t)
+
+(use-package toml-mode
+  :mode
+  ("Pipfile\\'" . toml-mode))
 
 (provide 'config-files)
 ;;; config-files.el ends here
