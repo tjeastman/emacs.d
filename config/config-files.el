@@ -31,7 +31,7 @@
   :hook (protobuf-mode . flyspell-prog-mode))
 
 (use-package dockerfile-mode
-  :mode "Dockerfile\\'")
+  :defer t)
 
 (use-package ansible-doc
   :commands ansible-doc)
@@ -62,7 +62,7 @@
    ("pylintrc$" . conf-mode)))
 
 (use-package arduino-mode
-  :mode "\\.ino\\'")
+  :defer t)
 
 (use-package systemd)
 
