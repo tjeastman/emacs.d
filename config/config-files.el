@@ -25,20 +25,20 @@
   :mode "\\.proto\\'"
   :hook (protobuf-mode . flyspell-prog-mode))
 
-(use-package dockerfile-mode
-  :defer t)
-
 (use-package ansible-doc
   :commands ansible-doc)
 
 (use-package yaml-mode
+  :after docker-compose-mode
   :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
   :mode ("\\.yaml\\'" "\\.yml\\'" "group_vars/.+\\'")
   :hook (yaml-mode . flyspell-prog-mode)
   :config)
 
+(use-package dockerfile-mode
+  :defer t)
 (use-package docker-compose-mode
-  :mode "docker-compose.yml")
+  :defer t)
 
 (use-package sh-script
   :mode
