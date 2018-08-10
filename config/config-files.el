@@ -32,8 +32,7 @@
   :after docker-compose-mode
   :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
   :mode ("\\.yaml\\'" "\\.yml\\'" "group_vars/.+\\'")
-  :hook (yaml-mode . flyspell-prog-mode)
-  :config)
+  :hook (yaml-mode . flyspell-prog-mode))
 
 (use-package dockerfile-mode
   :defer t)
