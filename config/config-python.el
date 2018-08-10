@@ -36,7 +36,6 @@
 (use-package virtualenvwrapper)
 (use-package cython-mode
   :defer t)
-(use-package nose)
 
 (use-package ein
   :commands ein:notebooklist-open)
