@@ -14,8 +14,7 @@
 (package-initialize)
 
 (defvar config-required-packages
-  '(paredit
-    use-package)
+  '(use-package)
   "List of packages that are automatically installed.")
 
 ;; ensure that all required packages are installed
