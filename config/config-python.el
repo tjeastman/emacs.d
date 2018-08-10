@@ -40,5 +40,7 @@
 (use-package ein
   :commands ein:notebooklist-open)
 
+(use-package pipenv)
+
 (provide 'config-python)
 ;;; config-python.el ends here
