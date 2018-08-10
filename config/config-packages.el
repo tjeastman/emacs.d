@@ -14,13 +14,7 @@
 (package-initialize)
 
 (defvar config-required-packages
-  '(solarized-theme
-    anti-zenburn-theme
-    kaolin-themes
-    blackboard-theme
-    lush-theme
-    doneburn-theme
-    paredit
+  '(paredit
     use-package)
   "List of packages that are automatically installed.")
 

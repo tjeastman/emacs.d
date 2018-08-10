@@ -21,13 +21,7 @@
      (set-face-attribute face nil :weight 'normal))
    (face-list)))
 
-(use-package zenburn-theme
-  :unless (eq system-type 'darwin)
-  :init
-  (load-theme 'zenburn t))
-
-(use-package solarized
-  :if (eq system-type 'darwin)
+(use-package solarized-theme
   :init
   (load-theme 'solarized-light t))
 
