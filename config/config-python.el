@@ -34,10 +34,12 @@
 (use-package python-pytest)
 
 (use-package virtualenvwrapper)
-(use-package cython-mode)
+(use-package cython-mode
+  :defer t)
 (use-package nose)
 
-(use-package pip-requirements)
+(use-package pip-requirements
+  :defer t)
 
 (use-package ein
   :commands ein:notebooklist-open)
