@@ -38,9 +38,6 @@
   :defer t)
 (use-package nose)
 
-(use-package pip-requirements
-  :defer t)
-
 (use-package ein
   :commands ein:notebooklist-open)
 

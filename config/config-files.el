@@ -84,5 +84,8 @@
   ("/\\.gitignore\\'" . gitignore-mode)
   ("/.dockerignore\\'" . gitignore-mode))
 
+(use-package pip-requirements
+  :defer t)
+
 (provide 'config-files)
 ;;; config-files.el ends here
