@@ -199,6 +199,7 @@
   (neo-theme 'icons 'arrow))
 
 (use-package fill-column-indicator
+  :hook (python-mode . fci-mode)
   :custom
   (fci-rule-width 1)
   (fci-rule-color "darkblue"))
