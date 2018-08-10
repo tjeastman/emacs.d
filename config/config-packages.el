@@ -35,8 +35,7 @@
 
 (use-package use-package
   :custom
-  (use-package-always-ensure t)
-  (use-package-always-defer t))
+  (use-package-always-ensure t))
 
 (use-package diminish)
 
