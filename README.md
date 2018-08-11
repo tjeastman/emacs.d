@@ -15,6 +15,14 @@ M-x jedi:install-server
 ```
 This command creates a virtualenv in ~/.emacs.d/.python-environments/ and installs the Jedi server there.
 
+### git-modes
+
+Clone the `git-modes` project:
+```
+mkdir .emacs.d/contrib
+cd .emacs.d/contrib
+git clone https://github.com/magit/git-modes.git
+```
 
 ### Keymap
 
