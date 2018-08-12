@@ -204,5 +204,12 @@
   (fci-rule-width 1)
   (fci-rule-color "darkblue"))
 
+(use-package exec-path-from-shell
+  :if (eq system-type 'darwin)
+  :custom
+  (exec-path-from-shell-shell-name "/usr/local/bin/zsh")
+  :config
+  (exec-path-from-shell-initialize))
+
 (provide 'config-features)
 ;;; config-features.el ends here
