@@ -68,10 +68,6 @@
   :mode
   ("Pipfile.lock\\'" . json-mode))
 
-(use-package cuda-mode)
-
-(use-package go-mode)
-
 (use-package git-modes
   :load-path "contrib/git-modes/"
   :mode
