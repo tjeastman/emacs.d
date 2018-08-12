@@ -26,19 +26,20 @@
   (ivy-historian-mode t))
 
 (use-package counsel
-  :custom
-  (counsel-find-file-at-point t)
-  (counsel-find-file-ignore-regexp
-   (regexp-opt completion-ignored-extensions))
   :bind
   (("C-x C-m" . counsel-M-x)
    ("C-x C-f" . counsel-find-file)
    ("C-h f" . counsel-describe-function)
    ("C-h v" . counsel-describe-variable)
-   ("C-c k" . counsel-ag)))
+   ("C-c k" . counsel-ag))
+  :custom
+  (counsel-find-file-at-point t)
+  (counsel-find-file-ignore-regexp
+   (regexp-opt completion-ignored-extensions)))
 
 (use-package swiper
-  :bind ("C-s" . swiper))
+  :bind
+  ("C-s" . swiper))
 
 (use-package avy
   :bind
@@ -122,7 +123,8 @@
   (rainbow-mode t))
 
 (use-package magit
-  :bind ("C-x g" . magit-status)
+  :bind
+  ("C-x g" . magit-status)
   :custom
   (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
   (magit-save-repository-buffers 'dontask))
@@ -133,8 +135,8 @@
 
 ;; preview files in dired
 (use-package peep-dired
-  :bind (:map dired-mode-map
-              ("P" . peep-dired)))
+  :bind
+  (:map dired-mode-map ("P" . peep-dired)))
 
 (use-package multiple-cursors
   :bind
@@ -153,7 +155,8 @@
   (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
 
 (use-package expand-region
-  :bind ("C-=" . er/expand-region))
+  :bind
+  ("C-=" . er/expand-region))
 
 (use-package autoinsert
   :custom
@@ -167,7 +170,8 @@
   (yatemplate-fill-alist))
 
 (use-package imenu-anywhere
-  :bind ("C-c i" . imenu-anywhere))
+  :bind
+  ("C-c i" . imenu-anywhere))
 
 (use-package flycheck
   :hook (after-init . global-flycheck-mode)

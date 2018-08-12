@@ -176,19 +176,22 @@
 
 (use-package recentf
   :demand
-  :bind ("C-x C-r" . recentf-open-files)
-  :config
-  (recentf-mode 1)
+  :bind
+  ("C-x C-r" . recentf-open-files)
   :custom
   (recentf-save-file (expand-file-name "recentf" user-emacs-state-directory))
   (recentf-max-menu-items 25)
-  (recentf-max-saved-items 250))
+  (recentf-max-saved-items 250)
+  :config
+  (recentf-mode 1))
 
 (use-package browse-kill-ring
-  :bind ("C-x y" . browse-kill-ring))
+  :bind
+  ("C-x y" . browse-kill-ring))
 
 (use-package ibuffer
-  :bind ("C-x C-b" . ibuffer))
+  :bind
+  ("C-x C-b" . ibuffer))
 (use-package ibuffer-vc
   :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
 
