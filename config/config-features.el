@@ -136,7 +136,12 @@
   :bind (:map dired-mode-map
               ("P" . peep-dired)))
 
-(use-package multiple-cursors)
+(use-package multiple-cursors
+  :bind
+  ("C-S-c C-S-c" . mc/edit-lines)
+  ("C->" . 'mc/mark-next-like-this)
+  ("C-<" . 'mc/mark-previous-like-this)
+  ("C-c C-<" . 'mc/mark-all-like-this))
 
 ;; FIX: not enabled in python-mode
 (use-package electric-operator
