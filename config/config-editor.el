@@ -185,10 +185,6 @@
   :config
   (recentf-mode 1))
 
-(use-package browse-kill-ring
-  :bind
-  ("C-x y" . browse-kill-ring))
-
 (use-package ibuffer
   :bind
   ("C-x C-b" . ibuffer))

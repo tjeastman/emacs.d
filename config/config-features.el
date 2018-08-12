@@ -96,8 +96,8 @@
 
 ;; navigate contents of the kill ring
 (use-package browse-kill-ring
-  :config
-  (browse-kill-ring-default-keybindings))
+  :bind
+  ("C-x y" . browse-kill-ring))
 
 ;; use a tree-structured representation of undo history
 (use-package undo-tree
