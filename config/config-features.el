@@ -116,12 +116,6 @@
   :config
   (projectile-global-mode))
 
-;; highlight color strings with the colors they represent
-(use-package rainbow-mode
-  :diminish rainbow-mode
-  :config
-  (rainbow-mode t))
-
 (use-package magit
   :bind
   ("C-x g" . magit-status)
