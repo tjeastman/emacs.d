@@ -131,15 +131,10 @@
   :custom
   (git-commit-summary-max-length 72))
 
-(use-package git-timemachine
-  :commands git-timemachine)
-
 ;; preview files in dired
 (use-package peep-dired
   :bind (:map dired-mode-map
               ("P" . peep-dired)))
-
-(use-package docker-tramp)
 
 (use-package multiple-cursors)
 
