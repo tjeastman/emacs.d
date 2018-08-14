@@ -211,5 +211,9 @@
   :config
   (exec-path-from-shell-initialize))
 
+(use-package crux
+  :commands
+  (crux-move-beginning-of-line))
+
 (provide 'config-features)
 ;;; config-features.el ends here

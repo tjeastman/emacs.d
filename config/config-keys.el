@@ -6,8 +6,7 @@
 
 (global-set-key (kbd "C-;") 'backward-kill-word)
 
-(global-set-key [remap move-beginning-of-line]
-                'my-move-to-beginning-of-line)
+(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 
 (use-package ns-win
   :ensure nil
