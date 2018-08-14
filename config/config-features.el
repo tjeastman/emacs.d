@@ -108,6 +108,8 @@
 ;; project management
 (use-package projectile
   :after neotree
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
   :custom
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
