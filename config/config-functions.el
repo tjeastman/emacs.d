@@ -17,5 +17,15 @@
           (get-buffer shell-buffer-name)))
     (shell shell-buffer-name)))
 
+(defun my-switch-to-last-window ()
+  "Switch to the previously used window if one exist."
+  (interactive)
+  (let ((win (get-mru-window t t t)))
+    (if win
+        (let ((frame (window-frame win)))
+          (raise-frame frame)
+          (select-frame frame)
+          (select-window win)))))
+
 (provide 'config-functions)
 ;;; config-functions.el ends here
