@@ -12,12 +12,12 @@
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-display-style 'fancy)
+  (ivy-use-selectable-prompt t)
   :config
   (setq ivy-re-builders-alist
         '((swiper . ivy--regex-plus)
           (t . ivy--regex-fuzzy)))
   (setq ivy-initial-inputs-alist nil)
-  (setq ivy-use-selectable-prompt t)
   (ivy-mode t))
 
 (use-package ivy-historian
