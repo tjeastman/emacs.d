@@ -221,5 +221,10 @@
   (compilation-scroll-output 'next-error)
   (compilation-environment '("TERM=eterm-color")))
 
+(use-package window
+  :ensure nil
+  :bind
+  ("M-o" . other-window))
+
 (provide 'config-editor)
 ;;; config-editor.el ends here
