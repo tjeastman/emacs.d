@@ -196,7 +196,7 @@
 (use-package neotree
   :custom
   (neo-smart-open t)
-  (neo-theme 'icons 'arrow))
+  (neo-theme 'classic))
 
 (use-package fill-column-indicator
   :hook (python-mode . fci-mode)
