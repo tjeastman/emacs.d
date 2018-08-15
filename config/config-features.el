@@ -171,7 +171,8 @@
   ("C-c i" . imenu-anywhere))
 
 (use-package flycheck
-  :hook (after-init . global-flycheck-mode)
+  :hook
+  (after-init . global-flycheck-mode)
   :bind
   (("C-c e n" . flycheck-next-error)
    ("C-c e p" . flycheck-previous-error)))
@@ -182,7 +183,8 @@
   (beacon-mode 1))
 
 (use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
 
 (use-package irony
   :diminish irony-mode
