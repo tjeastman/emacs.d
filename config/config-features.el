@@ -108,6 +108,7 @@
 ;; project management
 (use-package projectile
   :after neotree
+  :delight '(:eval (format " P[%s]" (projectile-project-name)))
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :custom
