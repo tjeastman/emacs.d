@@ -226,5 +226,10 @@
   :bind
   ("M-o" . other-window))
 
+(use-package elisp-mode
+  :ensure nil
+  :delight
+  (emacs-lisp-mode "ELisp"))
+
 (provide 'config-editor)
 ;;; config-editor.el ends here
