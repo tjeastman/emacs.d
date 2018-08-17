@@ -92,7 +92,8 @@
   (yas-global-mode t))
 (use-package yasnippet-snippets
   :after yasnippet
-  :config (yasnippet-snippets-initialize))
+  :config
+  (yasnippet-snippets-initialize))
 
 ;; navigate contents of the kill ring
 (use-package browse-kill-ring
