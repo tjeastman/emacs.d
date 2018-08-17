@@ -195,12 +195,23 @@
 
 (use-package flycheck-irony)
 
-;; also run once: M-x all-the-icons-install-fonts
-(use-package all-the-icons)
 (use-package neotree
   :custom
-  (neo-smart-open t)
-  (neo-theme 'classic))
+  ((neo-smart-open t)
+   (neo-autorefresh nil)
+   (neo-show-hidden-files t)
+   (neo-hidden-regexp-list
+    '("\\.pyc$"
+      "~$"
+      "^#.*#$"
+      "\\.elc$"
+      ".git$"
+      ".cache$"
+      ".pytest_cache$"
+      "\\.egg-info$"
+      "^.coverage$"
+      "__pycache__"))
+   (neo-theme 'classic)))
 
 (use-package fill-column-indicator
   :hook (python-mode . fci-mode)
