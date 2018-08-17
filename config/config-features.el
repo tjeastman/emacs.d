@@ -218,5 +218,12 @@
   :commands
   (crux-move-beginning-of-line))
 
+(use-package docker
+  :bind
+  ("C-c d" . docker)
+  :init
+  (if (eq system-type 'darwin)
+      (setenv "DOCKER_HOST" "tcp://0.0.0.0:2376")))
+
 (provide 'config-features)
 ;;; config-features.el ends here
