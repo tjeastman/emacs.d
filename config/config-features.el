@@ -213,12 +213,6 @@
       "__pycache__"))
    (neo-theme 'classic)))
 
-(use-package fill-column-indicator
-  :hook (python-mode . fci-mode)
-  :custom
-  (fci-rule-width 1)
-  (fci-rule-color "darkblue"))
-
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
   :custom
