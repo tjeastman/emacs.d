@@ -217,6 +217,7 @@
   :if (eq system-type 'darwin)
   :custom
   (exec-path-from-shell-shell-name "/usr/local/bin/zsh")
+  (exec-path-from-shell-variables '("PATH" "MANPATH" "WORKON_HOME"))
   :config
   (exec-path-from-shell-initialize))
 
