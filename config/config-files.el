@@ -83,5 +83,7 @@
   :mode
   ("Pipfile\\'" . toml-mode))
 
+(use-package terraform-mode)
+
 (provide 'config-files)
 ;;; config-files.el ends here
