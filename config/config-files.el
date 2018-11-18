@@ -85,5 +85,7 @@
 
 (use-package terraform-mode)
 
+(use-package go-mode)
+
 (provide 'config-files)
 ;;; config-files.el ends here
