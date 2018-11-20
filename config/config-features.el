@@ -108,7 +108,6 @@
 
 ;; project management
 (use-package projectile
-  :after neotree
   :delight '(:eval (format " P[%s]" (projectile-project-name)))
   :bind-keymap
   ("C-c p" . projectile-command-map)
@@ -116,7 +115,6 @@
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
   (projectile-indexing-method 'alien)
-  (projectile-switch-project-action 'neotree-projectile-action)
   :config
   (projectile-global-mode))
 
@@ -194,24 +192,6 @@
    (c-mode . irony-mode)))
 
 (use-package flycheck-irony)
-
-(use-package neotree
-  :custom
-  ((neo-smart-open t)
-   (neo-autorefresh nil)
-   (neo-show-hidden-files t)
-   (neo-hidden-regexp-list
-    '("\\.pyc$"
-      "~$"
-      "^#.*#$"
-      "\\.elc$"
-      ".git$"
-      ".cache$"
-      ".pytest_cache$"
-      "\\.egg-info$"
-      "^.coverage$"
-      "__pycache__"))
-   (neo-theme 'classic)))
 
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
