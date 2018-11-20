@@ -14,8 +14,7 @@
   :ensure nil
   :if (eq system-type 'darwin)
   :custom
-  (mac-command-modifier 'meta)
-  (mac-option-modifier 'super))
+  (mac-command-modifier 'meta))
 
 (provide 'config-keys)
 ;;; config-keys.el ends here
