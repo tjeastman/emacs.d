@@ -19,7 +19,7 @@
 (use-package markdown-preview-mode)
 
 (use-package thrift
-  :mode "\\.thrift\\'")
+  :mode ("\\.thrift\\'" . thrift-mode))
 
 (use-package protobuf-mode
   :mode "\\.proto\\'"
