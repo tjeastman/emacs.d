@@ -197,7 +197,7 @@
   :if (eq system-type 'darwin)
   :custom
   (exec-path-from-shell-shell-name "/usr/local/bin/zsh")
-  (exec-path-from-shell-variables '("PATH" "MANPATH" "WORKON_HOME"))
+  (exec-path-from-shell-variables '("PATH" "MANPATH" "WORKON_HOME" "SSH_AGENT_PID" "SSH_AUTH_SOCK"))
   :config
   (exec-path-from-shell-initialize))
 
