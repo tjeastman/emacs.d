@@ -108,7 +108,10 @@
 
 ;; project management
 (use-package projectile
+  :demand
   :delight '(:eval (format " P[%s]" (projectile-project-name)))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
   :custom
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
