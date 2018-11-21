@@ -107,11 +107,6 @@
    (makefile-mode . (lambda () (whitespace-toggle-options '(tabs))))
    (before-save . whitespace-cleanup)))
 
-;; make it possible to undo and redo window configuration changes
-(use-package winner
-  :config
-  (winner-mode t))
-
 ;; automatically revert buffers when the corresponding file changes
 (use-package autorevert
   :diminish

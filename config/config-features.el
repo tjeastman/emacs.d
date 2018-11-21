@@ -20,11 +20,6 @@
   (setq ivy-initial-inputs-alist nil)
   (ivy-mode t))
 
-(use-package ivy-historian
-  :config
-  (historian-mode t)
-  (ivy-historian-mode t))
-
 (use-package counsel
   :bind
   (("C-x C-m" . counsel-M-x)
@@ -73,18 +68,6 @@
   (company-tooltip-flip-when-above t)
   :config
   (global-company-mode t))
-
-;; configure readline completion in shell mode
-(use-package readline-complete
-  :commands company-readline
-  :hook (rlc-no-readline-hook . (lambda () (company-mode -1))))
-(use-package shell
-  :after company
-  :custom
-  (explicit-shell-file-name "bash")
-  (explicit-bash-args '("-c" "export TERM=eterm-color; export EMACS=; stty echo; bash"))
-  :config
-  (push 'company-readline company-backends))
 
 (use-package yasnippet
   :diminish yas-minor-mode
@@ -185,14 +168,6 @@
 (use-package rainbow-delimiters
   :hook
   (prog-mode . rainbow-delimiters-mode))
-
-(use-package irony
-  :diminish irony-mode
-  :hook
-  ((c++-mode . irony-mode)
-   (c-mode . irony-mode)))
-
-(use-package flycheck-irony)
 
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
