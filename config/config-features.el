@@ -8,7 +8,7 @@
 (use-package flx)
 
 (use-package ivy
-  :diminish ivy-mode
+  :delight
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-display-style 'fancy)
@@ -70,7 +70,7 @@
   (global-company-mode t))
 
 (use-package yasnippet
-  :diminish yas-minor-mode
+  :delight yas-minor-mode
   :config
   (yas-global-mode t))
 (use-package yasnippet-snippets
