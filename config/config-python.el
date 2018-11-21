@@ -4,43 +4,23 @@
 
 ;;; Code:
 
-(use-package pyvenv
-  :bind
-  (("C-c w" . pyvenv-workon)
-   ("C-c a" . pyvenv-activate)))
-
-(use-package highlight-indentation
-  :diminish highlight-indentation-mode)
-
-(use-package company-jedi
-  :hook
-  (python-mode . (lambda () (progn (jedi:setup) (add-to-list 'company-backends 'company-jedi))))
-  :custom
-  (jedi:complete-on-dot t)
-  (jedi:setup-keys t))
-
 (use-package python
+  :delight "Py"
+  :mode ("\\.py\\'" . python-mode)
   :custom
   (python-indent-offset 4)
   (python-indent-guess-indent-offset nil))
 
-(use-package elpy
-  :custom
-  (elpy-rpc-backend "jedi")
-  :config
-  (elpy-enable)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules)))
+(use-package highlight-indentation
+  :diminish highlight-indentation-mode
+  :hook (python-mode . highlight-indentation-mode))
 
-(use-package python-pytest)
-
-(use-package virtualenvwrapper)
-(use-package cython-mode
-  :defer t)
-
-(use-package ein
-  :commands ein:notebooklist-open)
-
-(use-package pipenv)
+(use-package pipenv
+  :hook (python-mode . pipenv-mode)
+  :init
+  (setq
+   pipenv-projectile-after-switch-function
+   #'pipenv-projectile-after-switch-default))
 
 (provide 'config-python)
 ;;; config-python.el ends here
