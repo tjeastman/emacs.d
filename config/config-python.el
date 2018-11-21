@@ -12,10 +12,11 @@
   (python-indent-guess-indent-offset nil))
 
 (use-package highlight-indentation
-  :diminish highlight-indentation-mode
+  :delight
   :hook (python-mode . highlight-indentation-mode))
 
 (use-package pipenv
+  :delight
   :hook (python-mode . pipenv-mode)
   :init
   (setq
