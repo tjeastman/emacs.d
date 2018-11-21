@@ -55,11 +55,14 @@
 (use-package arduino-mode
   :defer t)
 
-(use-package systemd)
+(use-package systemd
+  :defer t)
 
-(use-package dotenv-mode)
+(use-package dotenv-mode
+  :defer t)
 
-(use-package apt-sources-list)
+(use-package apt-sources-list
+  :defer t)
 
 (use-package json-mode
   :mode
@@ -80,9 +83,11 @@
   :mode
   ("Pipfile\\'" . toml-mode))
 
-(use-package terraform-mode)
+(use-package terraform-mode
+  :defer t)
 
-(use-package go-mode)
+(use-package go-mode
+  :defer t)
 
 (provide 'config-files)
 ;;; config-files.el ends here
