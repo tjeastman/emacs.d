@@ -53,19 +53,19 @@
 
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
-  :diminish volatile-highlights-mode
+  :delight
   :config
   (volatile-highlights-mode t))
 
 (use-package aggressive-indent
-  :diminish aggressive-indent-mode
+  :delight
   :config
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'html-mode))
 
 ;; text completion framework
 (use-package company
-  :diminish company-mode
+  :delight
   :custom
   (company-idle-delay 0.5)
   (company-minimum-prefix-length 3)
@@ -102,7 +102,7 @@
 
 ;; use a tree-structured representation of undo history
 (use-package undo-tree
-  :diminish undo-tree-mode
+  :delight
   :config
   (global-undo-tree-mode))
 
@@ -178,7 +178,7 @@
    ("C-c e p" . flycheck-previous-error)))
 
 (use-package beacon
-  :diminish beacon-mode
+  :delight
   :config
   (beacon-mode 1))
 
