@@ -72,7 +72,7 @@
 
 ;; highlight matching bracket delimiters
 (use-package smartparens
-  :diminish smartparens-mode
+  :delight
   :hook (prog-mode . turn-on-smartparens-strict-mode)
   :config
   (require 'smartparens-config)
@@ -146,7 +146,7 @@
 ;; set up abbreviations
 (use-package abbrev
   :ensure nil
-  :diminish abbrev-mode
+  :delight
   :custom
   (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
   :config
@@ -159,7 +159,7 @@
   (ispell-program-name "aspell"))
 
 (use-package flyspell
-  :diminish
+  :delight
   (flyspell-mode
    flyspell-prog-mode)
   :hook
@@ -192,7 +192,7 @@
   :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
 
 (use-package subword
-  :diminish subword-mode
+  :delight
   :hook
   ((prog-mode . subword-mode)
    (yaml-mode . subword-mode)
