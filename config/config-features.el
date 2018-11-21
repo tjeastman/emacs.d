@@ -197,7 +197,13 @@
   :if (eq system-type 'darwin)
   :custom
   (exec-path-from-shell-shell-name "/usr/local/bin/zsh")
-  (exec-path-from-shell-variables '("PATH" "MANPATH" "WORKON_HOME" "SSH_AGENT_PID" "SSH_AUTH_SOCK"))
+  (exec-path-from-shell-variables
+   '("PATH"
+     "MANPATH"
+     "WORKON_HOME"
+     "DOCKER_HOST"
+     "SSH_AGENT_PID"
+     "SSH_AUTH_SOCK"))
   :config
   (exec-path-from-shell-initialize))
 
@@ -207,10 +213,7 @@
 
 (use-package docker
   :bind
-  ("C-c d" . docker)
-  :init
-  (if (eq system-type 'darwin)
-      (setenv "DOCKER_HOST" "tcp://0.0.0.0:2376")))
+  ("C-c d" . docker))
 
 (provide 'config-features)
 ;;; config-features.el ends here
