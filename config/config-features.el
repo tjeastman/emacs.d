@@ -209,8 +209,8 @@
   (exec-path-from-shell-initialize))
 
 (use-package crux
-  :commands
-  (crux-move-beginning-of-line))
+  :bind
+  ([remap move-beginning-of-line] . crux-move-beginning-of-line))
 
 (use-package docker
   :bind

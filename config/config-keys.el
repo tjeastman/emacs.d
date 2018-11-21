@@ -8,8 +8,6 @@
 
 (global-set-key (kbd "M-O") 'my-switch-to-last-window)
 
-(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
-
 (use-package ns-win
   :ensure nil
   :if (eq system-type 'darwin)
