@@ -8,7 +8,7 @@
 (use-package flx)
 
 (use-package ivy
-  :diminish ivy-mode
+  :delight
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-display-style 'fancy)
