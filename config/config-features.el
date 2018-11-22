@@ -116,6 +116,7 @@
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
   (projectile-indexing-method 'alien)
+  (projectile-switch-project-action #'projectile-dired)
   :config
   (projectile-mode +1))
 
