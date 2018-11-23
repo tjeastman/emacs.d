@@ -99,6 +99,7 @@
   (projectile-use-git-grep t)
   (projectile-completion-system 'ivy)
   (projectile-indexing-method 'alien)
+  (projectile-switch-project-action #'projectile-dired)
   :config
   (projectile-mode +1))
 
@@ -125,12 +126,12 @@
    ("C-<" . 'mc/mark-previous-like-this)
    ("C-c C-<" . 'mc/mark-all-like-this)))
 
-;; FIX: not enabled in python-mode
 (use-package electric-operator
+  :delight
   :hook
-  ((c-mode-common . electric-operator-mode)
-   (python-mode . electric-operator-mode)
-   (protobuf-mode . electric-operator-mode))
+  (c-mode-common
+   python-mode
+   protobuf-mode)
   :config
   (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
 
