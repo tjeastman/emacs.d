@@ -100,6 +100,7 @@
   (projectile-completion-system 'ivy)
   (projectile-indexing-method 'alien)
   (projectile-switch-project-action #'projectile-dired)
+  (projectile-project-search-path '("~/projects/"))
   :config
   (projectile-mode +1))
 
