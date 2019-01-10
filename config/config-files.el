@@ -89,5 +89,8 @@
 (use-package go-mode
   :defer t)
 
+(use-package groovy-mode
+  :defer t)
+
 (provide 'config-files)
 ;;; config-files.el ends here
