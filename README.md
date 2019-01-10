@@ -39,7 +39,10 @@ Keybinding             | Description
 <kbd>M-o</kbd>         | goto other window
 <kbd>C-:</kbd>         | avy goto char timer
 <kbd>M-g g</kbd>       | avy goto line
-<kbd>C-c C-p p</kbd>   | switch projects with projectile
+<kbd>C-c p p</kbd>     | switch projects with projectile
+<kbd>C-c p f</kbd>     | find file with projectile
+<kbd>C-c p d</kbd>     | find directory with projectile
+<kbd>C-c p b</kbd>     | switch project buffer with projectile
 
 #### Python
 
