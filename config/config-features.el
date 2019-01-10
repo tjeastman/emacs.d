@@ -178,7 +178,6 @@
   (exec-path-from-shell-variables
    '("PATH"
      "MANPATH"
-     "WORKON_HOME"
      "DOCKER_HOST"
      "SSH_AGENT_PID"
      "SSH_AUTH_SOCK"))
