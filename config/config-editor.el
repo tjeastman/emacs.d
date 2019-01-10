@@ -121,7 +121,10 @@
   :custom
   (dired-auto-revert-buffer t)          ; revert dired buffers when revisiting
   (dired-recursive-copies 'always)
-  (dired-recursive-deletes 'always))
+  (dired-recursive-deletes 'always)
+  :config
+  (if (eq system-type 'darwin)
+      (setq dired-use-ls-dired nil)))
 
 (use-package files
   :ensure nil
