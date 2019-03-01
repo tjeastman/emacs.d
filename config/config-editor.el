@@ -44,66 +44,22 @@
 (add-to-list 'completion-ignored-extensions ".python-environments/")
 (add-to-list 'completion-ignored-extensions ".coverage")
 
-(use-package mouse
+;; enabled region case manipulation commands
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+;; enable buffer narrowing commands
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+
+(use-package abbrev
   :ensure nil
-  :custom
-  (mouse-yank-at-point t))
-
-(use-package vc
-  :custom
-  (vc-follow-symlinks t))
-
-(use-package comint
-  :ensure nil
-  :custom
-  (comint-buffer-maximum-size 20000)
-  (comint-process-echoes t)
-  (comint-prompt-read-only t))
-
-;; replace text in the active region with typed text
-(use-package delsel
-  :config (delete-selection-mode t))
-
-;; highlight the current line (the line containing the point)
-(use-package hl-line
-  :config (global-hl-line-mode t))
-
-;; highlight matching bracket delimiters
-(use-package smartparens
   :delight
-  :hook (prog-mode . turn-on-smartparens-strict-mode)
+  :custom
+  (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
   :config
-  (require 'smartparens-config)
-  (show-smartparens-global-mode +1))
-
-;; save point position between sessions
-(use-package saveplace
-  :custom
-  (save-place-file (expand-file-name "places" user-emacs-state-directory))
-  :config
-  (save-place-mode 1))
-
-;; improved mechanism for making buffer names unique
-(use-package uniquify
-  :ensure nil
-  :custom
-  (uniquify-buffer-name-style 'post-forward)
-  (uniquify-after-kill-buffer-p t)
-  (uniquify-ignore-buffers-re "^\\*"))
-
-;; visualize unwanted whitespace characters and lines that are too long
-(use-package whitespace
-  :diminish
-  (global-whitespace-mode
-   whitespace-mode
-   whitespace-newline-mode)
-  :custom
-  (whitespace-line-column 100)
-  (whitespace-style '(face tabs empty trailing lines-tail))
-  :hook
-  ((prog-mode . (lambda () (whitespace-mode +1)))
-   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs))))
-   (before-save . whitespace-cleanup)))
+  (setq-default abbrev-mode t)
+  (quietly-read-abbrev-file abbrev-file-name))
 
 ;; automatically revert buffers when the corresponding file changes
 (use-package autorevert
@@ -114,6 +70,28 @@
   :config
   (global-auto-revert-mode t))
 
+(use-package comint
+  :ensure nil
+  :custom
+  (comint-buffer-maximum-size 20000)
+  (comint-process-echoes t)
+  (comint-prompt-read-only t))
+
+(use-package compile
+  :hook
+  (compilation-filter
+   . (lambda ()
+       (let ((inhibit-read-only t))
+         (ansi-color-apply-on-region compilation-filter-start (point)))))
+  :custom
+  (compilation-ask-about-save nil)
+  (compilation-scroll-output 'next-error)
+  (compilation-environment '("TERM=eterm-color")))
+
+;; replace text in the active region with typed text
+(use-package delsel
+  :config (delete-selection-mode t))
+
 (use-package dired
   :ensure nil
   :custom
@@ -123,6 +101,11 @@
   :config
   (if (eq system-type 'darwin)
       (setq dired-use-ls-dired nil)))
+
+(use-package elisp-mode
+  :ensure nil
+  :delight
+  (emacs-lisp-mode "ELisp"))
 
 (use-package files
   :ensure nil
@@ -139,21 +122,6 @@
   (require-final-newline t)
   (confirm-nonexistent-file-or-buffer nil))
 
-;; set up abbreviations
-(use-package abbrev
-  :ensure nil
-  :delight
-  :custom
-  (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
-  :config
-  (setq-default abbrev-mode t)
-  (quietly-read-abbrev-file abbrev-file-name))
-
-(use-package ispell
-  :custom
-  (ispell-personal-dictionary "~/.aspell.en.pws")
-  (ispell-program-name "aspell"))
-
 (use-package flyspell
   :delight
   (flyspell-mode
@@ -162,13 +130,28 @@
   ((text-mode . flyspell-mode)
    (prog-mode . flyspell-prog-mode)))
 
-;; enabled region case manipulation commands
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-;; enable buffer narrowing commands
-(put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
-(put 'narrow-to-defun 'disabled nil)
+;; highlight the current line (the line containing the point)
+(use-package hl-line
+  :config (global-hl-line-mode t))
+
+(use-package ibuffer
+  :bind
+  ("C-x C-b" . ibuffer))
+(use-package ibuffer-vc
+  :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
+
+(use-package ispell
+  :custom
+  (ispell-personal-dictionary "~/.aspell.en.pws")
+  (ispell-program-name "aspell"))
+
+(use-package make-mode
+  :mode ("Make.rules" . makefile-mode))
+
+(use-package mouse
+  :ensure nil
+  :custom
+  (mouse-yank-at-point t))
 
 (use-package recentf
   :demand
@@ -181,22 +164,12 @@
   :config
   (recentf-mode 1))
 
-(use-package ibuffer
-  :bind
-  ("C-x C-b" . ibuffer))
-(use-package ibuffer-vc
-  :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
-
-(use-package subword
-  :delight
-  :hook
-  ((prog-mode . subword-mode)
-   (yaml-mode . subword-mode)
-   (protobuf-mode . subword-mode)))
-
-(use-package which-func
+;; save point position between sessions
+(use-package saveplace
+  :custom
+  (save-place-file (expand-file-name "places" user-emacs-state-directory))
   :config
-  (which-function-mode 1))
+  (save-place-mode 1))
 
 (use-package simple
   :ensure nil
@@ -207,29 +180,55 @@
   (line-number-mode t)
   (size-indication-mode t))
 
-(use-package make-mode
-  :mode ("Make.rules" . makefile-mode))
+;; highlight matching bracket delimiters
+(use-package smartparens
+  :delight
+  :hook (prog-mode . turn-on-smartparens-strict-mode)
+  :config
+  (require 'smartparens-config)
+  (show-smartparens-global-mode +1))
 
-(use-package compile
+(use-package subword
+  :delight
   :hook
-  (compilation-filter
-   . (lambda ()
-       (let ((inhibit-read-only t))
-         (ansi-color-apply-on-region compilation-filter-start (point)))))
+  ((prog-mode . subword-mode)
+   (yaml-mode . subword-mode)
+   (protobuf-mode . subword-mode)))
+
+;; improved mechanism for making buffer names unique
+(use-package uniquify
+  :ensure nil
   :custom
-  (compilation-ask-about-save nil)
-  (compilation-scroll-output 'next-error)
-  (compilation-environment '("TERM=eterm-color")))
+  (uniquify-buffer-name-style 'post-forward)
+  (uniquify-after-kill-buffer-p t)
+  (uniquify-ignore-buffers-re "^\\*"))
+
+(use-package vc
+  :custom
+  (vc-follow-symlinks t))
+
+(use-package which-func
+  :config
+  (which-function-mode 1))
+
+;; visualize unwanted whitespace characters and lines that are too long
+(use-package whitespace
+  :diminish
+  (global-whitespace-mode
+   whitespace-mode
+   whitespace-newline-mode)
+  :custom
+  (whitespace-line-column 100)
+  (whitespace-style '(face tabs empty trailing lines-tail))
+  :hook
+  ((prog-mode . (lambda () (whitespace-mode +1)))
+   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs))))
+   (before-save . whitespace-cleanup)))
 
 (use-package window
   :ensure nil
   :bind
   ("M-o" . other-window))
-
-(use-package elisp-mode
-  :ensure nil
-  :delight
-  (emacs-lisp-mode "ELisp"))
 
 (provide 'config-editor)
 ;;; config-editor.el ends here
