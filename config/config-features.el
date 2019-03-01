@@ -142,11 +142,6 @@
    ("C-<" . 'mc/mark-previous-like-this)
    ("C-c C-<" . 'mc/mark-all-like-this)))
 
-;; preview files in dired
-(use-package peep-dired
-  :bind
-  (:map dired-mode-map ("P" . peep-dired)))
-
 (use-package projectile
   :demand
   :delight '(:eval (format " P[%s]" (projectile-project-name)))
