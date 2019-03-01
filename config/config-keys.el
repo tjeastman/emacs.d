@@ -4,8 +4,6 @@
 
 ;;; Code:
 
-(global-set-key (kbd "C-;") 'backward-kill-word)
-
 (global-set-key (kbd "M-O") 'my-switch-to-last-window)
 
 (use-package ns-win
