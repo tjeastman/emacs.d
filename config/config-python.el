@@ -12,6 +12,9 @@
    pipenv-projectile-after-switch-function
    #'pipenv-projectile-after-switch-default))
 
+(use-package blacken
+  :commands blacken-mode)
+
 (use-package python
   :delight "Py"
   :mode ("\\.py\\'" . python-mode)
@@ -20,6 +23,7 @@
   (python-indent-guess-indent-offset nil)
   :config
   (add-hook 'python-mode-hook #'pipenv-mode)
+  (add-hook 'python-mode-hook #'blacken-mode)
   (add-hook 'python-mode-hook #'highlight-indentation-mode)
   (add-hook 'python-mode-hook #'electric-operator-mode))
 
