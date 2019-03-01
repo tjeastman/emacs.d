@@ -130,9 +130,9 @@
 (use-package electric-operator
   :delight
   :hook
-  (c-mode-common
-   python-mode
-   protobuf-mode)
+  ((c-mode-common
+    python-mode
+    protobuf-mode) . electric-operator-mode)
   :config
   (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
 
