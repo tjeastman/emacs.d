@@ -61,14 +61,12 @@
   (comint-prompt-read-only t))
 
 ;; replace text in the active region with typed text
-(delete-selection-mode t)
+(use-package delsel
+  :config (delete-selection-mode t))
 
 ;; highlight the current line (the line containing the point)
-(global-hl-line-mode t)
-
-;; show the current line number and indicate the buffer size in the mode line
-(line-number-mode t)
-(size-indication-mode t)
+(use-package hl-line
+  :config (global-hl-line-mode t))
 
 ;; highlight matching bracket delimiters
 (use-package smartparens
@@ -203,7 +201,10 @@
 (use-package simple
   :ensure nil
   :custom
-  (next-line-add-newlines t))
+  (next-line-add-newlines t)
+  :config
+  (line-number-mode t)
+  (size-indication-mode t))
 
 (use-package make-mode
   :mode ("Make.rules" . makefile-mode))
