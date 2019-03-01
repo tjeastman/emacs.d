@@ -9,11 +9,10 @@
   :mode ("\\.py\\'" . python-mode)
   :custom
   (python-indent-offset 4)
-  (python-indent-guess-indent-offset nil))
-
-(use-package highlight-indentation
-  :delight
-  :hook (python-mode . highlight-indentation-mode))
+  (python-indent-guess-indent-offset nil)
+  :config
+  (add-hook 'python-mode-hook #'highlight-indentation-mode)
+  (add-hook 'python-mode-hook #'electric-operator-mode))
 
 (use-package pipenv
   :delight

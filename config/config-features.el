@@ -129,9 +129,9 @@
 
 (use-package electric-operator
   :delight
+  :commands electric-operator-mode
   :hook
   ((c-mode-common
-    python-mode
     protobuf-mode) . electric-operator-mode)
   :config
   (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
@@ -191,6 +191,10 @@
 (use-package docker
   :bind
   ("C-c d" . docker))
+
+(use-package highlight-indentation
+  :delight
+  :commands highlight-indentation-mode)
 
 (provide 'config-features)
 ;;; config-features.el ends here
