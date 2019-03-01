@@ -12,4 +12,5 @@ smex-items
 .python-environments
 contrib
 .historian
+transient
 url
