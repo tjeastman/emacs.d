@@ -190,10 +190,8 @@
 
 (use-package subword
   :delight
-  :hook
-  ((prog-mode . subword-mode)
-   (yaml-mode . subword-mode)
-   (protobuf-mode . subword-mode)))
+  :config
+  (global-subword-mode))
 
 ;; improved mechanism for making buffer names unique
 (use-package uniquify
