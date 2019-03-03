@@ -15,6 +15,9 @@
 (use-package blacken
   :commands blacken-mode)
 
+(use-package py-isort
+  :hook (before-save . py-isort-before-save))
+
 (use-package python
   :delight "Py"
   :mode ("\\.py\\'" . python-mode)
