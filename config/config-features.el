@@ -64,9 +64,9 @@
 
 (use-package electric-operator
   :delight
-  :commands electric-operator-mode
   :hook
   ((c-mode-common
+    python-mode
     protobuf-mode) . electric-operator-mode)
   :config
   (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
@@ -103,7 +103,7 @@
 
 (use-package highlight-indentation
   :delight
-  :commands highlight-indentation-mode)
+  :hook (python-mode . highlight-indentation-mode))
 
 (use-package imenu-anywhere
   :bind
