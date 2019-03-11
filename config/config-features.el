@@ -62,10 +62,6 @@
   :bind
   ([remap move-beginning-of-line] . crux-move-beginning-of-line))
 
-(use-package docker
-  :bind
-  ("C-c d" . docker))
-
 (use-package electric-operator
   :delight
   :commands electric-operator-mode
@@ -82,7 +78,6 @@
   (exec-path-from-shell-variables
    '("PATH"
      "MANPATH"
-     "DOCKER_HOST"
      "SSH_AGENT_PID"
      "SSH_AUTH_SOCK"))
   :config
