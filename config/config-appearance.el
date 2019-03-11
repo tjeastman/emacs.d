@@ -21,9 +21,9 @@
      (set-face-attribute face nil :weight 'normal))
    (face-list)))
 
-(use-package solarized-theme
+(use-package zenburn-theme
   :init
-  (load-theme 'solarized-light t))
+  (load-theme 'zenburn t))
 
 (provide 'config-appearance)
 ;;; config-appearance.el ends here
