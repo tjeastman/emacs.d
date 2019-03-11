@@ -33,17 +33,6 @@
  indent-tabs-mode nil
  tab-width 4)
 
-(add-to-list 'completion-ignored-extensions ".jar")
-(add-to-list 'completion-ignored-extensions ".elf")
-(add-to-list 'completion-ignored-extensions ".hex")
-(add-to-list 'completion-ignored-extensions ".db")
-(add-to-list 'completion-ignored-extensions "__pycache__/")
-(add-to-list 'completion-ignored-extensions "a.out")
-(add-to-list 'completion-ignored-extensions ".pyc")
-(add-to-list 'completion-ignored-extensions ".cache/")
-(add-to-list 'completion-ignored-extensions ".python-environments/")
-(add-to-list 'completion-ignored-extensions ".coverage")
-
 ;; enabled region case manipulation commands
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
