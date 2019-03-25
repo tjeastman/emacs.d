@@ -1,0 +1,3 @@
+#!/bin/sh
+# provide clean output from pipenv
+PIPENV_COLORBLIND=1 pipenv $@ | cat
