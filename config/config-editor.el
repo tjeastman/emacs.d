@@ -121,7 +121,8 @@
 
 ;; highlight the current line (the line containing the point)
 (use-package hl-line
-  :config (global-hl-line-mode t))
+  :config
+  (global-hl-line-mode t))
 
 (use-package ibuffer
   :bind
@@ -170,7 +171,8 @@
 ;; highlight matching bracket delimiters
 (use-package smartparens
   :delight
-  :hook (prog-mode . turn-on-smartparens-strict-mode)
+  :hook
+  (prog-mode . turn-on-smartparens-strict-mode)
   :config
   (require 'smartparens-config)
   (show-smartparens-global-mode +1))

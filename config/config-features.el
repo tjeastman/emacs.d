@@ -173,6 +173,7 @@
   :delight yas-minor-mode
   :config
   (yas-global-mode t))
+
 (use-package yasnippet-snippets
   :after yasnippet
   :config
