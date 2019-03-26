@@ -41,7 +41,9 @@
 (use-package python-pytest
   :commands
   (python-pytest
-   python-pytest-popup))
+   python-pytest-popup)
+  :custom
+  (python-pytest-executable "python -m pytest"))
 
 (use-package ein)
 
