@@ -6,7 +6,7 @@
 
 (use-package pipenv
   :delight
-  :hook (python-mode . pipenv-mode)
+  :commands pipenv-mode
   :custom
   (pipenv-executable
    (expand-file-name
