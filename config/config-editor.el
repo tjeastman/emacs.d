@@ -126,8 +126,6 @@
 (use-package ibuffer
   :bind
   ("C-x C-b" . ibuffer))
-(use-package ibuffer-vc
-  :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
 
 (use-package ispell
   :custom
