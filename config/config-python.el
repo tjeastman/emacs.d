@@ -18,10 +18,13 @@
 
 (use-package blacken
   :delight
-  :hook (python-mode . blacken-mode))
+  :commands blacken-mode)
 
 (use-package py-isort
-  :hook (before-save . py-isort-before-save))
+  :commands
+  (py-isort-region
+   py-isort-buffer
+   py-isort-before-save))
 
 (use-package python
   :delight "Py"
