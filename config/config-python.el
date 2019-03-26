@@ -16,6 +16,11 @@
    pipenv-projectile-after-switch-function
    #'pipenv-projectile-after-switch-default))
 
+(use-package pyvenv
+  :commands
+  (pyvenv-activate
+   pyvenv-workon))
+
 (use-package blacken
   :delight
   :commands blacken-mode)
