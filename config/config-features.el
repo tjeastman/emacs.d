@@ -31,7 +31,6 @@
   :config
   (beacon-mode 1))
 
-;; navigate contents of the kill ring
 (use-package browse-kill-ring
   :bind
   ("C-x y" . browse-kill-ring))
