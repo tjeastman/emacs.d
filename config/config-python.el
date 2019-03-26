@@ -38,6 +38,11 @@
   (python-indent-offset 4)
   (python-indent-guess-indent-offset nil))
 
+(use-package python-pytest
+  :commands
+  (python-pytest
+   python-pytest-popup))
+
 (use-package ein)
 
 (provide 'config-python)
