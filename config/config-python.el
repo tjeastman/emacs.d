@@ -45,7 +45,10 @@
   :custom
   (python-pytest-executable "python -m pytest"))
 
-(use-package ein)
+(use-package ein
+  :commands
+  (ein:notebooklist-login
+   ein:jupyter-server-start))
 
 (provide 'config-python)
 ;;; config-python.el ends here
