@@ -114,12 +114,19 @@
   (ivy-use-virtual-buffers t)
   (ivy-display-style 'fancy)
   (ivy-use-selectable-prompt t)
-  :config
-  (setq ivy-re-builders-alist
-        '((swiper . ivy--regex-plus)
-          (t . ivy--regex-fuzzy)))
-  (setq ivy-initial-inputs-alist nil)
+  ;; :config
+  ;; (setq ivy-re-builders-alist
+  ;;       '((swiper . ivy--regex-plus)
+  ;;         (t . ivy--regex-fuzzy)))
+  ;; (setq ivy-initial-inputs-alist nil)
   (ivy-mode t))
+
+(use-package ivy-prescient
+  :after ivy
+  :custom
+  (prescient-filter-method 'fuzzy)
+  :config
+  (ivy-prescient-mode))
 
 (use-package magit
   :bind
