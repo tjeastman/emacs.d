@@ -133,7 +133,9 @@
   ("C-x g" . magit-status)
   :custom
   (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
-  (magit-save-repository-buffers 'dontask))
+  (magit-save-repository-buffers 'dontask)
+  :config
+  (add-to-list 'magit-no-confirm 'stage-all-changes))
 
 (use-package multiple-cursors
   :bind
