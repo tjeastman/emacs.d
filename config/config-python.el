@@ -42,6 +42,8 @@
   :commands
   (python-pytest
    python-pytest-popup)
+  :bind
+  ("C-c t" . python-pytest)
   :custom
   (python-pytest-executable "python -m pytest"))
 
