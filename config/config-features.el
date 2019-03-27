@@ -51,7 +51,7 @@
    ("C-x C-f" . counsel-find-file)
    ("C-h f" . counsel-describe-function)
    ("C-h v" . counsel-describe-variable)
-   ("C-c k" . counsel-ag))
+   ("C-c k" . counsel-rg))
   :custom
   (counsel-find-file-at-point t)
   (counsel-find-file-ignore-regexp
