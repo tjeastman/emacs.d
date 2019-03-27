@@ -180,6 +180,7 @@
 (use-package yasnippet
   :delight yas-minor-mode
   :config
+  (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
   (yas-global-mode t))
 
 (use-package yasnippet-snippets
