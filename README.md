@@ -44,6 +44,7 @@ Keybinding             | Description
 <kbd>C-c p d</kbd>     | find directory with projectile
 <kbd>C-c p b</kbd>     | switch project buffer with projectile
 <kbd>C-c k</kbd>       | grep for string in current directory with ripgrep
+<kbd>C-c ! l</kbd>     | list flycheck errors
 
 #### Python
 
