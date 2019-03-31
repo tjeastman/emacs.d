@@ -40,6 +40,10 @@
 (use-package groovy-mode
   :defer t)
 
+(use-package i3wm-config-mode
+  :load-path "contrib/i3wm-Config-Mode/"
+  :commands i3wm-config-mode)
+
 (use-package json-mode
   :mode
   ("Pipfile.lock\\'" . json-mode))
