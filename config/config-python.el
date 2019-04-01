@@ -52,5 +52,10 @@
   (ein:notebooklist-login
    ein:jupyter-server-start))
 
+(use-package lsp-mode)
+(use-package lsp-python-ms
+  :after lsp-mode
+  :load-path "contrib/lsp-python-ms/")
+
 (provide 'config-python)
 ;;; config-python.el ends here

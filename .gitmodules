@@ -4,3 +4,6 @@
 [submodule "contrib/git-modes"]
 	path = contrib/git-modes
 	url = https://github.com/magit/git-modes.git
+[submodule "contrib/lsp-python-ms"]
+	path = contrib/lsp-python-ms
+	url = https://github.com/andrew-christianson/lsp-python-ms.git
