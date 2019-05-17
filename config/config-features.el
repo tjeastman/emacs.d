@@ -100,6 +100,11 @@
   :custom
   (git-commit-summary-max-length 72))
 
+(use-package git-timemachine
+  :commands
+  (git-timemachine
+   git-timemachine-toggle))
+
 (use-package highlight-indentation
   :delight
   :hook (python-mode . highlight-indentation-mode))
@@ -136,6 +141,10 @@
   (magit-save-repository-buffers 'dontask)
   :config
   (add-to-list 'magit-no-confirm 'stage-all-changes))
+
+(use-package magit-filenotify
+  :hook
+  (after-save . magit-after-save-refresh-status))
 
 (use-package multiple-cursors
   :bind
