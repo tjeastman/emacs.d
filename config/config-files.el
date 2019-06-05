@@ -55,6 +55,8 @@
    ("\\.markdown\\'" . markdown-mode)))
 (use-package markdown-preview-mode)
 
+(use-package nim-mode)
+
 (use-package pip-requirements
   :defer t)
 

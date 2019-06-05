@@ -12,6 +12,7 @@
 (use-package aggressive-indent
   :delight
   :config
+  (add-to-list 'aggressive-indent-excluded-modes 'nim-mode)
   (global-aggressive-indent-mode 1))
 
 (use-package autoinsert
@@ -66,7 +67,8 @@
   :hook
   ((c-mode-common
     python-mode
-    protobuf-mode) . electric-operator-mode)
+    protobuf-mode
+    nim-mode) . electric-operator-mode)
   :config
   (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
 
