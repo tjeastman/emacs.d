@@ -68,7 +68,9 @@
 
 (use-package protobuf-mode
   :mode "\\.proto\\'"
-  :hook (protobuf-mode . flyspell-prog-mode))
+  :hook (protobuf-mode . flyspell-prog-mode)
+  :config
+  (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
 
 (use-package sh-script
   :mode

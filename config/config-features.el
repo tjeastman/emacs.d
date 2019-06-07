@@ -67,12 +67,7 @@
   :commands
   (electric-operator-mode
    electric-operator-get-rules-for-mode
-   electric-operator-add-rules-for-mode)
-  :hook
-  ((c-mode-common
-    protobuf-mode) . electric-operator-mode)
-  :config
-  (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
+   electric-operator-add-rules-for-mode))
 
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
