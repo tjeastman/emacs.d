@@ -34,6 +34,7 @@
 (use-package python
   :delight "Py"
   :mode ("\\.py\\'" . python-mode)
+  :hook (python-mode . electric-operator-mode)
   :custom
   (python-indent-offset 4)
   (python-indent-guess-indent-offset nil))

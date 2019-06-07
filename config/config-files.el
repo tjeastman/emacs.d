@@ -55,7 +55,13 @@
    ("\\.markdown\\'" . markdown-mode)))
 (use-package markdown-preview-mode)
 
-(use-package nim-mode)
+(use-package nim-mode
+  :hook
+  (nim-mode . electric-operator-mode)
+  :config
+  (apply #'electric-operator-add-rules-for-mode 'nim-mode
+         (electric-operator-get-rules-for-mode 'prog-mode))
+  (electric-operator-add-rules-for-mode 'nim-mode (cons ":" ": ")))
 
 (use-package pip-requirements
   :defer t)
