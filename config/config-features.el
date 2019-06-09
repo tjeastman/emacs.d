@@ -12,7 +12,6 @@
 (use-package aggressive-indent
   :delight
   :config
-  (add-to-list 'aggressive-indent-excluded-modes 'nim-mode)
   (global-aggressive-indent-mode 1))
 
 (use-package autoinsert

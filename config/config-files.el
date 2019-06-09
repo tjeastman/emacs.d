@@ -59,6 +59,7 @@
   :hook
   (nim-mode . electric-operator-mode)
   :config
+  (add-to-list 'aggressive-indent-excluded-modes 'nim-mode)
   (apply #'electric-operator-add-rules-for-mode 'nim-mode
          (electric-operator-get-rules-for-mode 'prog-mode))
   (electric-operator-add-rules-for-mode 'nim-mode (cons ":" ": ")))
