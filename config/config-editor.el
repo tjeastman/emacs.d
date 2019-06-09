@@ -50,7 +50,6 @@
   (setq-default abbrev-mode t)
   (quietly-read-abbrev-file abbrev-file-name))
 
-;; automatically revert buffers when the corresponding file changes
 (use-package autorevert
   :diminish
   (auto-revert-mode
@@ -77,7 +76,6 @@
   (compilation-scroll-output 'next-error)
   (compilation-environment '("TERM=eterm-color")))
 
-;; replace text in the active region with typed text
 (use-package delsel
   :config (delete-selection-mode t))
 
@@ -98,6 +96,8 @@
 
 (use-package files
   :ensure nil
+  :hook
+  (before-save . whitespace-cleanup)
   :custom
   ;; store backup files in a central directory
   (backup-directory-alist
@@ -114,12 +114,8 @@
 (use-package flyspell
   :delight
   (flyspell-mode
-   flyspell-prog-mode)
-  :hook
-  ((text-mode . flyspell-mode)
-   (prog-mode . flyspell-prog-mode)))
+   flyspell-prog-mode))
 
-;; highlight the current line (the line containing the point)
 (use-package hl-line
   :config
   (global-hl-line-mode t))
@@ -134,12 +130,22 @@
   (ispell-program-name "aspell"))
 
 (use-package make-mode
-  :mode ("Make.rules" . makefile-mode))
+  :mode
+  ("Make.rules" . makefile-mode)
+  :hook
+  (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
 
 (use-package mouse
   :ensure nil
   :custom
   (mouse-yank-at-point t))
+
+(use-package prog-mode
+  :ensure nil
+  :hook
+  ((prog-mode . turn-on-smartparens-strict-mode)
+   (prog-mode . (lambda () (whitespace-mode +1)))
+   (prog-mode . flyspell-prog-mode)))
 
 (use-package recentf
   :demand
@@ -152,7 +158,6 @@
   :config
   (recentf-mode 1))
 
-;; save point position between sessions
 (use-package saveplace
   :custom
   (save-place-file (expand-file-name "places" user-emacs-state-directory))
@@ -168,11 +173,8 @@
   (line-number-mode t)
   (size-indication-mode t))
 
-;; highlight matching bracket delimiters
 (use-package smartparens
   :delight
-  :hook
-  (prog-mode . turn-on-smartparens-strict-mode)
   :config
   (require 'smartparens-config)
   (show-smartparens-global-mode +1))
@@ -182,7 +184,11 @@
   :config
   (global-subword-mode))
 
-;; improved mechanism for making buffer names unique
+(use-package text-mode
+  :ensure nil
+  :hook
+  (text-mode . flyspell-mode))
+
 (use-package uniquify
   :ensure nil
   :custom
@@ -206,11 +212,7 @@
    whitespace-newline-mode)
   :custom
   (whitespace-line-column 100)
-  (whitespace-style '(face tabs empty trailing lines-tail))
-  :hook
-  ((prog-mode . (lambda () (whitespace-mode +1)))
-   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs))))
-   (before-save . whitespace-cleanup)))
+  (whitespace-style '(face tabs empty trailing lines-tail)))
 
 (use-package window
   :ensure nil
