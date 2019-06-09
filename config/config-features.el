@@ -106,7 +106,8 @@
 
 (use-package highlight-indentation
   :delight
-  :hook (python-mode . highlight-indentation-mode))
+  :commands
+  highlight-indentation-mode)
 
 (use-package imenu-anywhere
   :bind
