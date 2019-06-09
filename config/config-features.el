@@ -191,11 +191,6 @@
   (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
   (yas-global-mode t))
 
-(use-package yasnippet-snippets
-  :after yasnippet
-  :config
-  (yasnippet-snippets-initialize))
-
 (use-package yatemplate
   :config
   (yatemplate-fill-alist))
