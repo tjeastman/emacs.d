@@ -4,22 +4,9 @@
 
 ;;; Code:
 
-(use-package pipenv
-  :delight
-  :commands pipenv-mode
-  :custom
-  (pipenv-executable
-   (expand-file-name
-    (concat (file-name-as-directory "scripts") "pipenv") user-emacs-directory))
-  :init
-  (setq
-   pipenv-projectile-after-switch-function
-   #'pipenv-projectile-after-switch-default))
-
 (use-package pyvenv
-  :commands
-  (pyvenv-activate
-   pyvenv-workon))
+  :config
+  (pyvenv-mode))
 
 (use-package blacken
   :delight
