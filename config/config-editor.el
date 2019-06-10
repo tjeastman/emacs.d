@@ -62,8 +62,7 @@
   :ensure nil
   :custom
   (comint-buffer-maximum-size 20000)
-  (comint-process-echoes t)
-  (comint-prompt-read-only t))
+  (comint-process-echoes t))
 
 (use-package compile
   :hook
