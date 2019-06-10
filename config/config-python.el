@@ -34,6 +34,7 @@
    python-pytest-popup)
   :bind
   ("C-c t" . python-pytest)
+  ("C-x t" . python-pytest-popup)
   :custom
   (python-pytest-executable "python -m pytest"))
 
