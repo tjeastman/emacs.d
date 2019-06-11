@@ -169,6 +169,7 @@
   (projectile-completion-system 'ivy)
   (projectile-indexing-method 'alien)
   (projectile-project-search-path '("~/projects/"))
+  (projectile-sort-order 'recentf)
   :config
   (projectile-mode +1))
 
