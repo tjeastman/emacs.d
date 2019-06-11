@@ -89,9 +89,14 @@
       (setq dired-use-ls-dired nil)))
 
 (use-package elisp-mode
+  :after electric-operator
   :ensure nil
   :delight
-  (emacs-lisp-mode "ELisp"))
+  (emacs-lisp-mode "ELisp")
+  :hook
+  (emacs-lisp-mode . electric-operator-mode)
+  :config
+  (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
 
 (use-package files
   :ensure nil
