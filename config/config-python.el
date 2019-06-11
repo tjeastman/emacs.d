@@ -9,14 +9,10 @@
   (pyvenv-mode))
 
 (use-package blacken
-  :delight
-  :commands blacken-mode)
+  :commands blacken-buffer)
 
 (use-package py-isort
-  :commands
-  (py-isort-region
-   py-isort-buffer
-   py-isort-before-save))
+  :commands py-isort-before-save)
 
 (use-package python
   :delight "Py"
