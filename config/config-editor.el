@@ -88,6 +88,9 @@
   (if (eq system-type 'darwin)
       (setq dired-use-ls-dired nil)))
 
+(use-package eldoc
+  :diminish)
+
 (use-package elisp-mode
   :after electric-operator
   :ensure nil
