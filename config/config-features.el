@@ -59,7 +59,11 @@
 
 (use-package crux
   :bind
-  ([remap move-beginning-of-line] . crux-move-beginning-of-line))
+  (("C-c I" . crux-find-user-init-file)
+   ("C-c ," . crux-find-user-custom-file)
+   ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
+   ("s-k" . crux-kill-whole-line)
+   ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
 (use-package electric-operator
   :delight
