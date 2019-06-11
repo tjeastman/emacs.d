@@ -89,7 +89,7 @@
       (setq dired-use-ls-dired nil)))
 
 (use-package eldoc
-  :diminish)
+  :delight)
 
 (use-package elisp-mode
   :after electric-operator
