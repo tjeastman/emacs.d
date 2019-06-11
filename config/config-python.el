@@ -25,9 +25,6 @@
   (python-indent-guess-indent-offset nil))
 
 (use-package python-pytest
-  :commands
-  (python-pytest
-   python-pytest-popup)
   :bind
   ("C-c t" . python-pytest)
   ("C-x t" . python-pytest-popup)
