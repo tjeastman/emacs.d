@@ -14,13 +14,6 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; disable bold text after loading a theme
-(defadvice load-theme (after disable-bold-text activate)
-  (mapc
-   (lambda (face)
-     (set-face-attribute face nil :weight 'normal))
-   (face-list)))
-
 (use-package zenburn-theme
   :init
   (load-theme 'zenburn t))
