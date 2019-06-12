@@ -18,5 +18,17 @@
   :init
   (load-theme 'zenburn t))
 
+(use-package doom-modeline
+  :init
+  (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-bar-width 1)
+  (setq doom-modeline-buffer-encoding nil)
+  (setq doom-modeline-buffer-file-name-style 'relative-from-project)
+  (setq doom-modeline-env-enable-python t)
+  (setq doom-modeline-height 15)
+  (setq doom-modeline-icon nil)
+  (setq doom-modeline-minor-modes nil))
+
 (provide 'config-appearance)
 ;;; config-appearance.el ends here
