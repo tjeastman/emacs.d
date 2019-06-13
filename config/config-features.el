@@ -119,6 +119,8 @@
                             (unless (eq ibuffer-sorting-mode 'alphabetic)
                               (ibuffer-do-sort-by-alphabetic)))))
 
+(use-package hydra)
+
 (use-package imenu-anywhere
   :bind
   ("C-c i" . imenu-anywhere))
