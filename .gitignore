@@ -14,3 +14,6 @@ smex-items
 transient
 url
 eshell/history
+network-security.data
+prescient-save.el
+amx-items
