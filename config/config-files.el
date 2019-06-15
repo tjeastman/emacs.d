@@ -65,7 +65,9 @@
   (electric-operator-add-rules-for-mode 'nim-mode (cons ":" ": ")))
 
 (use-package pip-requirements
-  :defer t)
+  :defer t
+  :custom
+  (pip-requirements-index-url nil))
 
 (use-package protobuf-mode
   :mode "\\.proto\\'"
