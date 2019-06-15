@@ -114,7 +114,8 @@
                             (unless (eq ibuffer-sorting-mode 'alphabetic)
                               (ibuffer-do-sort-by-alphabetic)))))
 
-(use-package hydra)
+(use-package hydra
+  :commands defhydra)
 
 (use-package imenu-anywhere
   :bind
