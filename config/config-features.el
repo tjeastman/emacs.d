@@ -159,6 +159,10 @@
   :commands
   magit-filenotify-mode)
 
+(use-package magit-todos
+  :config
+  (magit-todos-mode))
+
 (use-package multiple-cursors
   :bind
   (("C-S-c C-S-c" . mc/edit-lines)
