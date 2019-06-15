@@ -129,11 +129,10 @@
   (ivy-use-virtual-buffers t)
   (ivy-display-style 'fancy)
   (ivy-use-selectable-prompt t)
-  ;; :config
-  ;; (setq ivy-re-builders-alist
-  ;;       '((swiper . ivy--regex-plus)
-  ;;         (t . ivy--regex-fuzzy)))
-  ;; (setq ivy-initial-inputs-alist nil)
+  (ivy-initial-inputs-alist nil)
+  :config
+  ;; prescient fuzzy filtering makes swiper unusable:
+  (setq ivy-re-builders-alist '((swiper . ivy--regex-plus)))
   (ivy-mode t))
 
 (use-package ivy-prescient
@@ -162,6 +161,12 @@
    ("C->" . 'mc/mark-next-like-this)
    ("C-<" . 'mc/mark-previous-like-this)
    ("C-c C-<" . 'mc/mark-all-like-this)))
+
+(use-package prescient
+  :custom
+  (prescient-save-file (expand-file-name "prescient-save.el" user-emacs-directory))
+  :config
+  (prescient-persist-mode))
 
 (use-package projectile
   :demand
