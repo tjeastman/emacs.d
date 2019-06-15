@@ -86,9 +86,6 @@
   :bind
   ("C-=" . er/expand-region))
 
-;; used by ivy for fuzzy matching below...
-(use-package flx)
-
 (use-package flycheck
   :hook
   (after-init . global-flycheck-mode)
