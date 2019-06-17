@@ -77,14 +77,9 @@
 
 (use-package sh-script
   :mode
-  (("\\.zsh\\'" . sh-mode)
-   ("\\.zsh-theme\\'" . sh-mode)
-   ("zshrc\\'" . sh-mode)
+  (("zshrc\\'" . sh-mode)
    (".zsh_personal\\'" . sh-mode)
-   ("bashrc\\'" . sh-mode)
-   ("bash_profile\\'" . sh-mode)
-   ("bash_logout\\'" . sh-mode)
-   ("profile\\'" . sh-mode)))
+   ("\\.zsh-theme\\'" . sh-mode)))
 
 ;; use ssh-specific modes for ssh configuration files
 (use-package ssh-config-mode
