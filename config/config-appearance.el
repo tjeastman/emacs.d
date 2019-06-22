@@ -12,9 +12,9 @@
 (if (and (fboundp 'menu-bar-mode) (not (eq system-type 'darwin)))
     (menu-bar-mode -1))
 
-(use-package zenburn-theme
+(use-package solarized-theme
   :init
-  (load-theme 'zenburn t))
+  (load-theme 'solarized-light t))
 
 (use-package doom-modeline
   :init
