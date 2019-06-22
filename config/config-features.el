@@ -151,8 +151,8 @@
 (use-package magit
   :bind
   ("C-x g" . magit-status)
-  :hook
-  (magit-status-mode . magit-filenotify-mode)
+  ;; :hook
+  ;; (magit-status-mode . magit-filenotify-mode)
   :custom
   (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
   (magit-save-repository-buffers 'dontask)
@@ -160,9 +160,9 @@
   :config
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
-(use-package magit-filenotify
-  :commands
-  magit-filenotify-mode)
+;; (use-package magit-filenotify
+;;   :commands
+;;   magit-filenotify-mode)
 
 (use-package magit-todos
   :config
