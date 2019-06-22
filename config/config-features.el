@@ -156,6 +156,7 @@
   :custom
   (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
   (magit-save-repository-buffers 'dontask)
+  (magit-repository-directories '(("~/projects/" . 1)))
   :config
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
