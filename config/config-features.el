@@ -23,8 +23,13 @@
 
 (use-package avy
   :bind
-  (("M-g g" . avy-goto-line)
-   ("C-:" . avy-goto-char-timer)))
+  (("C-:" . avy-goto-char)
+   ("C-'" . avy-goto-char-2)
+   ("M-g f" . avy-goto-line)
+   ("M-g w" . avy-goto-word-1)
+   ("M-g e" . avy-goto-word-0))
+  :config
+  (avy-setup-defaults))
 
 (use-package beacon
   :delight
