@@ -28,7 +28,7 @@ git clone https://github.com/magit/git-modes.git
 
 #### Global
 
-Keybinding             | Description
+Key                    | Description
 -----------------------|------------------------------------------------------------
 <kbd>C-c & C-n</kbd>   | create a new snippet
 <kbd>C-=</kbd>         | expand region
@@ -46,9 +46,15 @@ Keybinding             | Description
 <kbd>C-c k</kbd>       | grep for string in current directory with ripgrep
 <kbd>C-c ! l</kbd>     | list flycheck errors
 
+#### Docker
+
+Key                    | Description
+-----------------------|------------------------------------------------------------
+<kbd>C-c C-b</kbd>     | build Docker image
+
 #### Python
 
-Keybinding             | Description
+Key                    | Description
 -----------------------|------------------------------------------------------------
 <kbd>C-c w</kbd>       | pyvenv workon
 <kbd>C-c a</kbd>       | pyvenv activate
@@ -60,6 +66,7 @@ Keybinding             | Description
 <kbd>M-e</kbd>         | navigate forward block
 
 #### JSON
-Keybinding             | Description
+
+Key                    | Description
 -----------------------|------------------------------------------------------------
 <kbd>C-c C-f</kbd>     | reformat region/buffer
