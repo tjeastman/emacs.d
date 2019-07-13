@@ -68,6 +68,10 @@
    ("s-k" . crux-kill-whole-line)
    ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
+(use-package deadgrep
+  :bind
+  ("C-c h" . deadgrep))
+
 (use-package docker
   :bind
   ("C-c d" . docker))
