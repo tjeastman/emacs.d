@@ -60,6 +60,10 @@
   :config
   (counsel-mode))
 
+(use-package counsel-projectile
+  :config
+  (counsel-projectile-mode))
+
 (use-package crux
   :bind
   (("C-c I" . crux-find-user-init-file)
