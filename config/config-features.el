@@ -161,6 +161,10 @@
   :config
   (ivy-prescient-mode))
 
+(use-package ivy-rich
+  :init
+  (ivy-rich-mode))
+
 (use-package magit
   :bind
   ("C-x g" . magit-status)
