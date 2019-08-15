@@ -76,7 +76,8 @@
   (compilation-environment '("TERM=eterm-color")))
 
 (use-package delsel
-  :config (delete-selection-mode t))
+  :config
+  (delete-selection-mode t))
 
 (use-package dired
   :ensure nil
