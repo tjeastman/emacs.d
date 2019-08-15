@@ -2,5 +2,5 @@
 # name: class
 # key: cls
 # --
-class ${1:class}:
+class ${1:class}(object):
     $0
