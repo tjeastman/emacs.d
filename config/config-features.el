@@ -185,6 +185,10 @@
   :config
   (magit-todos-mode))
 
+(use-package modern-cpp-font-lock
+  :config
+  (modern-c++-font-lock-global-mode t))
+
 (use-package multiple-cursors
   :bind
   (("C-S-c C-S-c" . mc/edit-lines)
