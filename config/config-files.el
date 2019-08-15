@@ -70,7 +70,9 @@
   (pip-requirements-index-url nil))
 
 (use-package protobuf-mode
-  :hook (protobuf-mode . flyspell-prog-mode)
+  :hook
+  ((protobuf-mode . flyspell-prog-mode)
+   (protobuf-mode . electric-operator-mode))
   :config
   (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
 
