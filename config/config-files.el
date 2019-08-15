@@ -97,7 +97,11 @@
 
 (use-package toml-mode
   :mode
-  ("Pipfile\\'" . toml-mode))
+  ("Pipfile\\'" . toml-mode)
+  :hook
+  (toml-mode . electric-operator-mode)
+  :config
+  (electric-operator-add-rules-for-mode 'toml-mode (cons "=" " = ")))
 
 (use-package yaml-mode
   :after docker-compose-mode
