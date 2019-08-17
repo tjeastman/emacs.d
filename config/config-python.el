@@ -37,7 +37,5 @@
   (ein:notebooklist-login
    ein:jupyter-server-start))
 
-(use-package eglot)
-
 (provide 'config-python)
 ;;; config-python.el ends here
