@@ -185,14 +185,6 @@
   (line-number-mode t)
   (size-indication-mode t))
 
-(use-package smartparens
-  :delight
-  :custom
-  (sp-escape-quotes-after-insert nil)
-  :config
-  (require 'smartparens-config)
-  (show-smartparens-global-mode +1))
-
 (use-package smerge-mode
   :after hydra
   :config

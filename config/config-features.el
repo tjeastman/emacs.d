@@ -220,6 +220,14 @@
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
+(use-package smartparens
+  :delight
+  :custom
+  (sp-escape-quotes-after-insert nil)
+  :config
+  (require 'smartparens-config)
+  (show-smartparens-global-mode +1))
+
 (use-package swiper
   :bind
   ("C-s" . swiper))
