@@ -187,6 +187,8 @@
 
 (use-package smartparens
   :delight
+  :custom
+  (sp-escape-quotes-after-insert nil)
   :config
   (require 'smartparens-config)
   (show-smartparens-global-mode +1))
