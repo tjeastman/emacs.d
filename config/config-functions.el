@@ -27,5 +27,14 @@
           (select-frame frame)
           (select-window win)))))
 
+(defun my-copy-filename-to-clipboard ()
+  "Copy filename corresponding to the current buffer to clipboard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename))))
+
 (provide 'config-functions)
 ;;; config-functions.el ends here
