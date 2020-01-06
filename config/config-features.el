@@ -165,8 +165,6 @@
   :config
   (keychain-refresh-environment))
 
-(use-package no-littering)
-
 (use-package magit
   :bind
   ("C-x g" . magit-status)
@@ -197,6 +195,8 @@
    ("C->" . 'mc/mark-next-like-this)
    ("C-<" . 'mc/mark-previous-like-this)
    ("C-c C-<" . 'mc/mark-all-like-this)))
+
+(use-package no-littering)
 
 (use-package prescient
   :custom
