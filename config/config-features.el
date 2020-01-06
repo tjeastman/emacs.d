@@ -161,6 +161,8 @@
   :init
   (ivy-rich-mode))
 
+(use-package no-littering)
+
 (use-package magit
   :bind
   ("C-x g" . magit-status)
