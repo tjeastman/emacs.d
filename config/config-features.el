@@ -161,6 +161,10 @@
   :init
   (ivy-rich-mode))
 
+(use-package keychain-environment
+  :config
+  (keychain-refresh-environment))
+
 (use-package no-littering)
 
 (use-package magit
