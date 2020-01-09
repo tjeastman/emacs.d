@@ -51,10 +51,6 @@
   (quietly-read-abbrev-file abbrev-file-name))
 
 (use-package autorevert
-  :diminish
-  (auto-revert-mode
-   auto-revert-tail-mode
-   global-auto-revert-mode)
   :config
   (global-auto-revert-mode t))
 
@@ -251,10 +247,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
-  :diminish
-  (global-whitespace-mode
-   whitespace-mode
-   whitespace-newline-mode)
   :custom
   (whitespace-line-column 100)
   (whitespace-style '(face tabs empty trailing lines-tail)))

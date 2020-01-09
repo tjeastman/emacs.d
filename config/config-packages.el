@@ -21,7 +21,6 @@
   :custom
   (use-package-always-ensure t))
 
-(use-package diminish)
 (use-package delight)
 
 (provide 'config-packages)
