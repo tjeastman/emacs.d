@@ -65,6 +65,12 @@ Key                    | Description
 <kbd>M-a</kbd>         | navigate backward block
 <kbd>M-e</kbd>         | navigate forward block
 
+#### Go
+
+Key                    | Description
+-----------------------|------------------------------------------------------------
+<kbd>C-c C-a</kbd>     | import package
+
 #### JSON
 
 Key                    | Description
