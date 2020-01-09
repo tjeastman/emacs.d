@@ -107,9 +107,6 @@
   :hook
   (before-save . whitespace-cleanup)
   :custom
-  ;; store backup files in a central directory
-  (backup-directory-alist
-   `(("." . ,(expand-file-name "backups" user-emacs-state-directory))))
   (backup-by-copying t)
   (version-control t)
   (delete-old-versions t)
@@ -159,15 +156,12 @@
   :bind
   ("C-x C-r" . recentf-open-files)
   :custom
-  (recentf-save-file (expand-file-name "recentf" user-emacs-state-directory))
   (recentf-max-menu-items 25)
   (recentf-max-saved-items 250)
   :config
   (recentf-mode 1))
 
 (use-package saveplace
-  :custom
-  (save-place-file (expand-file-name "places" user-emacs-state-directory))
   :config
   (save-place-mode 1))
 

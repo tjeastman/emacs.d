@@ -9,10 +9,6 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
-(defconst user-emacs-state-directory
-  (expand-file-name "state" user-emacs-directory)
-  "root directory for organizing feature state files")
-
 ;; store customizations outside of the emacs configuration directory
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file t)
