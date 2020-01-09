@@ -21,6 +21,8 @@
   :custom
   (use-package-always-ensure t))
 
+(use-package no-littering)
+
 (use-package delight)
 
 (provide 'config-packages)

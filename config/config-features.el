@@ -196,8 +196,6 @@
    ("C-<" . 'mc/mark-previous-like-this)
    ("C-c C-<" . 'mc/mark-all-like-this)))
 
-(use-package no-littering)
-
 (use-package prescient
   :custom
   (prescient-save-file (expand-file-name "prescient-save.el" user-emacs-directory))
