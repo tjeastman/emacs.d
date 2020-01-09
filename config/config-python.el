@@ -19,8 +19,7 @@
   :delight "Py"
   :mode ("\\.py\\'" . python-mode)
   :hook
-  ((python-mode . electric-operator-mode)
-   (python-mode . highlight-indentation-mode))
+  (python-mode . highlight-indentation-mode)
   :custom
   (python-indent-offset 4)
   (python-indent-guess-indent-offset nil))
