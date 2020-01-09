@@ -191,8 +191,9 @@
    ("C-c C-<" . 'mc/mark-all-like-this)))
 
 (use-package prescient
-  :custom
-  (prescient-save-file (expand-file-name "prescient-save.el" user-emacs-directory))
+  ;; use no-littering?
+  ;; :custom
+  ;; (prescient-save-file (expand-file-name "prescient-save.el" user-emacs-directory))
   :config
   (prescient-persist-mode))
 
@@ -245,6 +246,8 @@
   (yas-global-mode t))
 
 (use-package yatemplate
+  :custom
+  (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
   :config
   (yatemplate-fill-alist))
 
