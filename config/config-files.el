@@ -41,10 +41,7 @@
                 (whitespace-toggle-options '(tabs))
                 (setq tab-width 4)
                 (setq indent-tabs-mode 1)
-                (electric-operator-mode)
-                (add-hook 'before-save-hook 'gofmt-before-save nil t))))
-  :config
-  (electric-operator-add-rules-for-mode 'go-mode (cons ":=" " := ")))
+                (add-hook 'before-save-hook 'gofmt-before-save nil t)))))
 
 (use-package groovy-mode
   :defer t)
