@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: click
+# key: click
+# --
+#!/usr/bin/env python
+
+import click
+
+
+@click.command()
+def main():
+    ${0:pass}
+
+
+if __name__ == "__main__":
+    main()
