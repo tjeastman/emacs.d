@@ -1,9 +1,3 @@
-;;; config-features.el --- configure features provided by third party packages
-
-;;; Commentary:
-
-;;; Code:
-
 (use-package ag
   :custom
   (ag-highlight-search t)
@@ -255,4 +249,3 @@
   (yatemplate-fill-alist))
 
 (provide 'config-features)
-;;; config-features.el ends here

@@ -1,9 +1,3 @@
-;;; config-keys.el --- configure keyboard
-
-;;; Commentary:
-
-;;; Code:
-
 (global-set-key (kbd "M-O") 'my-switch-to-last-window)
 
 (global-set-key (kbd "M-RET") 'toggle-frame-fullscreen)
@@ -15,4 +9,3 @@
   (mac-command-modifier 'meta))
 
 (provide 'config-keys)
-;;; config-keys.el ends here

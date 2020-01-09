@@ -1,9 +1,3 @@
-;;; config-editor.el --- configure features built into the editor
-
-;;; Commentary:
-
-;;; Code:
-
 ;; consistently ask yes or no questions
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -251,4 +245,3 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("M-o" . other-window))
 
 (provide 'config-editor)
-;;; config-editor.el ends here

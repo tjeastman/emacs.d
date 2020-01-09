@@ -1,9 +1,3 @@
-;;; config-files.el --- configure modes for specific file formats
-
-;;; Commentary:
-
-;;; Code:
-
 (use-package ansible-doc
   :commands ansible-doc)
 
@@ -115,4 +109,3 @@
   :hook (yaml-mode . flyspell-prog-mode))
 
 (provide 'config-files)
-;;; config-files.el ends here

@@ -1,9 +1,3 @@
-;;; config-appearance.el --- configure appearance of the Emacs UI
-
-;;; Commentary:
-
-;;; Code:
-
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode -1))
@@ -29,4 +23,3 @@
   (setq doom-modeline-minor-modes nil))
 
 (provide 'config-appearance)
-;;; config-appearance.el ends here

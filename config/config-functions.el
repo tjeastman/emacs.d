@@ -1,9 +1,3 @@
-;;; config-functions.el --- global function definitions
-
-;;; Commentary:
-
-;;; Code:
-
 (defun my-run-new-shell-always ()
   "Run a shell in a new buffer regardless of how many shells are already running."
   (interactive)
@@ -37,4 +31,3 @@
       (kill-new filename))))
 
 (provide 'config-functions)
-;;; config-functions.el ends here

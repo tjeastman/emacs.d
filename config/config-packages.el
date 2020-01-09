@@ -1,9 +1,3 @@
-;;; config-packages.el --- package manager configuration
-
-;;; Commentary:
-
-;;; Code:
-
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -26,4 +20,3 @@
 (use-package delight)
 
 (provide 'config-packages)
-;;; config-packages.el ends here

@@ -1,9 +1,3 @@
-;;; config-python.el -- Python configuration
-
-;;; Commentary:
-
-;;; Code:
-
 (use-package pyvenv
   :config
   (setq pyvenv-mode-line-indicator nil)
@@ -37,4 +31,3 @@
    ein:jupyter-server-start))
 
 (provide 'config-python)
-;;; config-python.el ends here
