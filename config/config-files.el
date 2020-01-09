@@ -38,7 +38,6 @@
   :defer t
   :hook
   ((go-mode . (lambda ()
-                (whitespace-toggle-options '(tabs))
                 (setq tab-width 4)
                 (setq indent-tabs-mode 1)
                 (add-hook 'before-save-hook 'gofmt-before-save nil t)))))

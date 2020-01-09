@@ -156,7 +156,6 @@
   :ensure nil
   :hook
   ((prog-mode . turn-on-smartparens-strict-mode)
-   (prog-mode . (lambda () (whitespace-mode +1)))
    (prog-mode . flyspell-prog-mode)))
 
 (use-package recentf
