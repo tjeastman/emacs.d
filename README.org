@@ -4,15 +4,6 @@ git clone https://github.com/tjeastman/emacs.d.git
 ln -s emacs.d ~/.emacs.d
 #+END_SRC
 
-* git-modes
-
-Clone the `git-modes` project:
-#+BEGIN_SRC shell
-mkdir .emacs.d/contrib
-cd .emacs.d/contrib
-git clone https://github.com/magit/git-modes.git
-#+END_SRC
-
 * Keymap
 
 ** Global
