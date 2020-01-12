@@ -1,0 +1,76 @@
+Clone the reponsitory and link ~/.emacs.d/ (backup an existing directory first):
+#+BEGIN_SRC shell
+git clone https://github.com/tjeastman/emacs.d.git
+ln -s emacs.d ~/.emacs.d
+#+END_SRC
+
+* git-modes
+
+Clone the `git-modes` project:
+#+BEGIN_SRC shell
+mkdir .emacs.d/contrib
+cd .emacs.d/contrib
+git clone https://github.com/magit/git-modes.git
+#+END_SRC
+
+* Keymap
+
+** Global
+
+| Key       | Description                                       |
+|-----------+---------------------------------------------------|
+| C-c & C-n | create a new snippet                              |
+| C-=       | expand region                                     |
+| C-M-j     | end ivy completion                                |
+| C-c e n   | goto flycheck next error                          |
+| C-c e p   | goto flycheck previous error                      |
+| C-;       | backward kill word                                |
+| M-o       | goto other window                                 |
+| C-:       | avy goto char timer                               |
+| M-g g     | avy goto line                                     |
+| C-c p p   | switch projects with projectile                   |
+| C-c p f   | find file with projectile                         |
+| C-c p d   | find directory with projectile                    |
+| C-c p b   | switch project buffer with projectile             |
+| C-c k     | grep for string in current directory with ripgrep |
+| C-c ! l   | list flycheck errors                              |
+| C-x C-u   | upcase region                                     |
+
+** Docker
+
+| Key     | Description        |
+|---------+--------------------|
+| C-c C-b | build Docker image |
+
+** Python
+
+| Key     | Description                    |
+|---------+--------------------------------|
+| C-c w   | pyvenv workon                  |
+| C-c a   | pyvenv activate                |
+| C-c C-e | elpy multiedit symbol at point |
+| C-c C-t | run tests                      |
+| M-.     | goto definition                |
+| M-,     | return from goto definition    |
+| M-a     | navigate backward block        |
+| M-e     | navigate forward block         |
+
+** Go
+
+| Key     | Description    |
+|---------+----------------|
+| C-c C-a | import package |
+
+** JSON
+
+| Key     | Description            |
+|---------+------------------------|
+| C-c C-f | reformat region/buffer |
+
+** Org
+
+| Key      | Description                            |
+|----------+----------------------------------------|
+| M-S-DOWN | insert a new row above the current row |
+| C-c C-c  | realign the table                      |
+| C-c '    | edit special                           |
