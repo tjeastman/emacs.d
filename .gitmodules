@@ -7,6 +7,3 @@
 [submodule "contrib/lsp-python-ms"]
 	path = contrib/lsp-python-ms
 	url = https://github.com/andrew-christianson/lsp-python-ms.git
-[submodule "straight/repos/straight.el"]
-	path = straight/repos/straight.el
-	url = https://github.com/raxod502/straight.el
