@@ -23,7 +23,7 @@
    ("M-g w" . avy-goto-word-1)
    ("M-g e" . avy-goto-word-0))
   :config
-  (avy-setup-defaults))
+  (avy-setup-default))
 
 (use-package beacon
   :delight
