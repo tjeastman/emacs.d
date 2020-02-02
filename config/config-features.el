@@ -22,6 +22,15 @@
    ("M-g f" . avy-goto-line)
    ("M-g w" . avy-goto-word-1)
    ("M-g e" . avy-goto-word-0))
+  :commands
+  (avy-goto-char-timer
+   avy-org-goto-heading-timer
+   avy-org-refile-as-child)
+  :custom
+  (avy-all-windows t)
+  (avy-background t)
+  (avy-case-fold-search t)
+  (avy-timeout-seconds 0.8)
   :config
   (avy-setup-default))
 

@@ -17,8 +17,11 @@ ln -s emacs.d ~/.emacs.d
 | C-c e p   | goto flycheck previous error                      |
 | C-;       | backward kill word                                |
 | M-o       | goto other window                                 |
-| C-:       | avy goto char timer                               |
-| M-g g     | avy goto line                                     |
+| C-:       | avy goto char                                     |
+| C-'       | avy goto char (two character input)               |
+| M-g f     | avy goto line                                     |
+| M-g w     | avy goto word                                     |
+| M-g e     | avy goto word (no input)                          |
 | C-c p p   | switch projects with projectile                   |
 | C-c p f   | find file with projectile                         |
 | C-c p d   | find directory with projectile                    |
