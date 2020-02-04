@@ -47,6 +47,7 @@
   (company-minimum-prefix-length 3)
   (company-tooltip-limit 10)
   (company-tooltip-flip-when-above t)
+  (company-selection-wrap-around t)
   :config
   (global-company-mode t))
 
