@@ -30,6 +30,13 @@ ln -s emacs.d ~/.emacs.d
 | C-c ! l   | list flycheck errors                              |
 | C-x C-u   | upcase region                                     |
 
+** Navigation
+
+| Key       | Description                                       |
+|-----------+---------------------------------------------------|
+| C->       | mark next part of buffer like this                |
+| C-<       | mark previous part of buffer like this            |
+
 ** Docker
 
 | Key     | Description        |
