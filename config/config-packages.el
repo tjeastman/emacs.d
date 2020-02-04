@@ -17,6 +17,4 @@
 
 (use-package no-littering)
 
-(use-package delight)
-
 (provide 'config-packages)

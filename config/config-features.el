@@ -4,7 +4,6 @@
   (ag-reuse-window t))
 
 (use-package aggressive-indent
-  :delight
   :config
   (global-aggressive-indent-mode 1))
 
@@ -35,7 +34,6 @@
   (avy-setup-default))
 
 (use-package beacon
-  :delight
   :config
   (beacon-mode 1))
 
@@ -44,7 +42,6 @@
   ("C-x y" . browse-kill-ring))
 
 (use-package company
-  :delight
   :custom
   (company-idle-delay 0.5)
   (company-minimum-prefix-length 3)
@@ -84,7 +81,6 @@
   ("C-c d" . docker))
 
 (use-package electric-operator
-  :delight
   :commands
   (electric-operator-mode
    electric-operator-get-rules-for-mode
@@ -123,7 +119,6 @@
    git-timemachine-toggle))
 
 (use-package highlight-indentation
-  :delight
   :commands
   highlight-indentation-mode)
 
@@ -142,7 +137,6 @@
   ("C-c i" . imenu-anywhere))
 
 (use-package ivy
-  :delight
   :custom
   (ivy-use-virtual-buffers t)
   (ivy-display-style 'fancy)
@@ -205,7 +199,6 @@
 
 (use-package projectile
   :demand
-  :delight '(:eval (format " P[%s]" (projectile-project-name)))
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :custom
@@ -222,7 +215,6 @@
   (prog-mode . rainbow-delimiters-mode))
 
 (use-package smartparens
-  :delight
   :custom
   (sp-escape-quotes-after-insert nil)
   :config
@@ -235,18 +227,15 @@
 
 ;; use a tree-structured representation of undo history
 (use-package undo-tree
-  :delight
   :config
   (global-undo-tree-mode))
 
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
-  :delight
   :config
   (volatile-highlights-mode t))
 
 (use-package yasnippet
-  :delight yas-minor-mode
   :config
   (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
   (yas-global-mode t))

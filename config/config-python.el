@@ -10,7 +10,6 @@
   :commands py-isort-before-save)
 
 (use-package python
-  :delight "Py"
   :mode ("\\.py\\'" . python-mode)
   :hook
   (python-mode . highlight-indentation-mode)

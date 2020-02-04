@@ -37,7 +37,6 @@
 
 (use-package abbrev
   :ensure nil
-  :delight
   :custom
   (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
   :config
@@ -83,14 +82,11 @@
   (if (eq system-type 'darwin)
       (setq dired-use-ls-dired nil)))
 
-(use-package eldoc
-  :delight)
+(use-package eldoc)
 
 (use-package elisp-mode
   :after electric-operator
   :ensure nil
-  :delight
-  (emacs-lisp-mode "ELisp")
   :hook
   (emacs-lisp-mode . electric-operator-mode)
   :config
@@ -110,10 +106,7 @@
   (require-final-newline t)
   (confirm-nonexistent-file-or-buffer nil))
 
-(use-package flyspell
-  :delight
-  (flyspell-mode
-   flyspell-prog-mode))
+(use-package flyspell)
 
 (use-package hl-line
   :config
@@ -209,7 +202,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
                                      (unpackaged/smerge-hydra/body)))))
 
 (use-package subword
-  :delight
   :config
   (global-subword-mode))
 
