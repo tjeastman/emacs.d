@@ -192,7 +192,9 @@
   (("C-S-c C-S-c" . mc/edit-lines)
    ("C->" . 'mc/mark-next-like-this)
    ("C-<" . 'mc/mark-previous-like-this)
-   ("C-c C-<" . 'mc/mark-all-like-this)))
+   ("C-c C-<" . 'mc/mark-all-like-this))
+  :custom
+  (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
 (use-package prescient
   :config
