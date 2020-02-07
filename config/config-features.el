@@ -1,8 +1,3 @@
-(use-package ag
-  :custom
-  (ag-highlight-search t)
-  (ag-reuse-window t))
-
 (use-package aggressive-indent
   :config
   (global-aggressive-indent-mode 1))
