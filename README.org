@@ -8,27 +8,27 @@ ln -s emacs.d ~/.emacs.d
 
 ** Global
 
-| Key       | Description                                       |
-|-----------+---------------------------------------------------|
-| C-c & C-n | create a new snippet                              |
-| C-=       | expand region                                     |
-| C-M-j     | end ivy completion                                |
-| C-c e n   | goto flycheck next error                          |
-| C-c e p   | goto flycheck previous error                      |
-| C-;       | backward kill word                                |
-| M-o       | goto other window                                 |
-| C-:       | avy goto char                                     |
-| C-'       | avy goto char (two character input)               |
-| M-g f     | avy goto line                                     |
-| M-g w     | avy goto word                                     |
-| M-g e     | avy goto word (no input)                          |
-| C-c p p   | switch projects with projectile                   |
-| C-c p f   | find file with projectile                         |
-| C-c p d   | find directory with projectile                    |
-| C-c p b   | switch project buffer with projectile             |
-| C-c k     | grep for string in current directory with ripgrep |
-| C-c ! l   | list flycheck errors                              |
-| C-x C-u   | upcase region                                     |
+| Key       | Description                           |
+|-----------+---------------------------------------|
+| C-c & C-n | create a new snippet                  |
+| C-=       | expand region                         |
+| C-M-j     | end ivy completion                    |
+| C-c e n   | goto flycheck next error              |
+| C-c e p   | goto flycheck previous error          |
+| C-;       | backward kill word                    |
+| M-o       | goto other window                     |
+| C-:       | avy goto char                         |
+| C-'       | avy goto char (two character input)   |
+| M-g f     | avy goto line                         |
+| M-g w     | avy goto word                         |
+| M-g e     | avy goto word (no input)              |
+| C-c p p   | switch projects with projectile       |
+| C-c p f   | find file with projectile             |
+| C-c p d   | find directory with projectile        |
+| C-c p b   | switch project buffer with projectile |
+| C-c ! l   | list flycheck errors                  |
+| C-x C-u   | upcase region                         |
+| C-c h     | deadgrep search                       |
 
 ** Navigation
 
