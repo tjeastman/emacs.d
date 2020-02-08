@@ -7,6 +7,7 @@
     (menu-bar-mode -1))
 
 (use-package solarized-theme
+  :if window-system
   :init
   (load-theme 'solarized-light t))
 
