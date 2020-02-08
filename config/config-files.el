@@ -28,14 +28,6 @@
   ("/\\.gitignore\\'" . gitignore-mode)
   ("/.dockerignore\\'" . gitignore-mode))
 
-(use-package go-mode
-  :defer t
-  :hook
-  ((go-mode . (lambda ()
-                (setq tab-width 4)
-                (setq indent-tabs-mode 1)
-                (add-hook 'before-save-hook 'gofmt-before-save nil t)))))
-
 (use-package groovy-mode
   :defer t)
 
@@ -53,20 +45,6 @@
    ("\\.md\\'" . markdown-mode)
    ("\\.markdown\\'" . markdown-mode)))
 (use-package markdown-preview-mode)
-
-(use-package nim-mode
-  :hook
-  (nim-mode . electric-operator-mode)
-  :config
-  (add-to-list 'aggressive-indent-excluded-modes 'nim-mode)
-  (apply #'electric-operator-add-rules-for-mode 'nim-mode
-         (electric-operator-get-rules-for-mode 'prog-mode))
-  (electric-operator-add-rules-for-mode 'nim-mode (cons ":" ": ")))
-
-(use-package pip-requirements
-  :defer t
-  :custom
-  (pip-requirements-index-url nil))
 
 (use-package protobuf-mode
   :hook
@@ -89,9 +67,6 @@
   :defer t)
 
 (use-package terraform-mode
-  :defer t)
-
-(use-package thrift
   :defer t)
 
 (use-package toml-mode

@@ -68,10 +68,6 @@
   (compilation-scroll-output 'next-error)
   (compilation-environment '("TERM=eterm-color")))
 
-(use-package delsel
-  :config
-  (delete-selection-mode t))
-
 (use-package dired
   :ensure nil
   :custom
@@ -108,15 +104,13 @@
 
 (use-package flyspell)
 
-(use-package hl-line
-  :config
-  (global-hl-line-mode t))
-
 (use-package ibuffer
+  :ensure nil
   :bind
   ("C-x C-b" . ibuffer))
 
 (use-package ispell
+  :ensure nil
   :custom
   (ispell-personal-dictionary "~/.aspell.en.pws")
   (ispell-program-name "aspell"))
@@ -126,31 +120,6 @@
   ("Make.rules" . makefile-mode)
   :hook
   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
-
-(use-package mouse
-  :ensure nil
-  :custom
-  (mouse-yank-at-point t))
-
-(use-package prog-mode
-  :ensure nil
-  :hook
-  ((prog-mode . turn-on-smartparens-strict-mode)
-   (prog-mode . flyspell-prog-mode)))
-
-(use-package recentf
-  :demand
-  :bind
-  ("C-x C-r" . recentf-open-files)
-  :custom
-  (recentf-max-menu-items 25)
-  (recentf-max-saved-items 250)
-  :config
-  (recentf-mode 1))
-
-(use-package saveplace
-  :config
-  (save-place-mode 1))
 
 (use-package simple
   :ensure nil
@@ -201,10 +170,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
                                    (when smerge-mode
                                      (unpackaged/smerge-hydra/body)))))
 
-(use-package subword
-  :config
-  (global-subword-mode))
-
 (use-package text-mode
   :ensure nil
   :hook
@@ -230,10 +195,5 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :custom
   (whitespace-line-column 100)
   (whitespace-style '(face tabs empty trailing lines-tail)))
-
-(use-package window
-  :ensure nil
-  :bind
-  ("M-o" . other-window))
 
 (provide 'config-editor)

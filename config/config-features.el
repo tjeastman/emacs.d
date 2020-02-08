@@ -9,43 +9,9 @@
   :config
   (auto-insert-mode))
 
-(use-package avy
-  :bind
-  (("C-:" . avy-goto-char)
-   ("C-'" . avy-goto-char-2)
-   ("M-g f" . avy-goto-line)
-   ("M-g w" . avy-goto-word-1)
-   ("M-g e" . avy-goto-word-0))
-  :commands
-  (avy-goto-char-timer
-   avy-org-goto-heading-timer
-   avy-org-refile-as-child)
-  :custom
-  (avy-all-windows t)
-  (avy-background t)
-  (avy-case-fold-search t)
-  (avy-timeout-seconds 0.8)
-  :config
-  (avy-setup-default))
-
-(use-package beacon
-  :config
-  (beacon-mode 1))
-
 (use-package browse-kill-ring
   :bind
   ("C-x y" . browse-kill-ring))
-
-(use-package company
-  :custom
-  (company-idle-delay 0.5)
-  (company-minimum-prefix-length 3)
-  (company-tooltip-limit 10)
-  (company-tooltip-flip-when-above t)
-  (company-selection-wrap-around t)
-  (company-show-numbers t)
-  :config
-  (global-company-mode t))
 
 (use-package counsel
   :bind
@@ -77,12 +43,6 @@
   :bind
   ("C-c d" . docker))
 
-(use-package electric-operator
-  :commands
-  (electric-operator-mode
-   electric-operator-get-rules-for-mode
-   electric-operator-add-rules-for-mode))
-
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
   :custom
@@ -94,10 +54,6 @@
      "SSH_AUTH_SOCK"))
   :config
   (exec-path-from-shell-initialize))
-
-(use-package expand-region
-  :bind
-  ("C-=" . er/expand-region))
 
 (use-package flycheck
   :hook
@@ -114,10 +70,6 @@
   :commands
   (git-timemachine
    git-timemachine-toggle))
-
-(use-package highlight-indentation
-  :commands
-  highlight-indentation-mode)
 
 (use-package ibuffer-vc
   :config
@@ -171,26 +123,9 @@
   :config
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
-;; (use-package magit-filenotify
-;;   :commands
-;;   magit-filenotify-mode)
-
 (use-package magit-todos
   :config
   (magit-todos-mode))
-
-(use-package modern-cpp-font-lock
-  :config
-  (modern-c++-font-lock-global-mode t))
-
-(use-package multiple-cursors
-  :bind
-  (("C-S-c C-S-c" . mc/edit-lines)
-   ("C->" . 'mc/mark-next-like-this)
-   ("C-<" . 'mc/mark-previous-like-this)
-   ("C-c C-<" . 'mc/mark-all-like-this))
-  :custom
-  (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
 (use-package prescient
   :config
@@ -208,17 +143,6 @@
   (projectile-sort-order 'recentf)
   :config
   (projectile-mode +1))
-
-(use-package rainbow-delimiters
-  :hook
-  (prog-mode . rainbow-delimiters-mode))
-
-(use-package smartparens
-  :custom
-  (sp-escape-quotes-after-insert nil)
-  :config
-  (require 'smartparens-config)
-  (show-smartparens-global-mode +1))
 
 (use-package swiper
   :bind

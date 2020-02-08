@@ -10,9 +10,11 @@
   :init
   (load-theme 'solarized-light t))
 
+(use-package beacon
+  :config
+  (beacon-mode 1))
+
 (use-package doom-modeline
-  :init
-  (doom-modeline-mode 1)
   :config
   (setq doom-modeline-bar-width 1)
   (setq doom-modeline-buffer-encoding nil)
@@ -20,6 +22,13 @@
   (setq doom-modeline-env-enable-python t)
   (setq doom-modeline-height 15)
   (setq doom-modeline-icon nil)
-  (setq doom-modeline-minor-modes nil))
+  (setq doom-modeline-minor-modes nil)
+  :init
+  (doom-modeline-mode 1))
+
+(use-package hl-line
+  :ensure nil
+  :config
+  (global-hl-line-mode t))
 
 (provide 'config-appearance)
