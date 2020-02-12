@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
         crux-move-beginning-of-line
+        sp-backward-delete-char
         sp-delete-char
         ))
 
