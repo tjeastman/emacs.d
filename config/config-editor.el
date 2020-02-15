@@ -47,10 +47,6 @@
   :config
   (global-auto-revert-mode t))
 
-(use-package cc-mode
-  :hook
-  (c++-mode . electric-operator-mode))
-
 (use-package comint
   :ensure nil
   :custom

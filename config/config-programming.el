@@ -27,6 +27,12 @@
   (require 'smartparens-config)
   (show-smartparens-global-mode +1))
 
+;; C/C++
+
+(use-package cc-mode
+  :hook
+  (c++-mode . electric-operator-mode))
+
 ;; Go
 
 (use-package go-mode
