@@ -103,11 +103,19 @@
 
 (define-abbrev-table 'git-rebase-mode-abbrev-table '())
 
+(define-abbrev-table 'gitattributes-mode-abbrev-table '())
+
+(define-abbrev-table 'gitconfig-mode-abbrev-table '())
+
+(define-abbrev-table 'gitignore-mode-abbrev-table '())
+
 (define-abbrev-table 'global-abbrev-table
   '(
     ("adn" "and" nil 0)
     ("configur" "configure" nil 0)
+    ("dicxtionary" "dictionary" nil 0)
     ("disalbe" "disable" nil 1)
+    ("enumerage" "enumerate" nil 0)
     ("expresison" "expression" nil 0)
     ("expressoin" "expression" nil 0)
     ("fiel" "file" nil 2)
@@ -123,8 +131,9 @@
     ("optinos" "options" nil 0)
     ("queyr" "query" nil 1)
     ("recieve" "receive" nil 1)
-    ("remvoe" "remove" nil 1)
+    ("remvoe" "remove" nil 2)
     ("retreive" "retrieve" nil 0)
+    ("reutrn" "return" nil 1)
     ("slef" "self" nil 1)
     ("soem" "some" nil 0)
     ("talbe" "table" nil 2)
@@ -312,3 +321,4 @@
 (define-abbrev-table 'xref--xref-buffer-mode-abbrev-table '())
 
 (define-abbrev-table 'yaml-mode-abbrev-table '())
+
