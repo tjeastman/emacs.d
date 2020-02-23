@@ -29,9 +29,10 @@
 
 ;; C/C++
 
-(use-package cc-mode
-  :hook
-  (c++-mode . electric-operator-mode))
+(use-package clang-format
+  :commands
+  (clang-format-region
+   clang-format-buffer))
 
 ;; Go
 
