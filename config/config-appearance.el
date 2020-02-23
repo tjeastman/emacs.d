@@ -6,10 +6,10 @@
 (if (and (fboundp 'menu-bar-mode) (not (eq system-type 'darwin)))
     (menu-bar-mode -1))
 
-(use-package solarized-theme
+(use-package zenburn-theme
   :if window-system
   :init
-  (load-theme 'solarized-light t))
+  (load-theme 'zenburn t))
 
 (use-package beacon
   :config
