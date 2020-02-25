@@ -1,7 +1,3 @@
-(use-package aggressive-indent
-  :config
-  (global-aggressive-indent-mode 1))
-
 (use-package autoinsert
   :custom
   (auto-insert-alist nil)
