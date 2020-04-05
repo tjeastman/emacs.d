@@ -4,6 +4,10 @@
 (setq mc/cmds-to-run-for-all
       '(
         crux-move-beginning-of-line
+        org-beginning-of-line
+        org-delete-char
+        org-end-of-line
+        org-self-insert-command
         sp-backward-delete-char
         sp-delete-char
         ))
