@@ -58,7 +58,6 @@
    ein:jupyter-server-start))
 
 (use-package pip-requirements
-  :defer t
   :custom
   (pip-requirements-index-url nil))
 
