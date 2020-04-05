@@ -14,6 +14,9 @@
   :commands
   highlight-indentation-mode)
 
+(use-package lsp-mode
+  :commands lsp)
+
 (use-package prog-mode
   :ensure nil
   :hook
