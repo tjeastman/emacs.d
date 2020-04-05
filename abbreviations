@@ -126,6 +126,7 @@
     ("imoport" "import" nil 0)
     ("imoprt" "import" nil 0)
     ("joine" "join" nil 1)
+    ("maintenence" "maintenance" nil 0)
     ("mdule" "module" nil 0)
     ("optino" "option" nil 0)
     ("optinos" "options" nil 0)
@@ -138,15 +139,24 @@
     ("soem" "some" nil 0)
     ("talbe" "table" nil 2)
     ("teh" "the" nil 2)
+    ("tempalte" "template" nil 1)
     ("termainl" "terminal" nil 1)
     ("vlaue" "value" nil 0)
    ))
 
 (define-abbrev-table 'gnus-group-mode-abbrev-table '())
 
+(define-abbrev-table 'go-dot-mod-mode-abbrev-table '())
+
+(define-abbrev-table 'go-mode-abbrev-table '())
+
+(define-abbrev-table 'godoc-mode-abbrev-table '())
+
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
 (define-abbrev-table 'help-mode-abbrev-table '())
+
+(define-abbrev-table 'i3wm-config-mode-abbrev-table '())
 
 (define-abbrev-table 'ibuffer-mode-abbrev-table '())
 
@@ -255,6 +265,8 @@
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'pip-requirements-mode-abbrev-table '())
 
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
