@@ -41,6 +41,9 @@
   (clang-format-region
    clang-format-buffer))
 
+(use-package modern-cpp-font-lock
+  :commands modern-c++-font-lock-mode)
+
 ;; Go
 
 (use-package go-mode
