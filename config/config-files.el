@@ -39,6 +39,8 @@
   :mode
   ("Pipfile.lock\\'" . json-mode))
 
+(use-package ledger-mode)
+
 (use-package markdown-mode
   :mode
   (("README\\.md\\'" . gfm-mode)
