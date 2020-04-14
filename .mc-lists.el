@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-slash
         crux-move-beginning-of-line
         org-beginning-of-line
         org-delete-char
