@@ -11,6 +11,8 @@
         org-self-insert-command
         sp-backward-delete-char
         sp-delete-char
+        yaml-electric-backspace
+        yaml-electric-dash-and-dot
         ))
 
 (setq mc/cmds-to-run-once
