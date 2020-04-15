@@ -9,4 +9,7 @@
   :config
   (global-company-mode t))
 
+(use-package company-lsp
+  :config (push 'company-lsp company-backends))
+
 (provide 'config-completion)
