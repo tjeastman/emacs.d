@@ -17,6 +17,10 @@
 (use-package lsp-mode
   :commands lsp)
 
+(use-package lsp-ui
+  :hook
+  (lsp-mode . lsp-ui-mode))
+
 (use-package prog-mode
   :ensure nil
   :hook
