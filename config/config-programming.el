@@ -21,6 +21,8 @@
   :hook
   (lsp-mode . lsp-ui-mode))
 
+(use-package lsp-python-ms)
+
 (use-package prog-mode
   :ensure nil
   :hook
