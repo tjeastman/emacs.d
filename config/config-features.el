@@ -62,6 +62,9 @@
   :custom
   (git-commit-summary-max-length 72))
 
+(use-package git-gutter
+  :commands git-gutter-mode)
+
 (use-package git-timemachine
   :commands
   (git-timemachine
