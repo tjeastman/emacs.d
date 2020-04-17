@@ -1,7 +1,9 @@
 (use-package org
   :custom
-  (org-babel-load-languages '((emacs-lisp . t)
-                              (python . t))))
+  (org-babel-load-languages
+   '((emacs-lisp . t)
+     (python . t)
+     (C . t))))
 
 (use-package org-ref
   :custom
