@@ -33,4 +33,9 @@
   :config
   (global-hl-line-mode t))
 
+(use-package frame
+  :ensure nil
+  :bind
+  ("M-RET" . toggle-frame-fullscreen))
+
 (provide 'config-appearance)
