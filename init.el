@@ -26,3 +26,4 @@
 (require 'config-navigation)
 (require 'config-files)
 (require 'config-programming)
+(require 'config-org)
