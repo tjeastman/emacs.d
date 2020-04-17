@@ -119,7 +119,8 @@
 
 (use-package simple
   :ensure nil
-  :bind ("C-;" . backward-kill-word)
+  :bind
+  ("C-;" . backward-kill-word)
   :custom
   (next-line-add-newlines t)
   :config
