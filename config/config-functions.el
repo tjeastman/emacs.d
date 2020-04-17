@@ -12,7 +12,7 @@
     (shell shell-buffer-name)))
 
 (defun my-switch-to-last-window ()
-  "Switch to the previously used window if one exist."
+  "Switch to the previously used window if one exists."
   (interactive)
   (let ((win (get-mru-window t t t)))
     (if win
