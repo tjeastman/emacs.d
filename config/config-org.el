@@ -1,5 +1,7 @@
 (use-package org
   :custom
+  (org-src-fontify-natively t)
+  (org-confirm-babel-evaluate nil)
   (org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
