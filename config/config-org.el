@@ -1,3 +1,5 @@
+(use-package ob-async)
+
 (use-package org
   :custom
   (org-src-fontify-natively t)
