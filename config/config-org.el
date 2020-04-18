@@ -5,6 +5,7 @@
   (org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
+     (shell . t)
      (C . t))))
 
 (use-package org-ref
