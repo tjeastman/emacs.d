@@ -4,6 +4,13 @@
   :config
   (global-aggressive-indent-mode 1))
 
+(use-package cmake-mode)
+
+(use-package cmake-font-lock
+  :after cmake-mode
+  :hook
+  (cmake-mode . cmake-font-lock-activate))
+
 (use-package electric-operator
   :commands
   (electric-operator-mode
