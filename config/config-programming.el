@@ -71,6 +71,9 @@
 (use-package blacken
   :commands blacken-buffer)
 
+(use-package cython-mode
+  :disabled)
+
 (use-package ein
   :commands
   (ein:notebooklist-login
