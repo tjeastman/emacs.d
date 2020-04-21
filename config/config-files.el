@@ -12,6 +12,8 @@
   ((".preseed$" . conf-mode)
    ("pylintrc$" . conf-mode)))
 
+(use-package cuda-mode)
+
 (use-package dockerfile-mode
   :defer t)
 (use-package docker-compose-mode
