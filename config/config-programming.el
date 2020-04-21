@@ -22,7 +22,9 @@
   highlight-indentation-mode)
 
 (use-package lsp-mode
-  :commands lsp)
+  :commands lsp
+  :custom
+  (company-lsp-cache-candidates nil))
 
 (use-package lsp-ui
   :hook
