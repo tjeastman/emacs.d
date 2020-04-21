@@ -10,6 +10,11 @@
   (global-company-mode t))
 
 (use-package company-lsp
-  :config (push 'company-lsp company-backends))
+  :after company
+  :custom
+  (company-lsp-async t)
+  (company-lsp-enable-recompletion t)
+  :config
+  (add-to-list 'company-backends 'company-lsp))
 
 (provide 'config-completion)
