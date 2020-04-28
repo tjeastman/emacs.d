@@ -16,4 +16,6 @@
   (org-ref-default-bibliography '("~/projects/refs/references.bib"))
   (org-ref-pdf-directory "~/projects/refs/papers/"))
 
+(use-package jupyter)
+
 (provide 'config-org)
