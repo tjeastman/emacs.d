@@ -24,7 +24,7 @@
 (use-package lsp-mode
   :commands lsp
   :custom
-  (company-lsp-cache-candidates nil))
+  (lsp-auto-guess-root t))
 
 (use-package lsp-ui
   :hook
