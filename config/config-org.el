@@ -12,8 +12,8 @@
 
 (use-package org-ref
   :custom
-  (org-ref-bibliography-notes "~/refs/notes.org")
-  (org-ref-default-bibliography '("~/refs/references.bib"))
-  (org-ref-pdf-directory "~/refs/docs/"))
+  (org-ref-bibliography-notes "~/projects/refs/notes.org")
+  (org-ref-default-bibliography '("~/projects/refs/references.bib"))
+  (org-ref-pdf-directory "~/projects/refs/papers/"))
 
 (provide 'config-org)
