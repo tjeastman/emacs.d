@@ -27,3 +27,4 @@
 (require 'config-files)
 (require 'config-programming)
 (require 'config-org)
+(require 'config-dired)
