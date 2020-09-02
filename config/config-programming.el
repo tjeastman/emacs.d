@@ -59,6 +59,10 @@
 (use-package modern-cpp-font-lock
   :commands modern-c++-font-lock-mode)
 
+;; Cojure
+
+(use-package clojure-mode)
+
 ;; Go
 
 (use-package go-mode
