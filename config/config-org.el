@@ -5,7 +5,8 @@
   (org-src-fontify-natively t)
   (org-confirm-babel-evaluate nil)
   (org-babel-load-languages
-   '((emacs-lisp . t)
+   '((clojure . t)
+     (emacs-lisp . t)
      (python . t)
      (shell . t)
      (C . t))))
