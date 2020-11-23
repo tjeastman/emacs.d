@@ -122,10 +122,6 @@
   :config
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
-(use-package magit-todos
-  :config
-  (magit-todos-mode))
-
 (use-package prescient
   :config
   (prescient-persist-mode))
