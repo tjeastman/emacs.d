@@ -22,15 +22,17 @@
   highlight-indentation-mode)
 
 (use-package lsp-mode
-  :commands lsp
+  :commands
+  (lsp
+   lsp-deferred)
   :custom
   (lsp-auto-guess-root t))
+
+(use-package lsp-python-ms)
 
 (use-package lsp-ui
   :hook
   (lsp-mode . lsp-ui-mode))
-
-(use-package lsp-python-ms)
 
 (use-package prog-mode
   :ensure nil
