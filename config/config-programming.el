@@ -21,6 +21,10 @@
   :commands
   highlight-indentation-mode)
 
+(use-package lsp-ivy
+  :commands
+  lsp-ivy-workspace-symbol)
+
 (use-package lsp-mode
   :commands
   (lsp
