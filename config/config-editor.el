@@ -173,10 +173,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :custom
   (vc-follow-symlinks t))
 
-(use-package which-func
-  :config
-  (which-function-mode 1))
-
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
   :custom

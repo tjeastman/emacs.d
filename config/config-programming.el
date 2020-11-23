@@ -55,6 +55,10 @@
   (require 'smartparens-config)
   (show-smartparens-global-mode +1))
 
+(use-package which-func
+  :config
+  (which-function-mode 1))
+
 ;; C/C++
 
 (use-package clang-format
