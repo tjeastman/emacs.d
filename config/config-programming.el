@@ -38,6 +38,11 @@
   :hook
   (lsp-mode . lsp-ui-mode))
 
+(use-package platformio-mode
+  :commands
+  (platformio-mode
+   platformio-conditionally-enable))
+
 (use-package prog-mode
   :ensure nil
   :hook
