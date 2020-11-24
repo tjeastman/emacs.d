@@ -17,6 +17,11 @@
   :config
   (avy-setup-default))
 
+(use-package ibuffer
+  :ensure nil
+  :bind
+  ("C-x C-b" . ibuffer))
+
 (use-package recentf
   :ensure nil
   :bind

@@ -90,11 +90,6 @@
 
 (use-package flyspell)
 
-(use-package ibuffer
-  :ensure nil
-  :bind
-  ("C-x C-b" . ibuffer))
-
 (use-package ispell
   :ensure nil
   :custom
