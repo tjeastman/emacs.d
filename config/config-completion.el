@@ -9,13 +9,4 @@
   :config
   (global-company-mode t))
 
-(use-package company-lsp
-  :after company
-  :custom
-  (company-lsp-async t)
-  (company-lsp-enable-recompletion t)
-  (company-lsp-cache-candidates nil)
-  :config
-  (add-to-list 'company-backends 'company-lsp))
-
 (provide 'config-completion)
