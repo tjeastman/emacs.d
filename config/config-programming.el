@@ -30,7 +30,8 @@
   (lsp
    lsp-deferred)
   :custom
-  (lsp-auto-guess-root t))
+  (lsp-auto-guess-root t)
+  (lsp-enable-indentation nil))
 
 (use-package lsp-python-ms)
 
