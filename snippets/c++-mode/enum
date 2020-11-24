@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: enum
-# key: enum
+# key: en
 # --
-enum class ${1:NAME} {
-$0
+enum class ${1:Name} {
+  $0
 };
