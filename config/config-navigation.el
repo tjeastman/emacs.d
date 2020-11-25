@@ -1,3 +1,9 @@
+(use-package ace-window
+  :bind
+  ("M-o" . ace-window)
+  :custom
+  (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
+
 (use-package avy
   :bind
   (("C-:" . avy-goto-char)
@@ -36,10 +42,5 @@
   :ensure nil
   :config
   (save-place-mode 1))
-
-(use-package window
-  :ensure nil
-  :bind
-  ("M-o" . other-window))
 
 (provide 'config-navigation)
