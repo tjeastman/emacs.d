@@ -43,4 +43,9 @@
   :config
   (save-place-mode 1))
 
+(use-package subword
+  :ensure nil
+  :config
+  (global-subword-mode))
+
 (provide 'config-navigation)

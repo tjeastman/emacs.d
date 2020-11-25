@@ -21,9 +21,4 @@
   :custom
   (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
-(use-package subword
-  :ensure nil
-  :config
-  (global-subword-mode))
-
 (provide 'config-editing)
