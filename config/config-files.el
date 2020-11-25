@@ -81,6 +81,8 @@
   :config
   (electric-operator-add-rules-for-mode 'toml-mode (cons "=" " = ")))
 
+(use-package udev-mode)
+
 (use-package yaml-mode
   :after docker-compose-mode
   :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
