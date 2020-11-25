@@ -1,3 +1,7 @@
+(use-package ace-link
+  :config
+  (ace-link-setup-default))
+
 (use-package ace-window
   :bind
   ("M-o" . ace-window)
