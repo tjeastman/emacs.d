@@ -68,6 +68,13 @@
 (use-package git-gutter
   :commands git-gutter-mode)
 
+(use-package git-messenger
+  :bind
+  ("C-x G" . git-messenger:popup-message)
+  :custom
+  (git-messenger:show-detail t)
+  (git-messenger:use-magit-popup t))
+
 (use-package git-timemachine
   :commands
   (git-timemachine
