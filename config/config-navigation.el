@@ -27,6 +27,13 @@
   :config
   (avy-setup-default))
 
+(use-package deadgrep
+  :bind
+  ("C-c h" . deadgrep)
+  :commands
+  (deadgrep-edit-mode
+   deadgrep-kill-all-buffers))
+
 (use-package ibuffer
   :ensure nil
   :bind
@@ -51,5 +58,9 @@
   :ensure nil
   :config
   (global-subword-mode))
+
+(use-package swiper
+  :bind
+  ("C-s" . swiper))
 
 (provide 'config-navigation)

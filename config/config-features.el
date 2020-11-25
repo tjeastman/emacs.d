@@ -31,13 +31,6 @@
    ("s-k" . crux-kill-whole-line)
    ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
-(use-package deadgrep
-  :bind
-  ("C-c h" . deadgrep)
-  :commands
-  (deadgrep-edit-mode
-   deadgrep-kill-all-buffers))
-
 (use-package docker
   :bind
   ("C-c d" . docker))
@@ -149,10 +142,6 @@
   (projectile-sort-order 'recentf)
   :config
   (projectile-mode +1))
-
-(use-package swiper
-  :bind
-  ("C-s" . swiper))
 
 ;; use a tree-structured representation of undo history
 (use-package undo-tree
