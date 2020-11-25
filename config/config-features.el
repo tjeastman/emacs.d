@@ -157,6 +157,10 @@
   :config
   (volatile-highlights-mode t))
 
+(use-package which-key
+  :config
+  (which-key-mode))
+
 (use-package yasnippet
   :config
   (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
