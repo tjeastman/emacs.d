@@ -33,7 +33,10 @@
 
 (use-package deadgrep
   :bind
-  ("C-c h" . deadgrep))
+  ("C-c h" . deadgrep)
+  :commands
+  (deadgrep-edit-mode
+   deadgrep-kill-all-buffers))
 
 (use-package docker
   :bind
