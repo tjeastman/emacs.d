@@ -27,12 +27,20 @@
   :config
   (avy-setup-default))
 
+(use-package avy-flycheck
+  :bind
+  ("C-c '" . avy-flycheck-goto-error))
+
 (use-package deadgrep
   :bind
   ("C-c h" . deadgrep)
   :commands
   (deadgrep-edit-mode
    deadgrep-kill-all-buffers))
+
+(use-package goto-chg
+  :bind
+  ("C-c G" . goto-last-change))
 
 (use-package ibuffer
   :ensure nil
