@@ -33,8 +33,6 @@
    lsp-deferred)
   :custom
   (lsp-auto-guess-root t)
-  (lsp-completion-enable nil)
-  (lsp-completion-provider :capf)
   (lsp-enable-indentation nil))
 
 (use-package lsp-python-ms)
