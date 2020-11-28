@@ -15,6 +15,12 @@
   :config
   (beacon-mode 1))
 
+(use-package dimmer
+  :custom
+  (dimmer-adjustment-mode :both)
+  :init
+  (dimmer-mode t))
+
 (use-package doom-modeline
   :config
   (setq doom-modeline-bar-width 1)
