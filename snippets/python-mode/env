@@ -1,5 +1,6 @@
 # -*- mode: snippet -*-
-# name: #!
-# key: #!
+# name: env python
+# key: env
+# group: boilerplate
 # --
 #!/usr/bin/env python
