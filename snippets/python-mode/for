@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for loop
+# key: for
+# group : control structures
+# --
+for ${1:variable} in ${2:collection}:
+    $0

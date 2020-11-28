@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: pytest.fixture
 # key: fx
+# group: testing
 # --
 @pytest.fixture
 def $1($2):
