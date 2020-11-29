@@ -20,6 +20,7 @@
 (require 'config-appearance)
 (require 'config-editor)
 (require 'config-editing)
+(require 'config-projects)
 (require 'config-completion)
 (require 'config-keys)
 (require 'config-features)
