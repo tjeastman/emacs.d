@@ -1,5 +1,3 @@
-(global-set-key (kbd "M-O") 'my-switch-to-last-window)
-
 (use-package ns-win
   :ensure nil
   :if (eq system-type 'darwin)

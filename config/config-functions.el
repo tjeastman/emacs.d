@@ -11,16 +11,6 @@
           (get-buffer shell-buffer-name)))
     (shell shell-buffer-name)))
 
-(defun my-switch-to-last-window ()
-  "Switch to the previously used window if one exists."
-  (interactive)
-  (let ((win (get-mru-window t t t)))
-    (if win
-        (let ((frame (window-frame win)))
-          (raise-frame frame)
-          (select-frame frame)
-          (select-window win)))))
-
 (defun my-copy-filename-to-clipboard ()
   "Copy filename corresponding to the current buffer to clipboard."
   (interactive)
