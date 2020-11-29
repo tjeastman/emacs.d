@@ -31,9 +31,10 @@
   ;; :hook
   ;; (magit-status-mode . magit-filenotify-mode)
   :custom
-  (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
-  (magit-save-repository-buffers 'dontask)
   (magit-repository-directories '(("~/projects/" . 1)))
+  (magit-save-repository-buffers 'dontask)
+  (magit-section-visibility-indicator nil)
+  (magit-visit-ref-behavior '(create-branch checkout-any focus-on-ref))
   :config
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
