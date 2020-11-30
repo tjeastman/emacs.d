@@ -2,8 +2,19 @@
   :custom
   (git-commit-summary-max-length 72))
 
-(use-package git-gutter
-  :commands git-gutter-mode)
+(use-package git-gutter-fringe
+  :if window-system
+  :config
+  (define-fringe-bitmap 'git-gutter-fr:added [224]
+    nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:modified [224]
+    nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240]
+    nil nil 'bottom)
+  (set-face-foreground 'git-gutter-fr:added "#709080")
+  (set-face-foreground 'git-gutter-fr:deleted "#cc9393")
+  (set-face-foreground 'git-gutter-fr:modified "#f0dfaf")
+  (global-git-gutter-mode t))
 
 (use-package git-messenger
   :bind
