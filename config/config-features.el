@@ -14,8 +14,6 @@
   ("C-x C-m" . counsel-M-x)
   :custom
   (counsel-find-file-at-point t)
-  (counsel-find-file-ignore-regexp
-   (regexp-opt completion-ignored-extensions))
   :config
   (counsel-mode))
 
