@@ -1,336 +1,38 @@
 ;;-*-coding: utf-8;-*-
-(define-abbrev-table 'Buffer-menu-mode-abbrev-table '())
-
-(define-abbrev-table 'Custom-mode-abbrev-table '())
-
-(define-abbrev-table 'Info-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'Man-mode-abbrev-table '())
-
-(define-abbrev-table 'ack-and-a-half-mode-abbrev-table '())
-
-(define-abbrev-table 'ag-mode-abbrev-table '())
-
-(define-abbrev-table 'apropos-mode-abbrev-table '())
-
-(define-abbrev-table 'awk-mode-abbrev-table
-  '(
-   ))
-
-(define-abbrev-table 'bibtex-mode-abbrev-table '())
-
-(define-abbrev-table 'bookmark-bmenu-mode-abbrev-table '())
-
-(define-abbrev-table 'bookmark-edit-annotation-mode-abbrev-table '())
-
-(define-abbrev-table 'browse-kill-ring-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'browse-kill-ring-mode-abbrev-table '())
-
-(define-abbrev-table 'c++-mode-abbrev-table
-  '(
-   ))
-
-(define-abbrev-table 'c-mode-abbrev-table
-  '(
-   ))
-
-(define-abbrev-table 'calc-trail-mode-abbrev-table '())
-
-(define-abbrev-table 'calendar-mode-abbrev-table '())
-
-(define-abbrev-table 'change-log-mode-abbrev-table '())
-
-(define-abbrev-table 'comint-mode-abbrev-table '())
-
-(define-abbrev-table 'completion-list-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-colon-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-desktop-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-javaprop-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-ppd-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-space-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-toml-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-unix-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-windows-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
-
-(define-abbrev-table 'csv-mode-abbrev-table '())
-
-(define-abbrev-table 'debugger-mode-abbrev-table '())
-
-(define-abbrev-table 'diff-mode-abbrev-table '())
-
-(define-abbrev-table 'dockerfile-mode-abbrev-table '())
-
-(define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
-
-(define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
-
-(define-abbrev-table 'emacs-lisp-byte-code-mode-abbrev-table '())
-
-(define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
-
-(define-abbrev-table 'epa-info-mode-abbrev-table '())
-
-(define-abbrev-table 'epa-key-list-mode-abbrev-table '())
-
-(define-abbrev-table 'epa-key-mode-abbrev-table '())
-
-(define-abbrev-table 'eshell-mode-abbrev-table '())
-
-(define-abbrev-table 'flycheck-error-list-mode-abbrev-table '())
-
-(define-abbrev-table 'flycheck-error-message-mode-abbrev-table '())
-
-(define-abbrev-table 'fundamental-mode-abbrev-table '())
-
-(define-abbrev-table 'gfm-mode-abbrev-table '())
-
-(define-abbrev-table 'gfm-view-mode-abbrev-table '())
-
-(define-abbrev-table 'git-commit-elisp-text-mode-abbrev-table '())
-
-(define-abbrev-table 'git-commit-mode-abbrev-table '())
-
-(define-abbrev-table 'git-rebase-mode-abbrev-table '())
-
-(define-abbrev-table 'gitattributes-mode-abbrev-table '())
-
-(define-abbrev-table 'gitconfig-mode-abbrev-table '())
-
-(define-abbrev-table 'gitignore-mode-abbrev-table '())
-
 (define-abbrev-table 'global-abbrev-table
   '(
-    ("adn" "and" nil 0)
-    ("configur" "configure" nil 0)
-    ("dicxtionary" "dictionary" nil 0)
-    ("disalbe" "disable" nil 1)
-    ("enumerage" "enumerate" nil 0)
-    ("expresison" "expression" nil 0)
-    ("expressoin" "expression" nil 0)
-    ("fiel" "file" nil 2)
-    ("flasg" "flags" nil 1)
-    ("fro" "for" nil 1)
-    ("funcxtion" "function" nil 0)
-    ("gropu" "group" nil 0)
-    ("imoport" "import" nil 0)
-    ("imoprt" "import" nil 0)
-    ("joine" "join" nil 1)
-    ("maintenence" "maintenance" nil 0)
-    ("mdule" "module" nil 0)
-    ("optino" "option" nil 0)
-    ("optinos" "options" nil 0)
-    ("queyr" "query" nil 1)
-    ("recieve" "receive" nil 1)
-    ("remvoe" "remove" nil 2)
-    ("retreive" "retrieve" nil 0)
-    ("reutrn" "return" nil 1)
-    ("slef" "self" nil 1)
-    ("soem" "some" nil 0)
-    ("talbe" "table" nil 2)
-    ("teh" "the" nil 2)
-    ("tempalte" "template" nil 1)
-    ("termainl" "terminal" nil 1)
-    ("vlaue" "value" nil 0)
+    ("adn" "and" nil :count 0)
+    ("broekn" "broken" nil :count 1)
+    ("configur" "configure" nil :count 0)
+    ("dicxtionary" "dictionary" nil :count 0)
+    ("disalbe" "disable" nil :count 1)
+    ("enumerage" "enumerate" nil :count 0)
+    ("expresison" "expression" nil :count 0)
+    ("expressoin" "expression" nil :count 0)
+    ("fiel" "file" nil :count 2)
+    ("flasg" "flags" nil :count 1)
+    ("fro" "for" nil :count 1)
+    ("funcxtion" "function" nil :count 0)
+    ("gropu" "group" nil :count 0)
+    ("hodl" "hold" nil :count 1)
+    ("imoport" "import" nil :count 0)
+    ("imoprt" "import" nil :count 0)
+    ("joine" "join" nil :count 1)
+    ("maintenence" "maintenance" nil :count 0)
+    ("mdule" "module" nil :count 0)
+    ("optino" "option" nil :count 0)
+    ("optinos" "options" nil :count 0)
+    ("queyr" "query" nil :count 1)
+    ("recieve" "receive" nil :count 1)
+    ("remvoe" "remove" nil :count 2)
+    ("retreive" "retrieve" nil :count 0)
+    ("reutrn" "return" nil :count 1)
+    ("slef" "self" nil :count 1)
+    ("soem" "some" nil :count 0)
+    ("talbe" "table" nil :count 2)
+    ("teh" "the" nil :count 2)
+    ("tempalte" "template" nil :count 1)
+    ("termainl" "terminal" nil :count 1)
+    ("vlaue" "value" nil :count 0)
    ))
-
-(define-abbrev-table 'gnus-group-mode-abbrev-table '())
-
-(define-abbrev-table 'go-dot-mod-mode-abbrev-table '())
-
-(define-abbrev-table 'go-mode-abbrev-table '())
-
-(define-abbrev-table 'godoc-mode-abbrev-table '())
-
-(define-abbrev-table 'grep-mode-abbrev-table '())
-
-(define-abbrev-table 'help-mode-abbrev-table '())
-
-(define-abbrev-table 'i3wm-config-mode-abbrev-table '())
-
-(define-abbrev-table 'ibuffer-mode-abbrev-table '())
-
-(define-abbrev-table 'idl-mode-abbrev-table '())
-
-(define-abbrev-table 'inferior-python-mode-abbrev-table '())
-
-(define-abbrev-table 'ivy-occur-grep-mode-abbrev-table '())
-
-(define-abbrev-table 'ivy-occur-mode-abbrev-table '())
-
-(define-abbrev-table 'java-mode-abbrev-table
-  '(
-   ))
-
-(define-abbrev-table 'js-mode-abbrev-table '())
-
-(define-abbrev-table 'lisp-mode-abbrev-table '())
-
-(define-abbrev-table 'log-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-branch-manager-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-cherry-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-commit-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-diff-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-log-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-log-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-log-select-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-merge-preview-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-popup-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-popup-sequence-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-process-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-reflog-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-refs-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-repolist-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-revision-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-section-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-stash-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-stashes-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-status-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-submodule-list-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-todos-list-mode-abbrev-table '())
-
-(define-abbrev-table 'magit-wazzup-mode-abbrev-table '())
-
-(define-abbrev-table 'makefile-automake-mode-abbrev-table '())
-
-(define-abbrev-table 'makefile-bsdmake-mode-abbrev-table '())
-
-(define-abbrev-table 'makefile-gmake-mode-abbrev-table '())
-
-(define-abbrev-table 'makefile-imake-mode-abbrev-table '())
-
-(define-abbrev-table 'makefile-makepp-mode-abbrev-table '())
-
-(define-abbrev-table 'makefile-mode-abbrev-table '())
-
-(define-abbrev-table 'markdown-mode-abbrev-table '())
-
-(define-abbrev-table 'markdown-view-mode-abbrev-table '())
-
-(define-abbrev-table 'message-mode-abbrev-table '())
-
-(define-abbrev-table 'messages-buffer-mode-abbrev-table '())
-
-(define-abbrev-table 'nxml-mode-abbrev-table '())
-
-(define-abbrev-table 'objc-mode-abbrev-table
-  '(
-   ))
-
-(define-abbrev-table 'occur-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'occur-mode-abbrev-table '())
-
-(define-abbrev-table 'org-mode-abbrev-table '())
-
-(define-abbrev-table 'outline-mode-abbrev-table '())
-
-(define-abbrev-table 'package-menu-mode-abbrev-table '())
-
-(define-abbrev-table 'perl-mode-abbrev-table '())
-
-(define-abbrev-table 'pike-mode-abbrev-table
-  '(
-   ))
-
-(define-abbrev-table 'pip-requirements-mode-abbrev-table '())
-
-(define-abbrev-table 'process-menu-mode-abbrev-table '())
-
-(define-abbrev-table 'prog-mode-abbrev-table '())
-
-(define-abbrev-table 'pylint-mode-abbrev-table '())
-
-(define-abbrev-table 'python-mode-abbrev-table '())
-
-(define-abbrev-table 'python-mode-skeleton-abbrev-table
-  '(
-   ))
-
-(define-abbrev-table 'reb-lisp-mode-abbrev-table '())
-
-(define-abbrev-table 'reb-mode-abbrev-table '())
-
-(define-abbrev-table 'rst-mode-abbrev-table '())
-
-(define-abbrev-table 'rst-toc-mode-abbrev-table '())
-
-(define-abbrev-table 'ruby-mode-abbrev-table '())
-
-(define-abbrev-table 'rxt-help-mode-abbrev-table '())
-
-(define-abbrev-table 'select-tags-table-mode-abbrev-table '())
-
-(define-abbrev-table 'sh-mode-abbrev-table '())
-
-(define-abbrev-table 'shell-mode-abbrev-table '())
-
-(define-abbrev-table 'snippet-mode-abbrev-table '())
-
-(define-abbrev-table 'special-mode-abbrev-table '())
-
-(define-abbrev-table 'speedbar-mode-abbrev-table '())
-
-(define-abbrev-table 'sql-mode-abbrev-table '())
-
-(define-abbrev-table 'tabulated-list-mode-abbrev-table '())
-
-(define-abbrev-table 'text-mode-abbrev-table '())
-
-(define-abbrev-table 'toml-mode-abbrev-table '())
-
-(define-abbrev-table 'url-cookie-mode-abbrev-table '())
-
-(define-abbrev-table 'use-package-statistics-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-bzr-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-hg-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-mtn-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-svn-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'xref--xref-buffer-mode-abbrev-table '())
-
-(define-abbrev-table 'yaml-mode-abbrev-table '())
 
