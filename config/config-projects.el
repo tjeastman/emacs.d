@@ -28,8 +28,6 @@
   :bind
   ("C-x g" . magit-status)
   ("C-x M-g" . magit-dispatch)
-  ;; :hook
-  ;; (magit-status-mode . magit-filenotify-mode)
   :custom
   (magit-repository-directories '(("~/projects/" . 1)))
   (magit-save-repository-buffers 'dontask)
