@@ -50,7 +50,9 @@
   (after-init . global-flycheck-mode)
   :bind
   (("C-c e n" . flycheck-next-error)
-   ("C-c e p" . flycheck-previous-error)))
+   ("C-c e p" . flycheck-previous-error))
+  :custom
+  (flycheck-indication-mode nil))
 
 (use-package hydra
   :commands defhydra)
