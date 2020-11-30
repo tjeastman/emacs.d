@@ -11,10 +11,13 @@
         org-self-insert-command
         sp-backward-delete-char
         sp-delete-char
+        sp-kill-hybrid-sexp
+        sp-kill-region
         yaml-electric-backspace
         yaml-electric-dash-and-dot
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        markdown-outdent-or-delete
         ))
