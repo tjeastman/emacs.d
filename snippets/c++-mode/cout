@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: cout
+# key: p
+# --
+std::cout << $1 << std::endl;
+$0
