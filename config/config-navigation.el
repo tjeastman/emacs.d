@@ -38,6 +38,12 @@
   (deadgrep-edit-mode
    deadgrep-kill-all-buffers))
 
+(use-package dired-sidebar
+  :commands
+  dired-sidebar-toggle-sidebar
+  :custom
+  (dired-sidebar-theme 'ascii))
+
 (use-package goto-chg
   :bind
   ("C-c G" . goto-last-change))
