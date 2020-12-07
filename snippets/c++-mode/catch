@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: catch
+# key: catch
+# group : control structures
+# --
+catch (${1:exception}) {
+  $2
+}
+$0

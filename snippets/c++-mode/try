@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: try
+# key: try
+# group : control structures
+# --
+try {
+  $1
+} catch (${2:exception}) {
+  $3
+}
+$0
