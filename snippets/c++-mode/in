@@ -3,5 +3,5 @@
 # key: in
 # group: includes
 # --
-#include <${vector}>
+#include <${1:iostream}>
 $0
