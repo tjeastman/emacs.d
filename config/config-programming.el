@@ -38,7 +38,7 @@
   (lsp-enable-indentation nil)
   (lsp-headerline-breadcrumb-enable nil))
 
-(use-package lsp-python-ms)
+(use-package lsp-pyright)
 
 (use-package platformio-mode
   :commands
