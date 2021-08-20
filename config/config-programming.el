@@ -35,7 +35,8 @@
    lsp-deferred)
   :custom
   (lsp-auto-guess-root t)
-  (lsp-enable-indentation nil))
+  (lsp-enable-indentation nil)
+  (lsp-headerline-breadcrumb-enable nil))
 
 (use-package lsp-python-ms)
 
