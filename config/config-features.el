@@ -29,6 +29,10 @@
    ("s-k" . crux-kill-whole-line)
    ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
+(use-package direnv
+  :config
+  (direnv-mode))
+
 (use-package docker
   :bind
   ("C-c d" . docker))
