@@ -17,14 +17,14 @@
   (dimmer-mode t))
 
 (use-package doom-modeline
-  :config
-  (setq doom-modeline-bar-width 1)
-  (setq doom-modeline-buffer-encoding nil)
-  (setq doom-modeline-buffer-file-name-style 'relative-from-project)
-  (setq doom-modeline-env-enable-python t)
-  (setq doom-modeline-height 15)
-  (setq doom-modeline-icon nil)
-  (setq doom-modeline-minor-modes nil)
+  :custom
+  (doom-modeline-bar-width 1)
+  (doom-modeline-buffer-encoding nil)
+  (doom-modeline-buffer-file-name-style 'relative-from-project)
+  (doom-modeline-env-enable-python t)
+  (doom-modeline-height 15)
+  (doom-modeline-icon nil)
+  (doom-modeline-minor-modes nil)
   :init
   (doom-modeline-mode 1))
 
