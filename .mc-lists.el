@@ -13,6 +13,7 @@
         sp-delete-char
         sp-kill-hybrid-sexp
         sp-kill-region
+        wdired-finish-edit
         yaml-electric-backspace
         yaml-electric-dash-and-dot
         ))
