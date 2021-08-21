@@ -6,10 +6,14 @@
 (if (and (fboundp 'menu-bar-mode) (not (eq system-type 'darwin)))
     (menu-bar-mode -1))
 
-(use-package zenburn-theme
+(use-package doom-themes
+  :ensure t
   :if window-system
-  :init
-  (load-theme 'zenburn t))
+  :custom
+  (doom-themes-enable-bold nil)
+  (doom-themes-enable-italic nil)
+  :config
+  (load-theme 'doom-one-light t))
 
 (use-package beacon
   :config
