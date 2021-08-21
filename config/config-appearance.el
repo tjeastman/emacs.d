@@ -6,15 +6,6 @@
 (if (and (fboundp 'menu-bar-mode) (not (eq system-type 'darwin)))
     (menu-bar-mode -1))
 
-(use-package doom-themes
-  :ensure t
-  :if window-system
-  :custom
-  (doom-themes-enable-bold nil)
-  (doom-themes-enable-italic nil)
-  :config
-  (load-theme 'doom-one-light t))
-
 (use-package beacon
   :config
   (beacon-mode 1))
@@ -37,15 +28,24 @@
   :init
   (doom-modeline-mode 1))
 
-(use-package hl-line
-  :ensure nil
+(use-package doom-themes
+  :ensure t
   :if window-system
+  :custom
+  (doom-themes-enable-bold nil)
+  (doom-themes-enable-italic nil)
   :config
-  (global-hl-line-mode t))
+  (load-theme 'doom-one-light t))
 
 (use-package frame
   :ensure nil
   :bind
   ("M-RET" . toggle-frame-fullscreen))
+
+(use-package hl-line
+  :ensure nil
+  :if window-system
+  :config
+  (global-hl-line-mode t))
 
 (provide 'config-appearance)
