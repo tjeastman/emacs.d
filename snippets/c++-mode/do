@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: do while
 # key: do
-# group : control structures
+# group: control structures
 # --
 do {
   $0
