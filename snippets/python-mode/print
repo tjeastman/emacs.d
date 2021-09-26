@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: print
 # key: p
-# group: statements
+# group: functions
 # --
 print($1)
 $0
