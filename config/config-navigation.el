@@ -63,6 +63,8 @@
   :config
   (recentf-mode 1))
 
+(use-package rg)
+
 (use-package saveplace
   :ensure nil
   :config
