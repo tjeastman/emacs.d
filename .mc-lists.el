@@ -5,6 +5,7 @@
       '(
         c-electric-slash
         crux-move-beginning-of-line
+        kill-region
         org-beginning-of-line
         org-delete-char
         org-end-of-line
