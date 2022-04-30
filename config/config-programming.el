@@ -1,9 +1,5 @@
 ;; General
 
-(use-package aggressive-indent
-  :config
-  (global-aggressive-indent-mode 1))
-
 (use-package cmake-mode)
 
 (use-package cmake-font-lock
