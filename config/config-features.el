@@ -40,7 +40,7 @@
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
   :custom
-  (exec-path-from-shell-shell-name "/usr/local/bin/zsh")
+  (exec-path-from-shell-shell-name "/opt/homebrew/bin/zsh")
   (exec-path-from-shell-variables
    '("PATH"
      "MANPATH"
