@@ -11,12 +11,6 @@
      (shell . t)
      (C . t))))
 
-(use-package org-ref
-  :custom
-  (org-ref-bibliography-notes "~/projects/refs/notes.org")
-  (org-ref-default-bibliography '("~/projects/refs/references.bib"))
-  (org-ref-pdf-directory "~/projects/refs/papers/"))
-
 (use-package jupyter)
 
 (provide 'config-org)
