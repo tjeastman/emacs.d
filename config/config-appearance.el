@@ -35,7 +35,7 @@
   (doom-themes-enable-bold nil)
   (doom-themes-enable-italic nil)
   :config
-  (load-theme 'doom-one-light t))
+  (load-theme 'doom-solarized-light t))
 
 (use-package frame
   :ensure nil
