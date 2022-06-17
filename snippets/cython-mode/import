@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: import
+# key: im
+# group : imports
+# --
+import ${1:library}${2: as ${3:alias}}
+$0
