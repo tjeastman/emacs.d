@@ -3,5 +3,5 @@
 # key: f
 # group: definitions
 # --
-def ${1:function}(${2:arguments}):
+def ${1:function}(${2:arguments}) -> ${3:None}:
     $0

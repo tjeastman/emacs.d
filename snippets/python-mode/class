@@ -3,6 +3,6 @@
 # key: cls
 # --
 class $1(${2:object}):
-    def __init__(self, $3):
+    def __init__(self, $3) -> None:
         ${3:$(mapconcat (lambda (x) (format "self._%s = %s" x x)) (split-string yas-text "," t "[ \t]") "\n        ")}
     $0

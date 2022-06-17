@@ -4,5 +4,5 @@
 # group: testing
 # --
 @pytest.fixture
-def $1($2):
+def $1($2) -> ${3:None}:
     $0

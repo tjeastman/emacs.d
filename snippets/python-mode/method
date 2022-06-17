@@ -3,5 +3,5 @@
 # key: m
 # group: object oriented
 # --
-def ${1:method}(self${2:, $3}):
+def ${1:method}(self${2:, $3}) -> ${4:None}:
     $0

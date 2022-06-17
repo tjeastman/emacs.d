@@ -4,5 +4,5 @@
 # group: object oriented
 # --
 @classmethod
-def ${1:meth}(cls, $2):
+def ${1:meth}(cls, $2) -> ${3:None}:
     $0
