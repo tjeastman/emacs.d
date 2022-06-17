@@ -32,7 +32,8 @@
   :custom
   (lsp-auto-guess-root t)
   (lsp-enable-indentation nil)
-  (lsp-headerline-breadcrumb-enable nil))
+  (lsp-headerline-breadcrumb-enable nil)
+  (lsp-keymap-prefix "C-c l"))
 
 (use-package lsp-pyright)
 
