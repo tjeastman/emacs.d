@@ -29,7 +29,6 @@
   (doom-modeline-mode 1))
 
 (use-package doom-themes
-  :ensure t
   :if window-system
   :custom
   (doom-themes-enable-bold nil)
