@@ -1,4 +1,5 @@
 *.elc
+.dir-locals.el
 .historian
 .python-environments
 amx-items
