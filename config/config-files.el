@@ -12,7 +12,8 @@
   ((".preseed$" . conf-mode)
    ("pylintrc$" . conf-mode)))
 
-(use-package cuda-mode)
+(use-package cuda-mode
+  :defer t)
 
 (use-package dockerfile-mode
   :defer t)
@@ -41,14 +42,17 @@
   :mode
   ("Pipfile.lock\\'" . json-mode))
 
-(use-package ledger-mode)
+(use-package ledger-mode
+  :defer t)
 
 (use-package markdown-mode
   :mode
   (("README\\.md\\'" . gfm-mode)
    ("\\.md\\'" . markdown-mode)
    ("\\.markdown\\'" . markdown-mode)))
-(use-package markdown-preview-mode)
+
+(use-package markdown-preview-mode
+  :defer t)
 
 (use-package protobuf-mode
   :hook

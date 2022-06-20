@@ -75,7 +75,8 @@
 
 ;; Cojure
 
-(use-package cider)
+(use-package cider
+  :defer t)
 
 (use-package clojure-mode)
 

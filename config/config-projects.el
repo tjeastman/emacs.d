@@ -1,4 +1,5 @@
 (use-package git-commit
+  :defer t
   :custom
   (git-commit-summary-max-length 72))
 
