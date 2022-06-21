@@ -24,7 +24,7 @@
   :defer t)
 
 (use-package git-modes
-  :load-path "contrib/git-modes/"
+  :straight (:host github :repo "magit/git-modes" :branch "master")
   :mode
   ("/\\.gitconfig\\'" . gitconfig-mode)
   ("/\\.git/config\\'" . gitconfig-mode)
@@ -35,7 +35,7 @@
   :defer t)
 
 (use-package i3wm-config-mode
-  :load-path "contrib/i3wm-Config-Mode/"
+  :straight (:host github :repo "Alexander-Miller/i3wm-Config-Mode" :branch "master")
   :commands i3wm-config-mode)
 
 (use-package json-mode

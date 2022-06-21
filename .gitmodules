@@ -1,6 +1,0 @@
-[submodule "contrib/i3wm-Config-Mode"]
-	path = contrib/i3wm-Config-Mode
-	url = https://github.com/Alexander-Miller/i3wm-Config-Mode.git
-[submodule "contrib/git-modes"]
-	path = contrib/git-modes
-	url = https://github.com/magit/git-modes.git
