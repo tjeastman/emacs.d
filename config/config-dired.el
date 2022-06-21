@@ -1,5 +1,5 @@
 (use-package dired
-  :ensure nil
+  :straight (:type built-in)
   :custom
   (dired-auto-revert-buffer t)
   (dired-recursive-copies 'always)

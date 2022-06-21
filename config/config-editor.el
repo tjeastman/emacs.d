@@ -36,7 +36,7 @@
 (put 'narrow-to-defun 'disabled nil)
 
 (use-package abbrev
-  :ensure nil
+  :straight (:type built-in)
   :custom
   (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
   :config
@@ -48,7 +48,7 @@
   (global-auto-revert-mode t))
 
 (use-package comint
-  :ensure nil
+  :straight (:type built-in)
   :custom
   (comint-buffer-maximum-size 20000)
   (comint-process-echoes t))
@@ -67,15 +67,15 @@
 (use-package eldoc)
 
 (use-package elisp-mode
+  :straight (:type built-in)
   :after electric-operator
-  :ensure nil
   :hook
   (emacs-lisp-mode . electric-operator-mode)
   :config
   (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
 
 (use-package files
-  :ensure nil
+  :straight (:type built-in)
   :hook
   (before-save . whitespace-cleanup)
   :custom
@@ -103,7 +103,7 @@
   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
 
 (use-package simple
-  :ensure nil
+  :straight (:type built-in)
   :bind
   ("C-;" . backward-kill-word)
   :custom
@@ -153,12 +153,12 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
                                      (unpackaged/smerge-hydra/body)))))
 
 (use-package text-mode
-  :ensure nil
+  :straight (:type built-in)
   :hook
   (text-mode . flyspell-mode))
 
 (use-package uniquify
-  :ensure nil
+  :straight (:type built-in)
   :custom
   (uniquify-buffer-name-style 'post-forward)
   (uniquify-after-kill-buffer-p t)

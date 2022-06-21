@@ -43,7 +43,7 @@
    platformio-conditionally-enable))
 
 (use-package prog-mode
-  :ensure nil
+  :straight (:type built-in)
   :hook
   ((prog-mode . turn-on-smartparens-strict-mode)
    (prog-mode . flyspell-prog-mode)))

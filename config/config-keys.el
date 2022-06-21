@@ -1,5 +1,5 @@
 (use-package ns-win
-  :ensure nil
+  :straight (:type built-in)
   :if (eq system-type 'darwin)
   :custom
   (mac-command-modifier 'meta)

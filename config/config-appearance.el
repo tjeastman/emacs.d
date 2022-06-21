@@ -37,7 +37,7 @@
   (load-theme 'doom-solarized-light t))
 
 (use-package frame
-  :ensure nil
+  :straight (:type built-in)
   :bind
   ("M-RET" . toggle-frame-fullscreen))
 

@@ -8,7 +8,7 @@
   ("C-=" . er/expand-region))
 
 (use-package mouse
-  :ensure nil
+  :straight (:type built-in)
   :custom
   (mouse-yank-at-point t))
 
