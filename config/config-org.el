@@ -14,6 +14,4 @@
      (C . t)
      (http . t))))
 
-(use-package jupyter)
-
 (provide 'config-org)
