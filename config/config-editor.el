@@ -91,7 +91,6 @@
 (use-package flyspell)
 
 (use-package ispell
-  :ensure nil
   :custom
   (ispell-personal-dictionary "~/.aspell.en.pws")
   (ispell-program-name "aspell"))
@@ -170,7 +169,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
-  :ensure nil
   :commands whitespace-cleanup
   :custom
   (whitespace-line-column 100)

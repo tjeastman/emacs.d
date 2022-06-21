@@ -1,5 +1,4 @@
 (use-package delsel
-  :ensure nil
   :config
   (delete-selection-mode t))
 

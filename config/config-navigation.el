@@ -49,12 +49,10 @@
   ("C-c G" . goto-last-change))
 
 (use-package ibuffer
-  :ensure nil
   :bind
   ("C-x C-b" . ibuffer))
 
 (use-package recentf
-  :ensure nil
   :bind
   ("C-x C-r" . recentf-open-files)
   :custom
@@ -66,12 +64,10 @@
 (use-package rg)
 
 (use-package saveplace
-  :ensure nil
   :config
   (save-place-mode 1))
 
 (use-package subword
-  :ensure nil
   :config
   (global-subword-mode))
 

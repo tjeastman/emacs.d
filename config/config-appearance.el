@@ -42,7 +42,6 @@
   ("M-RET" . toggle-frame-fullscreen))
 
 (use-package hl-line
-  :ensure nil
   :if window-system
   :config
   (global-hl-line-mode t))
