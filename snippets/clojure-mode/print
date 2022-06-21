@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: print
+# key: p
+# group: functions
+# --
+(println $1)
+$0
