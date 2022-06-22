@@ -33,16 +33,10 @@
   (straight-use-package-by-default t))
 
 (require 'config-packages)
-(require 'config-functions)
 (require 'config-appearance)
 (require 'config-editor)
 (require 'config-editing)
-(require 'config-projects)
-(require 'config-completion)
-(require 'config-keys)
 (require 'config-features)
-(require 'config-navigation)
 (require 'config-files)
-(require 'config-programming)
-(require 'config-org)
-(require 'config-dired)
+
+(load-file (expand-file-name "config.el" user-emacs-directory))
