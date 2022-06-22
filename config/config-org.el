@@ -5,6 +5,7 @@
 (use-package org
   :custom
   (org-src-fontify-natively t)
+  (org-use-speed-commands t)
   (org-confirm-babel-evaluate nil)
   (org-babel-load-languages
    '((clojure . t)
