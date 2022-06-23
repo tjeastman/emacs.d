@@ -261,7 +261,6 @@
 
 (use-package pyvenv
   :config
-  (setq pyvenv-mode-line-indicator nil)
   (pyvenv-mode))
 
 (use-package ob-async)
