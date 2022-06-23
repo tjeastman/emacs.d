@@ -241,26 +241,6 @@
   :config
   (which-function-mode 1))
 
-(use-package clang-format
-  :commands
-  (clang-format-region
-   clang-format-buffer))
-
-(use-package modern-cpp-font-lock
-  :commands modern-c++-font-lock-mode)
-
-(use-package cider
-  :defer t)
-
-(use-package clojure-mode)
-
-(use-package go-mode
-  :hook
-  (go-mode . (lambda ()
-               (setq tab-width 4)
-               (setq indent-tabs-mode 1)
-               (add-hook 'before-save-hook 'gofmt-before-save nil t))))
-
 (use-package blacken
   :commands blacken-buffer)
 

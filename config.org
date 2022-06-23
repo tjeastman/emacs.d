@@ -261,7 +261,7 @@
 #+END_SRC
 
 ** C/C++
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package clang-format
     :commands
     (clang-format-region
@@ -272,7 +272,7 @@
 #+END_SRC
 
 ** Clojure
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package cider
     :defer t)
 
@@ -280,7 +280,7 @@
 #+END_SRC
 
 ** Go
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle no
   (use-package go-mode
     :hook
     (go-mode . (lambda ()
