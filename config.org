@@ -305,23 +305,15 @@
     :commands py-isort-before-save)
 
   (use-package python
-    :mode ("\\.py\\'" . python-mode)
     :hook
-    (python-mode . highlight-indentation-mode)
-    :custom
-    (python-indent-offset 4)
-    (python-indent-guess-indent-offset nil))
+    (python-mode . highlight-indentation-mode))
 
   (use-package python-pytest
     :bind
     ("C-c t" . python-pytest)
-    ("C-x t" . python-pytest-popup)
+    ("C-x t" . python-pytest-dispatch)
     :custom
-    (python-pytest-executable "python -m pytest"))
-
-  (use-package pyvenv
-    :config
-    (pyvenv-mode))
+    (python-pytest-unsaved-buffers-behavior 'save-all))
 #+END_SRC
 
 * Org
