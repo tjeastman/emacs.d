@@ -78,7 +78,10 @@
   (require-final-newline t)
   (confirm-nonexistent-file-or-buffer nil))
 
-(use-package flyspell)
+(use-package flyspell
+  :commands
+  (flyspell-mode
+   flyspell-prog-mode))
 
 (use-package ispell
   :custom
