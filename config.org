@@ -254,6 +254,15 @@
     (which-function-mode 1))
 #+END_SRC
 
+** Make
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package make-mode
+    :mode
+    ("Make.rules" . makefile-mode)
+    :hook
+    (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
+#+END_SRC
+
 ** CMake
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package cmake-mode)

@@ -235,6 +235,12 @@
   :config
   (which-function-mode 1))
 
+(use-package make-mode
+  :mode
+  ("Make.rules" . makefile-mode)
+  :hook
+  (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
+
 (use-package elisp-mode
   :straight (:type built-in)
   :hook

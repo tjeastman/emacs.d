@@ -85,12 +85,6 @@
   (ispell-personal-dictionary "~/.aspell.en.pws")
   (ispell-program-name "aspell"))
 
-(use-package make-mode
-  :mode
-  ("Make.rules" . makefile-mode)
-  :hook
-  (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
-
 (use-package simple
   :straight (:type built-in)
   :bind
