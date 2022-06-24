@@ -235,6 +235,13 @@
   :config
   (which-function-mode 1))
 
+(use-package elisp-mode
+  :straight (:type built-in)
+  :hook
+  (emacs-lisp-mode . electric-operator-mode)
+  :config
+  (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
+
 (use-package blacken
   :commands blacken-buffer)
 

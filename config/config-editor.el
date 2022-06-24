@@ -64,14 +64,6 @@
   (compilation-scroll-output 'next-error)
   (compilation-environment '("TERM=eterm-color")))
 
-(use-package elisp-mode
-  :straight (:type built-in)
-  :after electric-operator
-  :hook
-  (emacs-lisp-mode . electric-operator-mode)
-  :config
-  (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
-
 (use-package files
   :straight (:type built-in)
   :hook

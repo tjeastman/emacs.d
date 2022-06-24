@@ -283,6 +283,16 @@
   (use-package clojure-mode)
 #+END_SRC
 
+** Emacs Lisp
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package elisp-mode
+    :straight (:type built-in)
+    :hook
+    (emacs-lisp-mode . electric-operator-mode)
+    :config
+    (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
+#+END_SRC
+
 ** Go
 #+BEGIN_SRC emacs-lisp :tangle no
   (use-package go-mode
