@@ -190,7 +190,8 @@
 
 (use-package highlight-indentation
   :commands
-  highlight-indentation-mode)
+  (highlight-indentation-mode
+   highlight-indentation-current-column-mode))
 
 (use-package lsp-ivy
   :commands
