@@ -64,8 +64,6 @@
   (compilation-scroll-output 'next-error)
   (compilation-environment '("TERM=eterm-color")))
 
-(use-package eldoc)
-
 (use-package elisp-mode
   :straight (:type built-in)
   :after electric-operator
