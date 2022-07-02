@@ -32,10 +32,10 @@
   :custom
   (straight-use-package-by-default t))
 
-(require 'config-packages)
+(use-package no-littering)
+
 (require 'config-appearance)
 (require 'config-editor)
-(require 'config-editing)
 (require 'config-features)
 (require 'config-files)
 

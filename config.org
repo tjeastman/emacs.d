@@ -1,3 +1,51 @@
+* Environment
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package direnv
+    :config
+    (direnv-mode))
+
+  (use-package exec-path-from-shell
+    :if (eq system-type 'darwin)
+    :custom
+    (exec-path-from-shell-shell-name "/opt/homebrew/bin/zsh")
+    (exec-path-from-shell-variables
+     '("PATH"
+       "MANPATH"
+       "SSH_AGENT_PID"
+       "SSH_AUTH_SOCK"))
+    :config
+    (exec-path-from-shell-initialize))
+#+END_SRC
+
+* Editing
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package delsel
+    :config
+    (delete-selection-mode t))
+
+  (use-package edit-indirect
+    :commands
+    edit-indirect-region)
+
+  (use-package expand-region
+    :bind
+    ("C-=" . er/expand-region))
+
+  (use-package mouse
+    :straight (:type built-in)
+    :custom
+    (mouse-yank-at-point t))
+
+  (use-package multiple-cursors
+    :bind
+    (("C-S-c C-S-c" . mc/edit-lines)
+     ("C->" . 'mc/mark-next-like-this)
+     ("C-<" . 'mc/mark-previous-like-this)
+     ("C-c C-<" . 'mc/mark-all-like-this))
+    :custom
+    (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
+#+END_SRC
+
 * Functions
 #+BEGIN_SRC emacs-lisp :tangle yes
   (defun my-run-new-shell-always ()

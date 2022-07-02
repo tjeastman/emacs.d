@@ -29,25 +29,9 @@
    ("s-k" . crux-kill-whole-line)
    ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
-(use-package direnv
-  :config
-  (direnv-mode))
-
 (use-package docker
   :bind
   ("C-c d" . docker))
-
-(use-package exec-path-from-shell
-  :if (eq system-type 'darwin)
-  :custom
-  (exec-path-from-shell-shell-name "/opt/homebrew/bin/zsh")
-  (exec-path-from-shell-variables
-   '("PATH"
-     "MANPATH"
-     "SSH_AGENT_PID"
-     "SSH_AUTH_SOCK"))
-  :config
-  (exec-path-from-shell-initialize))
 
 (use-package flycheck
   :hook
