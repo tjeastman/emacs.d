@@ -2,6 +2,10 @@
   :config
   (delete-selection-mode t))
 
+(use-package edit-indirect
+  :commands
+  edit-indirect-region)
+
 (use-package expand-region
   :bind
   ("C-=" . er/expand-region))
