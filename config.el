@@ -269,22 +269,44 @@
   :custom
   (python-pytest-unsaved-buffers-behavior 'save-all))
 
-(use-package ob-async)
+(use-package ob-emacs-lisp
+  :straight nil
+  :commands
+  (org-babel-expand-body:emacs-lisp
+   org-babel-execute:emacs-lisp))
 
-(use-package ob-http)
+(use-package ob-http
+  :commands
+  (org-babel-expand-body:http
+   org-babel-execute-body:http))
+
+(use-package ob-python
+  :straight nil
+  :commands
+  org-babel-execute:python)
+
+(use-package ob-shell
+  :straight nil
+  :commands
+  org-babel-execute:shell)
 
 (use-package org
   :custom
-  (org-src-fontify-natively t)
-  (org-use-speed-commands t)
+  (org-babel-load-languages nil)
   (org-confirm-babel-evaluate nil)
+  (org-src-fontify-natively t)
+  (org-use-speed-commands t))
+
+(use-package ob-async
+  :after org
+  :custom
   (org-babel-load-languages
-   '((clojure . t)
+   '((C . t)
+     (clojure . t)
      (emacs-lisp . t)
+     (http . t)
      (python . t)
-     (shell . t)
-     (C . t)
-     (http . t))))
+     (shell . t))))
 
 (use-package dired
   :straight (:type built-in)
