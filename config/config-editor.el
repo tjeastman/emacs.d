@@ -148,7 +148,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; visualize unwanted whitespace characters and lines that are too long
 (use-package whitespace
-  :commands whitespace-cleanup
+  :commands
+  (whitespace-cleanup)
   :custom
   (whitespace-line-column 100)
   (whitespace-style '(face tabs empty trailing lines-tail)))

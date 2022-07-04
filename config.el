@@ -39,7 +39,7 @@
 
 (use-package edit-indirect
   :commands
-  edit-indirect-region)
+  (edit-indirect-region))
 
 (use-package expand-region
   :bind
@@ -224,7 +224,7 @@
 
 (use-package dired-sidebar
   :commands
-  dired-sidebar-toggle-sidebar
+  (dired-sidebar-toggle-sidebar)
   :custom
   (dired-sidebar-theme 'ascii))
 
@@ -278,7 +278,7 @@
 
 (use-package lsp-ivy
   :commands
-  lsp-ivy-workspace-symbol)
+  (lsp-ivy-workspace-symbol))
 
 (use-package lsp-mode
   :commands
@@ -338,14 +338,16 @@
 
 ;; [[file:config.org::*Python][Python:1]]
 (use-package blacken
-  :commands blacken-buffer)
+  :commands
+  (blacken-buffer))
 
 (use-package pip-requirements
   :custom
   (pip-requirements-index-url nil))
 
 (use-package py-isort
-  :commands py-isort-before-save)
+  :commands
+  (py-isort-before-save))
 
 (use-package python
   :hook
@@ -374,12 +376,12 @@
 (use-package ob-python
   :straight nil
   :commands
-  org-babel-execute:python)
+  (org-babel-execute:python))
 
 (use-package ob-shell
   :straight nil
   :commands
-  org-babel-execute:shell)
+  (org-babel-execute:shell))
 
 (use-package org
   :custom

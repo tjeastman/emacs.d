@@ -1,5 +1,6 @@
 (use-package ansible-doc
-  :commands ansible-doc)
+  :commands
+  (ansible-doc))
 
 (use-package apt-sources-list
   :defer t)
@@ -36,7 +37,8 @@
 
 (use-package i3wm-config-mode
   :straight (:host github :repo "Alexander-Miller/i3wm-Config-Mode" :branch "master")
-  :commands i3wm-config-mode)
+  :commands
+  (i3wm-config-mode))
 
 (use-package json-mode
   :mode

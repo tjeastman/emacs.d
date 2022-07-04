@@ -32,7 +32,8 @@
   (flycheck-indication-mode nil))
 
 (use-package hydra
-  :commands defhydra)
+  :commands
+  (defhydra))
 
 (use-package imenu-anywhere
   :bind
