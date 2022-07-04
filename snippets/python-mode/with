@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: with
 # key: with
-# group : control structures
+# group: control structures
 # --
 with ${1:expression}${2: as ${3:alias}}:
     $0

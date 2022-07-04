@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: if else
 # key: ife
-# group : control structures
+# group: control structures
 # --
 if ${1:condition}:
     $2

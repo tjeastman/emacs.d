@@ -1,7 +1,7 @@
 # -*- mode: snippet -*-
 # name: from
 # key: from
-# group : imports
+# group: imports
 # --
 from ${1:library} import ${2:objects}
 $0
