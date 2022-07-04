@@ -1,14 +1,3 @@
-(use-package autoinsert
-  :custom
-  (auto-insert-alist nil)
-  (auto-insert-query nil)
-  :config
-  (auto-insert-mode))
-
-(use-package browse-kill-ring
-  :bind
-  ("C-x y" . browse-kill-ring))
-
 (use-package counsel
   :bind
   ("C-x C-m" . counsel-M-x)
@@ -92,16 +81,5 @@
 (use-package which-key
   :config
   (which-key-mode))
-
-(use-package yasnippet
-  :config
-  (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
-  (yas-global-mode t))
-
-(use-package yatemplate
-  :custom
-  (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
-  :config
-  (yatemplate-fill-alist))
 
 (provide 'config-features)

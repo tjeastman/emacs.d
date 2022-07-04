@@ -35,14 +35,6 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-defun 'disabled nil)
 
-(use-package abbrev
-  :straight (:type built-in)
-  :custom
-  (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
-  :config
-  (setq-default abbrev-mode t)
-  (quietly-read-abbrev-file abbrev-file-name))
-
 (use-package autorevert
   :config
   (global-auto-revert-mode t))

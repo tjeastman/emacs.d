@@ -14,6 +14,25 @@
   :config
   (exec-path-from-shell-initialize))
 
+(use-package abbrev
+  :straight (:type built-in)
+  :custom
+  (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
+  :config
+  (setq-default abbrev-mode t)
+  (quietly-read-abbrev-file abbrev-file-name))
+
+(use-package autoinsert
+  :custom
+  (auto-insert-alist nil)
+  (auto-insert-query nil)
+  :config
+  (auto-insert-mode))
+
+(use-package browse-kill-ring
+  :bind
+  ("C-x y" . browse-kill-ring))
+
 (use-package delsel
   :config
   (delete-selection-mode t))
@@ -39,6 +58,17 @@
    ("C-c C-<" . 'mc/mark-all-like-this))
   :custom
   (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
+
+(use-package yasnippet
+  :config
+  (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
+  (yas-global-mode t))
+
+(use-package yatemplate
+  :custom
+  (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
+  :config
+  (yatemplate-fill-alist))
 
 (defun my-run-new-shell-always ()
   "Run a shell in a new buffer regardless of how many shells are already running."
