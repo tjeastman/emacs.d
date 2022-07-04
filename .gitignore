@@ -10,6 +10,8 @@ packages
 projectile-bookmarks.eld
 projectile.cache
 request
-straight
+straight/build
+straight/build-cache.el
+straight/repos
 tramp
 var
