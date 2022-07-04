@@ -275,10 +275,6 @@
    electric-operator-get-rules-for-mode
    electric-operator-add-rules-for-mode))
 
-(use-package ccls
-  :custom
-  (ccls-sem-highlight-method 'overlays))
-
 (use-package highlight-indentation
   :commands
   (highlight-indentation-mode
