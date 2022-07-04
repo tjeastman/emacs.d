@@ -380,7 +380,7 @@
 #+END_SRC
 
 ** Emacs Lisp
-#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+#+BEGIN_SRC emacs-lisp :tangle no :comments link
   (use-package elisp-mode
     :straight (:type built-in)
     :hook
