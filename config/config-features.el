@@ -37,7 +37,7 @@
 
 (use-package imenu-anywhere
   :bind
-  ("C-c i" . imenu-anywhere))
+  ("C-c i" . ivy-imenu-anywhere))
 
 (use-package ivy
   :custom
