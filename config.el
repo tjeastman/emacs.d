@@ -14,6 +14,10 @@
   :config
   (exec-path-from-shell-initialize))
 
+(use-package keychain-environment
+  :config
+  (keychain-refresh-environment))
+
 (use-package abbrev
   :straight (:type built-in)
   :custom
@@ -235,6 +239,10 @@
 (use-package ibuffer
   :bind
   ("C-x C-b" . ibuffer))
+
+(use-package imenu-anywhere
+  :bind
+  ("C-c i" . ivy-imenu-anywhere))
 
 (use-package recentf
   :bind

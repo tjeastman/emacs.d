@@ -35,10 +35,6 @@
   :commands
   (defhydra))
 
-(use-package imenu-anywhere
-  :bind
-  ("C-c i" . ivy-imenu-anywhere))
-
 (use-package ivy
   :custom
   (ivy-use-virtual-buffers t)
@@ -60,10 +56,6 @@
 (use-package ivy-rich
   :init
   (ivy-rich-mode))
-
-(use-package keychain-environment
-  :config
-  (keychain-refresh-environment))
 
 (use-package prescient
   :config
