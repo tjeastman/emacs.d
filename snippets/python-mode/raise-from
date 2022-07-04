@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: raise from
+# key: raf
+# group: control structures
+# --
+raise ${1:Exception}($2) from ${3:None}
+$0
