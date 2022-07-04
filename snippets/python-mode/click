@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: click
 # key: click
+# group: boilerplate
 # --
 #!/usr/bin/env python
 
