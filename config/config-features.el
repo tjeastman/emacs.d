@@ -7,6 +7,7 @@
   (counsel-mode))
 
 (use-package counsel-projectile
+  :defer t
   :config
   (counsel-projectile-mode))
 
@@ -68,6 +69,7 @@
 
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
+  :defer t
   :config
   (volatile-highlights-mode t))
 

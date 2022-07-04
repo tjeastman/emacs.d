@@ -15,6 +15,7 @@
   (exec-path-from-shell-initialize))
 
 (use-package keychain-environment
+  :defer t
   :config
   (keychain-refresh-environment))
 
@@ -64,11 +65,13 @@
   (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
 (use-package yasnippet
+  :defer t
   :config
   (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
   (yas-global-mode t))
 
 (use-package yatemplate
+  :defer t
   :custom
   (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
   :config
@@ -106,6 +109,7 @@
 
 (use-package git-gutter-fringe
   :if window-system
+  :defer t
   :config
   (define-fringe-bitmap 'git-gutter-fr:added [224]
     nil nil '(center repeated))
@@ -150,7 +154,7 @@
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
 (use-package projectile
-  :demand
+  :defer t
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :custom
@@ -165,6 +169,7 @@
 
 ;; [[file:config.org::*Completion][Completion:1]]
 (use-package company
+  :defer t
   :custom
   (company-idle-delay 0.5)
   (company-minimum-prefix-length 3)
@@ -253,7 +258,8 @@
   :config
   (recentf-mode 1))
 
-(use-package rg)
+(use-package rg
+  :defer t)
 
 (use-package saveplace
   :config
@@ -294,7 +300,8 @@
   (lsp-headerline-breadcrumb-enable nil)
   (lsp-keymap-prefix "C-c l"))
 
-(use-package lsp-pyright)
+(use-package lsp-pyright
+  :defer t)
 
 (use-package platformio-mode
   :commands
@@ -312,6 +319,7 @@
   (prog-mode . rainbow-delimiters-mode))
 
 (use-package smartparens
+  :defer t
   :custom
   (sp-escape-quotes-after-insert nil)
   :config
@@ -379,6 +387,7 @@
   (org-babel-execute:shell))
 
 (use-package org
+  :defer t
   :custom
   (org-babel-load-languages nil)
   (org-confirm-babel-evaluate nil)
@@ -387,6 +396,7 @@
 
 (use-package ob-async
   :after org
+  :defer t
   :custom
   (org-babel-load-languages
    '((C . t)

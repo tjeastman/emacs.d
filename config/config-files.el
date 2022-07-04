@@ -87,7 +87,8 @@
   :config
   (electric-operator-add-rules-for-mode 'toml-mode (cons "=" " = ")))
 
-(use-package udev-mode)
+(use-package udev-mode
+  :defer t)
 
 (use-package yaml-mode
   :after docker-compose-mode
