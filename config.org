@@ -77,7 +77,7 @@
 #+END_SRC
 
 * Functions
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (defun my-run-new-shell-always ()
     "Run a shell in a new buffer regardless of how many shells are already running."
     (interactive)
@@ -102,7 +102,7 @@
 #+END_SRC
 
 * Projects
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package git-commit
     :defer t
     :custom
@@ -168,7 +168,7 @@
 #+END_SRC
 
 * Completion
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package company
     :custom
     (company-idle-delay 0.5)
@@ -182,7 +182,7 @@
 #+END_SRC
 
 * Keys
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package ns-win
     :straight (:type built-in)
     :if (eq system-type 'darwin)
@@ -192,7 +192,7 @@
 #+END_SRC
 
 * Navigation
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes  :comments link
   (use-package ace-link
     :config
     (ace-link-setup-default))
@@ -273,7 +273,7 @@
 
 * Programming
 ** General
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes  :comments link
   (use-package electric-operator
     :commands
     (electric-operator-mode
@@ -333,7 +333,7 @@
 #+END_SRC
 
 ** Make
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package make-mode
     :mode
     ("Make.rules" . makefile-mode)
@@ -342,7 +342,7 @@
 #+END_SRC
 
 ** CMake
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp :tangle no :comments link
   (use-package cmake-mode)
 
   (use-package cmake-font-lock
@@ -352,7 +352,7 @@
 #+END_SRC
 
 ** C/C++
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp :tangle no :comments link
   (use-package clang-format
     :commands
     (clang-format-region
@@ -363,7 +363,7 @@
 #+END_SRC
 
 ** Clojure
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp :tangle no :comments link
   (use-package cider
     :defer t)
 
@@ -371,7 +371,7 @@
 #+END_SRC
 
 ** Emacs Lisp
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package elisp-mode
     :straight (:type built-in)
     :hook
@@ -381,7 +381,7 @@
 #+END_SRC
 
 ** Go
-#+BEGIN_SRC emacs-lisp :tangle no
+#+BEGIN_SRC emacs-lisp :tangle no :comments link
   (use-package go-mode
     :hook
     (go-mode . (lambda ()
@@ -391,7 +391,7 @@
 #+END_SRC
 
 ** Python
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package blacken
     :commands blacken-buffer)
 
@@ -415,7 +415,7 @@
 #+END_SRC
 
 * Org
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package ob-emacs-lisp
     :straight nil
     :commands
@@ -457,7 +457,7 @@
 #+END_SRC
 
 * Dired
-#+BEGIN_SRC emacs-lisp :tangle yes
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package dired
     :straight (:type built-in)
     :custom

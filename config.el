@@ -70,6 +70,7 @@
   :config
   (yatemplate-fill-alist))
 
+;; [[file:config.org::*Functions][Functions:1]]
 (defun my-run-new-shell-always ()
   "Run a shell in a new buffer regardless of how many shells are already running."
   (interactive)
@@ -91,7 +92,9 @@
                     (buffer-file-name))))
     (when filename
       (kill-new filename))))
+;; Functions:1 ends here
 
+;; [[file:config.org::*Projects][Projects:1]]
 (use-package git-commit
   :defer t
   :custom
@@ -154,7 +157,9 @@
   (projectile-sort-order 'recentf)
   :config
   (projectile-mode +1))
+;; Projects:1 ends here
 
+;; [[file:config.org::*Completion][Completion:1]]
 (use-package company
   :custom
   (company-idle-delay 0.5)
@@ -165,14 +170,18 @@
   (company-show-numbers t)
   :config
   (global-company-mode t))
+;; Completion:1 ends here
 
+;; [[file:config.org::*Keys][Keys:1]]
 (use-package ns-win
   :straight (:type built-in)
   :if (eq system-type 'darwin)
   :custom
   (mac-command-modifier 'meta)
   (mac-option-modifier 'super))
+;; Keys:1 ends here
 
+;; [[file:config.org::*Navigation][Navigation:1]]
 (use-package ace-link
   :config
   (ace-link-setup-default))
@@ -249,7 +258,9 @@
 (use-package swiper
   :bind
   ("C-s" . swiper))
+;; Navigation:1 ends here
 
+;; [[file:config.org::*General][General:1]]
 (use-package electric-operator
   :commands
   (electric-operator-mode
@@ -306,20 +317,26 @@
 (use-package which-func
   :config
   (which-function-mode 1))
+;; General:1 ends here
 
+;; [[file:config.org::*Make][Make:1]]
 (use-package make-mode
   :mode
   ("Make.rules" . makefile-mode)
   :hook
   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
+;; Make:1 ends here
 
+;; [[file:config.org::*Emacs Lisp][Emacs Lisp:1]]
 (use-package elisp-mode
   :straight (:type built-in)
   :hook
   (emacs-lisp-mode . electric-operator-mode)
   :config
   (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
+;; Emacs Lisp:1 ends here
 
+;; [[file:config.org::*Python][Python:1]]
 (use-package blacken
   :commands blacken-buffer)
 
@@ -340,7 +357,9 @@
   ("C-x t" . python-pytest-dispatch)
   :custom
   (python-pytest-unsaved-buffers-behavior 'save-all))
+;; Python:1 ends here
 
+;; [[file:config.org::*Org][Org:1]]
 (use-package ob-emacs-lisp
   :straight nil
   :commands
@@ -379,7 +398,9 @@
      (http . t)
      (python . t)
      (shell . t))))
+;; Org:1 ends here
 
+;; [[file:config.org::*Dired][Dired:1]]
 (use-package dired
   :straight (:type built-in)
   :custom
@@ -389,3 +410,4 @@
   :config
   (if (eq system-type 'darwin)
       (setq dired-use-ls-dired nil)))
+;; Dired:1 ends here
