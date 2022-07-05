@@ -23,6 +23,10 @@
   :bind
   ("C-c d" . docker))
 
+(use-package esup
+  :commands
+  (esup))
+
 (use-package flycheck
   :hook
   (after-init . global-flycheck-mode)
