@@ -20,6 +20,7 @@
     ("joine" "join" nil :count 1)
     ("maintenence" "maintenance" nil :count 0)
     ("mdule" "module" nil :count 0)
+    ("mvoe" "move" nil :count 0)
     ("optino" "option" nil :count 0)
     ("optinos" "options" nil :count 0)
     ("queyr" "query" nil :count 1)
