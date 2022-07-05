@@ -1,6 +1,182 @@
+;; [[file:config.org::*Packages][Packages:1]]
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(straight-use-package 'use-package)
+
+(use-package straight
+  :custom
+  (straight-use-package-by-default t))
+
+(use-package no-littering)
+;; Packages:1 ends here
+
+;; [[file:config.org::*Appearance][Appearance:1]]
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'blink-cursor-mode) (blink-cursor-mode -1))
+(if (fboundp 'fringe-mode) (fringe-mode 4))
+
+(if (and (fboundp 'menu-bar-mode) (not (eq system-type 'darwin)))
+    (menu-bar-mode -1))
+
+(setq visible-bell t)
+(if (eq system-type 'darwin)
+    (setq ring-bell-function 'ignore))
+
+(setq-default
+ ;; only allow continuation lines in buffers that occupy the full frame width
+ truncate-lines nil
+ truncate-partial-width-windows t)
+
+;; hide cursor in windows that are not selected
+(setq-default cursor-in-non-selected-windows nil)
+
+;; prefer horizontal splits
+(setq split-height-threshold 9999)
+
+(use-package beacon
+  :config
+  (beacon-mode 1))
+
+(use-package dimmer
+  :custom
+  (dimmer-adjustment-mode :both)
+  :init
+  (dimmer-mode t))
+
+(use-package doom-modeline
+  :custom
+  (doom-modeline-bar-width 1)
+  (doom-modeline-buffer-encoding nil)
+  (doom-modeline-buffer-file-name-style 'relative-from-project)
+  (doom-modeline-env-enable-python t)
+  (doom-modeline-height 15)
+  (doom-modeline-icon nil)
+  (doom-modeline-minor-modes nil)
+  :init
+  (doom-modeline-mode 1))
+
+(use-package doom-themes
+  :if window-system
+  :custom
+  (doom-themes-enable-bold nil)
+  (doom-themes-enable-italic nil)
+  :config
+  (load-theme 'doom-solarized-light t))
+
+(use-package frame
+  :straight (:type built-in)
+  :bind
+  ("M-RET" . toggle-frame-fullscreen))
+
+(use-package hl-line
+  :if window-system
+  :config
+  (global-hl-line-mode t))
+
+;; highlight buffer changes caused by certain commands
+(use-package volatile-highlights
+  :defer t
+  :config
+  (volatile-highlights-mode t))
+;; Appearance:1 ends here
+
+;; [[file:config.org::*Interface][Interface:1]]
+;; consistently ask yes or no questions
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; enabled region case manipulation commands
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+;; enable buffer narrowing commands
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+
+(use-package counsel
+  :bind
+  ("C-x C-m" . counsel-M-x)
+  :custom
+  (counsel-find-file-at-point t)
+  :config
+  (counsel-mode))
+
+(use-package counsel-projectile
+  :defer t
+  :config
+  (counsel-projectile-mode))
+
+(use-package crux
+  :bind
+  (("C-c I" . crux-find-user-init-file)
+   ("C-c ," . crux-find-user-custom-file)
+   ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
+   ("s-k" . crux-kill-whole-line)
+   ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
+
+(use-package helpful
+  :defer t
+  :bind
+  (("C-h f" . helpful-callable)
+   ("C-h v" . helpful-variable)
+   ("C-h k" . helpful-key)
+   ("C-h C-d" . helpful-at-point)
+   ("C-h F" . helpful-function)
+   ("C-h C" . helpful-command)))
+
+(use-package hydra
+  :commands
+  (defhydra))
+
+(use-package ivy
+  :custom
+  (ivy-use-virtual-buffers t)
+  (ivy-display-style 'fancy)
+  (ivy-use-selectable-prompt t)
+  (ivy-initial-inputs-alist nil)
+  :config
+  ;; prescient fuzzy filtering makes swiper unusable:
+  (setq ivy-re-builders-alist '((swiper . ivy--regex-plus)))
+  (ivy-mode t))
+
+(use-package ivy-prescient
+  :after ivy
+  :custom
+  (prescient-filter-method 'fuzzy)
+  :config
+  (ivy-prescient-mode))
+
+(use-package ivy-rich
+  :init
+  (ivy-rich-mode))
+
+(use-package prescient
+  :config
+  (prescient-persist-mode))
+
+(use-package which-key
+  :config
+  (which-key-mode))
+;; Interface:1 ends here
+
+;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv
   :config
   (direnv-mode))
+
+(use-package dotenv-mode
+  :defer t)
 
 (use-package exec-path-from-shell
   :if (eq system-type 'darwin)
@@ -18,6 +194,12 @@
   :defer t
   :config
   (keychain-refresh-environment))
+;; Environment:1 ends here
+
+;; [[file:config.org::*Editing][Editing:1]]
+(setq-default
+ indent-tabs-mode nil
+ tab-width 4)
 
 (use-package abbrev
   :straight (:type built-in)
@@ -64,6 +246,19 @@
   :custom
   (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
+;; use a tree-structured representation of undo history
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
+
+;; visualize unwanted whitespace characters and lines that are too long
+(use-package whitespace
+  :commands
+  (whitespace-cleanup)
+  :custom
+  (whitespace-line-column 100)
+  (whitespace-style '(face tabs empty trailing lines-tail)))
+
 (use-package yasnippet
   :defer t
   :config
@@ -76,6 +271,7 @@
   (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
   :config
   (yatemplate-fill-alist))
+;; Editing:1 ends here
 
 ;; [[file:config.org::*Functions][Functions:1]]
 (defun my-run-new-shell-always ()
@@ -129,6 +325,14 @@
   (git-messenger:show-detail t)
   (git-messenger:use-magit-popup t))
 
+(use-package git-modes
+  :straight (:host github :repo "magit/git-modes" :branch "master")
+  :mode
+  ("/\\.gitconfig\\'" . gitconfig-mode)
+  ("/\\.git/config\\'" . gitconfig-mode)
+  ("/\\.gitignore\\'" . gitignore-mode)
+  ("/.dockerignore\\'" . gitignore-mode))
+
 (use-package git-timemachine
   :commands
   (git-timemachine
@@ -165,6 +369,50 @@
   (projectile-sort-order 'recentf)
   :config
   (projectile-mode +1))
+
+(use-package smerge-mode
+  :after hydra
+  :config
+  (defhydra unpackaged/smerge-hydra
+    (:color pink :hint nil :post (smerge-auto-leave))
+    "
+^Move^       ^Keep^               ^Diff^                 ^Other^
+^^-----------^^-------------------^^---------------------^^-------
+_n_ext       _b_ase               _<_: upper/base        _C_ombine
+_p_rev       _u_pper              _=_: upper/lower       _r_esolve
+^^           _l_ower              _>_: base/lower        _k_ill current
+^^           _a_ll                _R_efine
+^^           _RET_: current       _E_diff
+"
+    ("n" smerge-next)
+    ("p" smerge-prev)
+    ("b" smerge-keep-base)
+    ("u" smerge-keep-upper)
+    ("l" smerge-keep-lower)
+    ("a" smerge-keep-all)
+    ("RET" smerge-keep-current)
+    ("\C-m" smerge-keep-current)
+    ("<" smerge-diff-base-upper)
+    ("=" smerge-diff-upper-lower)
+    (">" smerge-diff-base-lower)
+    ("R" smerge-refine)
+    ("E" smerge-ediff)
+    ("C" smerge-combine-with-next)
+    ("r" smerge-resolve)
+    ("k" smerge-kill-current)
+    ("ZZ" (lambda ()
+            (interactive)
+            (save-buffer)
+            (bury-buffer))
+     "Save and bury buffer" :color blue)
+    ("q" nil "cancel" :color blue))
+  :hook (magit-diff-visit-file . (lambda ()
+                                   (when smerge-mode
+                                     (unpackaged/smerge-hydra/body)))))
+
+(use-package vc
+  :custom
+  (vc-follow-symlinks t))
 ;; Projects:1 ends here
 
 ;; [[file:config.org::*Completion][Completion:1]]
@@ -191,6 +439,13 @@
 ;; Keys:1 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:1]]
+(setq
+ ;; preserve the vertical position of the line containing the point
+ scroll-preserve-screen-position t
+ ;; never vertically recenter windows
+ scroll-conservatively 100000
+ scroll-margin 0)
+
 (use-package ace-link
   :config
   (ace-link-setup-default))
@@ -272,6 +527,13 @@
 (use-package swiper
   :bind
   ("C-s" . swiper))
+
+(use-package uniquify
+  :straight (:type built-in)
+  :custom
+  (uniquify-buffer-name-style 'post-forward)
+  (uniquify-after-kill-buffer-p t)
+  (uniquify-ignore-buffers-re "^\\*"))
 ;; Navigation:1 ends here
 
 ;; [[file:config.org::*General][General:1]]
@@ -302,11 +564,6 @@
 
 (use-package lsp-pyright
   :defer t)
-
-(use-package platformio-mode
-  :commands
-  (platformio-mode
-   platformio-conditionally-enable))
 
 (use-package prog-mode
   :straight (:type built-in)
@@ -364,6 +621,33 @@
   (python-pytest-unsaved-buffers-behavior 'save-all))
 ;; Python:1 ends here
 
+;; [[file:config.org::*Shell][Shell:1]]
+(use-package sh-script
+  :mode
+  (("zshrc\\'" . sh-mode)
+   (".zsh_personal\\'" . sh-mode)
+   ("\\.zsh-theme\\'" . sh-mode)))
+;; Shell:1 ends here
+
+;; [[file:config.org::*Protocol Buffers][Protocol Buffers:1]]
+(use-package protobuf-mode
+  :hook
+  ((protobuf-mode . flyspell-prog-mode)
+   (protobuf-mode . electric-operator-mode))
+  :config
+  (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
+;; Protocol Buffers:1 ends here
+
+;; [[file:config.org::*Embedded][Embedded:1]]
+(use-package arduino-mode
+  :defer t)
+
+(use-package platformio-mode
+  :commands
+  (platformio-mode
+   platformio-conditionally-enable))
+;; Embedded:1 ends here
+
 ;; [[file:config.org::*Org][Org:1]]
 (use-package ob-emacs-lisp
   :straight nil
@@ -394,6 +678,13 @@
   (org-src-fontify-natively t)
   (org-use-speed-commands t))
 
+(use-package org-roam
+  :defer t
+  :custom
+  (org-roam-directory (concat (getenv "HOME") "/Documents/notes/"))
+  :config
+  (org-roam-db-autosync-enable))
+
 (use-package ob-async
   :after org
   :defer t
@@ -418,3 +709,155 @@
   (if (eq system-type 'darwin)
       (setq dired-use-ls-dired nil)))
 ;; Dired:1 ends here
+
+;; [[file:config.org::*Docker][Docker:1]]
+(use-package docker
+  :bind
+  ("C-c d" . docker))
+
+(use-package dockerfile-mode
+  :defer t)
+
+(use-package docker-compose-mode
+  :defer t)
+;; Docker:1 ends here
+
+;; [[file:config.org::*Files][Files:1]]
+(use-package ansible-doc
+  :commands
+  (ansible-doc))
+
+(use-package apt-sources-list
+  :defer t)
+
+(use-package conf-mode
+  :mode
+  ((".preseed$" . conf-mode)
+   ("pylintrc$" . conf-mode)))
+
+(use-package groovy-mode
+  :defer t)
+
+(use-package i3wm-config-mode
+  :straight (:host github :repo "Alexander-Miller/i3wm-Config-Mode" :branch "master")
+  :commands
+  (i3wm-config-mode))
+
+(use-package json-mode
+  :mode
+  ("Pipfile.lock\\'" . json-mode))
+
+(use-package ledger-mode
+  :defer t)
+
+(use-package markdown-mode
+  :mode
+  (("README\\.md\\'" . gfm-mode)
+   ("\\.md\\'" . markdown-mode)
+   ("\\.markdown\\'" . markdown-mode)))
+
+(use-package markdown-preview-mode
+  :defer t)
+
+;; use ssh-specific modes for ssh configuration files
+(use-package ssh-config-mode
+  :defer t)
+
+(use-package systemd
+  :defer t)
+
+(use-package terraform-mode
+  :defer t)
+
+(use-package toml-mode
+  :mode
+  ("Pipfile\\'" . toml-mode)
+  :hook
+  (toml-mode . electric-operator-mode)
+  :config
+  (electric-operator-add-rules-for-mode 'toml-mode (cons "=" " = ")))
+
+(use-package udev-mode
+  :defer t)
+
+(use-package yaml-mode
+  :after docker-compose-mode
+  :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
+  :mode ("\\.yaml\\'" "\\.yml\\'" "group_vars/.+\\'")
+  :hook (yaml-mode . flyspell-prog-mode))
+;; Files:1 ends here
+
+;; [[file:config.org::*Miscellaneous][Miscellaneous:1]]
+(use-package autorevert
+  :config
+  (global-auto-revert-mode t))
+
+(use-package comint
+  :straight (:type built-in)
+  :custom
+  (comint-buffer-maximum-size 20000)
+  (comint-process-echoes t))
+
+(use-package compile
+  :hook
+  (compilation-filter
+   . (lambda ()
+       (let ((inhibit-read-only t))
+         (ansi-color-apply-on-region compilation-filter-start (point)))))
+  :custom
+  (compilation-ask-about-save nil)
+  (compilation-scroll-output 'next-error)
+  (compilation-environment '("TERM=eterm-color")))
+
+(use-package esup
+  :commands
+  (esup))
+
+(use-package files
+  :straight (:type built-in)
+  :hook
+  (before-save . whitespace-cleanup)
+  :custom
+  (backup-by-copying t)
+  (version-control t)
+  (delete-old-versions t)
+  (kept-new-versions 6)
+  (kept-old-versions 2)
+  (save-abbrevs 'silently)
+  (require-final-newline t)
+  (confirm-nonexistent-file-or-buffer nil))
+
+(use-package flycheck
+  :hook
+  (after-init . global-flycheck-mode)
+  :bind
+  (("C-c e n" . flycheck-next-error)
+   ("C-c e p" . flycheck-previous-error))
+  :custom
+  (flycheck-indication-mode nil))
+
+(use-package flyspell
+  :commands
+  (flyspell-mode
+   flyspell-prog-mode))
+
+(use-package ispell
+  :custom
+  (ispell-personal-dictionary "~/.aspell.en.pws")
+  (ispell-program-name "aspell"))
+
+(use-package simple
+  :straight (:type built-in)
+  :bind
+  ("C-;" . backward-kill-word)
+  :custom
+  (next-line-add-newlines t)
+  :config
+  (line-number-mode t)
+  (size-indication-mode t))
+
+(use-package text-mode
+  :straight (:type built-in)
+  :hook
+  (text-mode . flyspell-mode))
+;; Miscellaneous:1 ends here
