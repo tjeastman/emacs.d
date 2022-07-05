@@ -448,7 +448,7 @@
 #+END_SRC
 
 * Navigation
-#+BEGIN_SRC emacs-lisp :tangle yes  :comments link
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (setq
    ;; preserve the vertical position of the line containing the point
    scroll-preserve-screen-position t
@@ -548,7 +548,7 @@
 
 * Programming
 ** General
-#+BEGIN_SRC emacs-lisp :tangle yes  :comments link
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package electric-operator
     :commands
     (electric-operator-mode
