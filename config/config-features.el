@@ -32,6 +32,16 @@
   :custom
   (flycheck-indication-mode nil))
 
+(use-package helpful
+  :defer t
+  :bind
+  (("C-h f" . helpful-callable)
+   ("C-h v" . helpful-variable)
+   ("C-h k" . helpful-key)
+   ("C-h C-d" . helpful-at-point)
+   ("C-h F" . helpful-function)
+   ("C-h C" . helpful-command)))
+
 (use-package hydra
   :commands
   (defhydra))
