@@ -161,6 +161,13 @@
   :init
   (ivy-rich-mode))
 
+(use-package ns-win
+  :straight (:type built-in)
+  :if (eq system-type 'darwin)
+  :custom
+  (mac-command-modifier 'meta)
+  (mac-option-modifier 'super))
+
 (use-package prescient
   :config
   (prescient-persist-mode))
@@ -428,15 +435,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (global-company-mode t))
 ;; Completion:1 ends here
-
-;; [[file:config.org::*Keys][Keys:1]]
-(use-package ns-win
-  :straight (:type built-in)
-  :if (eq system-type 'darwin)
-  :custom
-  (mac-command-modifier 'meta)
-  (mac-option-modifier 'super))
-;; Keys:1 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:1]]
 (setq

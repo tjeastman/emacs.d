@@ -164,6 +164,13 @@
     :init
     (ivy-rich-mode))
 
+  (use-package ns-win
+    :straight (:type built-in)
+    :if (eq system-type 'darwin)
+    :custom
+    (mac-command-modifier 'meta)
+    (mac-option-modifier 'super))
+
   (use-package prescient
     :config
     (prescient-persist-mode))
@@ -435,16 +442,6 @@
     (company-show-numbers t)
     :config
     (global-company-mode t))
-#+END_SRC
-
-* Keys
-#+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package ns-win
-    :straight (:type built-in)
-    :if (eq system-type 'darwin)
-    :custom
-    (mac-command-modifier 'meta)
-    (mac-option-modifier 'super))
 #+END_SRC
 
 * Navigation
