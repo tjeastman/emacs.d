@@ -617,6 +617,16 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
 ;; Make:1 ends here
 
+;; [[file:config.org::*Emacs Lisp][Emacs Lisp:1]]
+(use-package elisp-mode
+  :straight (:type built-in)
+  :hook
+  ((emacs-lisp-mode . aggressive-indent-mode)
+   (emacs-lisp-mode . electric-operator-mode))
+  :config
+  (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
+;; Emacs Lisp:1 ends here
+
 ;; [[file:config.org::*Python][Python:1]]
 (use-package blacken
   :commands
