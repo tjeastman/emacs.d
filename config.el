@@ -252,6 +252,12 @@
   :commands
   (edit-indirect-region))
 
+(use-package electric-operator
+  :commands
+  (electric-operator-mode
+   electric-operator-get-rules-for-mode
+   electric-operator-add-rules-for-mode))
+
 (use-package expand-region
   :bind
   ("C-=" . er/expand-region))
