@@ -229,6 +229,10 @@
   (setq-default abbrev-mode t)
   (quietly-read-abbrev-file abbrev-file-name))
 
+(use-package aggressive-indent
+  :commands
+  (aggressive-indent-mode))
+
 (use-package autoinsert
   :custom
   (auto-insert-alist nil)
@@ -256,6 +260,11 @@
   :straight (:type built-in)
   :custom
   (mouse-yank-at-point t))
+
+(use-package move-text
+  :commands
+  (move-text-up
+   move-text-down))
 
 (use-package multiple-cursors
   :bind
