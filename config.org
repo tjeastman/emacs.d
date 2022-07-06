@@ -270,6 +270,10 @@
     :config
     (auto-insert-mode))
 
+  (use-package autorevert
+    :config
+    (global-auto-revert-mode t))
+
   (use-package browse-kill-ring
     :bind
     ("C-x y" . browse-kill-ring))
@@ -904,10 +908,6 @@
 
 * Miscellaneous
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package autorevert
-    :config
-    (global-auto-revert-mode t))
-
   (use-package comint
     :straight (:type built-in)
     :custom

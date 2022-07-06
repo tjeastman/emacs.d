@@ -249,6 +249,10 @@
   :config
   (auto-insert-mode))
 
+(use-package autorevert
+  :config
+  (global-auto-revert-mode t))
+
 (use-package browse-kill-ring
   :bind
   ("C-x y" . browse-kill-ring))
@@ -819,10 +823,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Files:1 ends here
 
 ;; [[file:config.org::*Miscellaneous][Miscellaneous:1]]
-(use-package autorevert
-  :config
-  (global-auto-revert-mode t))
-
 (use-package comint
   :straight (:type built-in)
   :custom
