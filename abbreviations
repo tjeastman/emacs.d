@@ -23,6 +23,7 @@
     ("mvoe" "move" nil :count 0)
     ("optino" "option" nil :count 0)
     ("optinos" "options" nil :count 0)
+    ("pacakges" "packages" nil :count 1)
     ("queyr" "query" nil :count 1)
     ("recieve" "receive" nil :count 1)
     ("remvoe" "remove" nil :count 2)
