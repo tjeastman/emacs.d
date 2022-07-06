@@ -1,3 +1,22 @@
+;; [[file:config.org::*Garbage Collection][Garbage Collection:1]]
+;; https://github.com/nilcons/emacs-use-package-fast
+(setq gc-cons-threshold 64000000)
+(add-hook 'after-init-hook #'(lambda ()
+                               ;; restore after startup
+                               (setq gc-cons-threshold 800000)))
+;; Garbage Collection:1 ends here
+
+;; [[file:config.org::*Messages][Messages:1]]
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
+;; Messages:1 ends here
+
+;; [[file:config.org::*Customizations][Customizations:1]]
+;; store customizations outside of the emacs configuration directory
+(setq custom-file "~/.emacs-custom.el")
+(load custom-file t)
+;; Customizations:1 ends here
+
 ;; [[file:config.org::*Packages][Packages:1]]
 (defvar bootstrap-version)
 (let ((bootstrap-file

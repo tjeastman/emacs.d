@@ -1,3 +1,38 @@
+* Start
+** Early Initialization
+#+BEGIN_SRC emacs-lisp :tangle early-init.el
+  ;; disable package.el in favor of straight.el
+  (setq package-enable-at-startup nil)
+
+  (push '(menu-bar-lines . 0) default-frame-alist)
+  (push '(tool-bar-lines . 0) default-frame-alist)
+  (push '(vertical-scroll-bars . nil) default-frame-alist)
+  (push '(left-fringe . 4) default-frame-alist)
+  (push '(right-fringe . 4) default-frame-alist)
+#+END_SRC
+
+** Garbage Collection
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  ;; https://github.com/nilcons/emacs-use-package-fast
+  (setq gc-cons-threshold 64000000)
+  (add-hook 'after-init-hook #'(lambda ()
+                                 ;; restore after startup
+                                 (setq gc-cons-threshold 800000)))
+#+END_SRC
+
+** Messages
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (setq inhibit-startup-screen t)
+  (setq initial-scratch-message nil)
+#+END_SRC
+
+** Customizations
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  ;; store customizations outside of the emacs configuration directory
+  (setq custom-file "~/.emacs-custom.el")
+  (load custom-file t)
+#+END_SRC
+
 * Packages
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (defvar bootstrap-version)
