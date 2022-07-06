@@ -568,17 +568,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Navigation:1 ends here
 
 ;; [[file:config.org::*General][General:1]]
-(use-package electric-operator
-  :commands
-  (electric-operator-mode
-   electric-operator-get-rules-for-mode
-   electric-operator-add-rules-for-mode))
-
-(use-package highlight-indentation
-  :commands
-  (highlight-indentation-mode
-   highlight-indentation-current-column-mode))
-
 (use-package lsp-ivy
   :commands
   (lsp-ivy-workspace-symbol))

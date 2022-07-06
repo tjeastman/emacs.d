@@ -595,17 +595,6 @@
 * Programming
 ** General
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package electric-operator
-    :commands
-    (electric-operator-mode
-     electric-operator-get-rules-for-mode
-     electric-operator-add-rules-for-mode))
-
-  (use-package highlight-indentation
-    :commands
-    (highlight-indentation-mode
-     highlight-indentation-current-column-mode))
-
   (use-package lsp-ivy
     :commands
     (lsp-ivy-workspace-symbol))
