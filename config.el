@@ -103,6 +103,10 @@
   :config
   (global-hl-line-mode t))
 
+(use-package rainbow-delimiters
+  :commands
+  (rainbow-delimiters-mode))
+
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
   :defer t
@@ -588,12 +592,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package prog-mode
   :straight (:type built-in)
   :hook
-  ((prog-mode . turn-on-smartparens-strict-mode)
-   (prog-mode . flyspell-prog-mode)))
-
-(use-package rainbow-delimiters
-  :hook
-  (prog-mode . rainbow-delimiters-mode))
+  ((prog-mode . flyspell-prog-mode)
+   (prog-mode . rainbow-delimiters-mode)
+   (prog-mode . turn-on-smartparens-strict-mode)))
 
 (use-package smartparens
   :defer t
