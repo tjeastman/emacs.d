@@ -93,6 +93,11 @@
   :bind
   ("M-RET" . toggle-frame-fullscreen))
 
+(use-package highlight-indentation
+  :commands
+  (highlight-indentation-mode
+   highlight-indentation-current-column-mode))
+
 (use-package hl-line
   :if window-system
   :config
