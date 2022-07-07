@@ -552,6 +552,21 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (yatemplate-fill-alist))
 ;; Editing:1 ends here
 
+(use-package flyspell
+  :commands
+  (flyspell-mode
+   flyspell-prog-mode))
+
+(use-package ispell
+  :custom
+  (ispell-personal-dictionary "~/.aspell.en.pws")
+  (ispell-program-name "aspell"))
+
+(use-package text-mode
+  :straight (:type built-in)
+  :hook
+  (text-mode . flyspell-mode))
+
 ;; [[file:config.org::*General][General:1]]
 (use-package lsp-mode
   :commands
@@ -864,16 +879,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :custom
   (flycheck-indication-mode nil))
 
-(use-package flyspell
-  :commands
-  (flyspell-mode
-   flyspell-prog-mode))
-
-(use-package ispell
-  :custom
-  (ispell-personal-dictionary "~/.aspell.en.pws")
-  (ispell-program-name "aspell"))
-
 (use-package simple
   :straight (:type built-in)
   :bind
@@ -883,9 +888,4 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (line-number-mode t)
   (size-indication-mode t))
-
-(use-package text-mode
-  :straight (:type built-in)
-  :hook
-  (text-mode . flyspell-mode))
 ;; Miscellaneous:1 ends here

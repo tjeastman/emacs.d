@@ -576,6 +576,24 @@
     (yatemplate-fill-alist))
 #+END_SRC
 
+* Writing
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (use-package flyspell
+    :commands
+    (flyspell-mode
+     flyspell-prog-mode))
+
+  (use-package ispell
+    :custom
+    (ispell-personal-dictionary "~/.aspell.en.pws")
+    (ispell-program-name "aspell"))
+
+  (use-package text-mode
+    :straight (:type built-in)
+    :hook
+    (text-mode . flyspell-mode))
+#+END_SRC
+
 * Programming
 ** General
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
@@ -949,16 +967,6 @@
     :custom
     (flycheck-indication-mode nil))
 
-  (use-package flyspell
-    :commands
-    (flyspell-mode
-     flyspell-prog-mode))
-
-  (use-package ispell
-    :custom
-    (ispell-personal-dictionary "~/.aspell.en.pws")
-    (ispell-program-name "aspell"))
-
   (use-package simple
     :straight (:type built-in)
     :bind
@@ -968,9 +976,4 @@
     :config
     (line-number-mode t)
     (size-indication-mode t))
-
-  (use-package text-mode
-    :straight (:type built-in)
-    :hook
-    (text-mode . flyspell-mode))
 #+END_SRC
