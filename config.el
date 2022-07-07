@@ -114,65 +114,6 @@
   (volatile-highlights-mode t))
 ;; Appearance:1 ends here
 
-;; [[file:config.org::*Interface][Interface:1]]
-;; consistently ask yes or no questions
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; enabled region case manipulation commands
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
-;; enable buffer narrowing commands
-(put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
-(put 'narrow-to-defun 'disabled nil)
-
-(use-package crux
-  :bind
-  (("C-c I" . crux-find-user-init-file)
-   ("C-c ," . crux-find-user-custom-file)
-   ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
-   ("s-k" . crux-kill-whole-line)
-   ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
-
-(use-package helpful
-  :bind
-  (("C-h f" . helpful-callable)
-   ("C-h v" . helpful-variable)
-   ("C-h k" . helpful-key)
-   ("C-h C-d" . helpful-at-point)
-   ("C-h F" . helpful-function)
-   ("C-h C" . helpful-command))
-  :init
-  (defun my-helpful-switch-buffer-function (buffer-or-name)
-    "Switch to helpful buffer in the window of an existing helpful buffer if possible."
-    (if (eq major-mode 'helpful-mode)
-        (switch-to-buffer buffer-or-name)
-      (pop-to-buffer buffer-or-name)))
-  :custom
-  (helpful-max-buffers 10)
-  (helpful-switch-buffer-function #'my-helpful-switch-buffer-function))
-
-(use-package hydra
-  :commands
-  (defhydra))
-
-(use-package ns-win
-  :straight (:type built-in)
-  :if (eq system-type 'darwin)
-  :custom
-  (mac-command-modifier 'meta)
-  (mac-option-modifier 'super))
-
-(use-package simple
-  :straight (:type built-in)
-  :bind
-  ("C-x C-m" . execute-extended-command))
-
-(use-package which-key
-  :config
-  (which-key-mode))
-;; Interface:1 ends here
-
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv
   :config
@@ -198,126 +139,6 @@
   :config
   (keychain-refresh-environment))
 ;; Environment:1 ends here
-
-;; [[file:config.org::*Editing][Editing:1]]
-(setq-default
- indent-tabs-mode nil
- tab-width 4)
-
-(use-package abbrev
-  :straight (:type built-in)
-  :custom
-  (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
-  :config
-  (setq-default abbrev-mode t)
-  (quietly-read-abbrev-file abbrev-file-name))
-
-(use-package aggressive-indent
-  :commands
-  (aggressive-indent-mode))
-
-(use-package autoinsert
-  :custom
-  (auto-insert-alist nil)
-  (auto-insert-query nil)
-  :config
-  (auto-insert-mode))
-
-(use-package autorevert
-  :config
-  (global-auto-revert-mode t))
-
-(use-package browse-kill-ring
-  :bind
-  ("C-x y" . browse-kill-ring))
-
-(use-package delsel
-  :config
-  (delete-selection-mode t))
-
-(use-package edit-indirect
-  :commands
-  (edit-indirect-region))
-
-(use-package electric-operator
-  :commands
-  (electric-operator-mode
-   electric-operator-get-rules-for-mode
-   electric-operator-add-rules-for-mode))
-
-(use-package expand-region
-  :bind
-  ("C-=" . er/expand-region))
-
-(use-package mouse
-  :straight (:type built-in)
-  :custom
-  (mouse-yank-at-point t))
-
-(use-package move-text
-  :commands
-  (move-text-up
-   move-text-down))
-
-(use-package multiple-cursors
-  :bind
-  (("C-S-c C-S-c" . mc/edit-lines)
-   ("C->" . 'mc/mark-next-like-this)
-   ("C-<" . 'mc/mark-previous-like-this)
-   ("C-c C-<" . 'mc/mark-all-like-this))
-  :custom
-  (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
-
-;; use a tree-structured representation of undo history
-(use-package undo-tree
-  :config
-  (global-undo-tree-mode))
-
-;; visualize unwanted whitespace characters and lines that are too long
-(use-package whitespace
-  :commands
-  (whitespace-cleanup)
-  :custom
-  (whitespace-line-column 100)
-  (whitespace-style '(face tabs empty trailing lines-tail)))
-
-(use-package yasnippet
-  :defer t
-  :config
-  (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
-  (yas-global-mode t))
-
-(use-package yatemplate
-  :defer t
-  :custom
-  (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
-  :config
-  (yatemplate-fill-alist))
-;; Editing:1 ends here
-
-;; [[file:config.org::*Functions][Functions:1]]
-(defun my-run-new-shell-always ()
-  "Run a shell in a new buffer regardless of how many shells are already running."
-  (interactive)
-  (let ((shell-buffer-index 0)
-        (shell-buffer-name-format "*shell-%d*")
-        (shell-buffer-name))
-    (while ;; loop until an unused shell buffer name is found
-        (progn
-          (setq shell-buffer-index (1+ shell-buffer-index))
-          (setq shell-buffer-name (format shell-buffer-name-format shell-buffer-index))
-          (get-buffer shell-buffer-name)))
-    (shell shell-buffer-name)))
-
-(defun my-copy-filename-to-clipboard ()
-  "Copy filename corresponding to the current buffer to clipboard."
-  (interactive)
-  (let ((filename (if (equal major-mode 'dired-mode)
-                      default-directory
-                    (buffer-file-name))))
-    (when filename
-      (kill-new filename))))
-;; Functions:1 ends here
 
 ;; [[file:config.org::*Projects][Projects:1]]
 (use-package git-commit
@@ -436,47 +257,64 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (vc-follow-symlinks t))
 ;; Projects:1 ends here
 
-;; [[file:config.org::*Completion][Completion:1]]
-(use-package company
-  :defer t
-  :custom
-  (company-idle-delay 0.5)
-  (company-minimum-prefix-length 3)
-  (company-tooltip-limit 10)
-  (company-tooltip-flip-when-above t)
-  (company-selection-wrap-around t)
-  (company-show-numbers t)
-  :config
-  (global-company-mode t))
+;; [[file:config.org::*Interface][Interface:1]]
+;; consistently ask yes or no questions
+(defalias 'yes-or-no-p 'y-or-n-p)
 
-(use-package consult
+;; enabled region case manipulation commands
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+;; enable buffer narrowing commands
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'narrow-to-defun 'disabled nil)
+
+(use-package crux
   :bind
-  ("C-x b" . consult-buffer))
+  (("C-c I" . crux-find-user-init-file)
+   ("C-c ," . crux-find-user-custom-file)
+   ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
+   ("s-k" . crux-kill-whole-line)
+   ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
-(use-package marginalia
-  :defer 1
+(use-package helpful
+  :bind
+  (("C-h f" . helpful-callable)
+   ("C-h v" . helpful-variable)
+   ("C-h k" . helpful-key)
+   ("C-h C-d" . helpful-at-point)
+   ("C-h F" . helpful-function)
+   ("C-h C" . helpful-command))
+  :init
+  (defun my-helpful-switch-buffer-function (buffer-or-name)
+    "Switch to helpful buffer in the window of an existing helpful buffer if possible."
+    (if (eq major-mode 'helpful-mode)
+        (switch-to-buffer buffer-or-name)
+      (pop-to-buffer buffer-or-name)))
   :custom
-  (marginalia-align 'left)
-  (marginalia-max-relative-age 0)
-  :config
-  (marginalia-mode))
+  (helpful-max-buffers 10)
+  (helpful-switch-buffer-function #'my-helpful-switch-buffer-function))
 
-(use-package savehist
+(use-package hydra
+  :commands
+  (defhydra))
+
+(use-package ns-win
   :straight (:type built-in)
-  :defer 1
-  :config
-  (savehist-mode))
-
-(use-package vertico
-  :defer 1
+  :if (eq system-type 'darwin)
   :custom
-  (vertico-count 10)
-  (vertico-cycle t)
-  (vertico-resize 'grow-only)
-  (vertico-scroll-margin 2)
+  (mac-command-modifier 'meta)
+  (mac-option-modifier 'super))
+
+(use-package simple
+  :straight (:type built-in)
+  :bind
+  ("C-x C-m" . execute-extended-command))
+
+(use-package which-key
   :config
-  (vertico-mode))
-;; Completion:1 ends here
+  (which-key-mode))
+;; Interface:1 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:1]]
 (setq
@@ -575,6 +413,144 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (uniquify-after-kill-buffer-p t)
   (uniquify-ignore-buffers-re "^\\*"))
 ;; Navigation:1 ends here
+
+;; [[file:config.org::*Completion][Completion:1]]
+(use-package company
+  :defer t
+  :custom
+  (company-idle-delay 0.5)
+  (company-minimum-prefix-length 3)
+  (company-tooltip-limit 10)
+  (company-tooltip-flip-when-above t)
+  (company-selection-wrap-around t)
+  (company-show-numbers t)
+  :config
+  (global-company-mode t))
+
+(use-package consult
+  :bind
+  ("C-x b" . consult-buffer))
+
+(use-package marginalia
+  :defer 1
+  :custom
+  (marginalia-align 'left)
+  (marginalia-max-relative-age 0)
+  :config
+  (marginalia-mode))
+
+(use-package savehist
+  :straight (:type built-in)
+  :defer 1
+  :config
+  (savehist-mode))
+
+(use-package vertico
+  :defer 1
+  :custom
+  (vertico-count 10)
+  (vertico-cycle t)
+  (vertico-resize 'grow-only)
+  (vertico-scroll-margin 2)
+  :config
+  (vertico-mode))
+;; Completion:1 ends here
+
+;; [[file:config.org::*Editing][Editing:1]]
+(setq-default
+ indent-tabs-mode nil
+ tab-width 4)
+
+(use-package abbrev
+  :straight (:type built-in)
+  :custom
+  (abbrev-file-name (expand-file-name "abbreviations" user-emacs-directory))
+  :config
+  (setq-default abbrev-mode t)
+  (quietly-read-abbrev-file abbrev-file-name))
+
+(use-package aggressive-indent
+  :commands
+  (aggressive-indent-mode))
+
+(use-package autoinsert
+  :custom
+  (auto-insert-alist nil)
+  (auto-insert-query nil)
+  :config
+  (auto-insert-mode))
+
+(use-package autorevert
+  :config
+  (global-auto-revert-mode t))
+
+(use-package browse-kill-ring
+  :bind
+  ("C-x y" . browse-kill-ring))
+
+(use-package delsel
+  :config
+  (delete-selection-mode t))
+
+(use-package edit-indirect
+  :commands
+  (edit-indirect-region))
+
+(use-package electric-operator
+  :commands
+  (electric-operator-mode
+   electric-operator-get-rules-for-mode
+   electric-operator-add-rules-for-mode))
+
+(use-package expand-region
+  :bind
+  ("C-=" . er/expand-region))
+
+(use-package mouse
+  :straight (:type built-in)
+  :custom
+  (mouse-yank-at-point t))
+
+(use-package move-text
+  :commands
+  (move-text-up
+   move-text-down))
+
+(use-package multiple-cursors
+  :bind
+  (("C-S-c C-S-c" . mc/edit-lines)
+   ("C->" . 'mc/mark-next-like-this)
+   ("C-<" . 'mc/mark-previous-like-this)
+   ("C-c C-<" . 'mc/mark-all-like-this))
+  :custom
+  (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
+
+;; use a tree-structured representation of undo history
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
+
+;; visualize unwanted whitespace characters and lines that are too long
+(use-package whitespace
+  :commands
+  (whitespace-cleanup)
+  :custom
+  (whitespace-line-column 100)
+  (whitespace-style '(face tabs empty trailing lines-tail)))
+
+(use-package yasnippet
+  :defer t
+  :config
+  (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
+  (yas-global-mode t))
+
+(use-package yatemplate
+  :defer t
+  :custom
+  (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
+  :config
+  (yatemplate-fill-alist))
+;; Editing:1 ends here
 
 ;; [[file:config.org::*General][General:1]]
 (use-package lsp-mode
@@ -818,6 +794,30 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :mode ("\\.yaml\\'" "\\.yml\\'" "group_vars/.+\\'")
   :hook (yaml-mode . flyspell-prog-mode))
 ;; Files:1 ends here
+
+;; [[file:config.org::*Functions][Functions:1]]
+(defun my-run-new-shell-always ()
+  "Run a shell in a new buffer regardless of how many shells are already running."
+  (interactive)
+  (let ((shell-buffer-index 0)
+        (shell-buffer-name-format "*shell-%d*")
+        (shell-buffer-name))
+    (while ;; loop until an unused shell buffer name is found
+        (progn
+          (setq shell-buffer-index (1+ shell-buffer-index))
+          (setq shell-buffer-name (format shell-buffer-name-format shell-buffer-index))
+          (get-buffer shell-buffer-name)))
+    (shell shell-buffer-name)))
+
+(defun my-copy-filename-to-clipboard ()
+  "Copy filename corresponding to the current buffer to clipboard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename))))
+;; Functions:1 ends here
 
 ;; [[file:config.org::*Miscellaneous][Miscellaneous:1]]
 (use-package comint
