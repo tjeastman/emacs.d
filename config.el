@@ -126,19 +126,6 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-defun 'disabled nil)
 
-(use-package counsel
-  :bind
-  ("C-x C-m" . counsel-M-x)
-  :custom
-  (counsel-find-file-at-point t)
-  :config
-  (counsel-mode))
-
-(use-package counsel-projectile
-  :defer t
-  :config
-  (counsel-projectile-mode))
-
 (use-package crux
   :bind
   (("C-c I" . crux-find-user-init-file)
@@ -169,28 +156,6 @@
   :commands
   (defhydra))
 
-(use-package ivy
-  :custom
-  (ivy-use-virtual-buffers t)
-  (ivy-display-style 'fancy)
-  (ivy-use-selectable-prompt t)
-  (ivy-initial-inputs-alist nil)
-  :config
-  ;; prescient fuzzy filtering makes swiper unusable:
-  (setq ivy-re-builders-alist '((swiper . ivy--regex-plus)))
-  (ivy-mode t))
-
-(use-package ivy-prescient
-  :after ivy
-  :custom
-  (prescient-filter-method 'fuzzy)
-  :config
-  (ivy-prescient-mode))
-
-(use-package ivy-rich
-  :init
-  (ivy-rich-mode))
-
 (use-package ns-win
   :straight (:type built-in)
   :if (eq system-type 'darwin)
@@ -198,9 +163,10 @@
   (mac-command-modifier 'meta)
   (mac-option-modifier 'super))
 
-(use-package prescient
-  :config
-  (prescient-persist-mode))
+(use-package simple
+  :straight (:type built-in)
+  :bind
+  ("C-x C-m" . execute-extended-command))
 
 (use-package which-key
   :config
@@ -419,7 +385,6 @@
   ("C-c p" . projectile-command-map)
   :custom
   (projectile-use-git-grep t)
-  (projectile-completion-system 'ivy)
   (projectile-indexing-method 'alien)
   (projectile-project-search-path '("~/projects/"))
   (projectile-sort-order 'recentf)
@@ -483,6 +448,34 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (company-show-numbers t)
   :config
   (global-company-mode t))
+
+(use-package consult
+  :bind
+  ("C-x b" . consult-buffer))
+
+(use-package marginalia
+  :defer 1
+  :custom
+  (marginalia-align 'left)
+  (marginalia-max-relative-age 0)
+  :config
+  (marginalia-mode))
+
+(use-package savehist
+  :straight (:type built-in)
+  :defer 1
+  :config
+  (savehist-mode))
+
+(use-package vertico
+  :defer 1
+  :custom
+  (vertico-count 10)
+  (vertico-cycle t)
+  (vertico-resize 'grow-only)
+  (vertico-scroll-margin 2)
+  :config
+  (vertico-mode))
 ;; Completion:1 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:1]]
@@ -549,7 +542,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package imenu-anywhere
   :bind
-  ("C-c i" . ivy-imenu-anywhere))
+  ("C-c i" . imenu-anywhere))
 
 (use-package recentf
   :bind
@@ -584,10 +577,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Navigation:1 ends here
 
 ;; [[file:config.org::*General][General:1]]
-(use-package lsp-ivy
-  :commands
-  (lsp-ivy-workspace-symbol))
-
 (use-package lsp-mode
   :commands
   (lsp
