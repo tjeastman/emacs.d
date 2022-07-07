@@ -107,6 +107,12 @@
   :commands
   (rainbow-delimiters-mode))
 
+(use-package simple
+  :straight (:type built-in)
+  :config
+  (line-number-mode t)
+  (size-indication-mode t))
+
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
   :defer t
@@ -525,6 +531,11 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :custom
   (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
+(use-package simple
+  :straight (:type built-in)
+  :custom
+  (next-line-add-newlines t))
+
 ;; use a tree-structured representation of undo history
 (use-package undo-tree
   :config
@@ -879,13 +890,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :custom
   (flycheck-indication-mode nil))
 
-(use-package simple
-  :straight (:type built-in)
-  :bind
-  ("C-;" . backward-kill-word)
-  :custom
-  (next-line-add-newlines t)
-  :config
-  (line-number-mode t)
-  (size-indication-mode t))
+;; (use-package simple
+;;   :straight (:type built-in)
+;;   :bind
+;;   ("C-;" . backward-kill-word))
 ;; Miscellaneous:1 ends here
