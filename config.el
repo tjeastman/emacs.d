@@ -115,7 +115,7 @@
 
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
-  :defer t
+  :defer 1
   :config
   (volatile-highlights-mode t))
 ;; Appearance:1 ends here
