@@ -37,6 +37,10 @@
   :custom
   (straight-use-package-by-default t))
 
+(use-package use-package
+  :custom
+  (use-package-verbose t))
+
 (use-package no-littering)
 ;; Packages:1 ends here
 
