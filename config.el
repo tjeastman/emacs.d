@@ -665,6 +665,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; [[file:config.org::*Protocol Buffers][Protocol Buffers:1]]
 (use-package protobuf-mode
+  :mode "\\.proto\\'"
   :hook
   ((protobuf-mode . flyspell-prog-mode)
    (protobuf-mode . electric-operator-mode))
@@ -674,7 +675,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; [[file:config.org::*Embedded][Embedded:1]]
 (use-package arduino-mode
-  :defer t)
+  :mode
+  (("\\.ino\\'" . arduino-mode)
+   ("\\.pde\\'" . arduino-mode)))
 
 (use-package platformio-mode
   :commands
