@@ -147,11 +147,6 @@
 ;; Environment:1 ends here
 
 ;; [[file:config.org::*Projects][Projects:1]]
-(use-package git-commit
-  :defer t
-  :custom
-  (git-commit-summary-max-length 72))
-
 (use-package git-gutter-fringe
   :if window-system
   :defer t
@@ -199,6 +194,7 @@
   ("C-x g" . magit-status)
   ("C-x M-g" . magit-dispatch)
   :custom
+  (git-commit-summary-max-length 72)
   (magit-repository-directories '(("~/projects/" . 1)))
   (magit-save-repository-buffers 'dontask)
   (magit-section-visibility-indicator nil)
