@@ -579,6 +579,15 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (text-mode . flyspell-mode))
 
 ;; [[file:config.org::*General][General:1]]
+(use-package flycheck
+  :hook
+  (after-init . global-flycheck-mode)
+  :bind
+  (("C-c e n" . flycheck-next-error)
+   ("C-c e p" . flycheck-previous-error))
+  :custom
+  (flycheck-indication-mode nil))
+
 (use-package lsp-mode
   :commands
   (lsp
@@ -883,15 +892,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (save-abbrevs 'silently)
   (require-final-newline t)
   (confirm-nonexistent-file-or-buffer nil))
-
-(use-package flycheck
-  :hook
-  (after-init . global-flycheck-mode)
-  :bind
-  (("C-c e n" . flycheck-next-error)
-   ("C-c e p" . flycheck-previous-error))
-  :custom
-  (flycheck-indication-mode nil))
 
 ;; (use-package simple
 ;;   :straight (:type built-in)

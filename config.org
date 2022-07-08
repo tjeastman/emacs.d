@@ -608,6 +608,15 @@
 * Programming
 ** General
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package flycheck
+    :hook
+    (after-init . global-flycheck-mode)
+    :bind
+    (("C-c e n" . flycheck-next-error)
+     ("C-c e p" . flycheck-previous-error))
+    :custom
+    (flycheck-indication-mode nil))
+
   (use-package lsp-mode
     :commands
     (lsp
@@ -971,15 +980,6 @@
     (save-abbrevs 'silently)
     (require-final-newline t)
     (confirm-nonexistent-file-or-buffer nil))
-
-  (use-package flycheck
-    :hook
-    (after-init . global-flycheck-mode)
-    :bind
-    (("C-c e n" . flycheck-next-error)
-     ("C-c e p" . flycheck-previous-error))
-    :custom
-    (flycheck-indication-mode nil))
 
   ;; (use-package simple
   ;;   :straight (:type built-in)
