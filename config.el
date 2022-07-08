@@ -280,6 +280,12 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
 (use-package helpful
+  :preface
+  (defun my-helpful-switch-buffer-function (buffer-or-name)
+    "Switch to helpful buffer in the window of an existing helpful buffer if possible."
+    (if (eq major-mode 'helpful-mode)
+        (switch-to-buffer buffer-or-name)
+      (pop-to-buffer buffer-or-name)))
   :bind
   (("C-h f" . helpful-callable)
    ("C-h v" . helpful-variable)
@@ -287,12 +293,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ("C-h C-d" . helpful-at-point)
    ("C-h F" . helpful-function)
    ("C-h C" . helpful-command))
-  :init
-  (defun my-helpful-switch-buffer-function (buffer-or-name)
-    "Switch to helpful buffer in the window of an existing helpful buffer if possible."
-    (if (eq major-mode 'helpful-mode)
-        (switch-to-buffer buffer-or-name)
-      (pop-to-buffer buffer-or-name)))
   :custom
   (helpful-max-buffers 10)
   (helpful-switch-buffer-function #'my-helpful-switch-buffer-function))
