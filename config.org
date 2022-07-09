@@ -1,9 +1,16 @@
 * Start
 ** Early Initialization
-#+BEGIN_SRC emacs-lisp :tangle early-init.el
-  ;; disable package.el in favor of straight.el
-  (setq package-enable-at-startup nil)
+The early initialization file is processed before the package system and graphical interface are initialized.
+It is appropriate to configure these components via this file in order to avoid initialization of unused features.
 
+This setting disables the built-in =package.el= in favor of the =straight.el= package manager (see below).
+#+BEGIN_SRC emacs-lisp :tangle early-init.el
+  (setq package-enable-at-startup nil)
+#+END_SRC
+
+The =default-frame-alist= captures default values affecting frame creation.
+Adjusting these values here speeds up creation of the initial frame.
+#+BEGIN_SRC emacs-lisp :tangle early-init.el
   (push '(menu-bar-lines . 0) default-frame-alist)
   (push '(tool-bar-lines . 0) default-frame-alist)
   (push '(vertical-scroll-bars . nil) default-frame-alist)
@@ -31,14 +38,17 @@ The =after-init-hook= below resets the garbage collection settings to reasonable
 #+END_SRC
 
 ** Messages
+These settings for =inhibit-startup-screen= and =initial-scratch-message= disable the startup splash screen and scratch buffer message respectively.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (setq inhibit-startup-screen t)
   (setq initial-scratch-message nil)
 #+END_SRC
 
 ** Customizations
+Despite aggressive use of =use-package= to manage customizations below, it is still useful to maintain a customization file.
+Some of the uses include tracking themes that are considered safe as well as safe local variable-value pairs.
+Since this file contains information specific to the host on which Emacs runs, store it outside of the configuration directory.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  ;; store customizations outside of the emacs configuration directory
   (setq custom-file "~/.emacs-custom.el")
   (load custom-file t)
 #+END_SRC

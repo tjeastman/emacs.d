@@ -18,7 +18,6 @@
 ;; Messages:1 ends here
 
 ;; [[file:config.org::*Customizations][Customizations:1]]
-;; store customizations outside of the emacs configuration directory
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file t)
 ;; Customizations:1 ends here
