@@ -1,17 +1,7 @@
 *.elc
 .dir-locals.el
-.historian
-.python-environments
-amx-items
-elpa
-eshell/history
-network-security.data
-packages
 projectile-bookmarks.eld
-projectile.cache
-request
 straight/build
 straight/build-cache.el
 straight/repos
-tramp
 var
