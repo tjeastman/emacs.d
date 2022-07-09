@@ -450,10 +450,6 @@ Since this file contains information specific to the host on which Emacs runs, s
     :config
     (global-subword-mode))
 
-  (use-package swiper
-    :bind
-    ("C-s" . swiper))
-
   (use-package uniquify
     :straight (:type built-in)
     :custom
@@ -478,7 +474,8 @@ Since this file contains information specific to the host on which Emacs runs, s
 
   (use-package consult
     :bind
-    ("C-x b" . consult-buffer))
+    (("C-s" . consult-line)
+     ("C-x b" . consult-buffer)))
 
   (use-package marginalia
     :defer 1

@@ -413,10 +413,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (global-subword-mode))
 
-(use-package swiper
-  :bind
-  ("C-s" . swiper))
-
 (use-package uniquify
   :straight (:type built-in)
   :custom
@@ -440,7 +436,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package consult
   :bind
-  ("C-x b" . consult-buffer))
+  (("C-s" . consult-line)
+   ("C-x b" . consult-buffer)))
 
 (use-package marginalia
   :defer 1
