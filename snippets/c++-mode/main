@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: main
 # key: main
+# group: boilerplate
 # --
 int main(int argc, char *argv[]) {
   $0

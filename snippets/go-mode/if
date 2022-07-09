@@ -1,8 +1,8 @@
 # -*- mode: snippet -*-
 # name: if
 # key: if
+# group: control structures
 # --
 if $1 {
-  $2
+	$0
 }
-$0
