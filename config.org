@@ -488,6 +488,12 @@ Since this file contains information specific to the host on which Emacs runs, s
     :config
     (marginalia-mode))
 
+  (use-package orderless
+    :custom
+    (orderless-matching-styles '(orderless-literal orderless-regexp))
+    (completion-styles '(orderless basic))
+    (completion-category-overrides '((file (styles basic partial-completion)))))
+
   (use-package savehist
     :straight (:type built-in)
     :defer 1

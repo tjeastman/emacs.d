@@ -450,6 +450,12 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (marginalia-mode))
 
+(use-package orderless
+  :custom
+  (orderless-matching-styles '(orderless-literal orderless-regexp))
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
 (use-package savehist
   :straight (:type built-in)
   :defer 1
