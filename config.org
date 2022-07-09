@@ -12,12 +12,22 @@
 #+END_SRC
 
 ** Garbage Collection
+The following effectively disables garbage collection during application startup.
+This works by increasing the memory threshold used to trigger automatic garbage collections.
+The result is a significant decrease in startup time.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  ;; https://github.com/nilcons/emacs-use-package-fast
-  (setq gc-cons-threshold 64000000)
-  (add-hook 'after-init-hook #'(lambda ()
-                                 ;; restore after startup
-                                 (setq gc-cons-threshold 800000)))
+  (setq
+   gc-cons-threshold most-positive-fixnum
+   gc-cons-percentage 0.6)
+#+END_SRC
+
+The =after-init-hook= below resets the garbage collection settings to reasonable values for interactive use.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (add-hook 'after-init-hook
+    (lambda ()
+      (setq
+       gc-cons-threshold 16777216
+       gc-cons-percentage 0.1)))
 #+END_SRC
 
 ** Messages

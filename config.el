@@ -1,10 +1,16 @@
 ;; [[file:config.org::*Garbage Collection][Garbage Collection:1]]
-;; https://github.com/nilcons/emacs-use-package-fast
-(setq gc-cons-threshold 64000000)
-(add-hook 'after-init-hook #'(lambda ()
-                               ;; restore after startup
-                               (setq gc-cons-threshold 800000)))
+(setq
+ gc-cons-threshold most-positive-fixnum
+ gc-cons-percentage 0.6)
 ;; Garbage Collection:1 ends here
+
+;; [[file:config.org::*Garbage Collection][Garbage Collection:2]]
+(add-hook 'after-init-hook
+  (lambda ()
+    (setq
+     gc-cons-threshold 16777216
+     gc-cons-percentage 0.1)))
+;; Garbage Collection:2 ends here
 
 ;; [[file:config.org::*Messages][Messages:1]]
 (setq inhibit-startup-screen t)
