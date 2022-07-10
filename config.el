@@ -460,6 +460,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (savehist-mode))
 
 (use-package vertico
+  :straight (:files (:defaults "extensions/*"))
   :defer 1
   :custom
   (vertico-count 10)
@@ -468,6 +469,14 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (vertico-scroll-margin 2)
   :config
   (vertico-mode))
+
+(use-package vertico-directory
+  :straight nil
+  :after vertico
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word)))
 ;; Completion:1 ends here
 
 ;; [[file:config.org::*Editing][Editing:1]]

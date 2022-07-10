@@ -498,6 +498,7 @@ Since this file contains information specific to the host on which Emacs runs, s
     (savehist-mode))
 
   (use-package vertico
+    :straight (:files (:defaults "extensions/*"))
     :defer 1
     :custom
     (vertico-count 10)
@@ -506,6 +507,14 @@ Since this file contains information specific to the host on which Emacs runs, s
     (vertico-scroll-margin 2)
     :config
     (vertico-mode))
+
+  (use-package vertico-directory
+    :straight nil
+    :after vertico
+    :bind (:map vertico-map
+                ("RET" . vertico-directory-enter)
+                ("DEL" . vertico-directory-delete-char)
+                ("M-DEL" . vertico-directory-delete-word)))
 #+END_SRC
 
 * Editing
