@@ -922,9 +922,4 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (save-abbrevs 'silently)
   (require-final-newline t)
   (confirm-nonexistent-file-or-buffer nil))
-
-;; (use-package simple
-;;   :straight (:type built-in)
-;;   :bind
-;;   ("C-;" . backward-kill-word))
 ;; Miscellaneous:1 ends here

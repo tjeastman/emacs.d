@@ -1036,9 +1036,4 @@ This package should be loaded early in the configuration.
     (save-abbrevs 'silently)
     (require-final-newline t)
     (confirm-nonexistent-file-or-buffer nil))
-
-  ;; (use-package simple
-  ;;   :straight (:type built-in)
-  ;;   :bind
-  ;;   ("C-;" . backward-kill-word))
 #+END_SRC
