@@ -402,8 +402,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("C-c i" . imenu-anywhere))
 
 (use-package recentf
-  :bind
-  ("C-x C-r" . recentf-open-files)
   :custom
   (recentf-max-menu-items 25)
   (recentf-max-saved-items 250)
@@ -446,6 +444,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :bind
   (("C-s" . consult-line)
    ("C-x b" . consult-buffer)
+   ("C-x C-r" . consult-recent-file)
    ("M-g M-g" . consult-goto-line)))
 
 (use-package marginalia
