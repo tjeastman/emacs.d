@@ -428,24 +428,18 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Navigation:1 ends here
 
 ;; [[file:config.org::*Completion][Completion:1]]
-(use-package company
-  :defer t
-  :custom
-  (company-idle-delay 0.5)
-  (company-minimum-prefix-length 3)
-  (company-tooltip-limit 10)
-  (company-tooltip-flip-when-above t)
-  (company-selection-wrap-around t)
-  (company-show-numbers t)
-  :config
-  (global-company-mode t))
-
 (use-package consult
   :bind
   (("C-s" . consult-line)
    ("C-x b" . consult-buffer)
    ("C-x C-r" . consult-recent-file)
    ("M-g M-g" . consult-goto-line)))
+
+(use-package corfu
+  :bind (:map corfu-map
+              ("SPC" . corfu-insert-separator))
+  :init
+  (global-corfu-mode))
 
 (use-package marginalia
   :defer 1

@@ -477,24 +477,18 @@ This package should be loaded early in the configuration.
 
 * Completion
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package company
-    :defer t
-    :custom
-    (company-idle-delay 0.5)
-    (company-minimum-prefix-length 3)
-    (company-tooltip-limit 10)
-    (company-tooltip-flip-when-above t)
-    (company-selection-wrap-around t)
-    (company-show-numbers t)
-    :config
-    (global-company-mode t))
-
   (use-package consult
     :bind
     (("C-s" . consult-line)
      ("C-x b" . consult-buffer)
      ("C-x C-r" . consult-recent-file)
      ("M-g M-g" . consult-goto-line)))
+
+  (use-package corfu
+    :bind (:map corfu-map
+                ("SPC" . corfu-insert-separator))
+    :init
+    (global-corfu-mode))
 
   (use-package marginalia
     :defer 1
