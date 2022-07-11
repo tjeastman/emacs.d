@@ -445,7 +445,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package consult
   :bind
   (("C-s" . consult-line)
-   ("C-x b" . consult-buffer)))
+   ("C-x b" . consult-buffer)
+   ("M-g M-g" . consult-goto-line)))
 
 (use-package marginalia
   :defer 1
