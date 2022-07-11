@@ -35,19 +35,27 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
+;; Packages:1 ends here
 
+;; [[file:config.org::*Packages][Packages:2]]
 (straight-use-package 'use-package)
+;; Packages:2 ends here
 
+;; [[file:config.org::*Packages][Packages:3]]
 (use-package straight
   :custom
   (straight-use-package-by-default t))
+;; Packages:3 ends here
 
+;; [[file:config.org::*Packages][Packages:4]]
 (use-package use-package
   :custom
   (use-package-verbose t))
+;; Packages:4 ends here
 
+;; [[file:config.org::*Packages][Packages:5]]
 (use-package no-littering)
-;; Packages:1 ends here
+;; Packages:5 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:1]]
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode -1))

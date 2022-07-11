@@ -54,6 +54,11 @@ Since this file contains information specific to the host on which Emacs runs, s
 #+END_SRC
 
 * Packages
+This project uses the functional package manager =straight.el=.
+The primary reason is that it uses a version lockfile to ensure a fully reproducible environment.
+By tracking this file in the  version control system, it is possible to revert to past states of the installed package collection.
+
+The following is the standard =straight.el= initialization boilerplate.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (defvar bootstrap-version)
   (let ((bootstrap-file
@@ -67,17 +72,31 @@ Since this file contains information specific to the host on which Emacs runs, s
         (goto-char (point-max))
         (eval-print-last-sexp)))
     (load bootstrap-file nil 'nomessage))
+#+END_SRC
 
+Install =use-package=, a package that simplifies package installation and configuration with a macro of the same name.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (straight-use-package 'use-package)
+#+END_SRC
 
+The =straight-use-package-by-default= setting below ensures that =use-package= forms install their associated packages without an explicit directive.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package straight
     :custom
     (straight-use-package-by-default t))
+#+END_SRC
 
+Setting =use-package-verbose= causes =use-package= to print a message in the =*Messages*= buffer whenever a package is loaded.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package use-package
     :custom
     (use-package-verbose t))
+#+END_SRC
 
+The =no-littering= package consolidates various package-specific state files into a consistent directory structure.
+It results in a cleaner =user-emacs-directory=.
+This package should be loaded early in the configuration.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package no-littering)
 #+END_SRC
 
