@@ -669,6 +669,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (blacken-buffer))
 
 (use-package pip-requirements
+  :defer t
   :custom
   (pip-requirements-index-url nil))
 

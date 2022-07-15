@@ -774,6 +774,7 @@ This package should be loaded early in the configuration.
     (blacken-buffer))
 
   (use-package pip-requirements
+    :defer t
     :custom
     (pip-requirements-index-url nil))
 
