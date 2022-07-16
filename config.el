@@ -613,11 +613,19 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (flycheck-indication-mode nil))
 
 (use-package lsp-mode
+  :preface
+  ;; https://github.com/minad/corfu/issues/41
+  (defun my-lsp-passthrough-to-orderless ()
+    "Replace lsp-passthrough completion style with orderless."
+    (setcdr (cadr (assq 'lsp-capf completion-category-defaults)) '(orderless)))
   :commands
   (lsp
    lsp-deferred)
+  :hook
+  (lsp-mode . my-lsp-passthrough-to-orderless)
   :custom
   (lsp-auto-guess-root t)
+  (lsp-completion-provider :none)
   (lsp-enable-indentation nil)
   (lsp-headerline-breadcrumb-enable nil)
   (lsp-keymap-prefix "C-c l"))
