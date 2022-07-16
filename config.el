@@ -438,6 +438,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package corfu
   :bind (:map corfu-map
               ("SPC" . corfu-insert-separator))
+  :custom
+  (corfu-cycle t)
   :init
   (global-corfu-mode))
 

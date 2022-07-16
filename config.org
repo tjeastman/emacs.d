@@ -487,6 +487,8 @@ This package should be loaded early in the configuration.
   (use-package corfu
     :bind (:map corfu-map
                 ("SPC" . corfu-insert-separator))
+    :custom
+    (corfu-cycle t)
     :init
     (global-corfu-mode))
 
