@@ -530,6 +530,14 @@ This package should be loaded early in the configuration.
                 ("M-DEL" . vertico-directory-delete-word)))
 #+END_SRC
 
+The value of =tab-always-indent= affects the behavior of the TAB key.
+When set to =complete=, TAB indents the current line unless it is already indented.
+In this case, TAB runs =complete-at-point= to complete the thing at point.
+#+BEGIN_SRC emacs-lisp :tangle yes
+  (setq tab-always-indent 'complete)
+#+END_SRC
+
+
 * Editing
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (setq-default

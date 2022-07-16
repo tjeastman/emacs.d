@@ -481,6 +481,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("M-DEL" . vertico-directory-delete-word)))
 ;; Completion:1 ends here
 
+(setq tab-always-indent 'complete)
+
 ;; [[file:config.org::*Editing][Editing:1]]
 (setq-default
  indent-tabs-mode nil
