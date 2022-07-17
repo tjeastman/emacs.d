@@ -369,6 +369,15 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (avy-background t)
   (avy-case-fold-search t)
   (avy-timeout-seconds 0.8)
+  (avy-dispatch-alist '((?x . avy-action-kill-move)
+                        (?X . avy-action-kill-stay)
+                        (?t . avy-action-teleport)
+                        (?m . avy-action-mark)
+                        (?n . avy-action-copy)
+                        (?y . avy-action-yank)
+                        (?Y . avy-action-yank-line)
+                        (?i . avy-action-ispell)
+                        (?z . avy-action-zap-to-char)))
   :config
   (avy-setup-default))
 
