@@ -5,6 +5,7 @@
       '(
         c-electric-slash
         crux-move-beginning-of-line
+        indent-for-tab-command
         kill-region
         org-beginning-of-line
         org-delete-char
