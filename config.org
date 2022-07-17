@@ -510,9 +510,18 @@ This package should be loaded early in the configuration.
     (marginalia-mode))
 
   (use-package orderless
+    :preface
+    (defun my-orderless-dispatch (pattern index total)
+      (cond
+       ((string= "!" pattern) `(orderless-literal . ""))
+       ((string-prefix-p "!" pattern) `(orderless-without-literal . ,(substring pattern 1)))
+       ((string-suffix-p "=" pattern) `(orderless-literal . ,(substring pattern 0 -1)))
+       ((string-prefix-p "^" pattern) `(orderless-prefixes . ,(substring pattern 1)))
+       ((= index 0) 'orderless-flex)))
     :custom
     (orderless-matching-styles '(orderless-literal orderless-regexp))
-    (completion-styles '(orderless basic))
+    (orderless-style-dispatchers '(my-orderless-dispatch))
+    (completion-styles '(orderless))
     (completion-category-overrides '((file (styles basic partial-completion)))))
 
   (use-package savehist
