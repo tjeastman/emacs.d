@@ -557,7 +557,6 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
   (setq tab-always-indent 'complete)
 #+END_SRC
 
-
 * Editing
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (setq-default
