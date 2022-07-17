@@ -572,6 +572,16 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :custom
   (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
+(use-package selected
+  :commands
+  (selected-minor-mode)
+  :bind (:map selected-keymap
+              ("q" . selected-off)
+              ("u" . upcase-region)
+              ("d" . downcase-region)
+              ("w" . count-words-region)
+              ("m" . apply-macro-to-region-lines)))
+
 (use-package simple
   :straight (:type built-in)
   :custom

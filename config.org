@@ -627,6 +627,16 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
     :custom
     (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
+  (use-package selected
+    :commands
+    (selected-minor-mode)
+    :bind (:map selected-keymap
+                ("q" . selected-off)
+                ("u" . upcase-region)
+                ("d" . downcase-region)
+                ("w" . count-words-region)
+                ("m" . apply-macro-to-region-lines)))
+
   (use-package simple
     :straight (:type built-in)
     :custom

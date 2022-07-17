@@ -95,6 +95,7 @@
  ("rainbow-delimiters" . "a32b39bdfe6c61c322c37226d66e1b6d4f107ed0")
  ("rg.el" . "51596cb516d7af1737d964ffdbb4c4d416d6dfaf")
  ("s.el" . "08661efb075d1c6b4fa812184c1e5e90c08795a9")
+ ("selected.el" . "81cb32521a05ff2a9125e001b83608e108e480f6")
  ("shrink-path.el" . "c14882c8599aec79a6e8ef2d06454254bb3e1e41")
  ("smartparens" . "8b6a3c3b31afd5b3f846e09859b5fc62eb06e7c1")
  ("spinner" . "34905eae12a236753fa88abc831eff1e41e8576e")
