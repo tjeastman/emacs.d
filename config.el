@@ -581,7 +581,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("u" . upcase-region)
               ("d" . downcase-region)
               ("w" . count-words-region)
-              ("m" . apply-macro-to-region-lines)))
+              ("m" . apply-macro-to-region-lines)
+              ("p" . move-text-up)
+              ("n" . move-text-down)))
 
 (use-package simple
   :straight (:type built-in)
