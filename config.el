@@ -295,7 +295,13 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ("C-c ," . crux-find-user-custom-file)
    ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
    ("s-k" . crux-kill-whole-line)
-   ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
+   ([remap move-beginning-of-line] . crux-move-beginning-of-line))
+  :commands
+  (crux-capitalize-region
+   crux-downcase-region
+   crux-upcase-region
+   crux-duplicate-and-comment-current-line-or-region
+   crux-eval-and-replace))
 
 (use-package helpful
   :preface
@@ -443,7 +449,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (("C-s" . consult-line)
    ("C-x b" . consult-buffer)
    ("C-x C-r" . consult-recent-file)
-   ("M-g M-g" . consult-goto-line)))
+   ("M-g M-g" . consult-goto-line))
+  :commands
+  (consult-yank-pop))
 
 (use-package corfu
   :bind (:map corfu-map
@@ -570,6 +578,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ("C->" . 'mc/mark-next-like-this)
    ("C-<" . 'mc/mark-previous-like-this)
    ("C-c C-<" . 'mc/mark-all-like-this))
+  :commands
+  (mc/edit-lines)
   :custom
   (mc/list-file (expand-file-name ".mc-lists.el" user-emacs-directory)))
 
@@ -577,13 +587,21 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :commands
   (selected-minor-mode)
   :bind (:map selected-keymap
-              ("q" . selected-off)
-              ("u" . upcase-region)
-              ("d" . downcase-region)
+              ("a" . apply-macro-to-region-lines)
+              ("y" . consult-yank-pop)
               ("w" . count-words-region)
-              ("m" . apply-macro-to-region-lines)
+              ("c" . crux-capitalize-region)
+              ("l" . crux-downcase-region)
+              ("u" . crux-upcase-region)
+              ("d" . crux-duplicate-and-comment-current-line-or-region)
+              ("e" . crux-eval-and-replace)
               ("p" . move-text-up)
-              ("n" . move-text-down)))
+              ("n" . move-text-down)
+              ("m" . mc/edit-lines)
+              ("q" . selected-off)
+              ("w" . sp-kill-region)
+              ("r" . sp-delete-region)
+              ("/" . undo-tree-undo)))
 
 (use-package simple
   :straight (:type built-in)
@@ -592,6 +610,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; use a tree-structured representation of undo history
 (use-package undo-tree
+  :commands
+  (undo-tree-undo)
   :config
   (global-undo-tree-mode))
 
@@ -677,6 +697,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package smartparens
   :defer t
+  :commands
+  (sp-kill-region
+   sp-delete-region)
   :custom
   (sp-escape-quotes-after-insert nil)
   :config
