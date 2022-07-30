@@ -450,6 +450,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ("C-x b" . consult-buffer)
    ("C-x C-r" . consult-recent-file)
    ("M-g M-g" . consult-goto-line))
+  :custom
+  (xref-show-xrefs-function #'consult-xref)
+  (xref-show-definitions-function #'consult-xref)
   :commands
   (consult-yank-pop))
 

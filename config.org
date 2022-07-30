@@ -499,6 +499,9 @@ This package should be loaded early in the configuration.
      ("C-x b" . consult-buffer)
      ("C-x C-r" . consult-recent-file)
      ("M-g M-g" . consult-goto-line))
+    :custom
+    (xref-show-xrefs-function #'consult-xref)
+    (xref-show-definitions-function #'consult-xref)
     :commands
     (consult-yank-pop))
 
