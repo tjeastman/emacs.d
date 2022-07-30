@@ -337,7 +337,7 @@ This package should be loaded early in the configuration.
 
   (use-package crux
     :bind
-    (("C-c D" . crux-delete-file-and-buffer	)
+    (("C-c D" . crux-delete-file-and-buffer)
      ("C-c I" . crux-find-user-init-file)
      ("C-c ," . crux-find-user-custom-file)
      ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)

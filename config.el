@@ -290,7 +290,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package crux
   :bind
-  (("C-c D" . crux-delete-file-and-buffer	)
+  (("C-c D" . crux-delete-file-and-buffer)
    ("C-c I" . crux-find-user-init-file)
    ("C-c ," . crux-find-user-custom-file)
    ("C-c M-d" . crux-duplicate-and-comment-current-line-or-region)
