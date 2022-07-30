@@ -3,5 +3,4 @@
 # key: p
 # group: functions
 # --
-print($1)
-$0
+print($0)
