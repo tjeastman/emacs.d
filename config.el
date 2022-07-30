@@ -86,16 +86,16 @@
   (dimmer-mode t))
 
 (use-package doom-modeline
+  :hook
+  (after-init . doom-modeline-mode)
   :custom
-  (doom-modeline-bar-width 1)
+  (doom-modeline-bar-width 5)
   (doom-modeline-buffer-encoding nil)
   (doom-modeline-buffer-file-name-style 'relative-from-project)
   (doom-modeline-env-enable-python t)
-  (doom-modeline-height 15)
+  (doom-modeline-height 20)
   (doom-modeline-icon nil)
-  (doom-modeline-minor-modes nil)
-  :init
-  (doom-modeline-mode 1))
+  (doom-modeline-minor-modes nil))
 
 (use-package doom-themes
   :if window-system
