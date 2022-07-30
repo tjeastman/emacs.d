@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: eq
+# key: eq
+# group: definitions
+# --
+def __eq__(self, other: ${1:object}) -> bool:
+    if isinstance(other, $2):
+        $0
+    return NotImplemented
