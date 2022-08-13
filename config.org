@@ -784,11 +784,12 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
 #+END_SRC
 
 ** CMake
-#+BEGIN_SRC emacs-lisp :tangle no :comments link
-  (use-package cmake-mode)
-
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package cmake-font-lock
-    :after cmake-mode
+    :commands
+    (cmake-font-lock-activate))
+
+  (use-package cmake-mode
     :hook
     (cmake-mode . cmake-font-lock-activate))
 #+END_SRC

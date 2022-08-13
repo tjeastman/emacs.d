@@ -722,6 +722,16 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (makefile-mode . (lambda () (whitespace-toggle-options '(tabs)))))
 ;; Make:1 ends here
 
+;; [[file:config.org::*CMake][CMake:1]]
+(use-package cmake-font-lock
+  :commands
+  (cmake-font-lock-activate))
+
+(use-package cmake-mode
+  :hook
+  (cmake-mode . cmake-font-lock-activate))
+;; CMake:1 ends here
+
 ;; [[file:config.org::*Emacs Lisp][Emacs Lisp:1]]
 (use-package elisp-mode
   :straight (:type built-in)
