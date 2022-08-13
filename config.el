@@ -75,6 +75,11 @@
 ;; prefer horizontal splits
 (setq split-height-threshold 9999)
 
+(setq display-buffer-base-action
+      '(display-buffer-reuse-mode-window
+        display-buffer-reuse-window
+        display-buffer-same-window))
+
 (use-package beacon
   :config
   (beacon-mode 1))
@@ -304,12 +309,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    crux-eval-and-replace))
 
 (use-package helpful
-  :preface
-  (defun my-helpful-switch-buffer-function (buffer-or-name)
-    "Switch to helpful buffer in the window of an existing helpful buffer if possible."
-    (if (eq major-mode 'helpful-mode)
-        (switch-to-buffer buffer-or-name)
-      (pop-to-buffer buffer-or-name)))
   :bind
   (("C-h f" . helpful-callable)
    ("C-h v" . helpful-variable)
@@ -318,8 +317,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ("C-h F" . helpful-function)
    ("C-h C" . helpful-command))
   :custom
-  (helpful-max-buffers 10)
-  (helpful-switch-buffer-function #'my-helpful-switch-buffer-function))
+  (helpful-max-buffers 10))
 
 (use-package hydra
   :commands
