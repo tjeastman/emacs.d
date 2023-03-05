@@ -192,7 +192,7 @@
   (git-messenger:use-magit-popup t))
 
 (use-package git-modes
-  :straight (:host github :repo "magit/git-modes" :branch "master")
+  :straight (:host github :repo "magit/git-modes" :branch "main")
   :mode
   ("/\\.gitconfig\\'" . gitconfig-mode)
   ("/\\.git/config\\'" . gitconfig-mode)
