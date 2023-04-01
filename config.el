@@ -420,6 +420,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (recentf-max-menu-items 25)
   (recentf-max-saved-items 250)
   :config
+  (add-to-list 'recentf-exclude no-littering-var-directory)
+  (add-to-list 'recentf-exclude no-littering-etc-directory)
   (recentf-mode 1))
 
 (use-package rg

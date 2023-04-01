@@ -468,6 +468,8 @@ This package should be loaded early in the configuration.
     (recentf-max-menu-items 25)
     (recentf-max-saved-items 250)
     :config
+    (add-to-list 'recentf-exclude no-littering-var-directory)
+    (add-to-list 'recentf-exclude no-littering-etc-directory)
     (recentf-mode 1))
 
   (use-package rg
