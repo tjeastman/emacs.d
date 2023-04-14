@@ -686,7 +686,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (lsp-completion-provider :none)
   (lsp-enable-indentation nil)
   (lsp-headerline-breadcrumb-enable nil)
-  (lsp-keymap-prefix "C-c l"))
+  (lsp-keymap-prefix "C-c l")
+  (lsp-lens-enable nil))
 
 (use-package lsp-pyright
   :defer t)

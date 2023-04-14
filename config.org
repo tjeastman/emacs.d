@@ -746,7 +746,8 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
     (lsp-completion-provider :none)
     (lsp-enable-indentation nil)
     (lsp-headerline-breadcrumb-enable nil)
-    (lsp-keymap-prefix "C-c l"))
+    (lsp-keymap-prefix "C-c l")
+    (lsp-lens-enable nil))
 
   (use-package lsp-pyright
     :defer t)
