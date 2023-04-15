@@ -58,6 +58,12 @@ This project uses the functional package manager =straight.el=.
 The primary reason is that it uses a version lockfile to ensure a fully reproducible environment.
 By tracking this file in the  version control system, it is possible to revert to past states of the installed package collection.
 
+The following commands are useful for managing packages with =straight.el=:
++ =straight-pull-package= pulls a single package from its primary remote
++ =straight-pull-all= pulls all packages from their primary remotes
++ =straight-freeze-versions= updates the package version lockfile
++ =straight-thaw-versions= restores packages to versions in the version lockfile
+
 The following is the standard =straight.el= initialization boilerplate.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (defvar bootstrap-version)
