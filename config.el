@@ -424,9 +424,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (add-to-list 'recentf-exclude no-littering-etc-directory)
   (recentf-mode 1))
 
-(use-package rg
-  :defer t)
-
 (use-package saveplace
   :config
   (save-place-mode 1))

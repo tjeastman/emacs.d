@@ -478,9 +478,6 @@ This package should be loaded early in the configuration.
     (add-to-list 'recentf-exclude no-littering-etc-directory)
     (recentf-mode 1))
 
-  (use-package rg
-    :defer t)
-
   (use-package saveplace
     :config
     (save-place-mode 1))
