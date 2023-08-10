@@ -832,7 +832,7 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
 #+END_SRC
 
 ** C/C++
-#+BEGIN_SRC emacs-lisp :tangle no :comments link
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package ccls
     :custom
     (ccls-sem-highlight-method 'overlays))

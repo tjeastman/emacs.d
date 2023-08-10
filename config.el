@@ -754,6 +754,24 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (cmake-mode . cmake-font-lock-activate))
 ;; CMake:1 ends here
 
+;; [[file:config.org::*C/C++][C/C++:1]]
+(use-package ccls
+  :custom
+  (ccls-sem-highlight-method 'overlays))
+
+(use-package clang-format
+  :commands
+  (clang-format-region
+   clang-format-buffer))
+
+(use-package cuda-mode
+  :mode "\\.cuh?\\'")
+
+(use-package modern-cpp-font-lock
+  :commands
+  (modern-c++-font-lock-mode))
+;; C/C++:1 ends here
+
 ;; [[file:config.org::*Emacs Lisp][Emacs Lisp:1]]
 (use-package elisp-mode
   :straight (:type built-in)
