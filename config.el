@@ -58,8 +58,50 @@
 ;; Packages:5 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:1]]
-(if (fboundp 'blink-cursor-mode) (blink-cursor-mode -1))
+(if (fboundp 'blink-cursor-mode)
+    (blink-cursor-mode -1))
+;; Appearance:1 ends here
 
+;; [[file:config.org::*Appearance][Appearance:2]]
+(setq-default cursor-in-non-selected-windows nil)
+;; Appearance:2 ends here
+
+;; [[file:config.org::*Appearance][Appearance:3]]
+(use-package beacon
+  :custom
+  (beacon-color 0.5)
+  (beacon-size 80)
+  (beacon-blink-duration 0.5)
+  (beacon-blink-when-point-moves-vertically t)
+  (beacon-blink-when-point-moves-horizontally t)
+  (beacon-blink-when-buffer-changes t)
+  (beacon-blink-when-window-scrolls t)
+  (beacon-blink-when-window-changes t)
+  (beacon-blink-when-focused t)
+  :config
+  (beacon-mode 1))
+;; Appearance:3 ends here
+
+;; [[file:config.org::*Appearance][Appearance:4]]
+(use-package hl-line
+  :straight (:type built-in)
+  :if window-system
+  :custom
+  (global-hl-line-sticky-flag nil)
+  :config
+  (global-hl-line-mode t))
+;; Appearance:4 ends here
+
+;; [[file:config.org::*Appearance][Appearance:5]]
+(use-package dimmer
+  :custom
+  (dimmer-fraction 0.3)
+  (dimmer-adjustment-mode :both)
+  :init
+  (dimmer-mode t))
+;; Appearance:5 ends here
+
+;; [[file:config.org::*Appearance][Appearance:6]]
 (setq visible-bell t)
 (if (eq system-type 'darwin)
     (setq ring-bell-function 'ignore))
@@ -69,9 +111,6 @@
  truncate-lines nil
  truncate-partial-width-windows t)
 
-;; hide cursor in windows that are not selected
-(setq-default cursor-in-non-selected-windows nil)
-
 ;; prefer horizontal splits
 (setq split-height-threshold 9999)
 
@@ -79,16 +118,6 @@
       '(display-buffer-reuse-mode-window
         display-buffer-reuse-window
         display-buffer-same-window))
-
-(use-package beacon
-  :config
-  (beacon-mode 1))
-
-(use-package dimmer
-  :custom
-  (dimmer-adjustment-mode :both)
-  :init
-  (dimmer-mode t))
 
 (use-package doom-modeline
   :hook
@@ -120,11 +149,6 @@
   (highlight-indentation-mode
    highlight-indentation-current-column-mode))
 
-(use-package hl-line
-  :if window-system
-  :config
-  (global-hl-line-mode t))
-
 (use-package rainbow-delimiters
   :commands
   (rainbow-delimiters-mode))
@@ -140,7 +164,7 @@
   :defer 1
   :config
   (volatile-highlights-mode t))
-;; Appearance:1 ends here
+;; Appearance:6 ends here
 
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv

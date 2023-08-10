@@ -107,9 +107,60 @@ This package should be loaded early in the configuration.
 #+END_SRC
 
 * Appearance
+Calling =blink-cursor-mode= as follows disables blinking of the cursor.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (if (fboundp 'blink-cursor-mode) (blink-cursor-mode -1))
+  (if (fboundp 'blink-cursor-mode)
+      (blink-cursor-mode -1))
+#+END_SRC
 
+This default value for =cursor-in-non-selected-windows= hides the cursor in windows that are not selected.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (setq-default cursor-in-non-selected-windows nil)
+#+END_SRC
+
+The =beacon= package helps to find the location of the cursor when certain events occur such as switching windows or scrolling within a window.
+It works by briefly flashing the line containing the cursor.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package beacon
+    :custom
+    (beacon-color 0.5)
+    (beacon-size 80)
+    (beacon-blink-duration 0.5)
+    (beacon-blink-when-point-moves-vertically t)
+    (beacon-blink-when-point-moves-horizontally t)
+    (beacon-blink-when-buffer-changes t)
+    (beacon-blink-when-window-scrolls t)
+    (beacon-blink-when-window-changes t)
+    (beacon-blink-when-focused t)
+    :config
+    (beacon-mode 1))
+#+END_SRC
+
+The global minor mode =global-hl-line-mode= highlights the line containing the point
+This behavior will affect the selected window only (see the variable =global-hl-line-sticky-flag=).
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package hl-line
+    :straight (:type built-in)
+    :if window-system
+    :custom
+    (global-hl-line-sticky-flag nil)
+    :config
+    (global-hl-line-mode t))
+#+END_SRC
+
+The =dimmer= package provides the minor mode =dimmer-mode= which provides a visual indication of what buffer is currently active.
+It works by muting the colors in all other visible buffers.
+This configuration mutes both foreground and background colors (see =dimmer-adjustment-mode=).
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package dimmer
+    :custom
+    (dimmer-fraction 0.3)
+    (dimmer-adjustment-mode :both)
+    :init
+    (dimmer-mode t))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (setq visible-bell t)
   (if (eq system-type 'darwin)
       (setq ring-bell-function 'ignore))
@@ -119,9 +170,6 @@ This package should be loaded early in the configuration.
    truncate-lines nil
    truncate-partial-width-windows t)
 
-  ;; hide cursor in windows that are not selected
-  (setq-default cursor-in-non-selected-windows nil)
-
   ;; prefer horizontal splits
   (setq split-height-threshold 9999)
 
@@ -129,16 +177,6 @@ This package should be loaded early in the configuration.
         '(display-buffer-reuse-mode-window
           display-buffer-reuse-window
           display-buffer-same-window))
-
-  (use-package beacon
-    :config
-    (beacon-mode 1))
-
-  (use-package dimmer
-    :custom
-    (dimmer-adjustment-mode :both)
-    :init
-    (dimmer-mode t))
 
   (use-package doom-modeline
     :hook
@@ -169,11 +207,6 @@ This package should be loaded early in the configuration.
     :commands
     (highlight-indentation-mode
      highlight-indentation-current-column-mode))
-
-  (use-package hl-line
-    :if window-system
-    :config
-    (global-hl-line-mode t))
 
   (use-package rainbow-delimiters
     :commands
