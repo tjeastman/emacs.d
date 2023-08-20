@@ -700,6 +700,8 @@ The =expand-region= package provides commands for manipulating the region based 
     :commands
     (selected-minor-mode)
     :bind (:map selected-keymap
+                ("=" . er/expand-region)
+                ("-" . er/contract-region)
                 ("a" . apply-macro-to-region-lines)
                 ("y" . consult-yank-pop)
                 ("w" . count-words-region)

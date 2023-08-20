@@ -624,6 +624,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :commands
   (selected-minor-mode)
   :bind (:map selected-keymap
+              ("=" . er/expand-region)
+              ("-" . er/contract-region)
               ("a" . apply-macro-to-region-lines)
               ("y" . consult-yank-pop)
               ("w" . count-words-region)
