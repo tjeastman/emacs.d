@@ -633,7 +633,12 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
   (use-package autorevert
     :config
     (global-auto-revert-mode t))
+#+END_SRC
 
+=browse-kill-ring= displays items from the kill ring in a separate buffer.
+Within that buffer, individual items can be selected and the source buffer will be updated as if =yank= was called for the selection.
+The =RET= key commits to a selection of killed text, modifies the source buffer accordingly and closes the kill ring buffer.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package browse-kill-ring
     :bind
     ("C-x y" . browse-kill-ring))

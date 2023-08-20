@@ -563,42 +563,44 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package autorevert
   :config
   (global-auto-revert-mode t))
-
-(use-package browse-kill-ring
-  :bind
-  ("C-x y" . browse-kill-ring))
 ;; Editing:1 ends here
 
 ;; [[file:config.org::*Editing][Editing:2]]
-(use-package delsel
-  :config
-  (delete-selection-mode t))
+(use-package browse-kill-ring
+  :bind
+  ("C-x y" . browse-kill-ring))
 ;; Editing:2 ends here
 
 ;; [[file:config.org::*Editing][Editing:3]]
-(use-package edit-indirect
-  :commands
-  (edit-indirect-region))
+(use-package delsel
+  :config
+  (delete-selection-mode t))
 ;; Editing:3 ends here
 
 ;; [[file:config.org::*Editing][Editing:4]]
+(use-package edit-indirect
+  :commands
+  (edit-indirect-region))
+;; Editing:4 ends here
+
+;; [[file:config.org::*Editing][Editing:5]]
 (use-package electric-operator
   :commands
   (electric-operator-mode
    electric-operator-get-rules-for-mode
    electric-operator-add-rules-for-mode))
-;; Editing:4 ends here
+;; Editing:5 ends here
 
-;; [[file:config.org::*Editing][Editing:5]]
+;; [[file:config.org::*Editing][Editing:6]]
 (use-package expand-region
   :bind
   ("C-=" . er/expand-region)
   :commands
   (er/expand-region
    er/contract-region))
-;; Editing:5 ends here
+;; Editing:6 ends here
 
-;; [[file:config.org::*Editing][Editing:6]]
+;; [[file:config.org::*Editing][Editing:7]]
 (use-package mouse
   :straight (:type built-in)
   :custom
@@ -674,7 +676,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
   :config
   (yatemplate-fill-alist))
-;; Editing:6 ends here
+;; Editing:7 ends here
 
 (use-package flyspell
   :commands
