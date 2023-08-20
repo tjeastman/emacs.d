@@ -637,25 +637,44 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
   (use-package browse-kill-ring
     :bind
     ("C-x y" . browse-kill-ring))
+#+END_SRC
 
+When =delete-selection-mode= is enabled, typed text will replace an active selection.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package delsel
     :config
     (delete-selection-mode t))
+#+END_SRC
 
+The =edit-indirect-region= command enables editing of a region in a separate buffer, isolated from its surrounding text.
+When done, the following commands can be used to exit the edit buffer:
++ =edit-indirect-commit= will replace the original region with the edited version
++ =edit-indirect-abort= will discard the modifications leaving the original region unmodified
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package edit-indirect
     :commands
     (edit-indirect-region))
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package electric-operator
     :commands
     (electric-operator-mode
      electric-operator-get-rules-for-mode
      electric-operator-add-rules-for-mode))
+#+END_SRC
 
+The =expand-region= package provides commands for manipulating the region based on semantic units.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package expand-region
     :bind
-    ("C-=" . er/expand-region))
+    ("C-=" . er/expand-region)
+    :commands
+    (er/expand-region
+     er/contract-region))
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package mouse
     :straight (:type built-in)
     :custom
