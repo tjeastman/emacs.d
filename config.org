@@ -510,11 +510,17 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
     (add-to-list 'recentf-exclude no-littering-var-directory)
     (add-to-list 'recentf-exclude no-littering-etc-directory)
     (recentf-mode 1))
+#+END_SRC
 
+=save-place-mode= automatically saves the last location of the point in each visited file.
+Visiting the file again will return the point to that location.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package saveplace
     :config
     (save-place-mode 1))
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package subword
     :config
     (global-subword-mode))
@@ -571,13 +577,23 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
     (orderless-style-dispatchers '(my-orderless-dispatch))
     (completion-styles '(orderless))
     (completion-category-overrides '((file (styles basic partial-completion)))))
+#+END_SRC
 
+When enabled, =savehist-mode= periodically saves minibuffer history to a file.
+Completion in the minibuffer orders completion candidates based on this history, prioritizing more recently used candidates.
+The variable =savehist-file= defines the file name where the history is saved.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package savehist
     :straight (:type built-in)
     :defer 1
+    :custom
+    (savehist-autosave-interval (* 5 60))
+    (savehist-save-minibuffer-history t)
     :config
     (savehist-mode))
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package vertico
     :straight (:files (:defaults "extensions/*"))
     :defer 1
@@ -629,7 +645,10 @@ In this case, TAB runs =complete-at-point= to complete the thing at point.
     (auto-insert-query nil)
     :config
     (auto-insert-mode))
+#+END_SRC
 
+The =global-auto-revert-mode= mode reverts any buffer associated with a file when that file changes.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package autorevert
     :config
     (global-auto-revert-mode t))

@@ -447,11 +447,15 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (add-to-list 'recentf-exclude no-littering-var-directory)
   (add-to-list 'recentf-exclude no-littering-etc-directory)
   (recentf-mode 1))
+;; Navigation:1 ends here
 
+;; [[file:config.org::*Navigation][Navigation:2]]
 (use-package saveplace
   :config
   (save-place-mode 1))
+;; Navigation:2 ends here
 
+;; [[file:config.org::*Navigation][Navigation:3]]
 (use-package subword
   :config
   (global-subword-mode))
@@ -462,7 +466,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (uniquify-buffer-name-style 'post-forward)
   (uniquify-after-kill-buffer-p t)
   (uniquify-ignore-buffers-re "^\\*"))
-;; Navigation:1 ends here
+;; Navigation:3 ends here
 
 ;; [[file:config.org::*Completion][Completion:1]]
 (use-package consult
@@ -507,13 +511,20 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (orderless-style-dispatchers '(my-orderless-dispatch))
   (completion-styles '(orderless))
   (completion-category-overrides '((file (styles basic partial-completion)))))
+;; Completion:1 ends here
 
+;; [[file:config.org::*Completion][Completion:2]]
 (use-package savehist
   :straight (:type built-in)
   :defer 1
+  :custom
+  (savehist-autosave-interval (* 5 60))
+  (savehist-save-minibuffer-history t)
   :config
   (savehist-mode))
+;; Completion:2 ends here
 
+;; [[file:config.org::*Completion][Completion:3]]
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :defer 1
@@ -532,7 +543,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("RET" . vertico-directory-enter)
               ("DEL" . vertico-directory-delete-char)
               ("M-DEL" . vertico-directory-delete-word)))
-;; Completion:1 ends here
+;; Completion:3 ends here
 
 (setq tab-always-indent 'complete)
 
@@ -559,48 +570,50 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (auto-insert-query nil)
   :config
   (auto-insert-mode))
-
-(use-package autorevert
-  :config
-  (global-auto-revert-mode t))
 ;; Editing:1 ends here
 
 ;; [[file:config.org::*Editing][Editing:2]]
-(use-package browse-kill-ring
-  :bind
-  ("C-x y" . browse-kill-ring))
+(use-package autorevert
+  :config
+  (global-auto-revert-mode t))
 ;; Editing:2 ends here
 
 ;; [[file:config.org::*Editing][Editing:3]]
-(use-package delsel
-  :config
-  (delete-selection-mode t))
+(use-package browse-kill-ring
+  :bind
+  ("C-x y" . browse-kill-ring))
 ;; Editing:3 ends here
 
 ;; [[file:config.org::*Editing][Editing:4]]
-(use-package edit-indirect
-  :commands
-  (edit-indirect-region))
+(use-package delsel
+  :config
+  (delete-selection-mode t))
 ;; Editing:4 ends here
 
 ;; [[file:config.org::*Editing][Editing:5]]
+(use-package edit-indirect
+  :commands
+  (edit-indirect-region))
+;; Editing:5 ends here
+
+;; [[file:config.org::*Editing][Editing:6]]
 (use-package electric-operator
   :commands
   (electric-operator-mode
    electric-operator-get-rules-for-mode
    electric-operator-add-rules-for-mode))
-;; Editing:5 ends here
+;; Editing:6 ends here
 
-;; [[file:config.org::*Editing][Editing:6]]
+;; [[file:config.org::*Editing][Editing:7]]
 (use-package expand-region
   :bind
   ("C-=" . er/expand-region)
   :commands
   (er/expand-region
    er/contract-region))
-;; Editing:6 ends here
+;; Editing:7 ends here
 
-;; [[file:config.org::*Editing][Editing:7]]
+;; [[file:config.org::*Editing][Editing:8]]
 (use-package mouse
   :straight (:type built-in)
   :custom
@@ -676,7 +689,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
   :config
   (yatemplate-fill-alist))
-;; Editing:7 ends here
+;; Editing:8 ends here
 
 (use-package flyspell
   :commands
