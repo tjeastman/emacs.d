@@ -707,6 +707,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (text-mode . flyspell-mode))
 
 ;; [[file:config.org::*General][General:1]]
+(use-package eglot)
+
 (use-package flycheck
   :hook
   (after-init . global-flycheck-mode)

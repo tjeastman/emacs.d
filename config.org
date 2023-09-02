@@ -797,6 +797,8 @@ The =expand-region= package provides commands for manipulating the region based 
 * Programming
 ** General
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package eglot)
+
   (use-package flycheck
     :hook
     (after-init . global-flycheck-mode)
