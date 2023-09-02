@@ -39,6 +39,6 @@
     ("teh" "the" nil :count 2)
     ("tempalte" "template" nil :count 1)
     ("termainl" "terminal" nil :count 1)
+    ("udpate" "update" nil :count 0)
     ("vlaue" "value" nil :count 0)
    ))
-
