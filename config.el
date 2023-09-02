@@ -480,7 +480,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (xref-show-definitions-function #'consult-xref)
   :commands
   (consult-yank-pop))
+;; Completion:1 ends here
 
+;; [[file:config.org::*Completion][Completion:2]]
 (use-package corfu
   :bind (:map corfu-map
               ("SPC" . corfu-insert-separator))
@@ -488,7 +490,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (corfu-cycle t)
   :init
   (global-corfu-mode))
+;; Completion:2 ends here
 
+;; [[file:config.org::*Completion][Completion:3]]
 (use-package marginalia
   :defer 1
   :custom
@@ -496,7 +500,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (marginalia-max-relative-age 0)
   :config
   (marginalia-mode))
+;; Completion:3 ends here
 
+;; [[file:config.org::*Completion][Completion:4]]
 (use-package orderless
   :preface
   (defun my-orderless-dispatch (pattern index total)
@@ -511,9 +517,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (orderless-style-dispatchers '(my-orderless-dispatch))
   (completion-styles '(orderless))
   (completion-category-overrides '((file (styles basic partial-completion)))))
-;; Completion:1 ends here
+;; Completion:4 ends here
 
-;; [[file:config.org::*Completion][Completion:2]]
+;; [[file:config.org::*Completion][Completion:5]]
 (use-package savehist
   :straight (:type built-in)
   :defer 1
@@ -522,9 +528,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (savehist-save-minibuffer-history t)
   :config
   (savehist-mode))
-;; Completion:2 ends here
+;; Completion:5 ends here
 
-;; [[file:config.org::*Completion][Completion:3]]
+;; [[file:config.org::*Completion][Completion:6]]
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :defer 1
@@ -543,7 +549,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("RET" . vertico-directory-enter)
               ("DEL" . vertico-directory-delete-char)
               ("M-DEL" . vertico-directory-delete-word)))
-;; Completion:3 ends here
+;; Completion:6 ends here
 
 (setq tab-always-indent 'complete)
 

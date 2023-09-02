@@ -546,7 +546,10 @@ Visiting the file again will return the point to that location.
     (xref-show-definitions-function #'consult-xref)
     :commands
     (consult-yank-pop))
+#+END_SRC
 
+=corfu= facilitates in-buffer completions via a popup completion menu that is displayed near the point.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package corfu
     :bind (:map corfu-map
                 ("SPC" . corfu-insert-separator))
@@ -554,7 +557,10 @@ Visiting the file again will return the point to that location.
     (corfu-cycle t)
     :init
     (global-corfu-mode))
+#+END_SRC
 
+The =marginalia= package add contextual annotations to minibuffer completion candidates.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package marginalia
     :defer 1
     :custom
@@ -562,7 +568,12 @@ Visiting the file again will return the point to that location.
     (marginalia-max-relative-age 0)
     :config
     (marginalia-mode))
+#+END_SRC
 
+=orderless= is a completion style that treats a pattern as a series of components and matches candidates that match every component in any order.
+The package provides various component matching styles, including literal, regexp, multiple word prefix and flex.
+In addition, it implements a dispatch mechanism to alter the style dynamically as components are entered.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package orderless
     :preface
     (defun my-orderless-dispatch (pattern index total)
