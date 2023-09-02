@@ -710,8 +710,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package eglot)
 
 (use-package flycheck
-  :hook
-  (after-init . global-flycheck-mode)
   :bind
   (("C-c e n" . flycheck-next-error)
    ("C-c e p" . flycheck-previous-error))
