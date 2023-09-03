@@ -720,8 +720,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package flycheck
   :bind
-  (("C-c e n" . flycheck-next-error)
-   ("C-c e p" . flycheck-previous-error))
+  (:map flycheck-mode-map
+        ("C-c e n" . flycheck-next-error)
+        ("C-c e p" . flycheck-previous-error))
   :custom
   (flycheck-buffer-switch-check-intermediate-buffers nil)
   (flycheck-check-syntax-automatically '(idle-buffer-switch idle-change mode-enabled save))
@@ -729,6 +730,12 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (flycheck-idle-buffer-switch-delay 2.0)
   (flycheck-idle-change-delay 2.0)
   (flycheck-indication-mode nil))
+
+(use-package flymake
+  :bind
+  (:map flymake-mode-map
+        ("C-c e n" . flymake-goto-next-error)
+        ("C-c e p" . flymake-goto-prev-error)))
 
 (use-package lsp-mode
   :preface
