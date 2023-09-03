@@ -808,7 +808,10 @@ The =expand-region= package provides commands for manipulating the region based 
 * Programming
 ** General
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package eglot)
+  (use-package eglot
+    :bind
+    (:map eglot-mode-map
+          ("C-c r" . eglot-rename)))
 
   (use-package flycheck
     :bind

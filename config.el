@@ -713,7 +713,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (text-mode . flyspell-mode))
 
 ;; [[file:config.org::*General][General:1]]
-(use-package eglot)
+(use-package eglot
+  :bind
+  (:map eglot-mode-map
+        ("C-c r" . eglot-rename)))
 
 (use-package flycheck
   :bind
