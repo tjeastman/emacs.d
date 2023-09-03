@@ -795,6 +795,17 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :commands
   (cmake-font-lock-activate))
 
+(use-package cmake-integration
+  :straight (:host github :repo "darcamo/cmake-integration" :branch "main")
+  :defer 1
+  :commands
+  (cmake-integration-cmake-reconfigure
+   cmake-integration-cmake-configure-with-preset
+   cmake-integration-save-and-compile
+   cmake-integration-save-and-compile-last-target
+   cmake-integration-run-last-target
+   cmake-integration-run-last-target-with-arguments))
+
 (use-package cmake-mode
   :hook
   (cmake-mode . cmake-font-lock-activate))
