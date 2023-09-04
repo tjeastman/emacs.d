@@ -554,6 +554,9 @@ Visiting the file again will return the point to that location.
     :bind (:map corfu-map
                 ("SPC" . corfu-insert-separator))
     :custom
+    (corfu-auto t)
+    (corfu-auto-delay 0.25)
+    (corfu-auto-prefix 2)
     (corfu-cycle t)
     :init
     (global-corfu-mode))
