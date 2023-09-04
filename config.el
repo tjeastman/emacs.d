@@ -738,7 +738,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :bind
   (:map flymake-mode-map
         ("C-c e n" . flymake-goto-next-error)
-        ("C-c e p" . flymake-goto-prev-error)))
+        ("C-c e p" . flymake-goto-prev-error)
+        ("C-c e d" . flymake-show-buffer-diagnostics)
+        ("C-c e D" . flymake-show-project-diagnostics)))
 
 (use-package lsp-mode
   :preface
