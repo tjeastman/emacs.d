@@ -814,7 +814,7 @@ The =expand-region= package provides commands for manipulating the region based 
   (use-package eglot
     :bind
     (:map eglot-mode-map
-          ("C-c r" . eglot-rename)))
+          ("C-c l r" . eglot-rename)))
 
   (use-package flycheck
     :bind

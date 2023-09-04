@@ -719,7 +719,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package eglot
   :bind
   (:map eglot-mode-map
-        ("C-c r" . eglot-rename)))
+        ("C-c l r" . eglot-rename)))
 
 (use-package flycheck
   :bind
