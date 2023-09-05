@@ -552,6 +552,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :defer 1
+  :hook
+  (rfn-eshadow-update-overlay . vertico-directory-tidy)
   :custom
   (vertico-count 10)
   (vertico-cycle t)

@@ -626,6 +626,8 @@ The variable =savehist-file= defines the file name where the history is saved.
   (use-package vertico
     :straight (:files (:defaults "extensions/*"))
     :defer 1
+    :hook
+    (rfn-eshadow-update-overlay . vertico-directory-tidy)
     :custom
     (vertico-count 10)
     (vertico-cycle t)
