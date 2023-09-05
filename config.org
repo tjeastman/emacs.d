@@ -512,6 +512,10 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
     (recentf-mode 1))
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package wgrep)
+#+END_SRC
+
 =save-place-mode= automatically saves the last location of the point in each visited file.
 Visiting the file again will return the point to that location.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
@@ -540,7 +544,8 @@ Visiting the file again will return the point to that location.
     (("C-s" . consult-line)
      ("C-x b" . consult-buffer)
      ("C-x C-r" . consult-recent-file)
-     ("M-g M-g" . consult-goto-line))
+     ("M-g M-g" . consult-goto-line)
+     ("C-c r" . consult-ripgrep))
     :custom
     (xref-show-xrefs-function #'consult-xref)
     (xref-show-definitions-function #'consult-xref)
@@ -560,6 +565,16 @@ Visiting the file again will return the point to that location.
     (corfu-cycle t)
     :init
     (global-corfu-mode))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package embark
+    :bind
+    ("C-c a" . embark-act))
+
+  (use-package embark-consult
+    :ensure nil
+    :after (embark consult))
 #+END_SRC
 
 The =marginalia= package add contextual annotations to minibuffer completion candidates.

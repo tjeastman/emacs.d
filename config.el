@@ -450,12 +450,16 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Navigation:1 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:2]]
-(use-package saveplace
-  :config
-  (save-place-mode 1))
+(use-package wgrep)
 ;; Navigation:2 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:3]]
+(use-package saveplace
+  :config
+  (save-place-mode 1))
+;; Navigation:3 ends here
+
+;; [[file:config.org::*Navigation][Navigation:4]]
 (use-package subword
   :config
   (global-subword-mode))
@@ -466,7 +470,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (uniquify-buffer-name-style 'post-forward)
   (uniquify-after-kill-buffer-p t)
   (uniquify-ignore-buffers-re "^\\*"))
-;; Navigation:3 ends here
+;; Navigation:4 ends here
 
 ;; [[file:config.org::*Completion][Completion:1]]
 (use-package consult
@@ -474,7 +478,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (("C-s" . consult-line)
    ("C-x b" . consult-buffer)
    ("C-x C-r" . consult-recent-file)
-   ("M-g M-g" . consult-goto-line))
+   ("M-g M-g" . consult-goto-line)
+   ("C-c r" . consult-ripgrep))
   :custom
   (xref-show-xrefs-function #'consult-xref)
   (xref-show-definitions-function #'consult-xref)
@@ -496,6 +501,16 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Completion:2 ends here
 
 ;; [[file:config.org::*Completion][Completion:3]]
+(use-package embark
+  :bind
+  ("C-c a" . embark-act))
+
+(use-package embark-consult
+  :ensure nil
+  :after (embark consult))
+;; Completion:3 ends here
+
+;; [[file:config.org::*Completion][Completion:4]]
 (use-package marginalia
   :defer 1
   :custom
@@ -503,9 +518,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (marginalia-max-relative-age 0)
   :config
   (marginalia-mode))
-;; Completion:3 ends here
+;; Completion:4 ends here
 
-;; [[file:config.org::*Completion][Completion:4]]
+;; [[file:config.org::*Completion][Completion:5]]
 (use-package orderless
   :preface
   (defun my-orderless-dispatch (pattern index total)
@@ -520,9 +535,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (orderless-style-dispatchers '(my-orderless-dispatch))
   (completion-styles '(orderless))
   (completion-category-overrides '((file (styles basic partial-completion)))))
-;; Completion:4 ends here
+;; Completion:5 ends here
 
-;; [[file:config.org::*Completion][Completion:5]]
+;; [[file:config.org::*Completion][Completion:6]]
 (use-package savehist
   :straight (:type built-in)
   :defer 1
@@ -531,9 +546,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (savehist-save-minibuffer-history t)
   :config
   (savehist-mode))
-;; Completion:5 ends here
+;; Completion:6 ends here
 
-;; [[file:config.org::*Completion][Completion:6]]
+;; [[file:config.org::*Completion][Completion:7]]
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :defer 1
@@ -552,7 +567,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("RET" . vertico-directory-enter)
               ("DEL" . vertico-directory-delete-char)
               ("M-DEL" . vertico-directory-delete-word)))
-;; Completion:6 ends here
+;; Completion:7 ends here
 
 (setq tab-always-indent 'complete)
 
