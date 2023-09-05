@@ -14,6 +14,7 @@
  ("clang-format" . "bce0bb4ca17ecb6e6927074920945cef2a78f5b6")
  ("cmake" . "31f58c5d80aa6d0dbbcf2dc825183d46aeeec172")
  ("cmake-font-lock" . "a6038e916bcca807ae695f7d7e5c300c3f38f415")
+ ("cmake-integration" . "018ef1e847ce0909c202800e69021d7477ac13ab")
  ("compat" . "9428a64eb8a579f35d57bc4d4cdb6c5cf10806c1")
  ("consult" . "5f78ab04a2a2c6387f0fe29bc309399ea815346a")
  ("corfu" . "72ddcb6ebc0a5887e360974deb277b0c82ffec0e")
