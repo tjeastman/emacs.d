@@ -489,6 +489,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; [[file:config.org::*Completion][Completion:2]]
 (use-package corfu
+  :straight (:files (:defaults "extensions/*"))
   :bind (:map corfu-map
               ("SPC" . corfu-insert-separator))
   :custom
@@ -497,7 +498,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (corfu-auto-prefix 2)
   (corfu-cycle t)
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  :config
+  (corfu-history-mode 1))
 ;; Completion:2 ends here
 
 ;; [[file:config.org::*Completion][Completion:3]]
@@ -545,7 +548,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (savehist-autosave-interval (* 5 60))
   (savehist-save-minibuffer-history t)
   :config
-  (savehist-mode))
+  (savehist-mode)
+  (add-to-list 'savehist-additional-variables 'corfu-history))
 ;; Completion:6 ends here
 
 ;; [[file:config.org::*Completion][Completion:7]]

@@ -556,6 +556,7 @@ Visiting the file again will return the point to that location.
 =corfu= facilitates in-buffer completions via a popup completion menu that is displayed near the point.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package corfu
+    :straight (:files (:defaults "extensions/*"))
     :bind (:map corfu-map
                 ("SPC" . corfu-insert-separator))
     :custom
@@ -564,7 +565,9 @@ Visiting the file again will return the point to that location.
     (corfu-auto-prefix 2)
     (corfu-cycle t)
     :init
-    (global-corfu-mode))
+    (global-corfu-mode)
+    :config
+    (corfu-history-mode 1))
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
@@ -619,7 +622,8 @@ The variable =savehist-file= defines the file name where the history is saved.
     (savehist-autosave-interval (* 5 60))
     (savehist-save-minibuffer-history t)
     :config
-    (savehist-mode))
+    (savehist-mode)
+    (add-to-list 'savehist-additional-variables 'corfu-history))
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
