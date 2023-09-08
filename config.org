@@ -537,6 +537,16 @@ Visiting the file again will return the point to that location.
     (uniquify-ignore-buffers-re "^\\*"))
 #+END_SRC
 
+=winner-mode= tracks changes to the window configuration and makes them accessible via the following commands:
++ =winner-undo= (=C-c left=) switch to the previous window configuration
++ =winner-redo= (=C-c right=) restore the next most recent window configuration
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package winner
+    :straight (:type built-in)
+    :init
+    (winner-mode))
+#+END_SRC
+
 * Completion
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package consult
