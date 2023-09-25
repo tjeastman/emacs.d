@@ -54,7 +54,9 @@
 ;; Packages:4 ends here
 
 ;; [[file:config.org::*Packages][Packages:5]]
-(use-package no-littering)
+(use-package no-littering
+  :config
+  (no-littering-theme-backups))
 ;; Packages:5 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:1]]

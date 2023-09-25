@@ -103,7 +103,9 @@ The =no-littering= package consolidates various package-specific state files int
 It results in a cleaner =user-emacs-directory=.
 This package should be loaded early in the configuration.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package no-littering)
+  (use-package no-littering
+    :config
+    (no-littering-theme-backups))
 #+END_SRC
 
 * Appearance
