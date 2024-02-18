@@ -1016,11 +1016,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package apt-sources-list
   :defer t)
 
-(use-package conf-mode
-  :mode
-  ((".preseed$" . conf-mode)
-   ("pylintrc$" . conf-mode)))
-
 (use-package groovy-mode
   :defer t)
 
