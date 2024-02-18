@@ -912,16 +912,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ("\\.zsh-theme\\'" . sh-mode)))
 ;; Shell:1 ends here
 
-;; [[file:config.org::*Protocol Buffers][Protocol Buffers:1]]
-(use-package protobuf-mode
-  :mode "\\.proto\\'"
-  :hook
-  ((protobuf-mode . flyspell-prog-mode)
-   (protobuf-mode . electric-operator-mode))
-  :config
-  (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
-;; Protocol Buffers:1 ends here
-
 ;; [[file:config.org::*Embedded][Embedded:1]]
 (use-package arduino-mode
   :mode

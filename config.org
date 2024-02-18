@@ -1034,17 +1034,6 @@ The =expand-region= package provides commands for manipulating the region based 
      ("\\.zsh-theme\\'" . sh-mode)))
 #+END_SRC
 
-** Protocol Buffers
-#+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package protobuf-mode
-    :mode "\\.proto\\'"
-    :hook
-    ((protobuf-mode . flyspell-prog-mode)
-     (protobuf-mode . electric-operator-mode))
-    :config
-    (electric-operator-add-rules-for-mode 'protobuf-mode (cons "=" " = ")))
-#+END_SRC
-
 ** Embedded
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package arduino-mode
