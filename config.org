@@ -1144,9 +1144,6 @@ The =expand-region= package provides commands for manipulating the region based 
   (use-package apt-sources-list
     :defer t)
 
-  (use-package groovy-mode
-    :defer t)
-
   (use-package i3wm-config-mode
     :straight (:host github :repo "Alexander-Miller/i3wm-Config-Mode" :branch "master")
     :commands

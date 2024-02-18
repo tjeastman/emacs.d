@@ -65,7 +65,6 @@
  ("git-timemachine" . "ac933e5cd29583c131401f3bd991d98129c316df")
  ("gnu-elpa-mirror" . "5779c96cfc03274ee2f320a82eedda20373122c9")
  ("goto-chg" . "278cd3e6d5107693aa2bb33189ca503f22f227d0")
- ("groovy-emacs-modes" . "7b8520b2e2d3ab1d62b35c426e17ac25ed0120bb")
  ("hcl-mode" . "751b79247f326ab52e00032e805775c37ad9f080")
  ("helpful" . "a32a5b3d959a7fccf09a71d97b3d7c888ac31c69")
  ("ht.el" . "1c49aad1c820c86f7ee35bf9fff8429502f60fef")

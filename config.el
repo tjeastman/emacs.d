@@ -1016,9 +1016,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package apt-sources-list
   :defer t)
 
-(use-package groovy-mode
-  :defer t)
-
 (use-package i3wm-config-mode
   :straight (:host github :repo "Alexander-Miller/i3wm-Config-Mode" :branch "master")
   :commands
