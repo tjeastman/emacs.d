@@ -1052,9 +1052,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package systemd
   :defer t)
 
-(use-package terraform-mode
-  :defer t)
-
 (use-package toml-mode
   :mode
   ("Pipfile\\'" . toml-mode)

@@ -115,7 +115,6 @@
  ("straight.el" . "b3760f5829dba37e855add7323304561eb57a3d4")
  ("systemd-mode" . "8742607120fbc440821acbc351fda1e8e68a8806")
  ("tablist" . "fcd37147121fabdf003a70279cf86fbe08cfac6f")
- ("terraform-mode" . "e8b57df8c2a3d3171f3768f60eb84067f553289c")
  ("themes" . "ff26f26ea3d761375f5fc4070438fbd0f3473d33")
  ("toml-mode.el" . "f6c61817b00f9c4a3cab1bae9c309e0fc45cdd06")
  ("transient" . "85ecbc66b68207275f81de4f9bd321474a6c8c61")

@@ -1180,9 +1180,6 @@ The =expand-region= package provides commands for manipulating the region based 
   (use-package systemd
     :defer t)
 
-  (use-package terraform-mode
-    :defer t)
-
   (use-package toml-mode
     :mode
     ("Pipfile\\'" . toml-mode)
