@@ -14,6 +14,7 @@
         c-electric-star
         c-indent-line-or-region
         crux-move-beginning-of-line
+        electric-newline-and-maybe-indent
         indent-for-tab-command
         kill-region
         org-beginning-of-line
