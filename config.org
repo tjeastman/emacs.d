@@ -191,7 +191,11 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
     (doom-modeline-height 20)
     (doom-modeline-icon nil)
     (doom-modeline-minor-modes nil))
+#+END_SRC
 
+=doom-themes= provides ready access to widely used themes.
+The =doom-themes-enable-bold= and =doom-themes-enable-italic= settings can be used to disable the respective text properties across all faces.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package doom-themes
     :if window-system
     :custom
@@ -199,27 +203,43 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
     (doom-themes-enable-italic nil)
     :config
     (load-theme 'doom-solarized-light t))
+#+END_SRC
 
+The =toggle-frame-fullscreen= (=M-RET=) command makes the selected frame occupy the full screen or restores its previous size if already full sized.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package frame
     :straight (:type built-in)
     :bind
     ("M-RET" . toggle-frame-fullscreen))
+#+END_SRC
 
+The =highlight-indentation= package provides visual indicators of indentation level.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package highlight-indentation
     :commands
     (highlight-indentation-mode
      highlight-indentation-current-column-mode))
+#+END_SRC
 
+The =rainbow-delimiters= package highlights delimiters such as parenthesis, brackets and braces.
+It implements this by assigning distinct colors to delimiter characters at each level of depth making it easier to see how they match.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package rainbow-delimiters
     :commands
     (rainbow-delimiters-mode))
+#+END_SRC
 
+=line-number-mode= and =size-indication-mode= extend the mode line with the current line number and buffer size respectively.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package simple
     :straight (:type built-in)
     :config
     (line-number-mode t)
     (size-indication-mode t))
+#+END_SRC
 
+=volatile-highlights-mode= provides visual feedback for certain text manipulation operations such as undo, yank and kill.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   ;; highlight buffer changes caused by certain commands
   (use-package volatile-highlights
     :defer 1
@@ -369,18 +389,28 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
 #+END_SRC
 
 * Interface
+Consistently use the short form (y or n) for yes/no questions.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  ;; consistently ask yes or no questions
   (defalias 'yes-or-no-p 'y-or-n-p)
+#+END_SRC
 
-  ;; enabled region case manipulation commands
+Enable region manipulation and buffer narrowing commands.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
-  ;; enable buffer narrowing commands
   (put 'narrow-to-region 'disabled nil)
   (put 'narrow-to-page 'disabled nil)
   (put 'narrow-to-defun 'disabled nil)
+#+END_SRC
 
+The =crux= package provides a variety of useful interactive commands including
++ =crux-delete-file-and-buffer= deletes the current buffer and associated file
++ =crux-find-user-init-file= opens the initialization file
++ =crux-find-user-custom-file= opens the custom file
++ =crux-duplicate-and-comment-current-line-or-region= duplicates and comments the current line or region
++ =crux-kill-whole-line= kills the whole line containing the point
++ =crux-move-beginning-of-line= moves the point back to the where the line begins excluding indentation
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package crux
     :bind
     (("C-c D" . crux-delete-file-and-buffer)
@@ -395,7 +425,10 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
      crux-upcase-region
      crux-duplicate-and-comment-current-line-or-region
      crux-eval-and-replace))
+#+END_SRC
 
+=helpful= adds useful contextual information to help buffers.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package helpful
     :bind
     (("C-h f" . helpful-callable)
@@ -406,7 +439,9 @@ This configuration mutes both foreground and background colors (see =dimmer-adju
      ("C-h C" . helpful-command))
     :custom
     (helpful-max-buffers 10))
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package hydra
     :commands
     (defhydra))

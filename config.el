@@ -132,7 +132,9 @@
   (doom-modeline-height 20)
   (doom-modeline-icon nil)
   (doom-modeline-minor-modes nil))
+;; Appearance:6 ends here
 
+;; [[file:config.org::*Appearance][Appearance:7]]
 (use-package doom-themes
   :if window-system
   :custom
@@ -140,33 +142,43 @@
   (doom-themes-enable-italic nil)
   :config
   (load-theme 'doom-solarized-light t))
+;; Appearance:7 ends here
 
+;; [[file:config.org::*Appearance][Appearance:8]]
 (use-package frame
   :straight (:type built-in)
   :bind
   ("M-RET" . toggle-frame-fullscreen))
+;; Appearance:8 ends here
 
+;; [[file:config.org::*Appearance][Appearance:9]]
 (use-package highlight-indentation
   :commands
   (highlight-indentation-mode
    highlight-indentation-current-column-mode))
+;; Appearance:9 ends here
 
+;; [[file:config.org::*Appearance][Appearance:10]]
 (use-package rainbow-delimiters
   :commands
   (rainbow-delimiters-mode))
+;; Appearance:10 ends here
 
+;; [[file:config.org::*Appearance][Appearance:11]]
 (use-package simple
   :straight (:type built-in)
   :config
   (line-number-mode t)
   (size-indication-mode t))
+;; Appearance:11 ends here
 
+;; [[file:config.org::*Appearance][Appearance:12]]
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
   :defer 1
   :config
   (volatile-highlights-mode t))
-;; Appearance:6 ends here
+;; Appearance:12 ends here
 
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv
@@ -308,17 +320,18 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Projects:1 ends here
 
 ;; [[file:config.org::*Interface][Interface:1]]
-;; consistently ask yes or no questions
 (defalias 'yes-or-no-p 'y-or-n-p)
+;; Interface:1 ends here
 
-;; enabled region case manipulation commands
+;; [[file:config.org::*Interface][Interface:2]]
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
-;; enable buffer narrowing commands
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 (put 'narrow-to-defun 'disabled nil)
+;; Interface:2 ends here
 
+;; [[file:config.org::*Interface][Interface:3]]
 (use-package crux
   :bind
   (("C-c D" . crux-delete-file-and-buffer)
@@ -333,7 +346,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    crux-upcase-region
    crux-duplicate-and-comment-current-line-or-region
    crux-eval-and-replace))
+;; Interface:3 ends here
 
+;; [[file:config.org::*Interface][Interface:4]]
 (use-package helpful
   :bind
   (("C-h f" . helpful-callable)
@@ -344,7 +359,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    ("C-h C" . helpful-command))
   :custom
   (helpful-max-buffers 10))
+;; Interface:4 ends here
 
+;; [[file:config.org::*Interface][Interface:5]]
 (use-package hydra
   :commands
   (defhydra))
@@ -364,7 +381,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package which-key
   :config
   (which-key-mode))
-;; Interface:1 ends here
+;; Interface:5 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:1]]
 (setq
