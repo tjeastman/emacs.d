@@ -1101,14 +1101,11 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package compile
   :hook
-  (compilation-filter
-   . (lambda ()
-       (let ((inhibit-read-only t))
-         (ansi-color-apply-on-region compilation-filter-start (point)))))
+  (compilation-filter . ansi-color-compilation-filter)
   :custom
+  (ansi-color-for-compilation-mode t)
   (compilation-ask-about-save nil)
-  (compilation-scroll-output 'next-error)
-  (compilation-environment '("TERM=eterm-color")))
+  (compilation-scroll-output 'next-error))
 
 (use-package esup
   :commands
