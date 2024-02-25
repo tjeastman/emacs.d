@@ -423,7 +423,6 @@ The =crux= package provides a variety of useful interactive commands including
     (crux-capitalize-region
      crux-downcase-region
      crux-upcase-region
-     crux-duplicate-and-comment-current-line-or-region
      crux-eval-and-replace))
 #+END_SRC
 

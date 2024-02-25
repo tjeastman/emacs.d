@@ -344,7 +344,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (crux-capitalize-region
    crux-downcase-region
    crux-upcase-region
-   crux-duplicate-and-comment-current-line-or-region
    crux-eval-and-replace))
 ;; Interface:3 ends here
 
