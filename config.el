@@ -519,7 +519,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("SPC" . corfu-insert-separator))
   :custom
   (corfu-auto t)
-  (corfu-auto-delay 0.25)
+  (corfu-auto-delay 0)
   (corfu-auto-prefix 2)
   (corfu-cycle t)
   (corfu-quit-no-match t)

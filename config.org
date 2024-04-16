@@ -607,7 +607,7 @@ Visiting the file again will return the point to that location.
                 ("SPC" . corfu-insert-separator))
     :custom
     (corfu-auto t)
-    (corfu-auto-delay 0.25)
+    (corfu-auto-delay 0)
     (corfu-auto-prefix 2)
     (corfu-cycle t)
     (corfu-quit-no-match t)
