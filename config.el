@@ -416,10 +416,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (avy-setup-default))
 
-(use-package avy-flycheck
-  :bind
-  ("C-c '" . avy-flycheck-goto-error))
-
 (use-package deadgrep
   :bind
   ("C-c h" . deadgrep)
@@ -755,19 +751,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :bind
   (:map eglot-mode-map
         ("C-c l r" . eglot-rename)))
-
-(use-package flycheck
-  :bind
-  (:map flycheck-mode-map
-        ("C-c e n" . flycheck-next-error)
-        ("C-c e p" . flycheck-previous-error))
-  :custom
-  (flycheck-buffer-switch-check-intermediate-buffers nil)
-  (flycheck-check-syntax-automatically '(idle-buffer-switch idle-change mode-enabled save))
-  (flycheck-highlighting-mode 'symbols)
-  (flycheck-idle-buffer-switch-delay 2.0)
-  (flycheck-idle-change-delay 2.0)
-  (flycheck-indication-mode nil))
 
 (use-package flymake
   :bind

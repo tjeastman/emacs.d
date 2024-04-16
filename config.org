@@ -497,10 +497,6 @@ The =crux= package provides a variety of useful interactive commands including
     :config
     (avy-setup-default))
 
-  (use-package avy-flycheck
-    :bind
-    ("C-c '" . avy-flycheck-goto-error))
-
   (use-package deadgrep
     :bind
     ("C-c h" . deadgrep)
@@ -871,19 +867,6 @@ The =expand-region= package provides commands for manipulating the region based 
     :bind
     (:map eglot-mode-map
           ("C-c l r" . eglot-rename)))
-
-  (use-package flycheck
-    :bind
-    (:map flycheck-mode-map
-          ("C-c e n" . flycheck-next-error)
-          ("C-c e p" . flycheck-previous-error))
-    :custom
-    (flycheck-buffer-switch-check-intermediate-buffers nil)
-    (flycheck-check-syntax-automatically '(idle-buffer-switch idle-change mode-enabled save))
-    (flycheck-highlighting-mode 'symbols)
-    (flycheck-idle-buffer-switch-delay 2.0)
-    (flycheck-idle-change-delay 2.0)
-    (flycheck-indication-mode nil))
 
   (use-package flymake
     :bind
