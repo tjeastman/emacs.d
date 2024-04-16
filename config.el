@@ -262,18 +262,6 @@
   :config
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
-(use-package projectile
-  :defer t
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :custom
-  (projectile-use-git-grep t)
-  (projectile-indexing-method 'alien)
-  (projectile-project-search-path '("~/projects/"))
-  (projectile-sort-order 'recentf)
-  :config
-  (projectile-mode +1))
-
 (use-package smerge-mode
   :after hydra
   :config
