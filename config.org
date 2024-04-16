@@ -1160,10 +1160,6 @@ The =expand-region= package provides commands for manipulating the region based 
 
 * Files
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package ansible-doc
-    :commands
-    (ansible-doc))
-
   (use-package apt-sources-list
     :defer t)
 
@@ -1208,7 +1204,6 @@ The =expand-region= package provides commands for manipulating the region based 
 
   (use-package yaml-mode
     :after docker-compose-mode
-    :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
     :mode ("\\.yaml\\'" "\\.yml\\'" "group_vars/.+\\'")
     :hook (yaml-mode . flyspell-prog-mode))
 #+END_SRC

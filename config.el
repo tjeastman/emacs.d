@@ -1015,10 +1015,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Docker:1 ends here
 
 ;; [[file:config.org::*Files][Files:1]]
-(use-package ansible-doc
-  :commands
-  (ansible-doc))
-
 (use-package apt-sources-list
   :defer t)
 
@@ -1063,7 +1059,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package yaml-mode
   :after docker-compose-mode
-  :bind (:map yaml-mode-map ("C-c h a" . ansible-doc))
   :mode ("\\.yaml\\'" "\\.yml\\'" "group_vars/.+\\'")
   :hook (yaml-mode . flyspell-prog-mode))
 ;; Files:1 ends here

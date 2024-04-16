@@ -4,7 +4,6 @@
  ("ace-link" . "06ab398df85e81d1dc763b3210732dd26cba60a1")
  ("ace-window" . "77115afc1b0b9f633084cf7479c767988106c196")
  ("aggressive-indent-mode" . "a437a45868f94b77362c6b913c5ee8e67b273c42")
- ("ansible-doc" . "86083a7bb2ed0468ca64e52076b06441a2f8e9e0")
  ("apt-sources-list" . "5289443ceff230dfc8a2c1c6b524c90560eb08a5")
  ("arduino-mode" . "652c6a328fa8f2db06534d5f231c6b6933be3edc")
  ("avy" . "be612110cb116a38b8603df367942e2bb3d9bdbe")
