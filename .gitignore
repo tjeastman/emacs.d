@@ -1,7 +1,9 @@
 *.elc
 .dir-locals.el
+eln-cache
 projectile-bookmarks.eld
 straight/build
 straight/build-cache.el
+straight/modified
 straight/repos
 var
