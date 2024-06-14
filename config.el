@@ -752,6 +752,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (:map eglot-mode-map
         ("C-c l r" . eglot-rename)))
 
+(use-package elec-pair
+  :commands
+  electric-pair-local-mode)
+
 (use-package flymake
   :bind
   (:map flymake-mode-map
@@ -785,23 +789,15 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package lsp-pyright
   :defer t)
 
+(use-package paredit
+  :commands
+  (enable-paredit-mode))
+
 (use-package prog-mode
   :straight (:type built-in)
   :hook
   ((prog-mode . flyspell-prog-mode)
-   (prog-mode . rainbow-delimiters-mode)
-   (prog-mode . turn-on-smartparens-strict-mode)))
-
-(use-package smartparens
-  :defer t
-  :commands
-  (sp-kill-region
-   sp-delete-region)
-  :custom
-  (sp-escape-quotes-after-insert nil)
-  :config
-  (require 'smartparens-config)
-  (show-smartparens-global-mode +1))
+   (prog-mode . rainbow-delimiters-mode)))
 
 (use-package which-func
   :config
@@ -838,6 +834,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; CMake:1 ends here
 
 ;; [[file:config.org::*C/C++][C/C++:1]]
+(use-package cc-mode
+  :hook
+  (c-mode-common . electric-pair-local-mode))
+
 (use-package ccls
   :custom
   (ccls-sem-highlight-method 'overlays))
@@ -860,7 +860,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :straight (:type built-in)
   :hook
   ((emacs-lisp-mode . aggressive-indent-mode)
-   (emacs-lisp-mode . electric-operator-mode))
+   (emacs-lisp-mode . electric-operator-mode)
+   (emacs-lisp-mode . enable-paredit-mode))
   :config
   (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
 ;; Emacs Lisp:1 ends here
@@ -881,7 +882,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package python
   :hook
-  (python-mode . highlight-indentation-mode))
+  ((python-mode . highlight-indentation-mode)
+   (python-mode . electric-pair-local-mode)))
 
 (use-package python-pytest
   :bind

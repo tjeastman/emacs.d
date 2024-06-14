@@ -868,6 +868,10 @@ The =expand-region= package provides commands for manipulating the region based 
     (:map eglot-mode-map
           ("C-c l r" . eglot-rename)))
 
+  (use-package elec-pair
+    :commands
+    electric-pair-local-mode)
+
   (use-package flymake
     :bind
     (:map flymake-mode-map
@@ -901,23 +905,15 @@ The =expand-region= package provides commands for manipulating the region based 
   (use-package lsp-pyright
     :defer t)
 
+  (use-package paredit
+    :commands
+    (enable-paredit-mode))
+
   (use-package prog-mode
     :straight (:type built-in)
     :hook
     ((prog-mode . flyspell-prog-mode)
-     (prog-mode . rainbow-delimiters-mode)
-     (prog-mode . turn-on-smartparens-strict-mode)))
-
-  (use-package smartparens
-    :defer t
-    :commands
-    (sp-kill-region
-     sp-delete-region)
-    :custom
-    (sp-escape-quotes-after-insert nil)
-    :config
-    (require 'smartparens-config)
-    (show-smartparens-global-mode +1))
+     (prog-mode . rainbow-delimiters-mode)))
 
   (use-package which-func
     :config
@@ -957,6 +953,10 @@ The =expand-region= package provides commands for manipulating the region based 
 
 ** C/C++
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package cc-mode
+    :hook
+    (c-mode-common . electric-pair-local-mode))
+
   (use-package ccls
     :custom
     (ccls-sem-highlight-method 'overlays))
@@ -979,7 +979,9 @@ The =expand-region= package provides commands for manipulating the region based 
   (use-package cider
     :defer t)
 
-  (use-package clojure-mode)
+  (use-package clojure-mode
+    :hook
+    (clojure-mode . enable-paredit-mode))
 #+END_SRC
 
 ** Emacs Lisp
@@ -988,7 +990,8 @@ The =expand-region= package provides commands for manipulating the region based 
     :straight (:type built-in)
     :hook
     ((emacs-lisp-mode . aggressive-indent-mode)
-     (emacs-lisp-mode . electric-operator-mode))
+     (emacs-lisp-mode . electric-operator-mode)
+     (emacs-lisp-mode . enable-paredit-mode))
     :config
     (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
 #+END_SRC
@@ -1020,7 +1023,8 @@ The =expand-region= package provides commands for manipulating the region based 
 
   (use-package python
     :hook
-    (python-mode . highlight-indentation-mode))
+    ((python-mode . highlight-indentation-mode)
+     (python-mode . electric-pair-local-mode)))
 
   (use-package python-pytest
     :bind
