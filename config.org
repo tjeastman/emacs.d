@@ -523,6 +523,7 @@ The =crux= package provides a variety of useful interactive commands including
     ("C-c i" . imenu-anywhere))
 
   (use-package recentf
+    :straight (:type built-in)
     :custom
     (recentf-max-menu-items 25)
     (recentf-max-saved-items 250)
@@ -549,6 +550,7 @@ Such symbols are implicitly split into subwords beginning with capital letters (
 This mode is useful for editing symbols that commonly occur in various programming languages.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package subword
+    :straight (:type built-in)
     :config
     (global-subword-mode))
 #+END_SRC

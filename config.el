@@ -442,6 +442,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("C-c i" . imenu-anywhere))
 
 (use-package recentf
+  :straight (:type built-in)
   :custom
   (recentf-max-menu-items 25)
   (recentf-max-saved-items 250)
@@ -463,6 +464,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; [[file:config.org::*Navigation][Navigation:4]]
 (use-package subword
+  :straight (:type built-in)
   :config
   (global-subword-mode))
 ;; Navigation:4 ends here
