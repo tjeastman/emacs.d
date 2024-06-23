@@ -465,21 +465,23 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package subword
   :config
   (global-subword-mode))
+;; Navigation:4 ends here
 
+;; [[file:config.org::*Navigation][Navigation:5]]
 (use-package uniquify
   :straight (:type built-in)
   :custom
   (uniquify-buffer-name-style 'post-forward)
   (uniquify-after-kill-buffer-p t)
   (uniquify-ignore-buffers-re "^\\*"))
-;; Navigation:4 ends here
+;; Navigation:5 ends here
 
-;; [[file:config.org::*Navigation][Navigation:5]]
+;; [[file:config.org::*Navigation][Navigation:6]]
 (use-package winner
   :straight (:type built-in)
   :init
   (winner-mode))
-;; Navigation:5 ends here
+;; Navigation:6 ends here
 
 ;; [[file:config.org::*Completion][Completion:1]]
 (use-package consult

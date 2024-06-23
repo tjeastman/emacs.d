@@ -544,11 +544,17 @@ Visiting the file again will return the point to that location.
     (save-place-mode 1))
 #+END_SRC
 
+=subword-mode= alters the behavior of word-based editing commands for symbols that mix upper and lowercase letters.
+Such symbols are implicitly split into subwords beginning with capital letters (or sequences of capital letters) that are treated as distinct words for editing purposes.
+This mode is useful for editing symbols that commonly occur in various programming languages.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package subword
     :config
     (global-subword-mode))
+#+END_SRC
 
+The =uniquify= package provides customizations that govern how buffers are named when visiting identically-named files.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package uniquify
     :straight (:type built-in)
     :custom
