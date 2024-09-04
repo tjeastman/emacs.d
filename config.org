@@ -150,18 +150,6 @@ This behavior will affect the selected window only (see the variable =global-hl-
     (global-hl-line-mode t))
 #+END_SRC
 
-The =dimmer= package provides the minor mode =dimmer-mode= which provides a visual indication of what buffer is currently active.
-It works by muting the colors in all other visible buffers.
-This configuration mutes both foreground and background colors (see =dimmer-adjustment-mode=).
-#+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package dimmer
-    :custom
-    (dimmer-fraction 0.3)
-    (dimmer-adjustment-mode :both)
-    :init
-    (dimmer-mode t))
-#+END_SRC
-
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (setq visible-bell t)
   (if (eq system-type 'darwin)

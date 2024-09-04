@@ -21,7 +21,6 @@
  ("cuda-mode" . "7f593518fd135fc6af994024bcb47986dfa502d2")
  ("dash.el" . "1de9dcb83eacfb162b6d9a118a4770b1281bcd84")
  ("deadgrep" . "eafc642c551e6d5df7eb1fee9aa7596e59811178")
- ("dimmer.el" . "a5b697580e5aed6168b571ae3d925753428284f8")
  ("dired-hacks" . "a01c126c3b1068655509487c76971895f5459d09")
  ("dired-sidebar" . "702165ad53a473992d84e0207b984b9be5114bde")
  ("docker-compose-mode" . "abaa4f3aeb5c62d7d16e186dd7d77f4e846e126a")

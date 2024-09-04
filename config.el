@@ -95,15 +95,6 @@
 ;; Appearance:4 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:5]]
-(use-package dimmer
-  :custom
-  (dimmer-fraction 0.3)
-  (dimmer-adjustment-mode :both)
-  :init
-  (dimmer-mode t))
-;; Appearance:5 ends here
-
-;; [[file:config.org::*Appearance][Appearance:6]]
 (setq visible-bell t)
 (if (eq system-type 'darwin)
     (setq ring-bell-function 'ignore))
@@ -132,9 +123,9 @@
   (doom-modeline-height 20)
   (doom-modeline-icon nil)
   (doom-modeline-minor-modes nil))
-;; Appearance:6 ends here
+;; Appearance:5 ends here
 
-;; [[file:config.org::*Appearance][Appearance:7]]
+;; [[file:config.org::*Appearance][Appearance:6]]
 (use-package doom-themes
   :if window-system
   :custom
@@ -142,43 +133,43 @@
   (doom-themes-enable-italic nil)
   :config
   (load-theme 'doom-solarized-light t))
-;; Appearance:7 ends here
+;; Appearance:6 ends here
 
-;; [[file:config.org::*Appearance][Appearance:8]]
+;; [[file:config.org::*Appearance][Appearance:7]]
 (use-package frame
   :straight (:type built-in)
   :bind
   ("M-RET" . toggle-frame-fullscreen))
-;; Appearance:8 ends here
+;; Appearance:7 ends here
 
-;; [[file:config.org::*Appearance][Appearance:9]]
+;; [[file:config.org::*Appearance][Appearance:8]]
 (use-package highlight-indentation
   :commands
   (highlight-indentation-mode
    highlight-indentation-current-column-mode))
-;; Appearance:9 ends here
+;; Appearance:8 ends here
 
-;; [[file:config.org::*Appearance][Appearance:10]]
+;; [[file:config.org::*Appearance][Appearance:9]]
 (use-package rainbow-delimiters
   :commands
   (rainbow-delimiters-mode))
-;; Appearance:10 ends here
+;; Appearance:9 ends here
 
-;; [[file:config.org::*Appearance][Appearance:11]]
+;; [[file:config.org::*Appearance][Appearance:10]]
 (use-package simple
   :straight (:type built-in)
   :config
   (line-number-mode t)
   (size-indication-mode t))
-;; Appearance:11 ends here
+;; Appearance:10 ends here
 
-;; [[file:config.org::*Appearance][Appearance:12]]
+;; [[file:config.org::*Appearance][Appearance:11]]
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
   :defer 1
   :config
   (volatile-highlights-mode t))
-;; Appearance:12 ends here
+;; Appearance:11 ends here
 
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv
