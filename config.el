@@ -706,8 +706,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("n" . move-text-down)
               ("m" . mc/edit-lines)
               ("q" . selected-off)
-              ("w" . sp-kill-region)
-              ("r" . sp-delete-region)
+              ("w" . kill-region)
+              ("r" . delete-region)
               ("/" . undo-tree-undo)))
 
 (use-package simple

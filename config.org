@@ -838,8 +838,8 @@ The =expand-region= package provides commands for manipulating the region based 
                 ("n" . move-text-down)
                 ("m" . mc/edit-lines)
                 ("q" . selected-off)
-                ("w" . sp-kill-region)
-                ("r" . sp-delete-region)
+                ("w" . kill-region)
+                ("r" . delete-region)
                 ("/" . undo-tree-undo)))
 
   (use-package simple
