@@ -25,6 +25,8 @@
     ("optino" "option" nil :count 0)
     ("optinos" "options" nil :count 0)
     ("pacakges" "packages" nil :count 1)
+    ("preceeding" "preceding" nil :count 1)
+    ("preferrable" "preferable" nil :count 1)
     ("queyr" "query" nil :count 1)
     ("recieve" "receive" nil :count 1)
     ("regoin" "region" nil :count 0)
@@ -39,6 +41,9 @@
     ("teh" "the" nil :count 2)
     ("tempalte" "template" nil :count 1)
     ("termainl" "terminal" nil :count 1)
+    ("tyhe" "they" nil :count 1)
     ("udpate" "update" nil :count 0)
     ("vlaue" "value" nil :count 0)
+    ("wehn" "when" nil :count 1)
    ))
+
