@@ -93,7 +93,6 @@
  ("pip-requirements.el" . "216cd1690f80cc965d4ae47b8753fc185f778ff6")
  ("popup-el" . "545e258024f6e4a8b2a066a5442d9e0147a7ee03")
  ("project" . "30432926870cc1b6be86519ddc7f8e6c2f3eda52")
- ("projectile" . "0163b335a18af0f077a474d4dc6b36e22b5e3274")
  ("py-isort.el" . "e67306f459c47c53a65604e4eea88a3914596560")
  ("queue" . "df8a1a2ad77d57c25e7005f0add275c13f9db20f")
  ("rainbow-delimiters" . "f40ece58df8b2f0fb6c8576b527755a552a5e763")
