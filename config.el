@@ -111,7 +111,9 @@
       '(display-buffer-reuse-mode-window
         display-buffer-reuse-window
         display-buffer-same-window))
+;; Appearance:5 ends here
 
+;; [[file:config.org::*Appearance][Appearance:6]]
 (use-package doom-modeline
   :hook
   (after-init . doom-modeline-mode)
@@ -123,9 +125,9 @@
   (doom-modeline-height 20)
   (doom-modeline-icon nil)
   (doom-modeline-minor-modes nil))
-;; Appearance:5 ends here
+;; Appearance:6 ends here
 
-;; [[file:config.org::*Appearance][Appearance:6]]
+;; [[file:config.org::*Appearance][Appearance:7]]
 (use-package doom-themes
   :if window-system
   :custom
@@ -133,43 +135,43 @@
   (doom-themes-enable-italic nil)
   :config
   (load-theme 'doom-solarized-light t))
-;; Appearance:6 ends here
+;; Appearance:7 ends here
 
-;; [[file:config.org::*Appearance][Appearance:7]]
+;; [[file:config.org::*Appearance][Appearance:8]]
 (use-package frame
   :straight (:type built-in)
   :bind
   ("M-RET" . toggle-frame-fullscreen))
-;; Appearance:7 ends here
+;; Appearance:8 ends here
 
-;; [[file:config.org::*Appearance][Appearance:8]]
+;; [[file:config.org::*Appearance][Appearance:9]]
 (use-package highlight-indentation
   :commands
   (highlight-indentation-mode
    highlight-indentation-current-column-mode))
-;; Appearance:8 ends here
-
-;; [[file:config.org::*Appearance][Appearance:9]]
-(use-package rainbow-delimiters
-  :commands
-  (rainbow-delimiters-mode))
 ;; Appearance:9 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:10]]
+(use-package rainbow-delimiters
+  :commands
+  (rainbow-delimiters-mode))
+;; Appearance:10 ends here
+
+;; [[file:config.org::*Appearance][Appearance:11]]
 (use-package simple
   :straight (:type built-in)
   :config
   (line-number-mode t)
   (size-indication-mode t))
-;; Appearance:10 ends here
+;; Appearance:11 ends here
 
-;; [[file:config.org::*Appearance][Appearance:11]]
+;; [[file:config.org::*Appearance][Appearance:12]]
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
   :defer 1
   :config
   (volatile-highlights-mode t))
-;; Appearance:11 ends here
+;; Appearance:12 ends here
 
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv
@@ -355,11 +357,13 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :straight (:type built-in)
   :bind
   ("C-x C-m" . execute-extended-command))
+;; Interface:5 ends here
 
+;; [[file:config.org::*Interface][Interface:6]]
 (use-package which-key
   :config
   (which-key-mode))
-;; Interface:5 ends here
+;; Interface:6 ends here
 
 ;; [[file:config.org::*Navigation][Navigation:1]]
 (setq
@@ -368,17 +372,23 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
  ;; never vertically recenter windows
  scroll-conservatively 100000
  scroll-margin 0)
+;; Navigation:1 ends here
 
+;; [[file:config.org::*Navigation][Navigation:2]]
 (use-package ace-link
   :config
   (ace-link-setup-default))
+;; Navigation:2 ends here
 
+;; [[file:config.org::*Navigation][Navigation:3]]
 (use-package ace-window
   :bind
   ("M-o" . ace-window)
   :custom
   (aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
+;; Navigation:3 ends here
 
+;; [[file:config.org::*Navigation][Navigation:4]]
 (use-package avy
   :bind
   (("C-:" . avy-goto-char)
@@ -441,40 +451,40 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (add-to-list 'recentf-exclude no-littering-var-directory)
   (add-to-list 'recentf-exclude no-littering-etc-directory)
   (recentf-mode 1))
-;; Navigation:1 ends here
+;; Navigation:4 ends here
 
-;; [[file:config.org::*Navigation][Navigation:2]]
+;; [[file:config.org::*Navigation][Navigation:5]]
 (use-package wgrep)
-;; Navigation:2 ends here
+;; Navigation:5 ends here
 
-;; [[file:config.org::*Navigation][Navigation:3]]
+;; [[file:config.org::*Navigation][Navigation:6]]
 (use-package saveplace
   :config
   (save-place-mode 1))
-;; Navigation:3 ends here
+;; Navigation:6 ends here
 
-;; [[file:config.org::*Navigation][Navigation:4]]
+;; [[file:config.org::*Navigation][Navigation:7]]
 (use-package subword
   :straight (:type built-in)
   :config
   (global-subword-mode))
-;; Navigation:4 ends here
+;; Navigation:7 ends here
 
-;; [[file:config.org::*Navigation][Navigation:5]]
+;; [[file:config.org::*Navigation][Navigation:8]]
 (use-package uniquify
   :straight (:type built-in)
   :custom
   (uniquify-buffer-name-style 'post-forward)
   (uniquify-after-kill-buffer-p t)
   (uniquify-ignore-buffers-re "^\\*"))
-;; Navigation:5 ends here
+;; Navigation:8 ends here
 
-;; [[file:config.org::*Navigation][Navigation:6]]
+;; [[file:config.org::*Navigation][Navigation:9]]
 (use-package winner
   :straight (:type built-in)
   :init
   (winner-mode))
-;; Navigation:6 ends here
+;; Navigation:9 ends here
 
 ;; [[file:config.org::*Completion][Completion:1]]
 (use-package consult
@@ -586,7 +596,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (setq-default
  indent-tabs-mode nil
  tab-width 4)
+;; Editing:1 ends here
 
+;; [[file:config.org::*Editing][Editing:2]]
 (use-package abbrev
   :straight (:type built-in)
   :custom
@@ -594,61 +606,65 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (setq-default abbrev-mode t)
   (quietly-read-abbrev-file abbrev-file-name))
+;; Editing:2 ends here
 
+;; [[file:config.org::*Editing][Editing:3]]
 (use-package aggressive-indent
   :commands
   (aggressive-indent-mode))
+;; Editing:3 ends here
 
+;; [[file:config.org::*Editing][Editing:4]]
 (use-package autoinsert
   :custom
   (auto-insert-alist nil)
   (auto-insert-query nil)
   :config
   (auto-insert-mode))
-;; Editing:1 ends here
-
-;; [[file:config.org::*Editing][Editing:2]]
-(use-package autorevert
-  :config
-  (global-auto-revert-mode t))
-;; Editing:2 ends here
-
-;; [[file:config.org::*Editing][Editing:3]]
-(use-package browse-kill-ring
-  :bind
-  ("C-x y" . browse-kill-ring))
-;; Editing:3 ends here
-
-;; [[file:config.org::*Editing][Editing:4]]
-(use-package delsel
-  :config
-  (delete-selection-mode t))
 ;; Editing:4 ends here
 
 ;; [[file:config.org::*Editing][Editing:5]]
-(use-package edit-indirect
-  :commands
-  (edit-indirect-region))
+(use-package autorevert
+  :config
+  (global-auto-revert-mode t))
 ;; Editing:5 ends here
 
 ;; [[file:config.org::*Editing][Editing:6]]
+(use-package browse-kill-ring
+  :bind
+  ("C-x y" . browse-kill-ring))
+;; Editing:6 ends here
+
+;; [[file:config.org::*Editing][Editing:7]]
+(use-package delsel
+  :config
+  (delete-selection-mode t))
+;; Editing:7 ends here
+
+;; [[file:config.org::*Editing][Editing:8]]
+(use-package edit-indirect
+  :commands
+  (edit-indirect-region))
+;; Editing:8 ends here
+
+;; [[file:config.org::*Editing][Editing:9]]
 (use-package electric-operator
   :commands
   (electric-operator-mode
    electric-operator-get-rules-for-mode
    electric-operator-add-rules-for-mode))
-;; Editing:6 ends here
+;; Editing:9 ends here
 
-;; [[file:config.org::*Editing][Editing:7]]
+;; [[file:config.org::*Editing][Editing:10]]
 (use-package expand-region
   :bind
   ("C-=" . er/expand-region)
   :commands
   (er/expand-region
    er/contract-region))
-;; Editing:7 ends here
+;; Editing:10 ends here
 
-;; [[file:config.org::*Editing][Editing:8]]
+;; [[file:config.org::*Editing][Editing:11]]
 (use-package mouse
   :straight (:type built-in)
   :custom
@@ -724,7 +740,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
   :config
   (yatemplate-fill-alist))
-;; Editing:8 ends here
+;; Editing:11 ends here
 
 (use-package flyspell
   :commands
