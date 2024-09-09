@@ -459,6 +459,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; [[file:config.org::*Navigation][Navigation:6]]
 (use-package saveplace
+  :straight (:type built-in)
   :config
   (save-place-mode 1))
 ;; Navigation:6 ends here
@@ -616,6 +617,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; [[file:config.org::*Editing][Editing:4]]
 (use-package autoinsert
+  :straight (:type built-in)
   :custom
   (auto-insert-alist nil)
   (auto-insert-query nil)

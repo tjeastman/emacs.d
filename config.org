@@ -552,6 +552,7 @@ The =avy= package facilitates quickly navigating to visible text via a dynamic, 
 Visiting the file again will return the point to that location.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package saveplace
+    :straight (:type built-in)
     :config
     (save-place-mode 1))
 #+END_SRC
@@ -738,6 +739,7 @@ The =inverse-add-global-abbrev= (=C-x a i g=) command add a new abbreviation for
 
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package autoinsert
+    :straight (:type built-in)
     :custom
     (auto-insert-alist nil)
     (auto-insert-query nil)
