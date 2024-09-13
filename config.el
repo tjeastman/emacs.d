@@ -505,8 +505,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; [[file:config.org::*Completion][Completion:2]]
 (use-package corfu
   :straight (:files (:defaults "extensions/*"))
-  :bind (:map corfu-map
-              ("SPC" . corfu-insert-separator))
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0)

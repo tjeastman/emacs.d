@@ -607,8 +607,6 @@ The =uniquify= package provides customizations that govern how buffers are named
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package corfu
     :straight (:files (:defaults "extensions/*"))
-    :bind (:map corfu-map
-                ("SPC" . corfu-insert-separator))
     :custom
     (corfu-auto t)
     (corfu-auto-delay 0)
