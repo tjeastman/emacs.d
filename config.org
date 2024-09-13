@@ -879,6 +879,7 @@ The =expand-region= package provides commands for manipulating the region based 
 * Writing
 #+BEGIN_SRC emacs-lisp :tangle yes
   (use-package flyspell
+    :straight (:type built-in)
     :commands
     (flyspell-mode
      flyspell-prog-mode))
@@ -903,10 +904,12 @@ The =expand-region= package provides commands for manipulating the region based 
           ("C-c l r" . eglot-rename)))
 
   (use-package elec-pair
+    :straight (:type built-in)
     :commands
     electric-pair-local-mode)
 
   (use-package flymake
+    :straight (:type built-in)
     :bind
     (:map flymake-mode-map
           ("C-c e n" . flymake-goto-next-error)
@@ -1251,6 +1254,7 @@ The =expand-region= package provides commands for manipulating the region based 
     (comint-process-echoes t))
 
   (use-package compile
+    :straight (:type built-in)
     :hook
     (compilation-filter . ansi-color-compilation-filter)
     :custom

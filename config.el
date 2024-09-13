@@ -745,6 +745,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Editing:11 ends here
 
 (use-package flyspell
+  :straight (:type built-in)
   :commands
   (flyspell-mode
    flyspell-prog-mode))
@@ -766,10 +767,12 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
         ("C-c l r" . eglot-rename)))
 
 (use-package elec-pair
+  :straight (:type built-in)
   :commands
   electric-pair-local-mode)
 
 (use-package flymake
+  :straight (:type built-in)
   :bind
   (:map flymake-mode-map
         ("C-c e n" . flymake-goto-next-error)
@@ -1081,6 +1084,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (comint-process-echoes t))
 
 (use-package compile
+  :straight (:type built-in)
   :hook
   (compilation-filter . ansi-color-compilation-filter)
   :custom
