@@ -1129,6 +1129,7 @@ The =expand-region= package provides commands for manipulating the region based 
 
   (use-package org
     :defer t
+    :hook (org-mode . visual-line-mode)
     :custom
     (org-babel-load-languages nil)
     (org-confirm-babel-evaluate nil)

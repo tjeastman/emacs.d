@@ -963,6 +963,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package org
   :defer t
+  :hook (org-mode . visual-line-mode)
   :custom
   (org-babel-load-languages nil)
   (org-confirm-babel-evaluate nil)
