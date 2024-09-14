@@ -528,6 +528,18 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Completion:3 ends here
 
 ;; [[file:config.org::*Completion][Completion:4]]
+(use-package kind-icon
+  :after corfu
+  :custom
+  (kind-icon-blend-background t)
+  (kind-icon-blend-frac 0.08)
+  (kind-icon-default-face 'corfu-default)
+  (kind-icon-use-icons t)
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+;; Completion:4 ends here
+
+;; [[file:config.org::*Completion][Completion:5]]
 (use-package marginalia
   :defer 1
   :custom
@@ -535,9 +547,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (marginalia-max-relative-age 0)
   :config
   (marginalia-mode))
-;; Completion:4 ends here
+;; Completion:5 ends here
 
-;; [[file:config.org::*Completion][Completion:5]]
+;; [[file:config.org::*Completion][Completion:6]]
 (use-package orderless
   :preface
   (defun my-orderless-dispatch (pattern index total)
@@ -552,9 +564,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (orderless-style-dispatchers '(my-orderless-dispatch))
   (completion-styles '(orderless))
   (completion-category-overrides '((file (styles basic partial-completion)))))
-;; Completion:5 ends here
+;; Completion:6 ends here
 
-;; [[file:config.org::*Completion][Completion:6]]
+;; [[file:config.org::*Completion][Completion:7]]
 (use-package savehist
   :straight (:type built-in)
   :defer 1
@@ -564,9 +576,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (savehist-mode)
   (add-to-list 'savehist-additional-variables 'corfu-history))
-;; Completion:6 ends here
+;; Completion:7 ends here
 
-;; [[file:config.org::*Completion][Completion:7]]
+;; [[file:config.org::*Completion][Completion:8]]
 (use-package vertico
   :straight (:files (:defaults "extensions/*"))
   :defer 1
@@ -587,7 +599,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
               ("RET" . vertico-directory-enter)
               ("DEL" . vertico-directory-delete-char)
               ("M-DEL" . vertico-directory-delete-word)))
-;; Completion:7 ends here
+;; Completion:8 ends here
 
 (setq tab-always-indent 'complete)
 

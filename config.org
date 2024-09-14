@@ -629,6 +629,19 @@ The =uniquify= package provides customizations that govern how buffers are named
     :after (embark consult))
 #+END_SRC
 
+The =kind-icon= package adds icon prefixes to completions.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package kind-icon
+    :after corfu
+    :custom
+    (kind-icon-blend-background t)
+    (kind-icon-blend-frac 0.08)
+    (kind-icon-default-face 'corfu-default)
+    (kind-icon-use-icons t)
+    :config
+    (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+#+END_SRC
+
 The =marginalia= package add contextual annotations to minibuffer completion candidates.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package marginalia
