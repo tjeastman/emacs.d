@@ -961,7 +961,8 @@ The =expand-region= package provides commands for manipulating the region based 
     :straight (:type built-in)
     :hook
     ((prog-mode . flyspell-prog-mode)
-     (prog-mode . rainbow-delimiters-mode)))
+     (prog-mode . rainbow-delimiters-mode)
+     (prog-mode . electric-operator-mode)))
 
   (use-package which-func
     :config
@@ -1038,7 +1039,6 @@ The =expand-region= package provides commands for manipulating the region based 
     :straight (:type built-in)
     :hook
     ((emacs-lisp-mode . aggressive-indent-mode)
-     (emacs-lisp-mode . electric-operator-mode)
      (emacs-lisp-mode . enable-paredit-mode))
     :config
     (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))

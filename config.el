@@ -823,7 +823,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :straight (:type built-in)
   :hook
   ((prog-mode . flyspell-prog-mode)
-   (prog-mode . rainbow-delimiters-mode)))
+   (prog-mode . rainbow-delimiters-mode)
+   (prog-mode . electric-operator-mode)))
 
 (use-package which-func
   :config
@@ -886,7 +887,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :straight (:type built-in)
   :hook
   ((emacs-lisp-mode . aggressive-indent-mode)
-   (emacs-lisp-mode . electric-operator-mode)
    (emacs-lisp-mode . enable-paredit-mode))
   :config
   (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
