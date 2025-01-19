@@ -69,22 +69,6 @@
 ;; Appearance:2 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:3]]
-(use-package beacon
-  :custom
-  (beacon-color 0.5)
-  (beacon-size 80)
-  (beacon-blink-duration 0.5)
-  (beacon-blink-when-point-moves-vertically t)
-  (beacon-blink-when-point-moves-horizontally t)
-  (beacon-blink-when-buffer-changes t)
-  (beacon-blink-when-window-scrolls t)
-  (beacon-blink-when-window-changes t)
-  (beacon-blink-when-focused t)
-  :config
-  (beacon-mode 1))
-;; Appearance:3 ends here
-
-;; [[file:config.org::*Appearance][Appearance:4]]
 (use-package hl-line
   :straight (:type built-in)
   :if window-system
@@ -92,9 +76,9 @@
   (global-hl-line-sticky-flag nil)
   :config
   (global-hl-line-mode t))
-;; Appearance:4 ends here
+;; Appearance:3 ends here
 
-;; [[file:config.org::*Appearance][Appearance:5]]
+;; [[file:config.org::*Appearance][Appearance:4]]
 (setq visible-bell t)
 (if (eq system-type 'darwin)
     (setq ring-bell-function 'ignore))
@@ -111,9 +95,9 @@
       '(display-buffer-reuse-mode-window
         display-buffer-reuse-window
         display-buffer-same-window))
-;; Appearance:5 ends here
+;; Appearance:4 ends here
 
-;; [[file:config.org::*Appearance][Appearance:6]]
+;; [[file:config.org::*Appearance][Appearance:5]]
 (use-package doom-modeline
   :hook
   (after-init . doom-modeline-mode)
@@ -125,9 +109,9 @@
   (doom-modeline-height 20)
   (doom-modeline-icon nil)
   (doom-modeline-minor-modes nil))
-;; Appearance:6 ends here
+;; Appearance:5 ends here
 
-;; [[file:config.org::*Appearance][Appearance:7]]
+;; [[file:config.org::*Appearance][Appearance:6]]
 (use-package doom-themes
   :if window-system
   :custom
@@ -135,43 +119,43 @@
   (doom-themes-enable-italic nil)
   :config
   (load-theme 'doom-solarized-light t))
-;; Appearance:7 ends here
+;; Appearance:6 ends here
 
-;; [[file:config.org::*Appearance][Appearance:8]]
+;; [[file:config.org::*Appearance][Appearance:7]]
 (use-package frame
   :straight (:type built-in)
   :bind
   ("M-RET" . toggle-frame-fullscreen))
-;; Appearance:8 ends here
+;; Appearance:7 ends here
 
-;; [[file:config.org::*Appearance][Appearance:9]]
+;; [[file:config.org::*Appearance][Appearance:8]]
 (use-package highlight-indentation
   :commands
   (highlight-indentation-mode
    highlight-indentation-current-column-mode))
-;; Appearance:9 ends here
+;; Appearance:8 ends here
 
-;; [[file:config.org::*Appearance][Appearance:10]]
+;; [[file:config.org::*Appearance][Appearance:9]]
 (use-package rainbow-delimiters
   :commands
   (rainbow-delimiters-mode))
-;; Appearance:10 ends here
+;; Appearance:9 ends here
 
-;; [[file:config.org::*Appearance][Appearance:11]]
+;; [[file:config.org::*Appearance][Appearance:10]]
 (use-package simple
   :straight (:type built-in)
   :config
   (line-number-mode t)
   (size-indication-mode t))
-;; Appearance:11 ends here
+;; Appearance:10 ends here
 
-;; [[file:config.org::*Appearance][Appearance:12]]
+;; [[file:config.org::*Appearance][Appearance:11]]
 ;; highlight buffer changes caused by certain commands
 (use-package volatile-highlights
   :defer 1
   :config
   (volatile-highlights-mode t))
-;; Appearance:12 ends here
+;; Appearance:11 ends here
 
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv

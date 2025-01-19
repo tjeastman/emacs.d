@@ -7,7 +7,6 @@
  ("apt-sources-list" . "5289443ceff230dfc8a2c1c6b524c90560eb08a5")
  ("arduino-mode" . "b2ffd8441851659cb1cc844156073967729585e5")
  ("avy" . "be612110cb116a38b8603df367942e2bb3d9bdbe")
- ("beacon" . "85261a928ae0ec3b41e639f05291ffd6bf7c231c")
  ("blacken" . "3c6eb86ad871ca14fcfd4e5c0e7b285afa1f1f71")
  ("browse-kill-ring" . "03cc18c08a549568edb6bc710c307c19bc507ef3")
  ("clang-format" . "7a955a4ed7e92fdb82983e307cb523547bb0285a")

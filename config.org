@@ -120,24 +120,6 @@ This default value for =cursor-in-non-selected-windows= hides the cursor in wind
   (setq-default cursor-in-non-selected-windows nil)
 #+END_SRC
 
-The =beacon= package helps to find the location of the cursor when certain events occur such as switching windows or scrolling within a window.
-It works by briefly flashing the line containing the cursor.
-#+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package beacon
-    :custom
-    (beacon-color 0.5)
-    (beacon-size 80)
-    (beacon-blink-duration 0.5)
-    (beacon-blink-when-point-moves-vertically t)
-    (beacon-blink-when-point-moves-horizontally t)
-    (beacon-blink-when-buffer-changes t)
-    (beacon-blink-when-window-scrolls t)
-    (beacon-blink-when-window-changes t)
-    (beacon-blink-when-focused t)
-    :config
-    (beacon-mode 1))
-#+END_SRC
-
 The global minor mode =global-hl-line-mode= highlights the line containing the point
 This behavior will affect the selected window only (see the variable =global-hl-line-sticky-flag=).
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
