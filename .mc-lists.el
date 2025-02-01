@@ -6,6 +6,7 @@
         asm-comment
         c-electric-brace
         c-electric-colon
+        c-electric-delete-forward
         c-electric-lt-gt
         c-electric-paren
         c-electric-pound
@@ -13,6 +14,7 @@
         c-electric-slash
         c-electric-star
         c-indent-line-or-region
+        corfu-quit
         crux-move-beginning-of-line
         electric-newline-and-maybe-indent
         indent-for-tab-command
@@ -34,4 +36,5 @@
 (setq mc/cmds-to-run-once
       '(
         markdown-outdent-or-delete
+        wdired--self-insert
         ))
