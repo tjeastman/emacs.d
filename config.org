@@ -211,15 +211,6 @@ It implements this by assigning distinct colors to delimiter characters at each 
     (size-indication-mode t))
 #+END_SRC
 
-=volatile-highlights-mode= provides visual feedback for certain text manipulation operations such as undo, yank and kill.
-#+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  ;; highlight buffer changes caused by certain commands
-  (use-package volatile-highlights
-    :defer 1
-    :config
-    (volatile-highlights-mode t))
-#+END_SRC
-
 * Environment
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package direnv

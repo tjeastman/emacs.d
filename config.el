@@ -149,14 +149,6 @@
   (size-indication-mode t))
 ;; Appearance:10 ends here
 
-;; [[file:config.org::*Appearance][Appearance:11]]
-;; highlight buffer changes caused by certain commands
-(use-package volatile-highlights
-  :defer 1
-  :config
-  (volatile-highlights-mode t))
-;; Appearance:11 ends here
-
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv
   :config
