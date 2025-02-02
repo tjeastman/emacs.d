@@ -837,6 +837,13 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (which-function-mode 1))
 ;; General:3 ends here
 
+;; [[file:config.org::*General][General:4]]
+(use-package combobulate
+  :after treesit
+  :custom
+  (combobulate-key-prefix "C-c o"))
+;; General:4 ends here
+
 ;; [[file:config.org::*Make][Make:1]]
 (use-package make-mode
   :mode
@@ -893,7 +900,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package python
   :hook
   ((python-ts-mode . highlight-indentation-mode)
-   (python-ts-mode . electric-pair-local-mode)))
+   (python-ts-mode . electric-pair-local-mode)
+   (python-ts-mode . combobulate-mode)))
 
 (use-package python-pytest
   :bind

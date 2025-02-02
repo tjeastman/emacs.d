@@ -12,6 +12,7 @@
  ("browse-kill-ring" . "03cc18c08a549568edb6bc710c307c19bc507ef3")
  ("cmake" . "2994eb88c31e1781e2cfdd24fe0ad111842da042")
  ("cmake-integration" . "018ef1e847ce0909c202800e69021d7477ac13ab")
+ ("combobulate" . "ca2545be196ec32945b5db109578582d7c7270b5")
  ("compat" . "6926fcc1c891d4ff677515c0eaadf84d3ab364b1")
  ("consult" . "110b560ae1e0ad398d5ce2b4aaf0e91f87f38297")
  ("corfu" . "9dc2f900ef58fdd75b4804039848da732f56465c")

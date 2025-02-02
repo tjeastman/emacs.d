@@ -977,6 +977,14 @@ It includes facilities for developing faster and higher fidelity language-specif
     (which-function-mode 1))
 #+END_SRC
 
+=combobulate= uses =treesit= to provide structured editing and movement for a wide range of programming languages.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package combobulate
+    :after treesit
+    :custom
+    (combobulate-key-prefix "C-c o"))
+#+END_SRC
+
 ** Make
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package make-mode
@@ -1058,7 +1066,8 @@ It includes facilities for developing faster and higher fidelity language-specif
   (use-package python
     :hook
     ((python-ts-mode . highlight-indentation-mode)
-     (python-ts-mode . electric-pair-local-mode)))
+     (python-ts-mode . electric-pair-local-mode)
+     (python-ts-mode . combobulate-mode)))
 
   (use-package python-pytest
     :bind
