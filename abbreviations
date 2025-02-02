@@ -26,6 +26,8 @@
     ("optino" "option" nil :count 0)
     ("optinos" "options" nil :count 0)
     ("pacakges" "packages" nil :count 1)
+    ("poisition" "position" nil :count 1)
+    ("poistion" "position" nil :count 1)
     ("preceeding" "preceding" nil :count 1)
     ("preferrable" "preferable" nil :count 1)
     ("queyr" "query" nil :count 1)
