@@ -747,6 +747,12 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (text-mode . flyspell-mode))
 
 ;; [[file:config.org::*General][General:1]]
+(use-package apheleia
+  :config
+  (apheleia-global-mode))
+;; General:1 ends here
+
+;; [[file:config.org::*General][General:2]]
 (use-package eglot
   :bind
   (:map eglot-mode-map
@@ -805,7 +811,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package which-func
   :config
   (which-function-mode 1))
-;; General:1 ends here
+;; General:2 ends here
 
 ;; [[file:config.org::*Make][Make:1]]
 (use-package make-mode
@@ -845,11 +851,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :custom
   (ccls-sem-highlight-method 'overlays))
 
-(use-package clang-format
-  :commands
-  (clang-format-region
-   clang-format-buffer))
-
 (use-package cuda-mode
   :mode "\\.cuh?\\'")
 
@@ -869,18 +870,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Emacs Lisp:1 ends here
 
 ;; [[file:config.org::*Python][Python:1]]
-(use-package blacken
-  :commands
-  (blacken-buffer))
-
 (use-package pip-requirements
   :defer t
   :custom
   (pip-requirements-index-url nil))
-
-(use-package py-isort
-  :commands
-  (py-isort-before-save))
 
 (use-package python
   :hook

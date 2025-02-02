@@ -881,6 +881,15 @@ The =expand-region= package provides commands for manipulating the region based 
 
 * Programming
 ** General
+=apheleia= is a code formatting package that supports a wide range of formatting tools.
+It automatically runs an appropriate formatter based on the major mode of a given buffer via =after-save-hook=.
+The package seeks to apply formatting changes with low latency and in a manner that maintains the point position relative to its surroundings.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package apheleia
+    :config
+    (apheleia-global-mode))
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package eglot
     :bind
@@ -983,11 +992,6 @@ The =expand-region= package provides commands for manipulating the region based 
     :custom
     (ccls-sem-highlight-method 'overlays))
 
-  (use-package clang-format
-    :commands
-    (clang-format-region
-     clang-format-buffer))
-
   (use-package cuda-mode
     :mode "\\.cuh?\\'")
 
@@ -1029,18 +1033,10 @@ The =expand-region= package provides commands for manipulating the region based 
 
 ** Python
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package blacken
-    :commands
-    (blacken-buffer))
-
   (use-package pip-requirements
     :defer t
     :custom
     (pip-requirements-index-url nil))
-
-  (use-package py-isort
-    :commands
-    (py-isort-before-save))
 
   (use-package python
     :hook
