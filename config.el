@@ -759,11 +759,18 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :preface
   (defun my-setup-install-grammars ()
     (dolist (grammar
-             '((python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))))
+             '((c . ("https://github.com/tree-sitter/tree-sitter-c" "v0.23.4"))
+               (cmake . ("https://github.com/uyha/tree-sitter-cmake" "v0.5.0"))
+               (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.23.4"))
+               (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))))
       (add-to-list 'treesit-language-source-alist grammar)
       (unless (treesit-language-available-p (car grammar))
         (treesit-install-language-grammar (car grammar)))))
-  (dolist (mapping '((python-mode . python-ts-mode)))
+  (dolist (mapping
+           '((c++-mode . c++-ts-mode)
+             (c-mode . c-ts-mode)
+             (cmake-mode . cmake-ts-mode)
+             (python-mode . python-ts-mode)))
     (add-to-list 'major-mode-remap-alist mapping))
   :config
   (my-setup-install-grammars))
@@ -839,10 +846,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; Make:1 ends here
 
 ;; [[file:config.org::*CMake][CMake:1]]
-(use-package cmake-font-lock
-  :commands
-  (cmake-font-lock-activate))
-
 (use-package cmake-integration
   :straight (:host github :repo "darcamo/cmake-integration" :branch "main")
   :defer 1
@@ -855,8 +858,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    cmake-integration-run-last-target-with-arguments))
 
 (use-package cmake-mode
-  :hook
-  (cmake-mode . cmake-font-lock-activate))
+  :defer t)
 ;; CMake:1 ends here
 
 ;; [[file:config.org::*C/C++][C/C++:1]]
@@ -870,10 +872,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package cuda-mode
   :mode "\\.cuh?\\'")
-
-(use-package modern-cpp-font-lock
-  :commands
-  (modern-c++-font-lock-mode))
 ;; C/C++:1 ends here
 
 ;; [[file:config.org::*Emacs Lisp][Emacs Lisp:1]]
