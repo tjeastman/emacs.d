@@ -7,4 +7,5 @@ straight/build
 straight/build-cache.el
 straight/modified
 straight/repos
+tree-sitter
 var

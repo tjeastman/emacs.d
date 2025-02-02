@@ -890,6 +890,25 @@ The package seeks to apply formatting changes with low latency and in a manner t
     (apheleia-global-mode))
 #+END_SRC
 
+The =treesit= package wraps the Tree-sitter parser generator and incremental parsing library.
+It includes facilities for developing faster and higher fidelity language-specific major modes.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
+  (use-package treesit
+    :straight (:type built-in)
+    :defer t
+    :preface
+    (defun my-setup-install-grammars ()
+      (dolist (grammar
+               '((python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))))
+        (add-to-list 'treesit-language-source-alist grammar)
+        (unless (treesit-language-available-p (car grammar))
+          (treesit-install-language-grammar (car grammar)))))
+    (dolist (mapping '((python-mode . python-ts-mode)))
+      (add-to-list 'major-mode-remap-alist mapping))
+    :config
+    (my-setup-install-grammars))
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package eglot
     :bind
@@ -1040,8 +1059,8 @@ The package seeks to apply formatting changes with low latency and in a manner t
 
   (use-package python
     :hook
-    ((python-mode . highlight-indentation-mode)
-     (python-mode . electric-pair-local-mode)))
+    ((python-ts-mode . highlight-indentation-mode)
+     (python-ts-mode . electric-pair-local-mode)))
 
   (use-package python-pytest
     :bind

@@ -753,6 +753,23 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 ;; General:1 ends here
 
 ;; [[file:config.org::*General][General:2]]
+(use-package treesit
+  :straight (:type built-in)
+  :defer t
+  :preface
+  (defun my-setup-install-grammars ()
+    (dolist (grammar
+             '((python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))))
+      (add-to-list 'treesit-language-source-alist grammar)
+      (unless (treesit-language-available-p (car grammar))
+        (treesit-install-language-grammar (car grammar)))))
+  (dolist (mapping '((python-mode . python-ts-mode)))
+    (add-to-list 'major-mode-remap-alist mapping))
+  :config
+  (my-setup-install-grammars))
+;; General:2 ends here
+
+;; [[file:config.org::*General][General:3]]
 (use-package eglot
   :bind
   (:map eglot-mode-map
@@ -811,7 +828,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package which-func
   :config
   (which-function-mode 1))
-;; General:2 ends here
+;; General:3 ends here
 
 ;; [[file:config.org::*Make][Make:1]]
 (use-package make-mode
@@ -877,8 +894,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 (use-package python
   :hook
-  ((python-mode . highlight-indentation-mode)
-   (python-mode . electric-pair-local-mode)))
+  ((python-ts-mode . highlight-indentation-mode)
+   (python-ts-mode . electric-pair-local-mode)))
 
 (use-package python-pytest
   :bind
