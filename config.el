@@ -831,8 +831,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :straight (:type built-in)
   :hook
   ((prog-mode . flyspell-prog-mode)
-   (prog-mode . rainbow-delimiters-mode)
-   (prog-mode . electric-operator-mode)))
+   (prog-mode . rainbow-delimiters-mode)))
 
 (use-package which-func
   :config

@@ -971,8 +971,7 @@ It includes facilities for developing faster and higher fidelity language-specif
     :straight (:type built-in)
     :hook
     ((prog-mode . flyspell-prog-mode)
-     (prog-mode . rainbow-delimiters-mode)
-     (prog-mode . electric-operator-mode)))
+     (prog-mode . rainbow-delimiters-mode)))
 
   (use-package which-func
     :config
