@@ -762,6 +762,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
              '((c . ("https://github.com/tree-sitter/tree-sitter-c" "v0.23.4"))
                (cmake . ("https://github.com/uyha/tree-sitter-cmake" "v0.5.0"))
                (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.23.4"))
+               (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1"))
                (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))))
       (add-to-list 'treesit-language-source-alist grammar)
       (unless (treesit-language-available-p (car grammar))
@@ -770,6 +771,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
            '((c++-mode . c++-ts-mode)
              (c-mode . c-ts-mode)
              (cmake-mode . cmake-ts-mode)
+             (javascript-mode . js-ts-mode)
              (python-mode . python-ts-mode)))
     (add-to-list 'major-mode-remap-alist mapping))
   :config
