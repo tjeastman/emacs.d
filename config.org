@@ -1211,6 +1211,9 @@ It includes facilities for developing faster and higher fidelity language-specif
   (use-package systemd
     :defer t)
 
+  (use-package terraform-mode
+    :defer t)
+
   (use-package toml-mode
     :mode
     ("Pipfile\\'" . toml-mode)
