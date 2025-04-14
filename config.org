@@ -939,6 +939,7 @@ It includes facilities for developing faster and higher fidelity language-specif
           ("C-c e D" . flymake-show-project-diagnostics))
     :custom
     (flymake-fringe-indicator-position nil)
+    (flymake-margin-indicator-position nil)
     (flymake-no-changes-timeout 1))
 
   (use-package lsp-mode

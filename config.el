@@ -799,6 +799,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
         ("C-c e D" . flymake-show-project-diagnostics))
   :custom
   (flymake-fringe-indicator-position nil)
+  (flymake-margin-indicator-position nil)
   (flymake-no-changes-timeout 1))
 
 (use-package lsp-mode
