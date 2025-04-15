@@ -784,7 +784,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (use-package eglot
   :bind
   (:map eglot-mode-map
-        ("C-c l r" . eglot-rename)))
+        ("C-c l r" . eglot-rename))
+  :custom-face
+  (eglot-highlight-symbol-face ((t :inherit normal :underline t))))
 
 (use-package elec-pair
   :straight (:type built-in)
