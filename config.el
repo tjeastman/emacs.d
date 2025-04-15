@@ -763,7 +763,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
                (cmake . ("https://github.com/uyha/tree-sitter-cmake" "v0.5.0"))
                (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.23.4"))
                (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1"))
-               (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))))
+               (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))
+               (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "tsx/src"))
+               (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "typescript/src"))))
       (add-to-list 'treesit-language-source-alist grammar)
       (unless (treesit-language-available-p (car grammar))
         (treesit-install-language-grammar (car grammar)))))
@@ -892,6 +894,11 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :config
   (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
 ;; Emacs Lisp:1 ends here
+
+;; [[file:config.org::*JavaScript][JavaScript:1]]
+(use-package typescript-ts-mode
+  :straight (:type built-in))
+;; JavaScript:1 ends here
 
 ;; [[file:config.org::*Python][Python:1]]
 (use-package pip-requirements
