@@ -746,6 +746,9 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   :hook
   (text-mode . flyspell-mode))
 
+(use-package typst-ts-mode
+  :straight '(:type git :host codeberg :repo "meow_king/typst-ts-mode"))
+
 ;; [[file:config.org::*General][General:1]]
 (use-package apheleia
   :config
@@ -765,7 +768,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
                (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "v0.23.1"))
                (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))
                (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "tsx/src"))
-               (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "typescript/src"))))
+               (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "typescript/src"))
+               (typst . ("https://github.com/uben0/tree-sitter-typst" "v0.11.0"))))
       (add-to-list 'treesit-language-source-alist grammar)
       (unless (treesit-language-available-p (car grammar))
         (treesit-install-language-grammar (car grammar)))))
