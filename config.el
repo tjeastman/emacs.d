@@ -747,7 +747,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (text-mode . flyspell-mode))
 
 (use-package typst-ts-mode
-  :straight '(:type git :host codeberg :repo "meow_king/typst-ts-mode"))
+  :straight '(:type git :host codeberg :repo "meow_king/typst-ts-mode")
+  :config
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs '(typst-ts-mode "tinymist"))))
 
 ;; [[file:config.org::*General][General:1]]
 (use-package apheleia
