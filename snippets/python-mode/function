@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: function
-# key: f
-# group: definitions
-# --
-def ${1:function}(${2:arguments}) -> ${3:None}:
-    $0

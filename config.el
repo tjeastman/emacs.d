@@ -716,12 +716,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   (whitespace-line-column 100)
   (whitespace-style '(face tabs empty trailing lines-tail)))
 
-(use-package yasnippet
-  :defer t
-  :config
-  (add-to-list 'yas-snippet-dirs (expand-file-name "snippets" user-emacs-directory))
-  (yas-global-mode t))
-
 (use-package yatemplate
   :defer t
   :custom

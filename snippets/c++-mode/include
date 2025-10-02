@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: include
-# key: in
-# group: includes
-# --
-#include <${1:iostream}>
-$0

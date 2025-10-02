@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: workdir
-# key: w
-# --
-WORKDIR $1
-$0

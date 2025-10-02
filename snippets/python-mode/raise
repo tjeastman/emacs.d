@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: raise
-# key: ra
-# group: control structures
-# --
-raise ${1:Exception}($2)
-$0

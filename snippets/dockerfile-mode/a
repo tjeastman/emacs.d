@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: add
-# key: a
-# --
-ADD $1

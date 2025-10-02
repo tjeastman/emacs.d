@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: from
-# key: f
-# --
-FROM ${1:debian:stable}

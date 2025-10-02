@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: import
-# key: im
-# group: imports
-# --
-import "$1"
-$0

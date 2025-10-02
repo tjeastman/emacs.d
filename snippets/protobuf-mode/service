@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: service
-# key: srv
-# --
-// ${1:description}
-service ${2:Name} {
-        $0
-}

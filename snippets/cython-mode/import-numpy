@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: import numpy
-# key: np
-# group: imports
-# --
-import numpy as np
-$0
