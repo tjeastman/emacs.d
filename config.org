@@ -933,7 +933,9 @@ It includes facilities for developing faster and higher fidelity language-specif
     (:map eglot-mode-map
           ("C-c l r" . eglot-rename))
     :custom-face
-    (eglot-highlight-symbol-face ((t :inherit normal :underline t))))
+    (eglot-highlight-symbol-face ((t :inherit normal :underline t)))
+    :custom
+    (eglot-code-action-indicator "*"))
 
   (use-package elec-pair
     :straight (:type built-in)
