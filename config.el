@@ -862,11 +862,6 @@
 ;; JavaScript:1 ends here
 
 ;; [[file:config.org::*Python][Python:1]]
-(use-package pip-requirements
-  :defer t
-  :custom
-  (pip-requirements-index-url nil))
-
 (use-package python
   :hook
   ((python-ts-mode . highlight-indentation-mode)

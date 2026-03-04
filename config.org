@@ -1029,11 +1029,6 @@ It includes facilities for developing faster and higher fidelity language-specif
 
 ** Python
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package pip-requirements
-    :defer t
-    :custom
-    (pip-requirements-index-url nil))
-
   (use-package python
     :hook
     ((python-ts-mode . highlight-indentation-mode)

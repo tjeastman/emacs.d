@@ -92,7 +92,6 @@
  ("org" . "1025e3b49a98f175b124dbccd774918360fe7e11")
  ("org-roam" . "7cd906b6f8b18a21766228f074aff24586770934")
  ("paredit" . "af075775af91f2dbc63b915d762b4aec092946c4")
- ("pip-requirements.el" . "31e0dc62abb2d88fa765e0ea88b919d756cc0e4f")
  ("popup-el" . "45a0b759076ce4139aba36dde0a2904136282e73")
  ("project" . "11a821c6529c2cb8b388be80371952a61b4b5e3a")
  ("projectile" . "4469d33f4921432e67b98151eeb6b4c2a17d648e")
