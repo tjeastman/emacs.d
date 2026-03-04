@@ -75,7 +75,6 @@
  ("ledger-mode" . "9ab399186fad220f59f3c1bbbcaddabf49ed9de8")
  ("llama" . "d430d48e0b5afd2a34b5531f103dcb110c3539c4")
  ("lsp-mode" . "7a00f55e092378c2a74ac6a2b5b79810f3ddfbe3")
- ("lsp-pyright" . "21b8f487855feb08f7df669b8884fbd5861dca25")
  ("magit" . "b9f19bae4d5e5c485d2d8d7bf52364eeb7d22a6b")
  ("marginalia" . "142e4da1bd76dc5bdbbfd15532571b8a271e680e")
  ("markdown-mode" . "f8d1be7cd5dfd64c0e4f88c29a3f84408cde0b47")
