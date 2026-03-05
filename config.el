@@ -762,7 +762,11 @@
         ("C-c e D" . flymake-show-project-diagnostics))
   :custom
   (flymake-fringe-indicator-position nil)
-  (flymake-margin-indicator-position nil)
+  (flymake-margin-indicator-position 'left-margin)
+  (flymake-margin-indicators-string '((error "" compilation-error)
+                                      (warning "" compilation-warning)
+                                      (note "" compilation-info)))
+  (flymake-indicator-type 'margins)
   (flymake-no-changes-timeout 1))
 
 (use-package paredit
