@@ -569,6 +569,7 @@
 
 ;; [[file:config.org::*Editing][Editing:5]]
 (use-package autorevert
+  :straight (:type built-in)
   :config
   (global-auto-revert-mode t))
 ;; Editing:5 ends here
@@ -581,6 +582,7 @@
 
 ;; [[file:config.org::*Editing][Editing:7]]
 (use-package delsel
+  :straight (:type built-in)
   :config
   (delete-selection-mode t))
 ;; Editing:7 ends here
@@ -780,6 +782,7 @@
    (prog-mode . rainbow-delimiters-mode)))
 
 (use-package which-func
+  :straight (:type built-in)
   :config
   (which-function-mode 1))
 ;; General:3 ends here

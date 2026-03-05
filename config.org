@@ -690,6 +690,7 @@ The =inverse-add-global-abbrev= (=C-x a i g=) command add a new abbreviation for
 The =global-auto-revert-mode= mode reverts any buffer associated with a file when that file changes.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package autorevert
+    :straight (:type built-in)
     :config
     (global-auto-revert-mode t))
 #+END_SRC
@@ -706,6 +707,7 @@ The =RET= key commits to a selection of killed text, modifies the source buffer 
 When =delete-selection-mode= is enabled, typed text will replace an active selection.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package delsel
+    :straight (:type built-in)
     :config
     (delete-selection-mode t))
 #+END_SRC
@@ -920,6 +922,7 @@ It includes facilities for developing faster and higher fidelity language-specif
      (prog-mode . rainbow-delimiters-mode)))
 
   (use-package which-func
+    :straight (:type built-in)
     :config
     (which-function-mode 1))
 #+END_SRC
