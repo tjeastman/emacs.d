@@ -755,6 +755,8 @@
         ("C-c e p" . flymake-goto-prev-error)
         ("C-c e d" . flymake-show-buffer-diagnostics)
         ("C-c e D" . flymake-show-project-diagnostics))
+  :config
+  (set-face-attribute 'flymake-error nil :underline '(:color "red" :style line))
   :custom
   (flymake-fringe-indicator-position nil)
   (flymake-margin-indicator-position 'left-margin)
