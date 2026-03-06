@@ -803,13 +803,6 @@ The =expand-region= package provides commands for manipulating the region based 
     :custom
     (whitespace-line-column 100)
     (whitespace-style '(face tabs empty trailing lines-tail)))
-
-  (use-package yatemplate
-    :defer t
-    :custom
-    (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
-    :config
-    (yatemplate-fill-alist))
 #+END_SRC
 
 * Writing

@@ -673,13 +673,6 @@
   :custom
   (whitespace-line-column 100)
   (whitespace-style '(face tabs empty trailing lines-tail)))
-
-(use-package yatemplate
-  :defer t
-  :custom
-  (yatemplate-dir (expand-file-name "templates" user-emacs-directory))
-  :config
-  (yatemplate-fill-alist))
 ;; Editing:11 ends here
 
 (use-package flyspell

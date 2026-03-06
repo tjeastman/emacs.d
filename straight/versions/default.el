@@ -116,7 +116,5 @@
  ("vertico" . "93f15873d7d6244d72202c5dd7724a030a2d5b9a")
  ("with-editor" . "64211dcb815f2533ac3d2a7e56ff36ae804d8338")
  ("xref" . "7afae701da9c4fe7b5a6ffeff33a4a4f14a12aa2")
- ("yaml-mode" . "d91f878729312a6beed77e6637c60497c5786efa")
- ("yasnippet" . "c1e6ff23e9af16b856c88dfaab9d3ad7b746ad37")
- ("yatemplate" . "275745ce1482edc08efb0b7807bc86d832bcc734"))
+ ("yaml-mode" . "d91f878729312a6beed77e6637c60497c5786efa"))
 :epsilon
