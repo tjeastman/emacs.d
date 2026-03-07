@@ -775,19 +775,21 @@
   :hook
   ((prog-mode . flyspell-prog-mode)
    (prog-mode . rainbow-delimiters-mode)))
+;; General:3 ends here
 
+;; [[file:config.org::*General][General:4]]
 (use-package which-func
   :straight (:type built-in)
   :config
   (which-function-mode 1))
-;; General:3 ends here
+;; General:4 ends here
 
-;; [[file:config.org::*General][General:4]]
+;; [[file:config.org::*General][General:5]]
 (use-package combobulate
   :after treesit
   :custom
   (combobulate-key-prefix "C-c o"))
-;; General:4 ends here
+;; General:5 ends here
 
 ;; [[file:config.org::*Make][Make:1]]
 (use-package make-mode

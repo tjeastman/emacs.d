@@ -915,7 +915,10 @@ It includes facilities for developing faster and higher fidelity language-specif
     :hook
     ((prog-mode . flyspell-prog-mode)
      (prog-mode . rainbow-delimiters-mode)))
+#+END_SRC
 
+=which-function-mode= is a minor mode that displays the current function name in the mode line.
+#+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package which-func
     :straight (:type built-in)
     :config
