@@ -947,10 +947,6 @@
   :commands
   (i3wm-config-mode))
 
-(use-package json-mode
-  :mode
-  ("Pipfile.lock\\'" . json-mode))
-
 (use-package ledger-mode
   :defer t)
 

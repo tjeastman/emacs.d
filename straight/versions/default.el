@@ -64,8 +64,6 @@
  ("i3wm-Config-Mode" . "188e3978807ec39eba3cb69d973c0062af324215")
  ("ibuffer-vc" . "11f2d44a280728e963d81b28455f1c6091718120")
  ("imenu-anywhere" . "06ec33d79e33edf01b9118aead1eabeae8ee08b1")
- ("json-mode" . "466d5b563721bbeffac3f610aefaac15a39d90a9")
- ("json-snatcher" . "b28d1c0670636da6db508d03872d96ffddbc10f2")
  ("jsonrpc" . "2bf7f24e39b6592faefef85e7553b2253c2ab87a")
  ("keychain-environment" . "d2fa34404fe3a58bd7e708e73b77be43f46eb4cc")
  ("kind-icon" . "85bd8ed3a24fe283f6aeff6afa9a552516ec14e0")

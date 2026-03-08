@@ -1121,10 +1121,6 @@ It includes facilities for developing faster and higher fidelity language-specif
     :commands
     (i3wm-config-mode))
 
-  (use-package json-mode
-    :mode
-    ("Pipfile.lock\\'" . json-mode))
-
   (use-package ledger-mode
     :defer t)
 
