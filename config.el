@@ -891,6 +891,7 @@
   :custom
   (org-babel-load-languages nil)
   (org-confirm-babel-evaluate nil)
+  (org-return-follows-link t)
   (org-src-fontify-natively t)
   (org-use-speed-commands t))
 
