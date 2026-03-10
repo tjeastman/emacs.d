@@ -893,6 +893,7 @@
   (org-confirm-babel-evaluate nil)
   (org-return-follows-link t)
   (org-src-fontify-natively t)
+  (org-startup-folded 'fold)
   (org-use-speed-commands t))
 
 (use-package org-roam
