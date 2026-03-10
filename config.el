@@ -867,6 +867,12 @@
 ;; Embedded:1 ends here
 
 ;; [[file:config.org::*Org][Org:1]]
+(use-package olivetti
+  :commands
+  (olivetti-mode)
+  :custom
+  (olivetti-body-width 0.9))
+
 (use-package ob-emacs-lisp
   :straight nil
   :commands
@@ -890,14 +896,27 @@
 
 (use-package org
   :defer t
-  :hook (org-mode . visual-line-mode)
+  :hook
+  ((org-mode . olivetti-mode)
+   (org-mode . org-modern-mode)
+   (org-mode . visual-line-mode))
   :custom
   (org-babel-load-languages nil)
   (org-confirm-babel-evaluate nil)
+  (org-edit-src-content-indentation 2)
+  (org-ellipsis "…")
+  (org-pretty-entities t)
   (org-return-follows-link t)
   (org-src-fontify-natively t)
+  (org-src-tab-acts-natively t)
   (org-startup-folded 'fold)
   (org-use-speed-commands t))
+
+(use-package org-modern
+  :commands
+  (org-modern-mode)
+  :custom
+  (org-modern-star 'replace))
 
 (use-package org-roam
   :defer t
