@@ -907,7 +907,10 @@ It includes facilities for developing faster and higher fidelity language-specif
   (use-package which-func
     :straight (:type built-in)
     :config
-    (which-function-mode 1))
+    (which-function-mode 1)
+    :custom
+    (which-func-display 'mode)
+    (which-func-modes t))
 #+END_SRC
 
 =combobulate= uses =treesit= to provide structured editing and movement for a wide range of programming languages.

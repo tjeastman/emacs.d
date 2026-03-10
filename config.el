@@ -766,7 +766,10 @@
 (use-package which-func
   :straight (:type built-in)
   :config
-  (which-function-mode 1))
+  (which-function-mode 1)
+  :custom
+  (which-func-display 'mode)
+  (which-func-modes t))
 ;; General:4 ends here
 
 ;; [[file:config.org::*General][General:5]]
