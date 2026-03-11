@@ -172,8 +172,8 @@ The =doom-themes-enable-bold= and =doom-themes-enable-italic= settings can be us
   (use-package doom-themes
     :if window-system
     :custom
-    (doom-themes-enable-bold nil)
-    (doom-themes-enable-italic nil)
+    (doom-themes-enable-bold t)
+    (doom-themes-enable-italic t)
     :config
     (load-theme 'doom-solarized-light t))
 #+END_SRC
@@ -1087,6 +1087,7 @@ It includes facilities for developing faster and higher fidelity language-specif
     (org-confirm-babel-evaluate nil)
     (org-edit-src-content-indentation 2)
     (org-ellipsis "…")
+    (org-hide-emphasis-markers t)
     (org-pretty-entities t)
     (org-return-follows-link t)
     (org-src-fontify-natively t)

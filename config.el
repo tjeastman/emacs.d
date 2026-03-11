@@ -115,8 +115,8 @@
 (use-package doom-themes
   :if window-system
   :custom
-  (doom-themes-enable-bold nil)
-  (doom-themes-enable-italic nil)
+  (doom-themes-enable-bold t)
+  (doom-themes-enable-italic t)
   :config
   (load-theme 'doom-solarized-light t))
 ;; Appearance:6 ends here
@@ -916,6 +916,7 @@
   (org-confirm-babel-evaluate nil)
   (org-edit-src-content-indentation 2)
   (org-ellipsis "…")
+  (org-hide-emphasis-markers t)
   (org-pretty-entities t)
   (org-return-follows-link t)
   (org-src-fontify-natively t)
