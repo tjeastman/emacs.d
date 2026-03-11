@@ -909,6 +909,8 @@
   ((org-mode . olivetti-mode)
    (org-mode . org-modern-mode)
    (org-mode . visual-line-mode))
+  :config
+  (require 'org-tempo)
   :custom
   (org-babel-load-languages nil)
   (org-confirm-babel-evaluate nil)
