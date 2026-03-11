@@ -826,6 +826,10 @@
   (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
 ;; Emacs Lisp:1 ends here
 
+;; [[file:config.org::*Scheme][Scheme:1]]
+(use-package geiser-guile)
+;; Scheme:1 ends here
+
 ;; [[file:config.org::*JavaScript][JavaScript:1]]
 (use-package typescript-ts-mode
   :straight (:type built-in))
@@ -889,6 +893,11 @@
   :commands
   (org-babel-execute:python))
 
+(use-package ob-scheme
+  :straight nil
+  :commands
+  (org-babel-execute:scheme))
+
 (use-package ob-shell
   :straight nil
   :commands
@@ -935,6 +944,7 @@
      (emacs-lisp . t)
      (http . t)
      (python . t)
+     (scheme .t)
      (shell . t))))
 ;; Org:1 ends here
 

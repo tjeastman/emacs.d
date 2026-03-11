@@ -982,6 +982,10 @@ It includes facilities for developing faster and higher fidelity language-specif
     (electric-operator-add-rules-for-mode 'emacs-lisp-mode (cons "." " . ")))
 #+END_SRC
 
+** Scheme
+#+begin_src emacs-lisp :tangle yes :comments link
+  (use-package geiser-guile)
+#+end_src
 ** Go
 #+BEGIN_SRC emacs-lisp :tangle no :comments link
   (use-package go-mode
@@ -1060,6 +1064,11 @@ It includes facilities for developing faster and higher fidelity language-specif
     :commands
     (org-babel-execute:python))
 
+  (use-package ob-scheme
+    :straight nil
+    :commands
+    (org-babel-execute:scheme))
+
   (use-package ob-shell
     :straight nil
     :commands
@@ -1106,6 +1115,7 @@ It includes facilities for developing faster and higher fidelity language-specif
        (emacs-lisp . t)
        (http . t)
        (python . t)
+       (scheme .t)
        (shell . t))))
 #+END_SRC
 
