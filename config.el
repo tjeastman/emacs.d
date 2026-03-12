@@ -957,10 +957,14 @@
 ;; [[file:config.org::*Org Roam][Org Roam:1]]
 (use-package org-roam
   :defer t
-  :custom
-  (org-roam-directory (concat (getenv "HOME") "/Documents/notes/"))
+  :bind
+  (("C-c n l" . org-roam-buffer-toggle)
+   ("C-c n f" . org-roam-node-find)
+   ("C-c n i" . org-roam-node-insert))
   :config
-  (org-roam-db-autosync-enable))
+  (org-roam-db-autosync-enable)
+  :custom
+  (org-roam-directory (concat (getenv "HOME") "/Documents/notes/")))
 ;; Org Roam:1 ends here
 
 ;; [[file:config.org::*Dired][Dired:1]]
