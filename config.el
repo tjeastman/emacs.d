@@ -136,18 +136,26 @@
 ;; Appearance:8 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:9]]
-(use-package rainbow-delimiters
+(use-package olivetti
   :commands
-  (rainbow-delimiters-mode))
+  (olivetti-mode)
+  :custom
+  (olivetti-body-width 0.9))
 ;; Appearance:9 ends here
 
 ;; [[file:config.org::*Appearance][Appearance:10]]
+(use-package rainbow-delimiters
+  :commands
+  (rainbow-delimiters-mode))
+;; Appearance:10 ends here
+
+;; [[file:config.org::*Appearance][Appearance:11]]
 (use-package simple
   :straight (:type built-in)
   :config
   (line-number-mode t)
   (size-indication-mode t))
-;; Appearance:10 ends here
+;; Appearance:11 ends here
 
 ;; [[file:config.org::*Environment][Environment:1]]
 (use-package direnv
@@ -871,38 +879,6 @@
 ;; Embedded:1 ends here
 
 ;; [[file:config.org::*Org][Org:1]]
-(use-package olivetti
-  :commands
-  (olivetti-mode)
-  :custom
-  (olivetti-body-width 0.9))
-
-(use-package ob-emacs-lisp
-  :straight nil
-  :commands
-  (org-babel-expand-body:emacs-lisp
-   org-babel-execute:emacs-lisp))
-
-(use-package ob-http
-  :commands
-  (org-babel-expand-body:http
-   org-babel-execute-body:http))
-
-(use-package ob-python
-  :straight nil
-  :commands
-  (org-babel-execute:python))
-
-(use-package ob-scheme
-  :straight nil
-  :commands
-  (org-babel-execute:scheme))
-
-(use-package ob-shell
-  :straight nil
-  :commands
-  (org-babel-execute:shell))
-
 (use-package org
   :defer t
   :hook
@@ -929,13 +905,34 @@
   (org-modern-mode)
   :custom
   (org-modern-star 'replace))
+;; Org:1 ends here
 
-(use-package org-roam
-  :defer t
-  :custom
-  (org-roam-directory (concat (getenv "HOME") "/Documents/notes/"))
-  :config
-  (org-roam-db-autosync-enable))
+;; [[file:config.org::*Org Babel][Org Babel:1]]
+(use-package ob-emacs-lisp
+  :straight nil
+  :commands
+  (org-babel-expand-body:emacs-lisp
+   org-babel-execute:emacs-lisp))
+
+(use-package ob-http
+  :commands
+  (org-babel-expand-body:http
+   org-babel-execute-body:http))
+
+(use-package ob-python
+  :straight nil
+  :commands
+  (org-babel-execute:python))
+
+(use-package ob-scheme
+  :straight nil
+  :commands
+  (org-babel-execute:scheme))
+
+(use-package ob-shell
+  :straight nil
+  :commands
+  (org-babel-execute:shell))
 
 (use-package ob-async
   :after org
@@ -949,7 +946,16 @@
      (python . t)
      (scheme .t)
      (shell . t))))
-;; Org:1 ends here
+;; Org Babel:1 ends here
+
+;; [[file:config.org::*Org Roam][Org Roam:1]]
+(use-package org-roam
+  :defer t
+  :custom
+  (org-roam-directory (concat (getenv "HOME") "/Documents/notes/"))
+  :config
+  (org-roam-db-autosync-enable))
+;; Org Roam:1 ends here
 
 ;; [[file:config.org::*Dired][Dired:1]]
 (use-package dired

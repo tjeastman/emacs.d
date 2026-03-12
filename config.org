@@ -194,6 +194,15 @@ The =highlight-indentation= package provides visual indicators of indentation le
      highlight-indentation-current-column-mode))
 #+END_SRC
 
+=olivetti-mode= automatically balances window margins.
+#+begin_src emacs-lisp :tangle yes :comments link
+  (use-package olivetti
+    :commands
+    (olivetti-mode)
+    :custom
+    (olivetti-body-width 0.9))
+#+end_src
+
 The =rainbow-delimiters= package highlights delimiters such as parenthesis, brackets and braces.
 It implements this by assigning distinct colors to delimiter characters at each level of depth making it easier to see how they match.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
@@ -1042,38 +1051,6 @@ It includes facilities for developing faster and higher fidelity language-specif
 
 * Org
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
-  (use-package olivetti
-    :commands
-    (olivetti-mode)
-    :custom
-    (olivetti-body-width 0.9))
-
-  (use-package ob-emacs-lisp
-    :straight nil
-    :commands
-    (org-babel-expand-body:emacs-lisp
-     org-babel-execute:emacs-lisp))
-
-  (use-package ob-http
-    :commands
-    (org-babel-expand-body:http
-     org-babel-execute-body:http))
-
-  (use-package ob-python
-    :straight nil
-    :commands
-    (org-babel-execute:python))
-
-  (use-package ob-scheme
-    :straight nil
-    :commands
-    (org-babel-execute:scheme))
-
-  (use-package ob-shell
-    :straight nil
-    :commands
-    (org-babel-execute:shell))
-
   (use-package org
     :defer t
     :hook
@@ -1100,13 +1077,35 @@ It includes facilities for developing faster and higher fidelity language-specif
     (org-modern-mode)
     :custom
     (org-modern-star 'replace))
+#+END_SRC
 
-  (use-package org-roam
-    :defer t
-    :custom
-    (org-roam-directory (concat (getenv "HOME") "/Documents/notes/"))
-    :config
-    (org-roam-db-autosync-enable))
+** Org Babel
+#+begin_src emacs-lisp :tangle yes :comments link
+  (use-package ob-emacs-lisp
+    :straight nil
+    :commands
+    (org-babel-expand-body:emacs-lisp
+     org-babel-execute:emacs-lisp))
+
+  (use-package ob-http
+    :commands
+    (org-babel-expand-body:http
+     org-babel-execute-body:http))
+
+  (use-package ob-python
+    :straight nil
+    :commands
+    (org-babel-execute:python))
+
+  (use-package ob-scheme
+    :straight nil
+    :commands
+    (org-babel-execute:scheme))
+
+  (use-package ob-shell
+    :straight nil
+    :commands
+    (org-babel-execute:shell))
 
   (use-package ob-async
     :after org
@@ -1120,8 +1119,17 @@ It includes facilities for developing faster and higher fidelity language-specif
        (python . t)
        (scheme .t)
        (shell . t))))
-#+END_SRC
+#+end_src
 
+** Org Roam
+#+begin_src emacs-lisp :tangle yes :comments link
+  (use-package org-roam
+    :defer t
+    :custom
+    (org-roam-directory (concat (getenv "HOME") "/Documents/notes/"))
+    :config
+    (org-roam-db-autosync-enable))
+#+end_src
 * Dired
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package dired
