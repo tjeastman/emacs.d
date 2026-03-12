@@ -889,6 +889,10 @@
    (org-mode . visual-line-mode))
   :config
   (require 'org-tempo)
+  :custom-face
+  (org-level-1 ((t (:inherit outline-1 :height 1.25))))
+  (org-level-2 ((t (:inherit outline-2 :height 1.15))))
+  (org-level-3 ((t (:inherit outline-3 :height 1.1))))
   :custom
   (org-babel-load-languages nil)
   (org-confirm-babel-evaluate nil)
