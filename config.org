@@ -357,7 +357,9 @@ The =crux= package provides a variety of useful interactive commands including
   (use-package simple
     :straight (:type built-in)
     :bind
-    ("C-x C-m" . execute-extended-command))
+    ("C-x C-m" . execute-extended-command)
+    :custom
+    (read-extended-command-predicate #'command-completion-default-include-p))
 #+END_SRC
 
 =which-key-mode= displays key bindings in the minibuffer for the currently entered command prefix.

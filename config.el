@@ -281,7 +281,9 @@
 (use-package simple
   :straight (:type built-in)
   :bind
-  ("C-x C-m" . execute-extended-command))
+  ("C-x C-m" . execute-extended-command)
+  :custom
+  (read-extended-command-predicate #'command-completion-default-include-p))
 ;; Interface:5 ends here
 
 ;; [[file:config.org::*Interface][Interface:6]]
