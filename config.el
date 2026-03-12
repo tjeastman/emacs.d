@@ -740,7 +740,7 @@
 (use-package elec-pair
   :straight (:type built-in)
   :commands
-  electric-pair-local-mode)
+  (electric-pair-local-mode))
 
 (use-package flymake
   :straight (:type built-in)
