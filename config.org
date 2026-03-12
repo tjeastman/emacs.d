@@ -833,8 +833,8 @@ It automatically runs an appropriate formatter based on the major mode of a give
 The package seeks to apply formatting changes with low latency and in a manner that maintains the point position relative to its surroundings.
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package apheleia
-    :config
-    (apheleia-global-mode))
+    :commands
+    (apheleia-mode))
 #+END_SRC
 
 The =treesit= package wraps the Tree-sitter parser generator and incremental parsing library.
@@ -909,7 +909,8 @@ It includes facilities for developing faster and higher fidelity language-specif
   (use-package prog-mode
     :straight (:type built-in)
     :hook
-    ((prog-mode . flyspell-prog-mode)
+    ((prog-mode . apheleia-mode)
+     (prog-mode . flyspell-prog-mode)
      (prog-mode . rainbow-delimiters-mode)))
 #+END_SRC
 

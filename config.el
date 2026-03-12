@@ -694,8 +694,8 @@
 
 ;; [[file:config.org::*General][General:1]]
 (use-package apheleia
-  :config
-  (apheleia-global-mode))
+  :commands
+  (apheleia-mode))
 ;; General:1 ends here
 
 ;; [[file:config.org::*General][General:2]]
@@ -768,7 +768,8 @@
 (use-package prog-mode
   :straight (:type built-in)
   :hook
-  ((prog-mode . flyspell-prog-mode)
+  ((prog-mode . apheleia-mode)
+   (prog-mode . flyspell-prog-mode)
    (prog-mode . rainbow-delimiters-mode)))
 ;; General:3 ends here
 
