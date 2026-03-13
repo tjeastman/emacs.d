@@ -432,6 +432,8 @@
 ;; [[file:config.org::*Completion][Completion:2]]
 (use-package corfu
   :straight (:files (:defaults "extensions/*"))
+  :hook
+  (corfu-mode . corfu-popupinfo-mode)
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0)
@@ -442,6 +444,14 @@
   (global-corfu-mode)
   :config
   (corfu-history-mode 1))
+
+(use-package corfu-popupinfo
+  :straight nil
+  :after corfu
+  :commands
+  (corfu-popupinfo-mode)
+  :custom
+  (corfu-popupinfo-delay '(1.0 . 0.5)))
 ;; Completion:2 ends here
 
 ;; [[file:config.org::*Completion][Completion:3]]
