@@ -852,6 +852,14 @@
 (use-package geiser-guile)
 ;; Scheme:1 ends here
 
+;; [[file:config.org::*Rust][Rust:1]]
+(use-package rust-mode
+  :hook
+  ((rust-mode . electric-pair-local-mode))
+  :custom
+  (rust-format-on-save nil))
+;; Rust:1 ends here
+
 ;; [[file:config.org::*JavaScript][JavaScript:1]]
 (use-package typescript-ts-mode
   :straight (:type built-in))

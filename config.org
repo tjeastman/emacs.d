@@ -1009,6 +1009,14 @@ It includes facilities for developing faster and higher fidelity language-specif
 #+begin_src emacs-lisp :tangle yes :comments link
   (use-package geiser-guile)
 #+end_src
+** Rust
+#+begin_src emacs-lisp :tangle yes :comments link
+  (use-package rust-mode
+    :hook
+    ((rust-mode . electric-pair-local-mode))
+    :custom
+    (rust-format-on-save nil))
+#+end_src
 ** Go
 #+BEGIN_SRC emacs-lisp :tangle no :comments link
   (use-package go-mode
