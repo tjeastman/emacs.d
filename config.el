@@ -434,14 +434,14 @@
   :straight (:files (:defaults "extensions/*"))
   :hook
   (corfu-mode . corfu-popupinfo-mode)
+  :commands
+  (corfu-mode)
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0)
   (corfu-auto-prefix 2)
   (corfu-cycle t)
   (corfu-quit-no-match t)
-  :init
-  (global-corfu-mode)
   :config
   (corfu-history-mode 1))
 
@@ -779,6 +779,7 @@
   :straight (:type built-in)
   :hook
   ((prog-mode . apheleia-mode)
+   (prog-mode . corfu-mode)
    (prog-mode . flyspell-prog-mode)
    (prog-mode . rainbow-delimiters-mode)))
 ;; General:3 ends here
