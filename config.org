@@ -863,7 +863,8 @@ It includes facilities for developing faster and higher fidelity language-specif
                  (python . ("https://github.com/tree-sitter/tree-sitter-python" "v0.23.6"))
                  (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "tsx/src"))
                  (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "v0.23.2" "typescript/src"))
-                 (typst . ("https://github.com/uben0/tree-sitter-typst" "v0.11.0"))))
+                 (typst . ("https://github.com/uben0/tree-sitter-typst" "v0.11.0"))
+                 (zig . ("https://github.com/tree-sitter-grammars/tree-sitter-zig" "v1.1.2"))))
         (add-to-list 'treesit-language-source-alist grammar)
         (unless (treesit-language-available-p (car grammar))
           (treesit-install-language-grammar (car grammar)))))
@@ -1027,6 +1028,11 @@ It includes facilities for developing faster and higher fidelity language-specif
                  (add-hook 'before-save-hook 'gofmt-before-save nil t))))
 #+END_SRC
 
+** Zig
+#+begin_src emacs-lisp :tangle yes :comments link
+  (use-package zig-ts-mode
+    :straight '(:type git :host codeberg :repo "meow_king/zig-ts-mode"))
+#+end_src
 ** JavaScript
 #+BEGIN_SRC emacs-lisp :tangle yes :comments link
   (use-package typescript-ts-mode
